@@ -1,0 +1,5 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/e4687a7a-e667-46ba-9f59-07decb4336ad/resourceGroups/bluering-node-rg/providers/Microsoft.Web/sites/bluering-node",
+    "appService.deploySubpath": ""
+}

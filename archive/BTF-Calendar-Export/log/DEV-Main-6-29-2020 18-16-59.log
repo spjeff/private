@@ -1,0 +1,148 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200629181659
+Username: PC\Name
+RunAs User: PC\Name
+Configuration Name: 
+Machine: PC (Microsoft Windows NT 10.0.18363.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2020.6.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules' -EnableConsoleRepl -StartupBanner "=====> PowerShell Integrated Console v2020.6.0 <=====
+" -LogLevel 'Normal' -LogPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\logs\1593472051-42abe65a-0f16-48b8-9ffd-3022e786352a1593472039304\EditorServices.log' -SessionDetailsPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\sessions\PSES-VSCode-13012-895336' -FeatureFlags @() 
+Process ID: 4720
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\CODE\BTF-Calendar-Export\log\DEV-Main-6-29-2020 18-16-59.log
+PS C:\CODE\BTF-Calendar-Export> TerminatingError(Invoke-RestMethod): "{
+  "error": {
+    "code": "Request_UnsupportedQuery",
+    "message": "The specified filter against a single entity is invalid.",
+    "innerError": {
+      "date": "2020-06-29T23:17:01",
+      "request-id": "b23be93d-88da-4419-afce-38766e4107da"
+    }
+  }
+}"
+Invoke-RestMethod : {
+  "error": {
+    "code": "Request_UnsupportedQuery",
+    "message": "The specified filter against a single entity is invalid.",
+    "innerError": {
+      "date": "2020-06-29T23:17:01",
+      "request-id": "b23be93d-88da-4419-afce-38766e4107da"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export2.ps1:69 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+Invoke-RestMethod : {
+  "error": {
+    "code": "Request_UnsupportedQuery",
+    "message": "The specified filter against a single entity is invalid.",
+    "innerError": {
+      "date": "2020-06-29T23:17:01",
+      "request-id": "b23be93d-88da-4419-afce-38766e4107da"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export2.ps1:69 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+>> TerminatingError(Invoke-RestMethod): "{
+  "error": {
+    "code": "Request_UnsupportedQuery",
+    "message": "The specified filter against a single entity is invalid.",
+    "innerError": {
+      "date": "2020-06-29T23:17:02",
+      "request-id": "8c629e30-2703-4694-88e3-02066fde5ed5"
+    }
+  }
+}"
+Invoke-RestMethod : {
+  "error": {
+    "code": "Request_UnsupportedQuery",
+    "message": "The specified filter against a single entity is invalid.",
+    "innerError": {
+      "date": "2020-06-29T23:17:02",
+      "request-id": "8c629e30-2703-4694-88e3-02066fde5ed5"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export2.ps1:69 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+Invoke-RestMethod : {
+  "error": {
+    "code": "Request_UnsupportedQuery",
+    "message": "The specified filter against a single entity is invalid.",
+    "innerError": {
+      "date": "2020-06-29T23:17:02",
+      "request-id": "8c629e30-2703-4694-88e3-02066fde5ed5"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export2.ps1:69 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+>> TerminatingError(Invoke-RestMethod): "{
+  "error": {
+    "code": "Request_UnsupportedQuery",
+    "message": "The specified filter against a single entity is invalid.",
+    "innerError": {
+      "date": "2020-06-29T23:17:02",
+      "request-id": "7a24621b-674e-4b21-b642-20d624f86fd8"
+    }
+  }
+}"
+Invoke-RestMethod : {
+  "error": {
+    "code": "Request_UnsupportedQuery",
+    "message": "The specified filter against a single entity is invalid.",
+    "innerError": {
+      "date": "2020-06-29T23:17:02",
+      "request-id": "7a24621b-674e-4b21-b642-20d624f86fd8"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export2.ps1:69 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+Invoke-RestMethod : {
+  "error": {
+    "code": "Request_UnsupportedQuery",
+    "message": "The specified filter against a single entity is invalid.",
+    "innerError": {
+      "date": "2020-06-29T23:17:02",
+      "request-id": "7a24621b-674e-4b21-b642-20d624f86fd8"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export2.ps1:69 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+TOTAL SCANNED:  0
+**********************
+Windows PowerShell transcript end
+End time: 20200629181701
+**********************

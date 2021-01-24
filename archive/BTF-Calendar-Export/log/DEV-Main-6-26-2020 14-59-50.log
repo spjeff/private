@@ -1,0 +1,81 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200626145950
+Username: PC\Name
+RunAs User: PC\Name
+Configuration Name: 
+Machine: PC (Microsoft Windows NT 10.0.18363.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2020.6.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules' -EnableConsoleRepl -StartupBanner "=====> PowerShell Integrated Console v2020.6.0 <=====
+" -LogLevel 'Normal' -LogPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\logs\1593200286-d9ac178b-2673-43c0-8dca-c0dcb36ac7a41593200086306\EditorServices.log' -SessionDetailsPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\sessions\PSES-VSCode-14816-760635' -FeatureFlags @() 
+Process ID: 16392
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\CODE\BTF-Calendar-Export\log\DEV-Main-6-26-2020 14-59-50.log
+Invoke-Sqlcmd : There is already an object named 'Events' in the database. 
+ Msg 2714, Level 16, State 6, Procedure , Line 1.
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:125 char:5
++     Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst -Username ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : There is already an object named 'Events' in the database.
+ Msg 2714, Level 16, State 6, Procedure , Line 1.
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:125 char:5
++     Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst -Username ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlPowerShellSqlExecutionException
+    + FullyQualifiedErrorId : SqlError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+PS C:\CODE\BTF-Calendar-Export> TerminatingError(Invoke-RestMethod): "{
+  "error": {
+    "code": "InvalidAuthenticationToken",
+    "message": "CompactToken parsing failed with error code: 80049217",
+    "innerError": {
+      "date": "2020-06-26T19:59:53",
+      "request-id": "ff51bb8b-2c35-4f53-89f3-59724d1e9cc0"
+    }
+  }
+}"
+Invoke-RestMethod : {
+  "error": {
+    "code": "InvalidAuthenticationToken",
+    "message": "CompactToken parsing failed with error code: 80049217",
+    "innerError": {
+      "date": "2020-06-26T19:59:53",
+      "request-id": "ff51bb8b-2c35-4f53-89f3-59724d1e9cc0"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:57 char:14
++ ...    $users = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+Invoke-RestMethod : {
+  "error": {
+    "code": "InvalidAuthenticationToken",
+    "message": "CompactToken parsing failed with error code: 80049217",
+    "innerError": {
+      "date": "2020-06-26T19:59:53",
+      "request-id": "ff51bb8b-2c35-4f53-89f3-59724d1e9cc0"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:57 char:14
++ ...    $users = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+TOTAL SCANNED:  0
+**********************
+Windows PowerShell transcript end
+End time: 20200626145952
+**********************

@@ -1,0 +1,65 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200626150142
+Username: PC\Name
+RunAs User: PC\Name
+Configuration Name: 
+Machine: PC (Microsoft Windows NT 10.0.18363.0)
+Host Application: C:\WINDOWS\system32\WindowsPowerShell\v1.0\PowerShell.exe
+Process ID: 12152
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\code\BTF-Calendar-Export\log\DEV-Main-6-26-2020 15-01-42.log
+PS>TerminatingError(Invoke-RestMethod): "{
+  "error": {
+    "code": "InvalidAuthenticationToken",
+    "message": "CompactToken parsing failed with error code: 80049217",
+    "innerError": {
+      "date": "2020-06-26T20:01:44",
+      "request-id": "a5c5e478-f060-472e-92ba-d78a80ad94af"
+    }
+  }
+}"
+Invoke-RestMethod : {
+  "error": {
+    "code": "InvalidAuthenticationToken",
+    "message": "CompactToken parsing failed with error code: 80049217",
+    "innerError": {
+      "date": "2020-06-26T20:01:44",
+      "request-id": "a5c5e478-f060-472e-92ba-d78a80ad94af"
+    }
+  }
+}
+At C:\code\BTF-Calendar-Export\BTF-Calendar-Export.ps1:57 char:14
++ ...    $users = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+Invoke-RestMethod : {
+  "error": {
+    "code": "InvalidAuthenticationToken",
+    "message": "CompactToken parsing failed with error code: 80049217",
+    "innerError": {
+      "date": "2020-06-26T20:01:44",
+      "request-id": "a5c5e478-f060-472e-92ba-d78a80ad94af"
+    }
+  }
+}
+At C:\code\BTF-Calendar-Export\BTF-Calendar-Export.ps1:57 char:14
++ ...    $users = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+TOTAL SCANNED:  0
+**********************
+Windows PowerShell transcript end
+End time: 20200626150143
+**********************

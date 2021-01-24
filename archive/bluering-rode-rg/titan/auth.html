@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titan</title>
+
+
+    <!-- AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+    <!-- App -->
+    <script src="shagi-app.js"></script>
+    <link rel="stylesheet" href="shagi-app.css">
+</head>
+
+<body>
+
+    <div ng-app="shagiApp">
+        <div ng-controller="shagiCtl">
+
+
+            <table width="100%" style="background-color: black;">
+                <tr>
+                    <td width="200px">
+                        <img src="titan.png" alt="" height="100px">
+                    </td>
+                    <td style="padding-left:80px;color: white;">
+                        <h1>Authorization Access Request</h1>
+                    </td>
+                    <td>
+                        <a href="/">
+                            [&lt;&lt; Return to menu]
+                        </a>
+                    </td>
+                    <td style="vertical-align: bottom;text-align: right; background-color: black;">
+                        <img src="titan-bg1.png" alt="" height="150px" width="180px">
+                    </td>
+                </tr>
+            </table>
+
+            <div class="shagi-main" style="padding-top:50px;">
+                <table border="1" style="margin-left:50px">
+
+                    <tr>
+                        <td colspan="4">
+                            TITAN AUTHORIZATION ACCESS REQUEST
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            PRIVACY ACT STATEMENT
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <table style="vertical-align: top" border="0">
+                                <tr>
+                                    <td nowrap>AUTHORITY:</td>
+                                    <td>Executive Order 10450, 9397; and Public Law 99-474 the Computer Fraud and Abuse
+                                        Act.</td>
+                                </tr>
+                                <tr>
+                                    <td nowrap>PRINCIPAL PURPOSE:</td>
+                                    <td>To record names, signatures, and other identifies for the purpose of validation
+                                        the trustworthiness of individual requesting
+                                        <br />access to Department of Defense (DoD) system and information. NOTE:
+                                        Records may be maintained in both electronic
+                                        <br />and/or paper form.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap>ROUTINE USES:</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td nowrap>DISCLOSURE:</td>
+                                    <td>
+                                        Disclosure of this information is voluntary; however, failure to provide the
+                                        requested information may impede, delay, or prevent
+                                        <br />further process of this request.
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="4">PART I - USER INFORMATION (To be complete by the Requestor or User)</td>
+                    </tr>
+                    <tr>
+                        <td>TYPE OF REQUEST</td>
+                        <td colspan="3">DATE (YYYYDDMM)</td>
+                    </tr>
+                    <td>
+                        <input type="checkbox" name="" id="" ng-model="auth.checkInitial" value="INITIAL">
+                        INITIAL
+                        <input type="checkbox" name="" id="" ng-model="auth.checkInitial" value="MODIFICATION">
+                        MODIFICATION
+                        <input type="checkbox" name="" id="" ng-model="auth.checkInitial" value="DEACTIVATION">
+                        DEACTIVATION
+                    </td>
+                    <td colspan="3">
+                        <input type="date" name="" id="" ng-model="auth.userDate">
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>SYSTEM NAMES(S) (Check all that apply)</td>
+                        <td colspan="3">TYPE OF ACCESS REQUIRED: (Check one)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="" id="" ng-model="auth.checkSystem" value="TITAN-U">
+                            TITAN-U
+                            <input type="checkbox" name="" id="" ng-model="auth.checkSystem" value="TITAN-S">
+                            TITAN-S
+                            <input type="checkbox" name="" id="" ng-model="auth.checkSystem" value="TITAN-T">
+                            TITAN-T
+                        </td>
+                        <td colspan="3">
+                            <input type="checkbox" name="" id="" ng-model="auth.checkType" value="AUTHORIZED">
+                            AUTHORIZED
+                            <input type="checkbox" name="" id="" ng-model="auth.checkType" value="PRIVILEGED">
+                            PRIVILEGED
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            NAME (Last, First M.I.)
+                        </td>
+                        <td colspan="3">SSN (XXX-XX-XXXX)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="" id="" ng-model="auth.name"></td>
+                        <td colspan="3"><input type="text" name="" id="" ng-model="auth.ssn"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ORGANIZATION/AGENCY
+                        </td>
+                        <td colspan="3">DESIGNATION</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="" id=""></td>
+                        <td colspan="3">
+                            <input type="checkbox" name="" id="" ng-model="auth.checkOrg" value="MILITARY">
+                            MILITARY
+                            <input type="checkbox" name="" id="" ng-model="auth.checkOrg" value="CIVILIAN">
+                            CIVILIAN
+                            <input type="checkbox" name="" id="" ng-model="auth.checkOrg" value="CONTRACTOR">
+                            CONTRACTOR
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JOB TITLE AND RANK/GRADE (If military)</td>
+                        <td colspan="3">BADGE NUMBER (If applicable)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="" id="" ng-model="auth.Job"></td>
+                        <td colspan="3"><input type="text" name="" id="" ng-model="auth.badge"></td>
+                    </tr>
+                    <tr>
+                        <td>CONTACT INFORMATION
+                            <br>
+                            (Communicatoi methods must be equal or higher than the classification level of the requested
+                            System)
+                        </td>
+                        <td colspan="3">LOCATION (Physical location of hte User)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>E-MAIL ADDRESS:</td>
+                                    <td><input type="text" name="" id="" ng-model="auth.email"></td>
+                                </tr>
+                                <tr>
+                                    <td>PHONE-Commercial:</td>
+                                    <td><input type="text" name="" id="" ng-model="auth.phoneComm">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PHONE-Secure:</td>
+                                    <td><input type="text" name="" id="" ng-model="auth.phoneSec"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td colspan="3"><input type="text" name="" id="" ng-model="auth.location"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">JUSTIFICATION FOR ACCESS</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <textarea name="" id="" cols="30" rows="10" ng-model="auth.justification"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>USER INITIALS
+                            <br>
+                            <input type="text" name="" id="" ng-model="auth.userInit">
+                        </td>
+                        <td colspan="3">DATE (YYYYMMDD)
+                            <br>
+                            <input type="text" name="" id="" ng-model="auth.date">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            PART II - CLEARANCE VALIDATION (To be completed by the Information System Security Manager,
+                            Security Officer, or Security Engineer)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TYPE OF INVESTIGATION</td>
+                        <td>DATE OF INVESTIGATION</td>
+                        <td>CLEARANCE LEVEL</td>
+                        <td>CAVEATS (If required)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="" id="" ng-model="auth.typeInvestigate"></td>
+                        <td><input type="date" name="" id="" ng-model="auth.dateInvestigate"></td>
+                        <td><input type="text" name="" id="" ng-model="auth.clearance"></td>
+                        <td>
+                            <input type="checkbox" name="" id="" ng-model="auth.checkCav" value="SI">SI
+                            <input type="checkbox" name="" id="" ng-model="auth.checkCav" value="TK">TK
+                            <input type="checkbox" name="" id="" ng-model="auth.checkCav" value="G">G
+                            <br>
+                            <input type="checkbox" name="" id="" ng-model="auth.checkCav" value="HCS">HCS
+                            <input type="checkbox" name="" id="" ng-model="auth.checkCav" value="SECRETNATO">SECRET NATO
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>VERIFIED BY (Print name)</td>
+                        <td>CONTACT NUMBER</td>
+                        <td>ISSM/ISSO/ISSE INITIAL</td>
+                        <td>DATE (YYYYMMDD)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="" id="" ng-model="auth.verified"></td>
+                        <td><input type="text" name="" id="" ng-model="auth.contact"></td>
+                        <td><input type="text" name="" id="" ng-model="auth.issm"></td>
+                        <td><input type="date" name="" id="" ng-model="auth.date"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">PART III - ACCOUNT CREATION (To be completed by the Information System Owner or
+                            System Administrator)</td>
+                    </tr>
+                    <tr>
+                        <td>SYSTEM ACCESS</td>
+                        <td>TEMPORARY PASSWORD GENERATED</td>
+                        <td colspan="2">COMMENTS (If applicable)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="" id="" ng-model="auth.titanuSys" value="TITAN-U">
+                            TITAN-U
+                        </td>
+                        <td>
+                            <input type="checkbox" name="" id="" ng-model="auth.titanuTemp" value="Y">Y
+                        </td>
+                        <td colspan="2">
+                            <input type="text" name="" id="" ng-model="auth.titanuComments">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="" id="" ng-model="auth.titanuSys" value="TITAN-S">
+                            TITAN-S
+                        </td>
+                        <td>
+                            <input type="checkbox" name="" id="" ng-model="auth.titanuTemp" value="Y">Y
+                        </td>
+                        <td colspan="2">
+                            <input type="text" name="" id="" ng-model="auth.titanuComments">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="" id="" ng-model="auth.titanuSys" value="TITAN-T">
+                            TITAN-T
+                        </td>
+                        <td>
+                            <input type="checkbox" name="" id="" ng-model="auth.titanuTemp" value="Y">Y
+                        </td>
+                        <td colspan="2">
+                            <input type="text" name="" id="" ng-model="auth.titanuComments">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>COMPLETED BY (Print name)</td>
+                        <td>CONTACT NUMBER</td>
+                        <td>ISO/SA INITIAL</td>
+                        <td>DATE (YYYYMMDD)</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="" id="" ng-model="auth.completedBy"></td>
+                        <td><input type="text" name="" id="" ng-model="auth.contactNumber"></td>
+                        <td><input type="text" name="" id="" ng-model="auth.isoInitial"></td>
+                        <td><input type="date" name="" id="" ng-model="auth.date"></td>
+                    </tr>
+                    <tr>
+
+                        <td colspan="4">
+                            <p>INSTRUCTIONS</p>
+                            <table>
+                                <tr>
+                                    <td nowrap>PART I:</td>
+                                    <td>This sections is compeltd by the requestor or the user. The user must verify the
+                                        accuracy of the information and intial. Send the initaled request form to the
+                                        Information Systems Security Team.</td>
+                                </tr>
+                                <tr>
+                                    <td nowrap>PART II:</td>
+                                    <td>This section must be completed by an ISSM, ISSO, or ISSE. Verfiy the user has
+                                        the appropriate clearance level and caveats for the TITAN System being
+                                        requested. Sign and send the completed form to the application System
+                                        Administrator.</td>
+                                </tr>
+                                <tr>
+                                    <td nowrap>PART III:</td>
+                                    <td>This section must be completed by an ISO, or SA. Once the user account(s) are
+                                        created, provide the user with the login information through the appropriate
+                                        control methods. PRovide the completed form back to the user and ISSM for
+                                        record.</td>
+                                </tr>
+                                <tr>
+                                    <td nowrap>NOTE:</td>
+                                    <td>In order to protect your PII, encrypt this form by going to File > Protect
+                                        Document > Encrypt with Password. Create a pasword and provide it via commerical
+                                        phone, secure phone, or in seperate e-mail from this form.</td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+
+
+
+
+                    <tr>
+                        <td colspan="4" class="shagi-toolbar">
+                            <button ng-click="saveAuth()">
+                                <i class="fa fa-floppy-o"></i>
+                                Save</button>
+                            <button ng-click="resetAuth()">
+                                <i class="fa fa-refresh"></i>
+                                Reset</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

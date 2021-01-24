@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2020/02/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.18.2002.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-8C02A7CD429D4E439354CD15B00BC6E2">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-8C02A7CD429D4E439354CD15B00BC6E2" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+      <pnp:Navigation AddNewPagesToNavigation="true" CreateFriendlyUrlsForNewPages="true">
+        <pnp:GlobalNavigation NavigationType="Structural">
+          <pnp:StructuralNavigation RemoveExistingNodes="false" />
+        </pnp:GlobalNavigation>
+        <pnp:CurrentNavigation NavigationType="StructuralLocal">
+          <pnp:StructuralNavigation RemoveExistingNodes="false">
+            <pnp:NavigationNode Title="Home" Url="https://brandes365.sharepoint.com/" IsExternal="true" />
+            <pnp:NavigationNode Title="Departments" Url="" IsExternal="true">
+              <pnp:NavigationNode Title="Compliance" Url="https://brandes365.sharepoint.com/sites/compliance" IsExternal="true" />
+              <pnp:NavigationNode Title="Finance" Url="https://brandes365.sharepoint.com/sites/Finance" IsExternal="true">
+                <pnp:NavigationNode Title="Accounting" Url="https://brandes365.sharepoint.com/sites/Finance/Accounting" IsExternal="true" />
+                <pnp:NavigationNode Title="Human Resources" Url="{site}" />
+                <pnp:NavigationNode Title="Travel" Url="https://brandes365.sharepoint.com/sites/Finance/Travel" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="Investments" Url="https://brandes365.sharepoint.com/sites/investments" IsExternal="true" />
+              <pnp:NavigationNode Title="Legal" Url="https://brandes365.sharepoint.com/sites/legal" IsExternal="true" />
+              <pnp:NavigationNode Title="Operations" Url="https://brandes365.sharepoint.com/sites/operations" IsExternal="true">
+                <pnp:NavigationNode Title="Account Administration" Url="https://brandes365.sharepoint.com/sites/Operations/AccountAdministration" IsExternal="true" />
+                <pnp:NavigationNode Title="Business Services" Url="https://brandes365.sharepoint.com/sites/Operations/BusinessServices" IsExternal="true" />
+                <pnp:NavigationNode Title="Portfolio Accounting" Url="https://brandes365.sharepoint.com/sites/Operations/PortfolioAccounting/" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="PMCS" Url="https://brandes365.sharepoint.com/sites/PMCS" IsExternal="true">
+                <pnp:NavigationNode Title="Asia Pacific Sales" Url="https://brandes365.sharepoint.com/sites/PMCS/APACInstitutional" IsExternal="true" />
+                <pnp:NavigationNode Title="Brandes Institute" Url="https://brandes365.sharepoint.com/sites/PMCS/BrandesInstitute" IsExternal="true" />
+                <pnp:NavigationNode Title="Canada/Bridgehouse" Url="https://brandes365.sharepoint.com/sites/PMCS/CaBridgehouse/" IsExternal="true" />
+                <pnp:NavigationNode Title="Client Portfolio Management" Url="https://brandes365.sharepoint.com/sites/PMCS/NAInstSvcs" IsExternal="true" />
+                <pnp:NavigationNode Title="EMEA" Url="https://brandes365.sharepoint.com/sites/PMCS/EMEAInstitutional/" IsExternal="true" />
+                <pnp:NavigationNode Title="Financial Institutions Group" Url="https://brandes365.sharepoint.com/sites/PMCS/FIG/" IsExternal="true" />
+                <pnp:NavigationNode Title="Global Marketing" Url="https://brandes365.sharepoint.com/sites/PMCS/GlobalMarketing/" IsExternal="true" />
+                <pnp:NavigationNode Title="Global Support" Url="https://brandes365.sharepoint.com/sites/PMCS/gs" IsExternal="true" />
+                <pnp:NavigationNode Title="NA Institutional Sales" Url="https://brandes365.sharepoint.com/sites/PMCS/NAInstSales" IsExternal="true" />
+                <pnp:NavigationNode Title="NA Mutual Funds" Url="https://brandes365.sharepoint.com/sites/PMCS/NAMutualFunds" IsExternal="true" />
+                <pnp:NavigationNode Title="NA Retail Sales" Url="https://brandes365.sharepoint.com/sites/PMCS/NARetailSales" IsExternal="true" />
+                <pnp:NavigationNode Title="Product Management" Url="https://brandes365.sharepoint.com/sites/PMCS/ProdMgmt" IsExternal="true" />
+                <pnp:NavigationNode Title="RFP" Url="https://brandes365.sharepoint.com/sites/PMCS/GlobalMarketing/RFP" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="Technology" Url="https://brandes365.sharepoint.com/sites/technology" IsExternal="true">
+                <pnp:NavigationNode Title="ITOps" Url="https://brandes365.sharepoint.com/sites/technology/InfrastructureOperations" IsExternal="true" />
+                <pnp:NavigationNode Title="DevOps" Url="https://brandes365.sharepoint.com/sites/technology/SWE" IsExternal="true" />
+                <pnp:NavigationNode Title="Project Management" Url="https://brandes365.sharepoint.com/sites/technology/swe/ProjectManagement" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="Trading" Url="https://brandes365.sharepoint.com/sites/trading" IsExternal="true">
+                <pnp:NavigationNode Title="Corporate Reorganization" Url="https://brandes365.sharepoint.com/sites/Operations/CorporateReorganization" IsExternal="true" />
+                <pnp:NavigationNode Title="Electronic Trading Solutions" Url="https://brandes365.sharepoint.com/sites/Trading/ElectronicTradingSolutions" IsExternal="true" />
+                <pnp:NavigationNode Title="Investment Decision Implementation" Url="https://brandes365.sharepoint.com/sites/Trading/InvestmentDecisionImplementation" IsExternal="true" />
+                <pnp:NavigationNode Title="Pricing" Url="https://brandes365.sharepoint.com/sites/Trading/Pricing" IsExternal="true" />
+                <pnp:NavigationNode Title="Risk" Url="https://brandes365.sharepoint.com/sites/Trading/Risk" IsExternal="true" />
+                <pnp:NavigationNode Title="Settlements" Url="https://brandes365.sharepoint.com/sites/Operations/Settlements" IsExternal="true" />
+                <pnp:NavigationNode Title="Trading" Url="https://brandes365.sharepoint.com/sites/Trading/Trading" IsExternal="true" />
+              </pnp:NavigationNode>
+            </pnp:NavigationNode>
+            <pnp:NavigationNode Title="Resources" Url="" IsExternal="true">
+              <pnp:NavigationNode Title="BRANDES.COM" Url="https://www.brandes.com/" IsExternal="true" />
+              <pnp:NavigationNode Title="BRANDES FUNDS" Url="https://www.brandes.com/us/mutual-funds" IsExternal="true" />
+              <pnp:NavigationNode Title="BRIDGEHOUSE CANADA" Url="http://www.bridgehousecanada.com/" IsExternal="true" />
+              <pnp:NavigationNode Title="EMPLOYEE RESOURCE CENTER" Url="{site}/Pages/EmployeeResourceCenter.aspx" />
+              <pnp:NavigationNode Title="MANAGER RESOURCE CENTER" Url="https://brandes365.sharepoint.com/sites/Finance/HR/MRC/Pages/default.aspx" IsExternal="true" />
+              <pnp:NavigationNode Title="Business Applications" Url="https://brandes365.sharepoint.com/sites/technology#" IsExternal="true">
+                <pnp:NavigationNode Title="Business Intelligence *" Url="http://bipnet/bi" IsExternal="true" />
+                <pnp:NavigationNode Title="Horizon *" Url="http://horizon.brandes.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Navigator *" Url="http://navigator.brandes.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Pivotal UX" Url="http://crmweb.brandes.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Recon *" Url="http://reconcile.brandes.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Salesforce" Url="https://brandesinvestmentpartners.my.salesforce.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Seismic" Url="https://brandes.seismic.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Transaction Poster *" Url="https://brandes365.sharepoint.com/sites/undefined" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="Other Applications" Url="https://brandes365.sharepoint.com/sites/technology#" IsExternal="true">
+                <pnp:NavigationNode Title="BIPPub *" Url="http://bippub/" IsExternal="true" />
+                <pnp:NavigationNode Title="Brandes Wiki *" Url="http://wiki.brandes.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Dimensions *" Url="http://dimensions.brandes.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Hourglass *" Url="http://hourglass.brandes.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Procurement *" Url="http://bippub/bpp/siteassets/Procurement.aspx" IsExternal="true" />
+                <pnp:NavigationNode Title="Venminder" Url="https://rsd.venminder.com/sso/AzureAD" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="My Benefits" Url="https://brandes365.sharepoint.com/sites/technology#" IsExternal="true">
+                <pnp:NavigationNode Title="Employee Health Benefits" Url="https://brandes365.sharepoint.com/sites/Finance/HR/Pages/Benefits.aspx" IsExternal="true" />
+                <pnp:NavigationNode Title="Employee Referral" Url="https://brandes365.sharepoint.com/sites/Finance/HR/Documents/Employee%20Referral%20Policy.docx" IsExternal="true" />
+                <pnp:NavigationNode Title="Employee Resource Center" Url="{site}/Pages/EmployeeResourceCenter.aspx" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="Policies &amp; Handbooks" Url="https://brandes365.sharepoint.com/sites/technology#" IsExternal="true">
+                <pnp:NavigationNode Title="2019 Holiday Closures" Url="https://brandes365.sharepoint.com/sites/Finance/HR/Pages/2019-Holiday-Calendar.aspx" IsExternal="true" />
+                <pnp:NavigationNode Title="Employee Directory" Url="https://delve.office.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Employee Handbook" Url="https://brandes365.sharepoint.com/sites/Finance/HR/Documents/Employee%20Handbook.docx" IsExternal="true" />
+                <pnp:NavigationNode Title="Injury and Illness Prevention Plan" Url="https://brandes365.sharepoint.com/sites/Finance/HR/Pages/IIPP-TOC.aspx" IsExternal="true" />
+                <pnp:NavigationNode Title="California Consumer Privacy Act (CCPA) Employee Privacy Notice" Url="https://brandes365.sharepoint.com/sites/Finance/HR/_layouts/15/guestaccess.aspx?e=s9Onhu&amp;share=EQMdzOHiJYtHgVOrH_i2NXMBqHyJ3eJFJneVZvQD_ZOb6A" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="Employee Services" Url="https://brandes365.sharepoint.com/sites/technology#" IsExternal="true">
+                <pnp:NavigationNode Title="ADP iPay" Url="https://ipay.adp.com/iPay/login.jsf" IsExternal="true" />
+                <pnp:NavigationNode Title="Anthem Blue Cross" Url="http://www.anthem.com/ca/health-insurance/home/overview" IsExternal="true" />
+                <pnp:NavigationNode Title="Cigna" Url="https://www.cigna.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Horizon Health" Url="https://brandes365.sharepoint.com/sites/undefined" IsExternal="true" />
+                <pnp:NavigationNode Title="Flex Spending (P&amp;A)" Url="https://www.padmin.com/mybenefits/login.aspx" IsExternal="true" />
+                <pnp:NavigationNode Title="Compliance Request Form" Url="https://brandes365.sharepoint.com/sites/Compliance/_layouts/15/guestaccess.aspx?e=PaHsep&amp;share=EbqH3B1mZA1JjU2T54MoilcBrxZo5pNwybw1TdZcpvMmDw" IsExternal="true" />
+                <pnp:NavigationNode Title="Expensewire" Url="https://web.expensewire.com/expensewire/signinpage.aspx?SsoAccessPoint=brandes" IsExternal="true" />
+                <pnp:NavigationNode Title="SunGard PTA" Url="https://account.activedirectory.windowsazure.com/applications/redirecttofederatedapplication.aspx?Operation=SignIn&amp;applicationId=267910cf-c89f-4f06-87bc-45651842b20d&amp;ApplicationConstName=customappsso&amp;SingleSignOnType=Federated&amp;ApplicationDisplayName=PTAConhttps://account.activedirectory.windowsazure.com/applications/redirecttofederatedapplication.aspx?Operation=SignIn&amp;applicationId=267910cf-c89f-4f06-87bc-45651842b20d&amp;ApplicationConstName=customappsso&amp;SingleSignOnType=Federated&amp;ApplicationDisplayName=PTACon" IsExternal="true" />
+                <pnp:NavigationNode Title="Tri-Ad" Url="https://www.benefitspot.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Workday" Url="https://www.myworkday.com/brandes/login-saml2.htmld" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="FAQs" Url="https://brandes365.sharepoint.com/sites/technology#" IsExternal="true">
+                <pnp:NavigationNode Title="Acronymns" Url="https://brandes365.sharepoint.com/sites/undefined" IsExternal="true" />
+                <pnp:NavigationNode Title="What time is it in...?" Url="https://brandes365.sharepoint.com/Pages/WhatTimeIsIt.aspx" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="Major Projects" Url="https://brandes365.sharepoint.com/sites/undefined" IsExternal="true">
+                <pnp:NavigationNode Title="Back Office Subscribed Service (BOSS)" Url="https://brandes365.sharepoint.com/BOSS-Implementation/" IsExternal="true" />
+                <pnp:NavigationNode Title="Data Center Move" Url="https://brandes365.sharepoint.com/DCM" IsExternal="true" />
+                <pnp:NavigationNode Title="Salesforce" Url="http://project2016/PWA/Salesforce%20CRM/" IsExternal="true" />
+              </pnp:NavigationNode>
+            </pnp:NavigationNode>
+            <pnp:NavigationNode Title="Support" Url="http://linkless.header/" IsExternal="true">
+              <pnp:NavigationNode Title="Equipment Request" Url="https://brandes365.sharepoint.com/sites/technology#" IsExternal="true">
+                <pnp:NavigationNode Title="Laptop Request" Url="https://brandes365.sharepoint.com/sites/undefined" IsExternal="true" />
+                <pnp:NavigationNode Title="Training Room Request" Url="mailto:service.ticket@brandes.com?subject=Training%20Room%20Request" IsExternal="true" />
+                <pnp:NavigationNode Title="Video Conference Request" Url="mailto:service.request@brandes.com?subject=Video%20Conference%20Request" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="Directories &amp; Facilities Resources" Url="https://brandes365.sharepoint.com/sites/technology#" IsExternal="true">
+                <pnp:NavigationNode Title="Employee Directory" Url="https://delve.office.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="Phone List" Url="http://linkless.header/" IsExternal="true" />
+                <pnp:NavigationNode Title="Gang Lines" Url="http://linkless.header/" IsExternal="true" />
+                <pnp:NavigationNode Title="Fax Numbers" Url="http://linkless.header/" IsExternal="true" />
+                <pnp:NavigationNode Title="Floor Maps" Url="https://brandes365.sharepoint.com/sites/undefined" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="Business Services" Url="https://brandes365.sharepoint.com/sites/technology#" IsExternal="true">
+                <pnp:NavigationNode Title="Business Card Request" Url="http://www.nationsprint.com/clients/brandesinvest" IsExternal="true" />
+                <pnp:NavigationNode Title="Facilities" Url="https://brandes365.sharepoint.com/sites/Operations/BusinessServices/Pages/Facilities.aspx" IsExternal="true" />
+                <pnp:NavigationNode Title="Fulfillment Center" Url="https://brandes365.sharepoint.com/sites/Operations/BusinessServices/Pages/Fulfillment-Center.aspx" IsExternal="true" />
+                <pnp:NavigationNode Title="Mail Center" Url="https://brandes365.sharepoint.com/sites/Operations/BusinessServices/Pages/Mail-Center.aspx" IsExternal="true" />
+                <pnp:NavigationNode Title="Optical Storage" Url="https://brandes365.sharepoint.com/sites/Operations/BusinessServices/Pages/Optical-Storage.aspx" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="IT Support Resources" Url="http://linkless.header/" IsExternal="true">
+                <pnp:NavigationNode Title="After Hours Support" Url="https://brandes365.sharepoint.com/sites/technology/InfrastructureOperations/Pages/After-Hours-Support.aspx" IsExternal="true" />
+                <pnp:NavigationNode Title="Open New Ticket (via Email)" Url="mailto:service.ticket@brandes.com" IsExternal="true" />
+                <pnp:NavigationNode Title="TeamTrack Service Ticket *" Url="http://sbm.brandes.com/" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="IT Services" Url="http://linkless.header/" IsExternal="true">
+                <pnp:NavigationNode Title="Spam Quarantine *" Url="https://euq.brandes.com:83/" IsExternal="true" />
+                <pnp:NavigationNode Title="Team Track (SBM) *" Url="http://sbm.brandes.com/" IsExternal="true" />
+                <pnp:NavigationNode Title="WebEx" Url="https://brandes.webex.com/" IsExternal="true" />
+              </pnp:NavigationNode>
+              <pnp:NavigationNode Title="FAQ's" Url="http://linkless.header/" IsExternal="true">
+                <pnp:NavigationNode Title="Outlook FAQ's" Url="http://linkless.header/" IsExternal="true" />
+                <pnp:NavigationNode Title="Telecommunication FAQs" Url="http://linkless.header/" IsExternal="true" />
+                <pnp:NavigationNode Title="Tips and Tricks from Microsoft" Url="http://linkless.header/" IsExternal="true" />
+                <pnp:NavigationNode Title="What time is it in...?" Url="https://brandes365.sharepoint.com/Pages/WhatTimeIsIt.aspx" IsExternal="true" />
+              </pnp:NavigationNode>
+            </pnp:NavigationNode>
+            <pnp:NavigationNode Title="Recent" Url="" IsExternal="true">
+              <pnp:NavigationNode Title="Useful HR Links" Url="{site}/Lists/Useful Links/AllItems.aspx" />
+            </pnp:NavigationNode>
+          </pnp:StructuralNavigation>
+        </pnp:CurrentNavigation>
+      </pnp:Navigation>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>

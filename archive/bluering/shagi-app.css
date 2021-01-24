@@ -1,0 +1,20 @@
+.shagi-toolbar {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.shagi-main {
+  background-image: url("/background.png");
+  background-repeat: repeat-y;
+  min-height: 600px;
+  /*background-color: #ac9f8b;*/
+}
+.shagi-main select,
+.shagi-main textarea {
+  width: 100%;
+}
+
+.shagi-need input {
+    width:70px;
+}

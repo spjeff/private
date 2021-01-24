@@ -1,0 +1,109 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200626144648
+Username: PC\Name
+RunAs User: PC\Name
+Configuration Name: 
+Machine: PC (Microsoft Windows NT 10.0.18363.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2020.6.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules' -EnableConsoleRepl -StartupBanner "=====> PowerShell Integrated Console v2020.6.0 <=====
+" -LogLevel 'Normal' -LogPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\logs\1593200286-d9ac178b-2673-43c0-8dca-c0dcb36ac7a41593200086306\EditorServices.log' -SessionDetailsPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\sessions\PSES-VSCode-14816-760635' -FeatureFlags @() 
+Process ID: 16392
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\CODE\BTF-Calendar-Export\log\DEV-Main-6-26-2020 14-46-48.log
+Invoke-Sqlcmd : A network-related or instance-specific error occurred while establishing a connection to SQL Server. 
+The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is 
+configured to allow remote connections. (provider: TCP Provider, error: 0 - No such host is known.)
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:121 char:5
++     Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst -Username ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExceptionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not
+accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No
+such host is known.)
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:121 char:5
++     Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst -Username ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExceptionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:121 char:5
++     Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst -Username ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:121 char:5
++     Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst -Username ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+PS>TerminatingError(Invoke-RestMethod): "{"error":"invalid_request","error_description":"AADSTS900023: Specified tenant identifier 'token:tenantid' is neither a valid DNS name, nor a valid external domain.\r\nTrace ID: a8cb8de6-2dfa-4648-b5fa-cb422c477d00\r\nCorrelation ID: 92756794-ab84-40c7-8d64-d1ddfbd3cd59\r\nTimestamp: 2020-06-26 19:47:06Z","error_codes":[900023],"timestamp":"2020-06-26 19:47:06Z","trace_id":"a8cb8de6-2dfa-4648-b5fa-cb422c477d00","correlation_id":"92756794-ab84-40c7-8d64-d1ddfbd3cd59","error_uri":"https://login.microsoftonline.com/error?code=900023"}"
+Invoke-RestMethod : {"error":"invalid_request","error_description":"AADSTS900023: Specified tenant identifier 
+'token:tenantid' is neither a valid DNS name, nor a valid external domain.\r\nTrace ID: 
+a8cb8de6-2dfa-4648-b5fa-cb422c477d00\r\nCorrelation ID: 92756794-ab84-40c7-8d64-d1ddfbd3cd59\r\nTimestamp: 2020-06-26 
+19:47:06Z","error_codes":[900023],"timestamp":"2020-06-26 19:47:06Z","trace_id":"a8cb8de6-2dfa-4648-b5fa-cb422c477d00","
+correlation_id":"92756794-ab84-40c7-8d64-d1ddfbd3cd59","error_uri":"https://login.microsoftonline.com/error?code=900023"
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:40 char:12
++     return Invoke-RestMethod -Uri "https://login.microsoftonline.com/ ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+Invoke-RestMethod : {"error":"invalid_request","error_description":"AADSTS900023: Specified tenant identifier 'token:tenantid' is neither a valid DNS name,
+nor a valid external domain.\r\nTrace ID: a8cb8de6-2dfa-4648-b5fa-cb422c477d00\r\nCorrelation ID: 92756794-ab84-40c7-8d64-d1ddfbd3cd59\r\nTimestamp:
+2020-06-26 19:47:06Z","error_codes":[900023],"timestamp":"2020-06-26 19:47:06Z","trace_id":"a8cb8de6-2dfa-4648-b5fa-cb422c477d00","correlation_id":"92756794-ab
+84-40c7-8d64-d1ddfbd3cd59","error_uri":"https://login.microsoftonline.com/error?code=900023"}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:40 char:12
++     return Invoke-RestMethod -Uri "https://login.microsoftonline.com/ ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+Invoke-Sqlcmd : A network-related or instance-specific error occurred while establishing a connection to SQL Server. 
+The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is 
+configured to allow remote connections. (provider: TCP Provider, error: 0 - No such host is known.)
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:117 char:31
++ ... Employees = Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExceptionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not
+accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 0 - No
+such host is known.)
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:117 char:31
++ ... Employees = Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Invoke-Sqlcmd], SqlException
+    + FullyQualifiedErrorId : SqlExceptionError,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+>> TerminatingError(Invoke-Sqlcmd): ""
+Invoke-Sqlcmd : 
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:117 char:31
++ ... Employees = Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+Invoke-Sqlcmd :
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:117 char:31
++ ... Employees = Invoke-Sqlcmd -Database $sqlDb -ServerInstance $sqlInst - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ParserError: (:) [Invoke-Sqlcmd], ParserException
+    + FullyQualifiedErrorId : ExecutionFailureException,Microsoft.SqlServer.Management.PowerShell.GetScriptCommand
+
+TOTAL SCANNED:  0
+**********************
+Windows PowerShell transcript end
+End time: 20200626144720
+**********************

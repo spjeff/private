@@ -1,0 +1,1016 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200629181301
+Username: PC\Name
+RunAs User: PC\Name
+Configuration Name: 
+Machine: PC (Microsoft Windows NT 10.0.18363.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2020.6.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules' -EnableConsoleRepl -StartupBanner "=====> PowerShell Integrated Console v2020.6.0 <=====
+" -LogLevel 'Normal' -LogPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\logs\1593472051-42abe65a-0f16-48b8-9ffd-3022e786352a1593472039304\EditorServices.log' -SessionDetailsPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\sessions\PSES-VSCode-13012-895336' -FeatureFlags @() 
+Process ID: 4720
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\CODE\BTF-Calendar-Export\log\DEV-Main-6-29-2020 18-13-01.log
+PS>@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4720
+computerName                   PC
+instanceId                     da541333-7db9-4780-95da-a8923960057b
+
+
+PS>CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="Global"
+
+Name                           Value
+----                           -----
+$
+?                              True
+^
+args                           {}
+clientID                       f356be36-ed44-4d33-83fc-ea1dad935067
+ClientSecret                   mYhwYW8O3n_.v~~RdDrrOAio8rb9_NIOg.
+ConfirmPreference              High
+ConsoleFileName
+DebugPreference                SilentlyContinue
+Error                          {There is already an object named 'Events' in the database. ...
+ErrorActionPreference          Continue
+ErrorView                      NormalView
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+ExemptEmployees                {System.Data.DataRow, System.Data.DataRow, System.Data.DataRow}
+false                          False
+FormatEnumerationLimit         4
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+InformationPreference          SilentlyContinue
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumHistoryCount            4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+NestedPromptLevel              0
+null
+OutputEncoding                 System.Text.ASCIIEncoding
+Password                       JDQGoHO3NPC6i1O
+PID                            4720
+profile                        C:\Documents\WindowsPowerShell\Microsoft.VSCode_profile.ps1
+ProgressPreference             Continue
+PSBoundParameters              {}
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSDefaultParameterValues       {}
+PSEdition                      Desktop
+psEditor                       Microsoft.PowerShell.EditorServices.Extensions.EditorObject
+PSEmailServer
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSSessionApplicationName       wsman
+PSSessionConfigurationName     http://schemas.microsoft.com/powershell/Microsoft.PowerShell
+PSSessionOption                System.Management.Automation.Remoting.PSSessionOption
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+PWD                            C:\CODE\BTF-Calendar-Export
+ShellId                        Microsoft.PowerShell
+sqlDb                          btf-events
+sqlInst                        btf-events.database.windows.net
+sqlPass                        piQK6rasRWF09JzAp8Ev
+SqlServerConnectionTimeout     30
+SqlServerIncludeSystemObjects  False
+SqlServerMaximumChildItems     0
+SqlServerMaximumTabCompletion  1000
+sqlUser                        btf-events-sa
+StackTrace
+tenantName                     4e2929f0-010c-4115-ac50-301dbd17936a
+true                           True
+userCount                      0
+Username                       jeff.jones@butterflytech.net
+VerbosePreference              SilentlyContinue
+WarningPreference              Continue
+WhatIfPreference               False
+
+
+PS>CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="Script"
+
+Name                           Value
+----                           -----
+$
+?                              True
+^
+args                           {}
+clientID                       f356be36-ed44-4d33-83fc-ea1dad935067
+ClientSecret                   mYhwYW8O3n_.v~~RdDrrOAio8rb9_NIOg.
+ConfirmPreference              High
+ConsoleFileName
+DebugPreference                SilentlyContinue
+Error                          {There is already an object named 'Events' in the database. ...
+ErrorActionPreference          Continue
+ErrorView                      NormalView
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+ExemptEmployees                {System.Data.DataRow, System.Data.DataRow, System.Data.DataRow}
+false                          False
+FormatEnumerationLimit         4
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+InformationPreference          SilentlyContinue
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumHistoryCount            4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+NestedPromptLevel              0
+null
+OutputEncoding                 System.Text.ASCIIEncoding
+Password                       JDQGoHO3NPC6i1O
+PID                            4720
+profile                        C:\Documents\WindowsPowerShell\Microsoft.VSCode_profile.ps1
+ProgressPreference             Continue
+PSBoundParameters              {}
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSDefaultParameterValues       {}
+PSEdition                      Desktop
+psEditor                       Microsoft.PowerShell.EditorServices.Extensions.EditorObject
+PSEmailServer
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSSessionApplicationName       wsman
+PSSessionConfigurationName     http://schemas.microsoft.com/powershell/Microsoft.PowerShell
+PSSessionOption                System.Management.Automation.Remoting.PSSessionOption
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+PWD                            C:\CODE\BTF-Calendar-Export
+ShellId                        Microsoft.PowerShell
+sqlDb                          btf-events
+sqlInst                        btf-events.database.windows.net
+sqlPass                        piQK6rasRWF09JzAp8Ev
+SqlServerConnectionTimeout     30
+SqlServerIncludeSystemObjects  False
+SqlServerMaximumChildItems     0
+SqlServerMaximumTabCompletion  1000
+sqlUser                        btf-events-sa
+StackTrace
+tenantName                     4e2929f0-010c-4115-ac50-301dbd17936a
+true                           True
+userCount                      0
+Username                       jeff.jones@butterflytech.net
+VerbosePreference              SilentlyContinue
+WarningPreference              Continue
+WhatIfPreference               False
+
+
+PS>$global:__psEditorServices_CallStack = Get-PSCallStack; $global:__psEditorServices_CallStack
+
+Command                 Arguments
+-------                 ---------
+readCalendar            {token=@{token_type=Bearer; scope=profile openid email https://graph.microsoft.com/Calendars.Read https://graph....
+Main                    {}
+BTF-Calendar-Export.ps1 {}
+
+
+PS>CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="0"
+
+Name                           Value
+----                           -----
+?                              True
+api                            https://graph.microsoft.com/v1.0/users
+args                           {}
+ConsoleFileName
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+false                          False
+foreach                        System.Array+SZArrayEnumerator
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+null
+PID                            4720
+PSBoundParameters              {[token, @{token_type=Bearer; scope=profile openid email https://graph.microsoft.com/Calendars.Read https...
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSDebugContext                 System.Management.Automation.PSDebugContext
+PSEdition                      Desktop
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+ShellId                        Microsoft.PowerShell
+token                          @{token_type=Bearer; scope=profile openid email https://graph.microsoft.com/Calendars.Read https://graph....
+true                           True
+u                              @{businessPhones=System.Object[]; displayName=Admin Migrate; givenName=Admin; jobTitle=; mail=Adminmigrat...
+upn                            Adminmigrate@HKITCG.onmicrosoft.com
+users                          @{@odata.context=https://graph.microsoft.com/v1.0/$metadata#users; value=System.Object[]}
+
+
+PS>CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="1"
+
+Name                           Value
+----                           -----
+?                              True
+args                           {}
+ConsoleFileName
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+false                          False
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+null
+PID                            4720
+prefix                         Main
+PSBoundParameters              {}
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSEdition                      Desktop
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+ShellId                        Microsoft.PowerShell
+stamp                          6-29-2020 18-13-01
+token                          @{token_type=Bearer; scope=profile openid email https://graph.microsoft.com/Calendars.Read https://graph....
+true                           True
+
+
+PS>CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="2"
+
+Name                           Value
+----                           -----
+$                              }
+?                              True
+^                              @{
+__psEditorServices_CallStack   {at readCalendar, C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1: line 63, at Main, C:\CODE\BTF-Cale...
+args                           {}
+clientID                       f356be36-ed44-4d33-83fc-ea1dad935067
+ClientSecret                   mYhwYW8O3n_.v~~RdDrrOAio8rb9_NIOg.
+ConfirmPreference              High
+ConsoleFileName
+DebugPreference                SilentlyContinue
+Error                          {There is already an object named 'Events' in the database. ...
+ErrorActionPreference          Continue
+ErrorView                      NormalView
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+ExemptEmployees                {System.Data.DataRow, System.Data.DataRow, System.Data.DataRow}
+false                          False
+FormatEnumerationLimit         4
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+InformationPreference          SilentlyContinue
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumHistoryCount            4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+NestedPromptLevel              0
+null
+OutputEncoding                 System.Text.ASCIIEncoding
+Password                       JDQGoHO3NPC6i1O
+PID                            4720
+profile                        C:\Documents\WindowsPowerShell\Microsoft.VSCode_profile.ps1
+ProgressPreference             Continue
+PSBoundParameters              {}
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSDefaultParameterValues       {}
+PSEdition                      Desktop
+psEditor                       Microsoft.PowerShell.EditorServices.Extensions.EditorObject
+PSEmailServer
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSSessionApplicationName       wsman
+PSSessionConfigurationName     http://schemas.microsoft.com/powershell/Microsoft.PowerShell
+PSSessionOption                System.Management.Automation.Remoting.PSSessionOption
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+PWD                            C:\CODE\BTF-Calendar-Export
+ShellId                        Microsoft.PowerShell
+sqlDb                          btf-events
+sqlInst                        btf-events.database.windows.net
+sqlPass                        piQK6rasRWF09JzAp8Ev
+SqlServerConnectionTimeout     30
+SqlServerIncludeSystemObjects  False
+SqlServerMaximumChildItems     0
+SqlServerMaximumTabCompletion  1000
+sqlUser                        btf-events-sa
+StackTrace
+tenantName                     4e2929f0-010c-4115-ac50-301dbd17936a
+true                           True
+userCount                      0
+Username                       jeff.jones@butterflytech.net
+VerbosePreference              SilentlyContinue
+WarningPreference              Continue
+WhatIfPreference               False
+
+
+PS>__Invoke-ReadLineForEditorServices
+The term '__Invoke-ReadLineForEditorServices' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.TerminatingError(Invoke-RestMethod): "{
+  "error": {
+    "code": "ErrorAccessDenied",
+    "message": "Access is denied. Check credentials and try again.",
+    "innerError": {
+      "date": "2020-06-29T23:13:15",
+      "request-id": "3a57ef1b-fbb4-48ae-8116-ed3a13e1d6ee"
+    }
+  }
+}"
+Invoke-RestMethod : {
+  "error": {
+    "code": "ErrorAccessDenied",
+    "message": "Access is denied. Check credentials and try again.",
+    "innerError": {
+      "date": "2020-06-29T23:13:15",
+      "request-id": "3a57ef1b-fbb4-48ae-8116-ed3a13e1d6ee"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:65 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+>> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4720
+computerName                   PC
+instanceId                     da541333-7db9-4780-95da-a8923960057b
+
+
+Invoke-RestMethod : {
+  "error": {
+    "code": "ErrorAccessDenied",
+    "message": "Access is denied. Check credentials and try again.",
+    "innerError": {
+      "date": "2020-06-29T23:13:15",
+      "request-id": "3a57ef1b-fbb4-48ae-8116-ed3a13e1d6ee"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:65 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="Global"
+
+Name                           Value
+----                           -----
+$                              $global:__psEditorServices_CallStack
+?                              True
+^                              $global:__psEditorServices_CallStack
+__psEditorServices_CallStack   {at readCalendar, C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1: line 63, at Main, C:\CODE\BTF-Cale...
+args                           {}
+clientID                       f356be36-ed44-4d33-83fc-ea1dad935067
+ClientSecret                   mYhwYW8O3n_.v~~RdDrrOAio8rb9_NIOg.
+ConfirmPreference              High
+ConsoleFileName
+DebugPreference                SilentlyContinue
+Error                          {{...
+ErrorActionPreference          Continue
+ErrorView                      NormalView
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+ExemptEmployees                {System.Data.DataRow, System.Data.DataRow, System.Data.DataRow}
+false                          False
+FormatEnumerationLimit         4
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+InformationPreference          SilentlyContinue
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumHistoryCount            4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+NestedPromptLevel              0
+null
+OutputEncoding                 System.Text.ASCIIEncoding
+Password                       JDQGoHO3NPC6i1O
+PID                            4720
+profile                        C:\Documents\WindowsPowerShell\Microsoft.VSCode_profile.ps1
+ProgressPreference             Continue
+PSBoundParameters              {}
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSDefaultParameterValues       {}
+PSEdition                      Desktop
+psEditor                       Microsoft.PowerShell.EditorServices.Extensions.EditorObject
+PSEmailServer
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSSessionApplicationName       wsman
+PSSessionConfigurationName     http://schemas.microsoft.com/powershell/Microsoft.PowerShell
+PSSessionOption                System.Management.Automation.Remoting.PSSessionOption
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+PWD                            C:\CODE\BTF-Calendar-Export
+ShellId                        Microsoft.PowerShell
+sqlDb                          btf-events
+sqlInst                        btf-events.database.windows.net
+sqlPass                        piQK6rasRWF09JzAp8Ev
+SqlServerConnectionTimeout     30
+SqlServerIncludeSystemObjects  False
+SqlServerMaximumChildItems     0
+SqlServerMaximumTabCompletion  1000
+sqlUser                        btf-events-sa
+StackTrace                        at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)...
+tenantName                     4e2929f0-010c-4115-ac50-301dbd17936a
+true                           True
+userCount                      0
+Username                       jeff.jones@butterflytech.net
+VerbosePreference              SilentlyContinue
+WarningPreference              Continue
+WhatIfPreference               False
+
+
+Invoke-RestMethod : {
+  "error": {
+    "code": "ErrorAccessDenied",
+    "message": "Access is denied. Check credentials and try again.",
+    "innerError": {
+      "date": "2020-06-29T23:13:15",
+      "request-id": "3a57ef1b-fbb4-48ae-8116-ed3a13e1d6ee"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:65 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="Script"
+
+Name                           Value
+----                           -----
+$                              $global:__psEditorServices_CallStack
+?                              True
+^                              $global:__psEditorServices_CallStack
+__psEditorServices_CallStack   {at readCalendar, C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1: line 63, at Main, C:\CODE\BTF-Cale...
+args                           {}
+clientID                       f356be36-ed44-4d33-83fc-ea1dad935067
+ClientSecret                   mYhwYW8O3n_.v~~RdDrrOAio8rb9_NIOg.
+ConfirmPreference              High
+ConsoleFileName
+DebugPreference                SilentlyContinue
+Error                          {{...
+ErrorActionPreference          Continue
+ErrorView                      NormalView
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+ExemptEmployees                {System.Data.DataRow, System.Data.DataRow, System.Data.DataRow}
+false                          False
+FormatEnumerationLimit         4
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+InformationPreference          SilentlyContinue
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumHistoryCount            4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+NestedPromptLevel              0
+null
+OutputEncoding                 System.Text.ASCIIEncoding
+Password                       JDQGoHO3NPC6i1O
+PID                            4720
+profile                        C:\Documents\WindowsPowerShell\Microsoft.VSCode_profile.ps1
+ProgressPreference             Continue
+PSBoundParameters              {}
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSDefaultParameterValues       {}
+PSEdition                      Desktop
+psEditor                       Microsoft.PowerShell.EditorServices.Extensions.EditorObject
+PSEmailServer
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSSessionApplicationName       wsman
+PSSessionConfigurationName     http://schemas.microsoft.com/powershell/Microsoft.PowerShell
+PSSessionOption                System.Management.Automation.Remoting.PSSessionOption
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+PWD                            C:\CODE\BTF-Calendar-Export
+ShellId                        Microsoft.PowerShell
+sqlDb                          btf-events
+sqlInst                        btf-events.database.windows.net
+sqlPass                        piQK6rasRWF09JzAp8Ev
+SqlServerConnectionTimeout     30
+SqlServerIncludeSystemObjects  False
+SqlServerMaximumChildItems     0
+SqlServerMaximumTabCompletion  1000
+sqlUser                        btf-events-sa
+StackTrace                        at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)...
+tenantName                     4e2929f0-010c-4115-ac50-301dbd17936a
+true                           True
+userCount                      0
+Username                       jeff.jones@butterflytech.net
+VerbosePreference              SilentlyContinue
+WarningPreference              Continue
+WhatIfPreference               False
+
+
+Invoke-RestMethod : {
+  "error": {
+    "code": "ErrorAccessDenied",
+    "message": "Access is denied. Check credentials and try again.",
+    "innerError": {
+      "date": "2020-06-29T23:13:15",
+      "request-id": "3a57ef1b-fbb4-48ae-8116-ed3a13e1d6ee"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:65 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+$global:__psEditorServices_CallStack = Get-PSCallStack; $global:__psEditorServices_CallStack
+
+Command                 Arguments
+-------                 ---------
+readCalendar            {token=@{token_type=Bearer; scope=profile openid email https://graph.microsoft.com/Calendars.Read https://graph....
+Main                    {}
+BTF-Calendar-Export.ps1 {}
+
+
+Invoke-RestMethod : {
+  "error": {
+    "code": "ErrorAccessDenied",
+    "message": "Access is denied. Check credentials and try again.",
+    "innerError": {
+      "date": "2020-06-29T23:13:15",
+      "request-id": "3a57ef1b-fbb4-48ae-8116-ed3a13e1d6ee"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:65 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="0"
+
+Name                           Value
+----                           -----
+?                              True
+api                            https://graph.microsoft.com/v1.0/users/Adminmigrate@HKITCG.onmicrosoft.com/events?$top=999&$filter=start/...
+args                           {}
+ConsoleFileName
+events
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+false                          False
+foreach                        System.Array+SZArrayEnumerator
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+null
+PID                            4720
+PSBoundParameters              {[token, @{token_type=Bearer; scope=profile openid email https://graph.microsoft.com/Calendars.Read https...
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSDebugContext                 System.Management.Automation.PSDebugContext
+PSEdition                      Desktop
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+ShellId                        Microsoft.PowerShell
+token                          @{token_type=Bearer; scope=profile openid email https://graph.microsoft.com/Calendars.Read https://graph....
+true                           True
+u                              @{businessPhones=System.Object[]; displayName=Aaron Mares; givenName=; jobTitle=; mail=amares@monigle.com...
+upn                            amares_monigle.com#EXT#@HKITCG.onmicrosoft.com
+users                          @{@odata.context=https://graph.microsoft.com/v1.0/$metadata#users; value=System.Object[]}
+
+
+Invoke-RestMethod : {
+  "error": {
+    "code": "ErrorAccessDenied",
+    "message": "Access is denied. Check credentials and try again.",
+    "innerError": {
+      "date": "2020-06-29T23:13:15",
+      "request-id": "3a57ef1b-fbb4-48ae-8116-ed3a13e1d6ee"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:65 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="1"
+
+Name                           Value
+----                           -----
+?                              True
+args                           {}
+ConsoleFileName
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+false                          False
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+null
+PID                            4720
+prefix                         Main
+PSBoundParameters              {}
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSEdition                      Desktop
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+ShellId                        Microsoft.PowerShell
+stamp                          6-29-2020 18-13-01
+token                          @{token_type=Bearer; scope=profile openid email https://graph.microsoft.com/Calendars.Read https://graph....
+true                           True
+
+
+Invoke-RestMethod : {
+  "error": {
+    "code": "ErrorAccessDenied",
+    "message": "Access is denied. Check credentials and try again.",
+    "innerError": {
+      "date": "2020-06-29T23:13:15",
+      "request-id": "3a57ef1b-fbb4-48ae-8116-ed3a13e1d6ee"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:65 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+CommandInvocation(Get-Variable): "Get-Variable"
+>> ParameterBinding(Get-Variable): name="Scope"; value="2"
+
+Name                           Value
+----                           -----
+$                              }
+?                              True
+^                              @{
+__psEditorServices_CallStack   {at readCalendar, C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1: line 63, at Main, C:\CODE\BTF-Cale...
+args                           {}
+clientID                       f356be36-ed44-4d33-83fc-ea1dad935067
+ClientSecret                   mYhwYW8O3n_.v~~RdDrrOAio8rb9_NIOg.
+ConfirmPreference              High
+ConsoleFileName
+DebugPreference                SilentlyContinue
+Error                          {{...
+ErrorActionPreference          Continue
+ErrorView                      NormalView
+ExecutionContext               System.Management.Automation.EngineIntrinsics
+ExemptEmployees                {System.Data.DataRow, System.Data.DataRow, System.Data.DataRow}
+false                          False
+FormatEnumerationLimit         4
+HOME                           C:\Users\Name.PC
+Host                           System.Management.Automation.Internal.Host.InternalHost
+InformationPreference          SilentlyContinue
+input                          System.Collections.ArrayList+ArrayListEnumeratorSimple
+MaximumAliasCount              4096
+MaximumDriveCount              4096
+MaximumErrorCount              256
+MaximumFunctionCount           4096
+MaximumHistoryCount            4096
+MaximumVariableCount           4096
+MyInvocation                   System.Management.Automation.InvocationInfo
+NestedPromptLevel              0
+null
+OutputEncoding                 System.Text.ASCIIEncoding
+Password                       JDQGoHO3NPC6i1O
+PID                            4720
+profile                        C:\Documents\WindowsPowerShell\Microsoft.VSCode_profile.ps1
+ProgressPreference             Continue
+PSBoundParameters              {}
+PSCommandPath                  C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1
+PSCulture                      en-US
+PSDefaultParameterValues       {}
+PSEdition                      Desktop
+psEditor                       Microsoft.PowerShell.EditorServices.Extensions.EditorObject
+PSEmailServer
+PSHOME                         C:\Windows\System32\WindowsPowerShell\v1.0
+PSScriptRoot                   C:\CODE\BTF-Calendar-Export
+PSSessionApplicationName       wsman
+PSSessionConfigurationName     http://schemas.microsoft.com/powershell/Microsoft.PowerShell
+PSSessionOption                System.Management.Automation.Remoting.PSSessionOption
+PSUICulture                    en-US
+PSVersionTable                 {PSVersion, PSEdition, PSCompatibleVersions, BuildVersion...}
+PWD                            C:\CODE\BTF-Calendar-Export
+ShellId                        Microsoft.PowerShell
+sqlDb                          btf-events
+sqlInst                        btf-events.database.windows.net
+sqlPass                        piQK6rasRWF09JzAp8Ev
+SqlServerConnectionTimeout     30
+SqlServerIncludeSystemObjects  False
+SqlServerMaximumChildItems     0
+SqlServerMaximumTabCompletion  1000
+sqlUser                        btf-events-sa
+StackTrace                        at Microsoft.PowerShell.Commands.WebRequestPSCmdlet.GetResponse(WebRequest request)...
+tenantName                     4e2929f0-010c-4115-ac50-301dbd17936a
+true                           True
+userCount                      0
+Username                       jeff.jones@butterflytech.net
+VerbosePreference              SilentlyContinue
+WarningPreference              Continue
+WhatIfPreference               False
+
+
+Invoke-RestMethod : {
+  "error": {
+    "code": "ErrorAccessDenied",
+    "message": "Access is denied. Check credentials and try again.",
+    "innerError": {
+      "date": "2020-06-29T23:13:15",
+      "request-id": "3a57ef1b-fbb4-48ae-8116-ed3a13e1d6ee"
+    }
+  }
+}
+At C:\CODE\BTF-Calendar-Export\BTF-Calendar-Export.ps1:65 char:19
++ ...   $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($t ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-RestMethod], 
+WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeRestMethodCommand
+__Invoke-ReadLineForEditorServices
+The term '__Invoke-ReadLineForEditorServices' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.CommandInvocation(Resolve-Path): "Resolve-Path"
+>> ParameterBinding(Resolve-Path): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Resolve-Path): name="Verbose"; value="False"
+>> ParameterBinding(Resolve-Path): name="Debug"; value="False"
+>> ParameterBinding(Resolve-Path): name="Path"; value="i*"
+The term '__Invoke-ReadLineForEditorServices' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.CommandInvocation(Get-ChildItem): "Get-ChildItem"
+>> ParameterBinding(Get-ChildItem): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-ChildItem): name="Verbose"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Debug"; value="False"
+>> ParameterBinding(Get-ChildItem): name="Path"; value="i*"
+>> ParameterBinding(Get-ChildItem): name="Hidden"; value="True"
+The term '__Invoke-ReadLineForEditorServices' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.CommandInvocation(Get-Item): "Get-Item"
+>> ParameterBinding(Get-Item): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Item): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-Item): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-Item): name="Verbose"; value="False"
+>> ParameterBinding(Get-Item): name="Debug"; value="False"
+>> ParameterBinding(Get-Item): name="Path"; value="variable:*"
+>> CommandInvocation(Sort-Object): "Sort-Object"
+>> ParameterBinding(Sort-Object): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Sort-Object): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Sort-Object): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Sort-Object): name="Verbose"; value="False"
+>> ParameterBinding(Sort-Object): name="Debug"; value="False"
+>> ParameterBinding(Sort-Object): name="Property"; value="Name"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.NullVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.QuestionMarkVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.SessionStateCapacityVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.SessionStateCapacityVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.SessionStateCapacityVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.SessionStateCapacityVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.SessionStateCapacityVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.LocalVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Management.Automation.PSVariable"
+The term '__Invoke-ReadLineForEditorServices' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.CommandInvocation(Get-Item): "Get-Item"
+>> ParameterBinding(Get-Item): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-Item): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-Item): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-Item): name="Verbose"; value="False"
+>> ParameterBinding(Get-Item): name="Debug"; value="False"
+>> ParameterBinding(Get-Item): name="Path"; value="env:*"
+>> CommandInvocation(Sort-Object): "Sort-Object"
+>> ParameterBinding(Sort-Object): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Sort-Object): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Sort-Object): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Sort-Object): name="Verbose"; value="False"
+>> ParameterBinding(Sort-Object): name="Debug"; value="False"
+>> ParameterBinding(Sort-Object): name="Property"; value="Key"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="System.Collections.DictionaryEntry"
+The term '__Invoke-ReadLineForEditorServices' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.CommandInvocation(Get-PSDrive): "Get-PSDrive"
+>> ParameterBinding(Get-PSDrive): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Get-PSDrive): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Get-PSDrive): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Get-PSDrive): name="Verbose"; value="False"
+>> ParameterBinding(Get-PSDrive): name="Debug"; value="False"
+>> ParameterBinding(Get-PSDrive): name="Name"; value="*"
+>> CommandInvocation(Sort-Object): "Sort-Object"
+>> ParameterBinding(Sort-Object): name="ErrorAction"; value="Ignore"
+>> ParameterBinding(Sort-Object): name="WarningAction"; value="Ignore"
+>> ParameterBinding(Sort-Object): name="InformationAction"; value="Ignore"
+>> ParameterBinding(Sort-Object): name="Verbose"; value="False"
+>> ParameterBinding(Sort-Object): name="Debug"; value="False"
+>> ParameterBinding(Sort-Object): name="Property"; value="Name"
+The term '__Invoke-ReadLineForEditorServices' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.ParameterBinding(Sort-Object): name="InputObject"; value="Alias"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="C"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="Cert"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="Env"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="Function"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="HKCU"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="HKLM"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="SQLSERVER"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="Variable"
+>> ParameterBinding(Sort-Object): name="InputObject"; value="WSMan"
+The term '__Invoke-ReadLineForEditorServices' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.@{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+PS C:\CODE\BTF-Calendar-Export> cls
+PS C:\CODE\BTF-Calendar-Export> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      4720
+computerName                   PC
+instanceId                     da541333-7db9-4780-95da-a8923960057b
+
+
+PS C:\CODE\BTF-Calendar-Export> Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20200629181401
+**********************

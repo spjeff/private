@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "brandes-spfx-ac-tech-css-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/brandesSpfxAcTechCss/BrandesSpfxAcTechCssApplicationCustomizer.js",
+          "manifest": "./src/extensions/brandesSpfxAcTechCss/BrandesSpfxAcTechCssApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "BrandesSpfxAcTechCssApplicationCustomizerStrings": "lib/extensions/brandesSpfxAcTechCss/loc/{locale}.js"
+  }
+}

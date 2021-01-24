@@ -1,0 +1,48 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20200819145414
+Username: PC\Name
+RunAs User: PC\Name
+Configuration Name: 
+Machine: PC (Microsoft Windows NT 10.0.18363.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2020.6.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules' -EnableConsoleRepl -StartupBanner "=====> PowerShell Integrated Console v2020.6.0 <=====
+" -LogLevel 'Normal' -LogPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\logs\1597864789-ccc417ec-033d-4b5d-b83f-8ebcf07309731597864780462\EditorServices.log' -SessionDetailsPath 'c:\Users\Name.PC\.vscode\extensions\ms-vscode.powershell-2020.6.0\sessions\PSES-VSCode-4416-666207' -FeatureFlags @() 
+Process ID: 3336
+PSVersion: 5.1.18362.752
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.18362.752
+BuildVersion: 10.0.18362.752
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\CODE\BIP%20SP%20Migration%20Repo\log\UpdateHubNav.ps1-2020-08-19-14-54-14.log
+https://keeneonsharepoint.sharepoint.com/sites/TestDemoHub01
+PS C:\Users\Name.PC> TerminatingError(Connect-PnPOnline): "Token request failed."
+Connect-PnPOnline : Token request failed.
+At C:\CODE\BIP%20SP%20Migration%20Repo\UpdateHubNav.ps1:40 char:24
++ ...  $connect = Connect-PnPOnline -Url $h.SiteUrl -ClientId $appId -Clien ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Connect-PnPOnline], RequestFailedException
+    + FullyQualifiedErrorId : 
+Microsoft.IdentityModel.SecurityTokenService.RequestFailedException,SharePointPnP.PowerShell.Commands.Base.ConnectOnline
+Connect-PnPOnline : Token request failed.
+At C:\CODE\BIP%20SP%20Migration%20Repo\UpdateHubNav.ps1:40 char:24
++ ...  $connect = Connect-PnPOnline -Url $h.SiteUrl -ClientId $appId -Clien ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Connect-PnPOnline], RequestFailedException
+    + FullyQualifiedErrorId : Microsoft.IdentityModel.SecurityTokenService.RequestFailedException,SharePointPnP.PowerShell.Commands.Ba
+   se.ConnectOnline
+
+https://keeneonsharepoint.sharepoint.com/sites/BIPHubNav1
+https://keeneonsharepoint.sharepoint.com/sites/BIPHubNav2
+https://keeneonsharepoint.sharepoint.com/sites/BIPHubNav3
+https://keeneonsharepoint.sharepoint.com/sites/BIPHome
+https://keeneonsharepoint.sharepoint.com/sites/contosoportal
+
+Time Elapsed: 00:00:12
+**********************
+Windows PowerShell transcript end
+End time: 20200819145426
+**********************

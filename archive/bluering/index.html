@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <!-- AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- App -->
+    <script src="shagi-app.js"></script>
+    <link rel="stylesheet" href="shagi-app.css">
+</head>
+
+<body>
+
+    <div ng-app="shagiApp">
+        <div ng-controller="shagiCtl">
+
+
+            <table width="100%">
+                <tr>
+                    <td width="200px">
+                        <img src="/shagi.png" alt="" height="60px">
+                    </td>
+                    <td style="padding-left:80px">
+                        <h1>Project Proposal</h1>
+                    </td>
+                </tr>
+            </table>
+
+
+            <hr>
+
+            <div class="shagi-main">
+                <table border="1" style="margin-left:180px">
+                    <tr>
+                        <td>Which government organization are you:</td>
+                        <td>
+                            <select name="" id="" ng-model="selectOrg" ng-options="x for x in org" size="4"></select>
+                        </td>
+                    <tr>
+                        <td>What is your Hardware/Software technical need:</td>
+                        <td>
+                            <!-- Repeating Table -->
+                            <table border="0">
+                                <tr>
+                                    <td>Qty</td>
+                                    <td>Cores</td>
+                                    <td>RAM</td>
+                                    <td>Drive 1</td>
+                                    <td>Drive 2</td>
+                                    <td>O/S</td>
+                                </tr>
+                                <tr class="shagi-need" ng-repeat="n in need">
+                                    <td>
+                                        <input type="text" name="" id="" ng-model="n.qty">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="" id="" ng-model="n.cores">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="" id="" ng-model="n.ram">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="" id="" ng-model="n.drive1">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="" id="" ng-model="n.drive2">
+                                    </td>
+                                    <td>
+                                            <select name="" id="" ng-model="n.os" ng-options="x for x in os"></select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <button ng-click="addRow()">
+                                            <i class="fa fa-plus-circle"></i>
+                                            Add Row</button>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Who is your gov sponsor:</td>
+                        <td>
+                            <select name="" id="" ng-model="selectSponsor" ng-options="x for x in sponsor"
+                                size="4"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>What is your expected level of ongoing support from TITAN:</td>
+                        <td>
+                            <textarea name="" id="" cols="30" rows="5"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>What phase is your application in:</td>
+                        <td>
+                            <select name="" id="" ng-model="selectPhase" ng-options="x for x in phase"
+                                size="4"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="shagi-toolbar">
+                            <button>
+                                <i class="fa fa-floppy-o"></i>
+                                Save</button>
+                            <button>
+                                <i class="fa fa-refresh"></i>
+                                Reset</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
