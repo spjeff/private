@@ -1,0 +1,7 @@
+Confirm Google Analytics dashboard for traffic repots and usage collection.
+Upgrade Wizdom branding to latest build () after hours.   Server farm rebooty, shakeout testing,a nd UAT.
+Wizdom upgrade is complete and we are running latest version [6.49.2.0]
+Error with Wizdom Custom Calendar web part (ticket #9748)
+keep this CSS override for now.   Root cause appears to be Wizdom branding.
+Left padding was added with SharePoint Designer directly into 3 column layout ASPX at https://vault/_catalogs/masterpage/wizdom3ColumnType2.aspx
+Everywhere panel overlaying Page content (ticket #12963)
