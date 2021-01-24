@@ -1,5 +1,0 @@
-$(document).ready(function () {
-    console.log('Setting logo link');
-    var dest = 'https://vault/';
-    $('#Sites_BrandBar').attr('href', dest);
-})

@@ -1,6 +1,0 @@
-{"Tasks": [{ "SourcePath": "E:\\BOX\\EML Structure\\_Payroll (to move to finance)\\Payroll (EML AMER)","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams721-U/","TargetList": "Documents","TargetSubFolder": "U" }
-,{ "SourcePath": "E:\\BOX\\EML Structure\\_Payroll (to move to finance)\\Payroll (EML AUS)","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams721-A/","TargetList": "Documents","TargetSubFolder": "A" }
-,{ "SourcePath": "E:\\BOX\\EML Structure\\10 Payroll - Restricted - EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams721-E/","TargetList": "Documents","TargetSubFolder": "E" }
-,{ "SourcePath": "E:\\BOX\\EML Structure\\8 R and D - Restricted - EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams721-E/","TargetList": "Documents","TargetSubFolder": "E" }
-
-]}

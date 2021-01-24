@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <CustomAction
-        Title="BiomarinCss"
-        Location="ClientSideExtension.ApplicationCustomizer"
-        ClientSideComponentId="54685f8b-d064-4e31-85bb-123bed679dbd"
-        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
-    </CustomAction>
-</Elements>

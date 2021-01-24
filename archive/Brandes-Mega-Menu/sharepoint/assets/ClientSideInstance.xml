@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <ClientSideComponentInstance
-        Title="BrandesMegaMenu"
-        Location="ClientSideExtension.ApplicationCustomizer"
-        ComponentId="28d240ce-885a-478d-ba57-2f52fa45128c"
-        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
-    </ClientSideComponentInstance>
-</Elements>

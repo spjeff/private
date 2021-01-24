@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <ClientSideComponentInstance
-        Title="CarlesonCss"
-        Location="ClientSideExtension.ApplicationCustomizer"
-        ComponentId="19af8131-30e7-4983-9522-7703f47b20a3"
-        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
-    </ClientSideComponentInstance>
-</Elements>

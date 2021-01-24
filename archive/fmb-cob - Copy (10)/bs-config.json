@@ -1,9 +1,0 @@
-{
-    "files": ["./**/*.{html,htm,aspx,css,js}"],
-    "watchOptions": {
-        "ignored": "node_modules"
-    },
-    "server": {
-        "baseDir": "./"
-    }
-}

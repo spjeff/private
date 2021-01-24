@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-    <CustomAction
-        Title="BrandesSpfxAcTechCss"
-        Location="ClientSideExtension.ApplicationCustomizer"
-        ClientSideComponentId="aa1abf24-42f3-41e6-92eb-3c8be8cc9205"
-        ClientSideComponentProperties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
-    </CustomAction>
-</Elements>
