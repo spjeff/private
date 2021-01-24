@@ -1,0 +1,591 @@
+<table border="1" class="form-table" width="100%">
+    <tr>
+        <td colspan="2" class="form-header">
+            <center>
+                <h2>
+                    STEP 3 - Development
+                </h2>
+                <h3>
+                    Submit for college development and review.
+                </h3>
+            </center>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="padding-left:0px">
+
+
+            <table border="0" width=100%>
+                <tr>
+                    <td class="form-label">
+
+                        <div
+                            ng-show="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                            <span
+                                title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters. Sample Course Name and Number: ENG 101.">
+                                <i class="fa fa-question-circle"></i>
+                                Course Name and Number:</div>
+                        <div
+                            ng-hide="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                            <span
+                                title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters. Sample Program Name: BC-Web Development.">
+                                <i class="fa fa-question-circle"></i>
+                                Program Name:</div>
+
+                        </span>
+
+                    </td>
+                    <td>
+                        <span
+                            title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters.">
+                            <input disabled type="text" name="" id="" ng-model="d.step1.pacctitle"
+                                ng-class="{'required-field': !d.step1.pacctitle}">
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="2" class="form-header">
+
+                        <div ng-show="currentCF()">
+                            <h2>
+                                CF Review
+                            </h2>
+                            Add comments below and recommend next step when ready.
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+
+
+                        <div ng-hide="!currentCF() && !d.step3.cfcomment">
+                            <h3>CF Comments:</h3>
+                        </div>
+
+                        <textarea name="" id="" cols="60" rows="5" style="margin-top:10px;" ng-model="d.step3.cfcomment"
+                            ng-disabled="!currentCF()" ng-hide="!currentCF() && !d.step3.cfcomment"></textarea>
+                        <br>
+                        <br>
+
+                        Click close to return to PACC homepage.
+                        <br>
+
+                        <!-- Buttons -->
+                        <button class="btn-upload" ng-click="close()">
+                            <i class="fa fa-times-circle"></i>
+                            Close Form
+                        </button>
+
+                        <button class="btn-warn" ng-click="save()">
+                            <i class="fa fa-save"></i>
+                            Save
+                        </button>
+                        <button class="btn-warn" ng-click="save(null, 'close')"
+                            title="This will save your proposal with all data">
+                            <i class="fa fa-save"></i>
+                            Save and Close
+                        </button>
+
+                        <button class="btn-success" ng-click="d.step3vote='Accept'" ng-show="currentCF()"
+                            title="Proposal moves forward" title="Save data and recommend as acceptable to next step.">
+                            <i class="fa fa-save"></i>
+                            Acceptable
+                        </button>
+
+
+                        <button class="btn-orange" ng-click="d.step3vote='Not'" ng-show="currentCF()"
+                            title="Save data and recommend as not acceptable to next step.">
+                            <i class="fa fa-save"></i>
+                            Not Acceptable
+                        </button>
+
+
+                        <button class="btn-warn" ng-click="submit(1, false, 'tabled')" ng-show="currentCF()"
+                            title="Data is saved and the proposal is tabled (let’s make the button red).">
+                            <i class="fa fa-save"></i>
+                            Table
+                        </button>
+
+
+
+                        <!-- DATA -->
+
+
+
+
+                    </td>
+
+                </tr>
+
+
+            </table>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td width="70%" style="padding-top:30px">
+
+            <table width="100%">
+
+                <tr>
+                    <td style="background-color: yellow" colspan="2">
+                        <b>MUST Attach Supporting Documentation</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right">
+                        <div>
+                            At this Step you need to download and complete Step 3 Rationale. Once complete, upload to
+                            the supportive documentation folder. If there are multiple colleges uploading, designate
+                            your file with your college two-letter abbreviation.
+                            <br>
+                            <br>
+                        </div>
+                    </td>
+                    <td>
+                        <button ng-click="downloadTemplate()" class="btn-upload" ng-hide="!id"
+                            style="margin-left:10px;">
+                            <i class="fa fa-download" style="padding-right:15px;"></i>
+                            <i class="fa fa-file-word-o" style="padding-right:15px;"></i>
+                            Download Step 3 Rational (DOCX)
+                        </button>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">Following Colleges Must Upload Step 3 Rationale:</td>
+                    <td>
+                        <div ng-show="d.step2.offerDA">
+                            <input type="checkbox" name="" id="offerDA" ng-model="d.step2.offerDA" disabled "><label
+                            for=" offerDA">DA
+                            (50806)</label>
+                            <br>
+                        </div>
+                        <div ng-show="d.step2.offerHW">
+                            <input type="checkbox" name="" id="offerHW" ng-model="d.step2.offerHW" disabled
+                                ng-show="d.step2.offerHW"><label for="offerHW">HW
+                                (50802)</label>
+                            <br>
+                        </div>
+                        <div ng-show="d.step2.offerKK">
+                            <input type="checkbox" name="" id="offerKK" ng-model="d.step2.offerKK" disabled
+                                ng-show="d.step2.offerKK"><label for="offerKK">KK
+                                (50801)</label>
+                            <br>
+                        </div>
+                        <div ng-show="d.step2.offerMX">
+                            <input type="checkbox" name="" id="offerMX" ng-model="d.step2.offerMX" disabled
+                                ng-show="d.step2.offerMX"><label for="offerMX">MX
+                                (50803)</label>
+                            <br></div>
+                        <div ng-show="d.step2.offerOH">
+                            <input type="checkbox" name="" id="offerOH" ng-model="d.step2.offerOH" disabled
+                                ng-show="d.step2.offerOH"><label for="offerOH">OH
+                                (50805)</label>
+                            <br>
+                        </div>
+                        <div ng-show="d.step2.offerTR">
+                            <input type="checkbox" name="" id="offerTR" ng-model="d.step2.offerTR" disabled
+                                ng-show="d.step2.offerTR"><label for="offerTR">TR
+                                (50804)</label>
+                            <br>
+                        </div>
+                        <div ng-show="d.step2.offerWR">
+                            <input type="checkbox" name="" id="offerWR" ng-model="d.step2.offerWR" disabled
+                                ng-show="d.step2.offerWR"><label for="offerWR">WR
+                                (50807)</label>
+                            <br>
+                            <br>
+                        </div>
+                    </td>
+                </tr>
+                <!-- 
+                <tr>
+                    <td class="form-label">Feasbility
+                        <br>
+                        <div class="form-label-instruction">
+                            <i>
+                                For courses - Summarizes course feasibility from academic/career standpoint, e.g., 1)
+                                It is
+                                a first or second year college level course; 2) Course may be transferable beyond
+                                elective
+                                category; 3) Course is mapped to a general education and/or program objectives and
+                                learning
+                                outcomes. 4) Course is mapped to a baccalaureate transfer or occupational/career
+                                program.
+
+                                For programs - Summarizes program feasibility from academic/career (labor market)
+                                standpoint. Summary demonstrates evidence of labor market need
+                            </i>
+                        </div>
+                    </td>
+                    <td>
+                        <textarea name="" id="" cols="40" rows="10" ng-model="d.step3.feas"
+                            ng-class="{'required-field': !d.step3.feas}"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-label">Curriculum
+                        <br>
+                        <div class="form-label-instruction">
+                            <i>
+                                For courses - Summarizes how curriculum content appropriately aligns with
+                                departmental/discipline curriculum of CCC, two-year and four-year academic
+                                institutions,
+                                professional associations, accrediting bodies, industry, and/or other external
+                                agencies.
+
+                                For programs - Summarizes how the college has developed quality curricula that aligns
+                                with
+                                federal, state and local requirements, is responsive to local workforce needs, and will
+                                prepare graduates with the appropriate level of skill to meet their educational goals.
+                            </i>
+                        </div>
+
+                    </td>
+                    <td>
+                        <textarea name="" id="" cols="40" rows="10" ng-model="d.step3.curriculum"
+                            ng-class="{'required-field': !d.step3.curriculum}"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-label">Cost
+                        <br>
+                        <div class="form-label-instruction">
+                            <i>
+                                For courses - Summarizes how curriculum content appropriately aligns with
+                                departmental/discipline curriculum of CCC, two-year and four-year academic
+                                institutions,
+                                professional associations, accrediting bodies, industry, and/or other external
+                                agencies.
+
+                                For programs - Summarizes how the college has developed quality curricula that aligns
+                                with
+                                federal, state and local requirements, is responsive to local workforce needs, and will
+                                prepare graduates with the appropriate level of skill to meet their educational goals.
+                            </i>
+                        </div>
+
+                    </td>
+                    <td>
+                        <textarea name="" id="" cols="40" rows="10" ng-model="d.step3.cost"
+                            ng-class="{'required-field': !d.step3.cost}"></textarea>
+                    </td>
+                </tr>
+-->
+
+                <tr>
+                    <td class="form-label">Proposal Team members:
+                        <div class="form-label-instruction">
+                            <i>
+                                Please list all CCC members that have assisted in the develpoment and or review of this
+                                proposal. If this proposal is for multiple colleges, make sure to have a team member
+                                from the particpating colleges.
+                            </i>
+                        </div>
+                    </td>
+
+                    <td>
+                        <textarea name="" id="" cols="40" rows="5" ng-model="d.step3.teammembers"
+                            ng-class="{'required-field': !d.step3.teammembers}"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">PA Comment:
+                    </td>
+                    <td>
+                        <textarea name="" id="" cols="40" rows="5" ng-model="d.step3.pacomment"
+                            ng-class="{'required-field': !d.step3.pacomment}"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="background-color:lightblue">
+                        <b>
+                            Approval
+                        </b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-label">Your Curriculum Facilitator:
+                        <br>
+
+                    </td>
+                    <td>
+                        <div>
+                            {{d.curriculumFacilitator}} (<a
+                                href="mailto:{{d.curriculumFacilitatorEMail}}">{{d.curriculumFacilitatorEMail}}</a>)
+                            <br>
+                            Comments:
+                            <br>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step3.commentsfacilitate"
+                                ng-class="{'required-field': !d.step3.commentsfacilitate}"></textarea>
+                            <br>
+                            Recommendation:
+                            <div ng-hide="d.step3.CF" style="white-space: nowrap">
+                                <button ng-disabled="!d.step3.commentsfacilitate" class="btn-success"
+                                    ng-click="step3vote('CF','Accept')">Acceptable</button>
+                                <button ng-disabled="!d.step3.commentsfacilitate" class="btn-successminor"
+                                    ng-click="step3vote('CF','AcceptMinor')">Acceptable
+                                    w/ Minor Concerns</button>
+                                <button ng-disabled="!d.step3.commentsfacilitate" class="btn-orange"
+                                    ng-click="step3vote('CF','Not')">
+                                    <i class="fa fa-save"></i>
+                                    Not Acceptable
+                                </button>
+                            </div>
+                            <div ng-hide="!d.step3.CF" class="vote">
+                                <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                {{d.step3.CF}}
+                                <a ng-click="undostep3('CF')">(Change Recommendation)</a>
+
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-label">
+                        <span style="white-space: nowrap">
+                            <span
+                                title="Select your Department Chair or an Academic Discipline Designee across the District that will be supportive and knowledgeable of this proposal.">
+                                <i class="fa fa-question-circle"></i>
+                                Academic or Department Discipline Designee:
+                            </span>
+                        </span>
+                        <br>
+
+                    </td>
+                    <td>
+
+                        <input type="text" name="" id="" ng-model="d.step3.designeepeople">
+                        <br>
+                        Comment:
+                        <br>
+                        <textarea name="" id="" cols="30" rows="2" ng-model="d.step3.designee"
+                            ng-class="{'required-field': !d.step3.designee}"></textarea>
+                        <br>
+                        Recommendation:
+                        <div ng-hide="d.step3.DES">
+                            <button ng-disabled="!d.step3.designee" class="btn-success"
+                                ng-click="step3vote('DES','Accept')">Acceptable</button>
+                            <button ng-disabled="!d.step3.designee" class="btn-successminor"
+                                ng-click="step3vote('DES','AcceptMinor')">Acceptable
+                                w/ Minor Concerns</button>
+                            <button ng-disabled="!d.step3.designee" class="btn-orange" ng-click="step3vote('DES','Not')"
+                                title="Proposal returns to step 1">
+                                <i class="fa fa-save"></i>
+                                Not Acceptable
+                            </button>
+                        </div>
+                        <div ng-hide="!d.step3.DES" class="vote">
+                            <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                            {{d.step3.DES}}
+                            <a ng-click="undostep3('DES')">(Change Recommendation)</a>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-label">President or VP or Dean or Designee:
+
+                    </td>
+                    <td>
+                        {{d.vp}} (<a href="mailto:{{d.vpEMail}}">{{d.vpEMail}}</a>)
+                        <br>
+                        Comment:
+                        <br>
+                        <textarea name="" id="" cols="30" rows="2" ng-model="d.step3.commentsdean"
+                            ng-class="{'required-field': !d.step3.commentsdean}"></textarea>
+                        <br>
+                        Recommendation:
+                        <br>
+                        <div ng-hide="d.step3.DEAN">
+                            <button ng-disabled="!d.step3.commentsdean" class="btn-success"
+                                ng-click="step3vote('DEAN','Accept')">Acceptable</button>
+                            <button ng-disabled="!d.step3.commentsdean" class="btn-successminor"
+                                ng-click="step3vote('DEAN','AcceptMinor')">Acceptable
+                                w/ Minor Concerns</button>
+                            <button ng-disabled="!d.step3.commentsdean" class="btn-orange"
+                                ng-click="step3vote('DEAN','Not')" title="Proposal returns to step 1">
+                                <i class="fa fa-save"></i>
+                                Not Acceptable
+                            </button>
+                        </div>
+                        <div ng-hide="!d.step3.DEAN" class="vote">
+                            <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                            {{d.step3.DEAN}}
+                            <a ng-click="undostep3('DEAN')">(Change Recommendation)</a>
+
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">Curriculum Commitee Chair:
+
+                    </td>
+                    <td>
+                        {{d.cchair}} (<a href="mailto:{{d.cchairEMail}}">{{d.cchairEMail}}</a>)
+                        <br>
+                        Comment:
+                        <br>
+                        <textarea name="" id="" cols="30" rows="2" ng-model="d.step3.commentscchair"
+                            ng-class="{'required-field': !d.step3.commentscchair}"></textarea>
+                        <br>
+                        Recommendation:
+                        <br>
+                        <div ng-hide="d.step3.CCHAIR">
+                            <button ng-disabled="!d.step3.commentscchair" class="btn-success"
+                                ng-click="step3vote('CCHAIR','Accept')">Acceptable</button>
+                            <button ng-disabled="!d.step3.commentscchair" class="btn-successminor"
+                                ng-click="step3vote('CCHAIR','AcceptMinor')">Acceptable
+                                w/ Minor Concerns</button>
+                            <button ng-disabled="!d.step3.commentscchair" class="btn-orange"
+                                ng-click="step3vote('CCHAIR','Not')" title="Proposal returns to step 1">
+                                <i class="fa fa-save"></i>
+                                Not Acceptable
+                            </button>
+                        </div>
+                        <div ng-hide="!d.step3.CCHAIR" class="vote">
+                            <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                            {{d.step3.CCHAIR}}
+                            <a ng-click="undostep3('CCHAIR')">(Change Recommendation)</a>
+
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+
+
+            </table>
+        </td>
+        <td width="30%" style="padding-top:30px;padding-left:20px">
+
+
+            <div class="form-label" style="text-align: left">Attach Supportive Documentation:<div>
+                    <div class="help-text">
+                        Documentation is optional at this step.
+                        See PACC Supportive Documentation Folder for PACC Documentation Guidelines PDF in Document
+                        Library.
+                    </div>
+
+                    <div ng-show="!id">
+                        <div
+                            style="background-color:lightblue; border:1px; border-color: black; padding:5px; margin-top:10px;">
+
+                            Please save PACC Proposal <button class="btn-warn" ng-click="save()" title="Save the current data.">
+                                <i class="fa fa-save"></i>
+                                Save
+                            </button> to begin attaching supportive documentation.
+                            <br>
+                        </div>
+
+                    </div>
+
+
+                    <!-- File Upload -->
+                    <div ng-show="id">
+                        <div class="help-text">
+                            <br>
+                            Click "Choose File" to select file. Once file is selected, click "Upload" to complete the
+                            process.
+                            You can only upload one file at a time.
+                        </div>
+                        <table class="upload-table">
+                            <tr>
+                                <td><input type="file" name="uploadFile" id="uploadFile" class="btn-upload"
+                                        style="padding-left:3px; padding-top:3px;"></td>
+                                <td>
+                                    <button ng-click="upload()" class="btn-upload">
+                                        <i class="fa fa-upload" aria-hidden="true"></i> Upload
+                                    </button></td>
+                            </tr>
+                        </table>
+
+
+                        <button ng-click="viewFolder()" class="btn-upload" ng-hide="!id">
+                            <i class="fa fa-folder" aria-hidden="true"></i>
+                            View Folder
+                        </button>
+
+                        <!-- File Table -->
+                        <table class="table-files" ng-show="uploadFiles.length">
+                            <tr>
+                                <td>Icon</td>
+                                <td>Filename</td>
+                                <td>Created</td>
+                            </tr>
+                            <tr ng-repeat="f in uploadFiles">
+                                <td>
+                                    <img ng-src="{{getIcon(f.Name)}}" alt="" />
+                                </td>
+                                <td>
+                                    <a href="{{f.ServerRelativeUrl}}">{{f.Name}}</a>
+
+
+                                </td>
+                                <td>{{f.TimeCreated.substring(0,10)}}</td>
+                            </tr>
+                        </table>
+                    </div>
+        </td>
+
+
+
+
+    </tr>
+</table>
+
+<center>
+    <button class="btn-upload" ng-click="close()" title="Cancel all data-proposal will not be saved.">
+        <i class="fa fa-times-circle"></i>
+        Close Form
+    </button>
+    <button class="btn-warn" ng-click="save()" title="Save the current data.">
+        <i class="fa fa-save"></i>
+        Save
+    </button>
+    <button class="btn-warn" ng-click="save(null, 'close')" title="Save the current data and close the proposal.">
+        <i class="fa fa-save"></i>
+        Save and Close
+    </button>    
+    <button class="btn-success" ng-click="submit(1.1, true, 'submit')" title="Submit to CF for Review and exit the proposal."
+        ng-disabled="d.curriculumFacilitatorEMail == currentUser.Email || notValid()">
+        <i class="fa fa-arrow-circle-right"></i>
+        Save and Submit to Curriculum Facilitator for Review
+    </button>
+</center>
+
+
+<!-- 
+<table width="100%">
+    <tr>
+        <td colspan="2" style="text-align: center">
+
+            <br>
+
+            <button class="btn-error" ng-click="cancel()">
+                <i class="fa fa-times-circle"></i>
+                Cancel
+            </button>
+            <button class="btn-warn" ng-click="save()">
+                <i class="fa fa-save"></i>
+                Save
+            </button>
+            <br>
+            <br>
+        </td>
+    </tr>
+</table> -->

@@ -1,0 +1,26 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js"></script>
+
+<script src="https://cccedu.sharepoint.com/sites/PAC/automated/dev/SiteAssets/ccc-pacc-header.js"></script>
+<link rel="stylesheet" href="https://cccedu.sharepoint.com/sites/PAC/automated/dev/SiteAssets/ccc-pacc.css">
+
+
+<div ng-app="paccHeaderApp">
+    <div ng-controller="paccHeaderCtl">
+
+
+        <table class="table-files">
+            <tr>
+                <td>Proposal</td>
+                <td>Created By</td>
+                <td>Created</td>
+            </tr>
+            <tr>
+                <td>{{i.PACCTitle}}</td>
+                <td>{{i.Author.Title}}</td>
+                <td>{{i.Created.substring(0,10)}}</td>
+            </tr>
+        </table>
+
+
+    </div>
+</div>

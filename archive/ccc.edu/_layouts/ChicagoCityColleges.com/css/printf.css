@@ -1,0 +1,73 @@
+﻿html{-webkit-print-color-adjust:exact;}
+body {background: none;}
+#s4-workspace {padding-top: 0 !important;}
+#s4-bodyContainer {background-image: none;}
+.drop-shadow {background: none;}
+.header {display: none; visibility: hidden; height: 0;}
+#top-section {height: auto !important; overflow: visible !important;}
+.top-right {margin-left: 0;}
+.slideshow,
+.empty-divider,
+.filter-wrapper #bottom-section,
+h1.careerfinder-h1,
+.careerfinder-description,
+.careerFinderFilters,
+.careerfinder h2,
+#s4-statusbarcontainer,
+.career-sort-option .text,
+.career-sort-option select,
+.right-col-full-desc {display: none !important;}
+.industry-info-icon {display: none !important;}
+.industry-info.hide {display: block !important;}
+.careerfinder #main-column .filter-wrapper {background-image: none;}
+.careerfinder .search-left {width: 675px !important;}
+.careerfinder .result-entry {position: relative;}
+.careerfinder .results-header {position: relative; width: 100%;}
+.YourOptions, .FirstStep, .Outcomes {clear: both; padding: 30px 0;}
+.HomPageBody {height: auto;}
+.nav, .nav2 {display: none;}
+.flipper-wrapper {height: auto;}
+.flipper-wrapper li.dfwp-item {opacity: 1 !important; display: block !important;}
+.twitter-alert-section {display: none;}
+.ui-accordion-content {display: block !important;}
+#content-left {display: none;}
+#iwantto {float: none;}
+#bottom-section li.dfwp-item {width: 100%; clear: both;}
+.footer {display: none;}
+
+/*---Print Styles for Program Details---*/
+.college-mobile-primary-nav {display: none !important;}
+.primary-nav a {display: none !important;}
+a.district-primary-nav {display: none !important;}
+li.sub-item a {display: none !important;}
+.main-link .primary-nav-link,
+ul.district-mobile-primary-nav,
+.global-mobile-nav {display: none !important;}
+body.program-details .inside-wrapper {width: 1000px !important;}
+#s4-bodyContainer {min-width: 1000px !important;}			
+body.program-details {}
+body.program-details .header {background-image: none !important; border-bottom: 2px solid #000; display: block; height: 80px !important; margin-bottom: 20px; visibility: visible;}
+body.program-details .header .logo {position: relative !important; top: 0 !important; left: 0px !important; padding-right: 20px; border-right: 2px solid !important;}
+body.program-details .header .header-icon {display: none;}
+body.program-details .header .social-links {display: none;}
+body.program-details .header .search-box {display: none;}
+body.program-details .header .topnav {display: none;}
+body.program-details .header .primary-nav {background-image: none !important; display: none !important;}
+body.program-details .top-bar {display: none;}
+body.program-details .feed-alert-section {display: none !important;}
+body.program-details .large-icon.career-pathway {display: none;}
+body.program-details .media-section {display: none;}
+body.program-details #main-column {border-right: 1px solid; min-width: 675px; max-width: 675px !important; padding-right: 25px;}
+body.program-details #right-column {display: block;}
+body.program-details #right-column .area-of-study-block {display: inline-block; height: 60px; line-height: 60px; font-size: 20px; position: absolute; text-transform: uppercase; top: 0; left: 350px;}
+body.program-details #right-column .area-of-study-block img {float: left; height: 60px; width: auto; margin-right: 10px;}
+body.program-details a.college-name {width: 26px;}
+.courses-title .print-courses {display: none;}
+.courses-title .plus {display: none;}
+.courses-title .minus {display: none;}
+.right-col-block.disclaimer {display: block;}
+.do-not-print {display: none !important;}
+
+
+.programfinder .transfer-clear-search .search-checkbox .check-box-graphic {background: none;}
+.programfinder .transfer-clear-search .search-checkbox input {position: relative; left: auto; visibility: visible;}

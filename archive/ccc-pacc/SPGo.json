@@ -1,0 +1,7 @@
+{
+    "sourceDirectory": "src",
+    "sharePointSiteUrl": "https://cccedu.sharepoint.com/sites/PAC/automated/dev",
+    "publishingScope": "SaveOnly",
+    "authenticationType": "Forms",
+    "remoteFolders" : "/sites/PAC/automated/dev/SiteAssets"
+}

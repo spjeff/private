@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "carleson-css-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/carlesonCss/CarlesonCssApplicationCustomizer.js",
+          "manifest": "./src/extensions/carlesonCss/CarlesonCssApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CarlesonCssApplicationCustomizerStrings": "lib/extensions/carlesonCss/loc/{locale}.js"
+  }
+}

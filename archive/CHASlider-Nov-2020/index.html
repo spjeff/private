@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    <!-- AngularJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous"></script>
+    <script src="chaSlider.js"></script>
+
+
+    <!-- BX Slider -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="jquery.bxslider-MOD.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.css">
+    <style>
+    .bx-caption {
+        margin-bottom: 40px !important;
+    }
+    .bx-caption {
+        background: #fff;
+        background: rgba(0, 0, 0, 0.40) !important;
+    }
+    .bx-caption2 span {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .bx-caption2 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #000;
+        background: rgba(0, 0, 0, 0.40);
+        width: 100%;
+        color:white;
+    }
+    .bx-caption2 span {
+        color: #fff;
+        font-family: Arial;
+        display: block;
+        font-size: .85em;
+        padding: 10px;
+    }
+    .bxbtn {
+        z-index:99999;
+        color:white;
+        background: #000;
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px solid green;
+        margin-bottom: 20px;
+        margin-left:10px;
+    }
+    .bxbtn:hover, .bxbtn:focus  {
+        background:green;
+        border: 1px solid green;
+    }
+    </style>
+
+
+</head>
+<body>
+
+
+    <!-- Controller -->
+    <div ng-app="chaSliderApp">
+        <div ng-controller="chaSliderCtl">
+
+
+            <div class="bxslider">
+                <!-- NG repeat slide -->
+                <div ng-repeat="slide in slides">
+                    <!-- Image -->
+                    <!-- <img ng-src="{{slide.Url}}" ng-click="view(slide)" title="{{slide.Title}}"> -->
+                    <div style="height:400px;width:600px; background: url('{{slide.Url}}'); background-repeat: no-repeat; background-size: cover;" ng-click="view(slide)" title="{{slide.Title}}"></div>
+                    
+                    <!-- Caption -->
+                    <div class="bx-caption2">
+                        <span>{{slide.Title}}</span>
+                        <input class="bxbtn" type="button" ng-click="view(slide)" value="Read More"/>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+ 
+        </div>
+    </div>
+
+    
+</body>
+</html>

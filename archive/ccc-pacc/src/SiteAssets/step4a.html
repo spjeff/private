@@ -1,0 +1,286 @@
+<div ng-hide="saveHide">
+    <table border="1" class="form-table" width="100%">
+        <tr>
+            <td colspan="2" class="form-header">
+                <center>
+                    <h2>
+                        STEP 4 – INTERNAL APPROVAL
+                    </h2>
+
+
+                    <h3>
+                        District‐wide Development and Review
+                    </h3>
+                    Review all completed fields, provide the reading deadlines, and initiate recommendations.
+                    Automated email notifications will be sent based on your actions.
+
+                </center>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td width="70%" style="padding-top:30px">
+
+                <table>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="error">
+                                <center>
+                                    Review all completed steps in the timeline and the supportive documentation.
+                                    <br>
+                                    Provide the due dates and submit for JCDC review.
+                                    <br>
+                                    <br>
+                                </center>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">
+                            Principal Advocate:
+                        </td>
+                        <td>
+                            {{d.step1.advocateTitle}} (<a
+                                href="mailto:{{d.step1.advocateEmail}}">{{d.step1.advocateEmail}}</a>)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">
+
+                            <span
+                                title="Please select the type of PACC proposal. Refer to PACC documentation for options and requirements.">
+                                <i class="fa fa-question-circle"></i>
+
+                                Type of PACC Proposal:</td>
+                        <td>
+
+                            <select name="" id="" ng-options="x for x in choiceType" ng-model="d.step1.selectType"
+                                ng-class="{'required-field': !d.step1.selectType}" disabled></select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">
+
+
+
+                            <div
+                                ng-show="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                                <span
+                                    title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 40 characters. Sample Course Name and Number: ENG 101.">
+                                    <i class="fa fa-question-circle"></i>
+                                    Course Name and Number:</div>
+                            <div
+                                ng-hide="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                                <span
+                                    title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 40 characters. Sample Program Name: BC-Web Development.">
+                                    <i class="fa fa-question-circle"></i>
+                                    Program Name:</div>
+
+                            </span>
+
+                        </td>
+                        <td>
+                            <span
+                                title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 40 characters.">
+                                <input type="text" name="" id="" ng-model="d.step1.pacctitle"
+                                    ng-class="{'required-field': !d.step1.pacctitle}" disabled maxlength="40">
+                            </span>
+                        </td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td class="form-label">
+
+                            <span
+                                title="Please select the type of PACC proposal. Refer to PACC documentation for options and requirements.">
+                                <i class="fa fa-question-circle"></i>
+
+                                Required DCF Comments:</td>
+                        <td>
+
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step4.dcfcomment"
+                                ng-disabled="isReadOnly()"></textarea>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">
+
+                            <span
+                                title="Please select the type of PACC proposal. Refer to PACC documentation for options and requirements.">
+                                <i class="fa fa-question-circle"></i>
+
+                                First Reading Due Date:</td>
+                        <td>
+
+                            <input type="text" name="" id="" datepicker ng-model="d.step4.datefirst"
+                                ng-disabled="isReadOnly() || !d.step4.dcfcomment">
+                            <i class="fa fa-calendar"></i>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">
+
+                            <span
+                                title="Please select the type of PACC proposal. Refer to PACC documentation for options and requirements.">
+                                <i class="fa fa-question-circle"></i>
+
+                                PA Response Due Date:</td>
+                        <td>
+
+                            <input type="text" name="" id="" datepicker ng-model="d.step4.datepa"
+                                ng-disabled="isReadOnly() || !d.step4.dcfcomment">
+                            <i class="fa fa-calendar"></i>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">
+
+                            <span
+                                title="Please select the type of PACC proposal. Refer to PACC documentation for options and requirements.">
+                                <i class="fa fa-question-circle"></i>
+
+                                Second Reading Due Date:</td>
+                        <td>
+
+                            <input type="text" name="" id="" datepicker ng-model="d.step4.datesecond"
+                                ng-disabled="isReadOnly() || !d.step4.dcfcomment">
+                            <i class="fa fa-calendar"></i>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+            <td width="30%" style="padding-top:30px;padding-left:20px">
+
+
+                <div class="form-label" style="text-align: left">Attach Supportive Documentation:<div>
+                        <div class="error">
+                            Review uploaded documentation.
+                        </div>
+
+                        <div class="help-text">
+
+                            You may also upload documentation to assist the Principal
+                            Advocate through the remaining steps of this proposal.
+                        </div>
+
+                        <div ng-show="!id">
+                            <div
+                                style="background-color:lightblue; border:1px; border-color: black; padding:5px; margin-top:10px;">
+
+                                Please save PACC Proposal <button class="btn-warn" ng-click="save()">
+                                    <i class="fa fa-save"></i>
+                                    Save
+                                </button> to begin attaching supportive documentation.
+                                <br>
+                            </div>
+
+                        </div>
+
+
+                        <!-- File Upload -->
+                        <div ng-show="id">
+                            <div class="help-text">
+                                <br>
+                                Click "Choose File" to select file. Once file is selected, click "Upload" to complete
+                                the
+                                process.
+                                You can only upload one file at a time.
+                            </div>
+                            <table class="upload-table">
+                                <tr>
+                                    <td><input type="file" name="uploadFile" id="uploadFile" class="btn-upload"
+                                            style="padding-left:3px; padding-top:3px;"></td>
+                                    <td>
+                                        <button ng-click="upload()" class="btn-upload">
+                                            <i class="fa fa-upload" aria-hidden="true"></i> Upload
+                                        </button></td>
+                                </tr>
+                            </table>
+
+
+                            <button ng-click="viewFolder()" class="btn-upload" ng-hide="!id">
+                                <i class="fa fa-folder" aria-hidden="true"></i>
+                                View Folder
+                            </button>
+
+                            <!-- File Table -->
+                            <table class="table-files" ng-show="uploadFiles.length">
+                                <tr>
+                                    <td>Icon</td>
+                                    <td>Filename</td>
+                                    <td>Created</td>
+                                </tr>
+                                <tr ng-repeat="f in uploadFiles">
+                                    <td>
+                                        <img ng-src="{{getIcon(f.Name)}}" alt="" />
+                                    </td>
+                                    <td>
+                                        <a href="{{f.ServerRelativeUrl}}">{{f.Name}}</a>
+
+
+                                    </td>
+                                    <td>{{f.TimeCreated.substring(0,10)}}</td>
+                                </tr>
+                            </table>
+                        </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Buttons -->
+    <div>
+        <br>
+        <br>
+        <center>
+
+            <table>
+                <tr>
+                    <td>
+                        <div ng-hide="isReadOnly()">
+                            <button class="btn-error" ng-click="submit(4, false, 'tabled')" ng-show="currentCF()"
+                                title="Proposal dormant">
+                                <i class="fa fa-save"></i>
+                                Table
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn-blue" ng-click="close()" title="Close the proposal.">
+                            <i class="fa fa-times-circle"></i>
+                            Close Form
+                        </button>
+                    </td>
+                    <td>
+                        <div ng-hide="isReadOnly()">
+                            <button class="btn-success" ng-click="submit(4.2, true, 'next')">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Save and Submit to JCDC Review
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+
+        </center>
+    </div>
+</div>

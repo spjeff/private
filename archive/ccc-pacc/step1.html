@@ -1,0 +1,280 @@
+<table border="1" class="form-table pacc-form" width="100%">
+    <tr>
+        <td colspan="2" class="form-header">
+            <center>
+                <h2>
+                    STEP 1 - INITIATION
+                </h2>
+
+
+                <h3>
+                    Initiate a PACC Proposal
+                </h3>
+                Complete the form in order to initiate a PACC Proposal. By completing and submitting this form, you are
+                designating yourself as the Principal Advocate (PA) of this PACC Proposal.
+                <br>
+                Your College Curriculum Facilitator (CF) will receive an automatic email and will schedule a meeting
+                with
+                you within two weeks to discuss the proposal.
+            </center>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="btn-warn" ng-show="d.step1.type == 'tabled'">
+            <center>
+                Tabled
+            </center>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="btn-orange" ng-show="d.step1.type == 'notaccept'">
+            <center>
+                Not Acceptable
+            </center>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td width="70%" style="padding-top:30px">
+
+            <table>
+                <tr>
+                    <td class="form-label">
+                        Principal Advocate:
+                    </td>
+                    <td>
+                        {{d.step1.advocateTitle}} (<a
+                            href="mailto:{{d.step1.advocateEmail}}">{{d.step1.advocateEmail}}</a>)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">
+
+                        <span
+                            title="Please select the type of PACC proposal. Refer to PACC documentation for options and requirements.">
+                            <i class="fa fa-question-circle"></i>
+
+                            Type of PACC Proposal:</td>
+                    <td>
+
+                        <select name="" id="" ng-options="x for x in choiceType" ng-model="d.step1.selectType"
+                            ng-class="{'required-field': !d.step1.selectType}"></select>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">
+
+
+
+                        <div
+                            ng-show="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                            <span
+                                title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters. Sample Course Name and Number: ENG 101.">
+                                <i class="fa fa-question-circle"></i>
+                                Course Name and Number:</div>
+                        <div
+                            ng-hide="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                            <span
+                                title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters. Sample Program Name: BC-Web Development.">
+                                <i class="fa fa-question-circle"></i>
+                                Program Name:</div>
+
+                        </span>
+
+                    </td>
+                    <td>
+                        <span
+                            title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters.">
+                            <input type="text" name="" id="" ng-model="d.step1.pacctitle"
+                                ng-class="{'required-field': !d.step1.pacctitle}">
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">
+
+                        <span
+                            title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters.">
+                            <i class="fa fa-question-circle"></i>
+
+                            PACC Proposal Description:
+                        </span>
+                    </td>
+                    <td>
+                        <textarea name="" id="" cols="30" rows="2" ng-model="d.step1.paccdesc"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <div style="width:400px; padding:5px; margin-bottom:20px;background-color: orange; color:white"
+                            ng-show="(d.step1.advocateEmail == d.curriculumFacilitatorEMail) || d.showAlternate">
+                            As the Principal Advocate of this proposal you cannot be the Curriculum Facilitator. The Alternate Curriculum Facilitator listed below will assist you with this proposal. </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="form-label">Your College:</td>
+                    <td>
+                        <select name="" id="" ng-options="x for x in choiceCollege" ng-model="d.step1.selectCollege"
+                            ng-change="changeCollege()" ng-class="{'required-field': !d.step1.selectCollege}"></select>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="form-label">Your Curriculum Facilitator:</td>
+                    <td>
+                        <div ng-show="d.curriculumFacilitator">
+                            {{d.curriculumFacilitator}} (
+                            <a href="mailto:{{d.curriculumFacilitatorEMail}}">{{d.curriculumFacilitatorEMail}}</a>
+                            )
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">Discipline Related to this PACC Proposal:</td>
+                    <td>
+                        <select name="" id="" ng-model="d.step1.discipline"
+                            ng-options="x.Title for x in disciplineLiaisons"
+                            ng-class="{'required-field': !d.step1.discipline.Title}"></select>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">Discipline Liaison:</td>
+                    <td>
+                        <div ng-show="d.step1.discipline.Liaison">
+                            {{d.step1.discipline.Liaison[0].Title}}
+                            (
+                            <a href="mailto:{{formatEmailFromLogin(d.step1.discipline.Liaison[0].Name)}}">
+                                {{formatEmailFromLogin(d.step1.discipline.Liaison[0].Name)}}
+                            </a>
+                            )
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">
+
+                        <span
+                            title="Provide a statement indicating the reason for this PACC Proposal. Rationale should include intent of course/program; students for whom the course and/or program is expected to serve; and relationship of the program and/or courses to existing curricula at the college.">
+                            <i class="fa fa-question-circle"></i>
+
+                            Purpose:</span>
+                        <div class="help-text">
+
+                        </div>
+                    </td>
+                    <td>
+
+
+                        <textarea name="" id="" cols="60" rows="5" style="margin-top:10px;"
+                            ng-class="{'required-field': !d.step1.rationale}" ng-model="d.step1.rationale"></textarea>
+                        </span>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td class="form-label">Proposal Type:</td>
+                    <td>
+                        <select name="" id="" ng-options="x for x in choiceProposal" ng-model="d.step1.selectProposal"
+                            ng-class="{'required-field': !d.step1.selectCollege}"></select>
+                    </td>
+                </tr> -->
+
+                <tr>
+                    <td class="form-label">
+                        <span
+                            title="You may enter comments here regarding your proposal. The Curriculum Facilitator will see these comments.">
+                            <i class="fa fa-question-circle"></i>
+                            PA Comments:</span>
+                        <div class="help-text">
+
+                        </div>
+                    </td>
+                    <td>
+                        <span
+                            title="You may enter comments here regarding your proposal. The Curriculum Facilitator will see these comments.">
+                            <textarea name="" id="" cols="60" rows="5" ng-model="d.step1.comments"></textarea>
+                        </span>
+                    </td>
+                </tr>
+
+                <tr ng-show="currentUser.Email == d.curriculumFacilitatorEMail && vm.id">
+                    <td class="form-label">
+                        <span title="">
+                            <!-- <i class="fa fa-question-circle"></i> -->
+                            CF Comments:</span>
+                        <div class="help-text">
+
+                        </div>
+                    </td>
+                    <td>
+                        <span title="">
+                            <textarea name="" id="" cols="60" rows="5" ng-model="d.step1.cfcomment"></textarea>
+                        </span>
+                    </td>
+                </tr>
+
+            </table>
+            <br>
+            <br>
+        </td>
+        <td width="30%" style="padding-top:30px;padding-left:20px">
+
+            <p>
+                This space reserved for attachment of supportive documentation. When you submit this proposal to your
+                curriculum facilitator, a folder will be created so you can upload starting at Step 2.
+            </p>
+        </td>
+    </tr>
+</table>
+
+<table width="100%">
+    <tr>
+        <td colspan="2" style="text-align: center">
+
+            <br>
+
+</table>
+<center>
+    <button class="btn-error" ng-click="cancel('cancel')" title="This will cancel your proposal">
+        <i class="fa fa-times-circle"></i>
+        Cancel Proposal
+    </button>
+    <button class="btn-warn" ng-click="save()">
+        <i class="fa fa-save"></i>
+        Save
+    </button>
+    <button class="btn-warn" ng-click="save(null, 'close')" title="This will save your proposal with all data">
+        <i class="fa fa-save"></i>
+        Save and Close
+    </button>    
+    <button class="btn-success" ng-click="submit(1.1, true, 'submit')" title="Submit to CF for review"
+        ng-disabled="d.curriculumFacilitatorEMail == currentUser.Email || notValid()">
+        <i class="fa fa-arrow-circle-right"></i>
+        Save and Submit to Curriculum Facilitator for Review
+    </button>
+</center>
+<br>
+<center><div class="error" ng-show="d.curriculumFacilitatorEMail == currentUser.Email || notValid()">
+    Please complete all required fields in order to Save and Submit to Curriculum Facilitator.
+</div></center>
+<br>
+<br>
+</td>
+</tr>
+</table>

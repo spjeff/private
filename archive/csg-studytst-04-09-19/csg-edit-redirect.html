@@ -1,0 +1,11 @@
+<script type="text/javascript">
+function gup(name, url) {
+  name = name.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
+  var results = new RegExp('[\\?&]'+name+'=?([^&#]*)').exec(url || window.location.href);
+  return results == null ? null : results[1];
+}
+
+var id = gup('ID',document.location.href);
+
+document.location.href='https://study.lgvreg.com/sites/aging/SiteAssets/index.aspx#/?id='+id;
+</script>

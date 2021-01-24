@@ -1,0 +1,900 @@
+<table border="1" class="form-table" width="100%">
+    <tr>
+        <td colspan="2" class="form-header">
+            <center>
+                <h2>
+                    STEP 2 - Justification
+                </h2>
+                <h3>
+                    Submit proposal summary for initial review.
+                </h3>
+
+            </center>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="70%" style="padding-top:30px">
+
+            <table>
+                <tr>
+                    <td class="form-label">
+                        Assigned To CF:
+                    </td>
+                    <td>
+                        <!-- <input type="text" name="" id=""> -->
+                        {{d.curriculumFacilitator}}
+                        ( {{d.curriculumFacilitatorEMail}} )
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td class="form-label">Due Date for this Task:
+                    </td>
+                    <td> <input type="text" name="" id="" datepicker ng-model="d.step2.duedate">
+                        <i class="fa fa-calendar"></i>
+
+                        <div class="error">
+                            This is the date that this task is due. You will receive reminders if you have not
+                            completed this task
+                            by the above date. You can change the date if necessary.
+                        </div>
+                    </td>
+                </tr> -->
+
+                <tr>
+                    <td class="form-label">
+                        Proposal Scope:
+                    </td>
+                    <td>
+                        <textarea name="" id="" cols="60" rows="5" ng-model="d.step2.proposalScope"
+                            ng-class="{'required-field': !d.step2.proposalScope}"></textarea>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="form-label">Expected Semester for Offering:</td>
+                    <td>
+                        {{d.step2.choiceSemester}}
+                        <div style="margin-top:10px;margin-bottom:10px">
+                            <i>
+                                This is an approximate date. If your proposal only requires internal review, you may be
+                                able to offer the course or program sooner. If your proposal requires external review,
+                                it may take additional time before you will be able to offer the course or program.
+                            </i>
+                        </div>
+                        <br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">
+                        <span
+                            title="If it is currentrly offered at more than one college, select all that apply. If not select no college.">
+                            <i class="fa fa-question-circle"></i>
+                            Is the course or program offered at a sister college?
+
+                            <br>(5-digit ICCB College number)
+                    </td>
+                    <td style="vertical-align: top">
+                        <!-- <div ng-class="{'required-field': !d.step2.offerAll}"
+                            ng-hide="d.step2.offerOther || d.step2.offerDA  || d.step2.offerHW  || d.step2.offerKK  || d.step2.offerMX  || d.step2.offerOH  || d.step2.offerTR  || d.step2.offerWR">
+                            <input type="checkbox" name="" id="offerAll" value="yes" ng-model="d.step2.offerAll"><label
+                                for="offerAll">Offered District Wide</label>
+                        </div> -->
+                        <div
+                            ng-class="{'required-field': !d.step2.offerDA && !d.step2.offerHW && !d.step2.offerKK && !d.step2.offerMX && !d.step2.offerOH && !d.step2.offerTR && !d.step2.offerWR}">
+                            <!-- ng-hide="d.step2.offerOther || d.step2.offerAll" -->
+
+                            <input type="checkbox" name="" id="offerDA" ng-model="d.step2.offerDA"
+                                ng-disabled="d.step1.selectCollege == 'DA'"><label for="offerDA">DA
+                                (50806)</label>
+                            <br>
+                            <input type="checkbox" name="" id="offerHW" ng-model="d.step2.offerHW"
+                                ng-disabled="d.step1.selectCollege == 'HW'"><label for="offerHW">HW
+                                (50802)</label>
+                            <br>
+                            <input type="checkbox" name="" id="offerKK" ng-model="d.step2.offerKK"
+                                ng-disabled="d.step1.selectCollege == 'KK'"><label for="offerKK">KK
+                                (50801)</label>
+                            <br>
+                            <input type="checkbox" name="" id="offerMX" ng-model="d.step2.offerMX"
+                                ng-disabled="d.step1.selectCollege == 'MX'"><label for="offerMX">MX
+                                (50803)</label>
+                            <br>
+                            <input type="checkbox" name="" id="offerOH" ng-model="d.step2.offerOH"
+                                ng-disabled="d.step1.selectCollege == 'OH'"><label for="offerOH">OH
+                                (50805)</label>
+                            <br>
+                            <input type="checkbox" name="" id="offerTR" ng-model="d.step2.offerTR"
+                                ng-disabled="d.step1.selectCollege == 'TR'"><label for="offerTR">TR
+                                (50804)</label>
+                            <br>
+                            <input type="checkbox" name="" id="offerWR" ng-model="d.step2.offerWR"
+                                ng-disabled="d.step1.selectCollege == 'WR'"><label for="offerWR">WR
+                                (50807)</label>
+                            <br>
+                        </div>
+                        <!-- <div ng-class="{'required-field': !d.step2.offerOther}"
+                            ng-hide="d.step2.offerAll || d.step2.offerDA  || d.step2.offerHW  || d.step2.offerKK  || d.step2.offerMX  || d.step2.offerOH  || d.step2.offerTR  || d.step2.offerWR">
+                            <input type="checkbox" name="" id="offerOther" value="yes"
+                                ng-model="d.step2.offerOther"><label for="offerOther">Not offered at any sister
+                                college</label>
+                        </div> -->
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="form-label">ICCB Course Classification & Funding - PCS Code:</td>
+                    <td>
+                        <select name="" id="" ng-options="x for x in choiceICCB" ng-model="d.step2.selectICCB"
+                            ng-class="{'required-field': !d.step2.selectICCB}"></select>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="form-label">Illinois Career Cluster:</td>
+                    <td>
+
+                        <select name="" id="" ng-options="x for x in choiceICC" ng-model="d.step2.selectICC"
+                            ng-class="{'required-field': !d.step2.selectICC}"></select>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">CCC Focus Area:</td>
+                    <td>
+                        <select name="" id="" ng-options="x for x in choiceFocus" ng-model="d.step2.selectFocus"
+                            ng-class="{'required-field': !d.step2.selectFocus}"></select>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">PA Comments:</td>
+                    <td>
+                        <textarea name="" id="" cols="60" rows="5" ng-model="d.step1.comments"></textarea>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="form-label">CF Comments:</td>
+                    <td>
+                        <textarea name="" id="" cols="60" rows="5" ng-model="d.step1.cfcomment"
+                            ng-disabled="!currentCF()"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td style="font-weight:bold">Step 2 Recommenders
+                    </td>
+
+                </tr>
+
+
+                <!-- 7 more CF votes -->
+                <tr ng-show="d.step1.selectCollege == 'DA' || (d.step2.offerDA && isCourse())">
+                    <td class="form-label">Curriculum Facilitator DA:
+                        <br>
+
+                    </td>
+                    <td>
+                        <div>
+                            {{d.curriculumFacilitatorDA}} (<a
+                                href="mailto:{{d.curriculumFacilitatorEMailDA}}">{{d.curriculumFacilitatorEMailDA}}</a>)
+                            <br>
+                            <div ng-hide="isPA()">
+                                Required Comments:
+                                <br>
+                                <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsfacilitateDA"
+                                    ng-class="{'required-field': !d.step2.commentsfacilitateDA}"></textarea>
+                                <br>
+                                Recommendation:
+                                <div ng-hide="d.step2.CFDA">
+                                    <button ng-disabled="!d.step2.commentsfacilitateDA" class="btn-success"
+                                        ng-click="step2vote('CFDA','Accept')">Acceptable</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateDA" class="btn-successminor"
+                                        ng-click="step2vote('CFDA','AcceptMinor')">Acceptable
+                                        w/ Minor Concerns</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateDA" class="btn-orange"
+                                        ng-click="step2vote('CFDA','Not')">
+                                        <i class="fa fa-save"></i>
+                                        Not Acceptable
+                                    </button>
+                                </div>
+                                <div ng-hide="!d.step2.CFDA" class="vote">
+                                    <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                    {{d.step2.CFDA}}
+                                    <a ng-click="undostep2('CFDA')">(Change Recommendation)</a>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+
+
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'HW' || (d.step2.offerHW && isCourse())">
+                    <td class="form-label">Curriculum Facilitator HW:
+                        <br>
+
+                    </td>
+                    <td>
+                        <div>
+                            {{d.curriculumFacilitatorHW}} (<a
+                                href="mailto:{{d.curriculumFacilitatorEMailHW}}">{{d.curriculumFacilitatorEMailHW}}</a>)
+                            <br>
+                            <div ng-hide="isPA()">
+                                Required Comments:
+                                <br>
+                                <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsfacilitateHW"
+                                    ng-class="{'required-field': !d.step2.commentsfacilitateHW}"></textarea>
+                                <br>
+                                Recommendation:
+                                <div ng-hide="d.step2.CFHW">
+                                    <button ng-disabled="!d.step2.commentsfacilitateDA" class="btn-success"
+                                        ng-click="step2vote('CFHW','Accept')">Acceptable</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateDA" class="btn-successminor"
+                                        ng-click="step2vote('CFHW','AcceptMinor')">Acceptable
+                                        w/ Minor Concerns</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateDA" class="btn-orange"
+                                        ng-click="step2vote('CFHW','Not')">
+                                        <i class="fa fa-save"></i>
+                                        Not Acceptable
+                                    </button>
+                                </div>
+                                <div ng-hide="!d.step2.CFHW" class="vote">
+                                    <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                    {{d.step2.CFHW}}
+                                    <a ng-click="undostep2('CFHW')">(Change Recommendation)</a>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+
+
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'KK' || (d.step2.offerKK && isCourse())">
+                    <td class="form-label">Curriculum Facilitator KK:
+                        <br>
+
+                    </td>
+                    <td>
+                        <div>
+                            {{d.curriculumFacilitatorKK}} (<a
+                                href="mailto:{{d.curriculumFacilitatorEMailKK}}">{{d.curriculumFacilitatorEMailKK}}</a>)
+                            <br>
+                            <div ng-hide="isPA()">
+                                Required Comments:
+                                <br>
+                                <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsfacilitateKK"
+                                    ng-class="{'required-field': !d.step2.commentsfacilitateKK}"></textarea>
+                                <br>
+                                Recommendation:
+                                <div ng-hide="d.step2.CFKK">
+                                    <button ng-disabled="!d.step2.commentsfacilitateKK" class="btn-success"
+                                        ng-click="step2vote('CFKK','Accept')">Acceptable</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateKK" class="btn-successminor"
+                                        ng-click="step2vote('CFKK','AcceptMinor')">Acceptable
+                                        w/ Minor Concerns</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateKK" class="btn-orange"
+                                        ng-click="step2vote('CFKK','Not')">
+                                        <i class="fa fa-save"></i>
+                                        Not Acceptable
+                                    </button>
+                                </div>
+                                <div ng-hide="!d.step2.CFKK" class="vote">
+                                    <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                    {{d.step2.CFKK}}
+                                    <a ng-click="undostep2('CFKK')">(Change Recommendation)</a>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+
+
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'MX' || (d.step2.offerMX && isCourse())">
+                    <td class="form-label">Curriculum Facilitator MX:
+                        <br>
+
+                    </td>
+                    <td>
+                        <div>
+                            {{d.curriculumFacilitatorMX}} (<a
+                                href="mailto:{{d.curriculumFacilitatorEMailMX}}">{{d.curriculumFacilitatorEMailMX}}</a>)
+                            <br>
+                            <div ng-hide="isPA()">
+                                Required Comments:
+                                <br>
+                                <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsfacilitateMX"
+                                    ng-class="{'required-field': !d.step2.commentsfacilitateMX}"></textarea>
+                                <br>
+                                Recommendation:
+                                <div ng-hide="d.step2.CFMX">
+                                    <button ng-disabled="!d.step2.commentsfacilitateMX" class="btn-success"
+                                        ng-click="step2vote('CFMX','Accept')">Acceptable</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateMX" class="btn-successminor"
+                                        ng-click="step2vote('CFMX','AcceptMinor')">Acceptable
+                                        w/ Minor Concerns</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateMX" class="btn-orange"
+                                        ng-click="step2vote('CFMX','Not')">
+                                        <i class="fa fa-save"></i>
+                                        Not Acceptable
+                                    </button>
+                                </div>
+                                <div ng-hide="!d.step2.CFMX" class="vote">
+                                    <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                    {{d.step2.CFMX}}
+                                    <a ng-click="undostep2('CFMX')">(Change Recommendation)</a>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+
+
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'OH' || (d.step2.offerOH && isCourse())">
+                    <td class="form-label">Curriculum Facilitator OH:
+                        <br>
+
+                    </td>
+                    <td>
+                        <div>
+                            {{d.curriculumFacilitatorOH}} (<a
+                                href="mailto:{{d.curriculumFacilitatorEMailOH}}">{{d.curriculumFacilitatorEMailOH}}</a>)
+                            <br>
+                            <div ng-hide="isPA()">
+                                Required Comments:
+                                <br>
+                                <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsfacilitateOH"
+                                    ng-class="{'required-field': !d.step2.commentsfacilitateOH}"></textarea>
+                                <br>
+                                Recommendation:
+                                <div ng-hide="d.step2.CFOH">
+                                    <button ng-disabled="!d.step2.commentsfacilitateOH" class="btn-success"
+                                        ng-click="step2vote('CFOH','Accept')">Acceptable</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateOH" class="btn-successminor"
+                                        ng-click="step2vote('CFOH','AcceptMinor')">Acceptable
+                                        w/ Minor Concerns</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateOH" class="btn-orange"
+                                        ng-click="step2vote('CFOH','Not')">
+                                        <i class="fa fa-save"></i>
+                                        Not Acceptable
+                                    </button>
+                                </div>
+                                <div ng-hide="!d.step2.CFOH" class="vote">
+                                    <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                    {{d.step2.CFOH}}
+                                    <a ng-click="undostep2('CFOH')">(Change Recommendation)</a>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+
+
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'TR' || (d.step2.offerTR && isCourse())">
+                    <td class="form-label">Curriculum Facilitator TR:
+                        <br>
+
+                    </td>
+                    <td>
+                        <div>
+                            {{d.curriculumFacilitatorTR}} (<a
+                                href="mailto:{{d.curriculumFacilitatorEMailTR}}">{{d.curriculumFacilitatorEMailTR}}</a>)
+                            <br>
+                            <div ng-hide="isPA()">
+                                Required Comments:
+                                <br>
+                                <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsfacilitateTR"
+                                    ng-class="{'required-field': !d.step2.commentsfacilitateDA}"></textarea>
+                                <br>
+                                Recommendation:
+                                <div ng-hide="d.step2.CFTR">
+                                    <button ng-disabled="!d.step2.commentsfacilitateTR" class="btn-success"
+                                        ng-click="step2vote('CFTR','Accept')">Acceptable</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateTR" class="btn-successminor"
+                                        ng-click="step2vote('CFTR','AcceptMinor')">Acceptable
+                                        w/ Minor Concerns</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateTR" class="btn-orange"
+                                        ng-click="step2vote('CFTR','Not')">
+                                        <i class="fa fa-save"></i>
+                                        Not Acceptable
+                                    </button>
+                                </div>
+                                <div ng-hide="!d.step2.CFTR" class="vote">
+                                    <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                    {{d.step2.CFTR}}
+                                    <a ng-click="undostep2('CFTR')">(Change Recommendation)</a>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+
+
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'WR' || (d.step2.offerWR && isCourse())">
+                    <td class="form-label">Curriculum Facilitator WR:
+                        <br>
+
+                    </td>
+                    <td>
+                        <div>
+                            {{d.curriculumFacilitatorWR}} (<a
+                                href="mailto:{{d.curriculumFacilitatorEMailWR}}">{{d.curriculumFacilitatorEMailWR}}</a>)
+                            <br>
+                            <div ng-hide="isPA()">
+                                Required Comments:
+                                <br>
+                                <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsfacilitateWR"
+                                    ng-class="{'required-field': !d.step2.commentsfacilitateWR}"></textarea>
+                                <br>
+                                Recommendation:
+                                <div ng-hide="d.step2.CFWR">
+                                    <button ng-disabled="!d.step2.commentsfacilitateWR" class="btn-success"
+                                        ng-click="step2vote('CFWR','Accept')">Acceptable</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateWR" class="btn-successminor"
+                                        ng-click="step2vote('CFWR','AcceptMinor')">Acceptable
+                                        w/ Minor Concerns</button>
+                                    <button ng-disabled="!d.step2.commentsfacilitateWR" class="btn-orange"
+                                        ng-click="step2vote('CFWR','Not')">
+                                        <i class="fa fa-save"></i>
+                                        Not Acceptable
+                                    </button>
+                                </div>
+                                <div ng-hide="!d.step2.CFWR" class="vote">
+                                    <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                    {{d.step2.CFWR}}
+                                    <a ng-click="undostep2('CFWR')">(Change Recommendation)</a>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+
+
+                    </td>
+                </tr>
+
+
+
+                <!-- VP -->
+                <tr ng-show="d.step1.selectCollege == 'DA' || (d.step2.offerDA && isProgram())">
+                    <td class="form-label">Vice-President (DA):
+
+                    </td>
+                    <td>
+                        {{d.vpDA}} (<a href="mailto:{{d.vpEMailDA}}">{{d.vpEMailDA}}</a>)
+                        <br>
+                        <div ng-hide="isPA()">
+                            Required Comment:
+                            <br>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsVPDA"
+                                ng-class="{'required-field': !d.step2.commentsVPDA}"></textarea>
+                            <br>
+                            Recommendation:
+                            <br>
+                            <div ng-hide="d.step2.VPDA">
+                                <button ng-disabled="!d.step2.commentsVPDA" class="btn-success"
+                                    ng-click="step2vote('VPDA','Accept')">Acceptable</button>
+                                <button ng-disabled="!d.step2.commentsVPDA" class="btn-successminor"
+                                    ng-click="step2vote('VPDA','AcceptMinor')">Acceptable
+                                    w/ Minor Concerns</button>
+                                <button ng-disabled="!d.step2.commentsVPDA" class="btn-orange"
+                                    ng-click="step2vote('VPDA','Not')" title="Proposal returns to step 1">
+                                    <i class="fa fa-save"></i>
+                                    Not Acceptable
+                                </button>
+                            </div>
+                            <div ng-hide="!d.step2.VPDA" class="vote">
+                                <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                {{d.step2.VPDA}}
+                                <a ng-click="undostep2('VPDA')">(Change Recommendation)</a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'HW' || (d.step2.offerHW && isProgram())">
+                    <td class="form-label">Vice-President (HW):
+
+                    </td>
+                    <td>
+                        {{d.vpHW}} (<a href="mailto:{{d.vpEMailHW}}">{{d.vpEMailHW}}</a>)
+                        <br>
+                        <div ng-hide="isPA()">
+                            Required Comment:
+                            <br>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsVPHW"
+                                ng-class="{'required-field': !d.step2.commentsVPHW}"></textarea>
+                            <br>
+                            Recommendation:
+                            <br>
+                            <div ng-hide="d.step2.VPHW">
+                                <button ng-disabled="!d.step2.commentsVPHW" class="btn-success"
+                                    ng-click="step2vote('VPHW','Accept')">Acceptable</button>
+                                <button ng-disabled="!d.step2.commentsVPHW" class="btn-successminor"
+                                    ng-click="step2vote('VPHW','AcceptMinor')">Acceptable
+                                    w/ Minor Concerns</button>
+                                <button ng-disabled="!d.step2.commentsVPHW" class="btn-orange"
+                                    ng-click="step2vote('VPHW','Not')" title="Proposal returns to step 1">
+                                    <i class="fa fa-save"></i>
+                                    Not Acceptable
+                                </button>
+                            </div>
+                            <div ng-hide="!d.step2.VPHW" class="vote">
+                                <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                {{d.step2.VPHW}}
+                                <a ng-click="undostep2('VPHW')">(Change Recommendation)</a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'KK' || (d.step2.offerKK && isProgram())">
+                    <td class="form-label">Vice-President (KK):
+
+                    </td>
+                    <td>
+                        {{d.vpKK}} (<a href="mailto:{{d.vpEMailKK}}">{{d.vpEMailKK}}</a>)
+                        <br>
+                        <div ng-hide="isPA()">
+                            Required Comment:
+                            <br>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsVPKK"
+                                ng-class="{'required-field': !d.step2.commentsVPKK}"></textarea>
+                            <br>
+                            Recommendation:
+                            <br>
+                            <div ng-hide="d.step2.VPKK">
+                                <button ng-disabled="!d.step2.commentsVPKK" class="btn-success"
+                                    ng-click="step2vote('VPKK','Accept')">Acceptable</button>
+                                <button ng-disabled="!d.step2.commentsVPKK" class="btn-successminor"
+                                    ng-click="step2vote('VPKK','AcceptMinor')">Acceptable
+                                    w/ Minor Concerns</button>
+                                <button ng-disabled="!d.step2.commentsVPKK" class="btn-orange"
+                                    ng-click="step2vote('VPKK','Not')" title="Proposal returns to step 1">
+                                    <i class="fa fa-save"></i>
+                                    Not Acceptable
+                                </button>
+                            </div>
+                            <div ng-hide="!d.step2.VPKK" class="vote">
+                                <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                {{d.step2.VPKK}}
+                                <a ng-click="undostep2('VPKK')">(Change Recommendation)</a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'MX' || (d.step2.offerMX && isProgram())">
+                    <td class="form-label">Vice-President (MX):
+
+                    </td>
+                    <td>
+                        {{d.vpMX}} (<a href="mailto:{{d.vpEMailMX}}">{{d.vpEMailMX}}</a>)
+                        <br>
+                        <div ng-hide="isPA()">
+                            Required Comment:
+                            <br>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsVPMX"
+                                ng-class="{'required-field': !d.step2.commentsVPMX}"></textarea>
+                            <br>
+                            Recommendation:
+                            <br>
+                            <div ng-hide="d.step2.VPMX">
+                                <button ng-disabled="!d.step2.commentsVPMX" class="btn-success"
+                                    ng-click="step2vote('VPMX','Accept')">Acceptable</button>
+                                <button ng-disabled="!d.step2.commentsVPMX" class="btn-successminor"
+                                    ng-click="step2vote('VPMX','AcceptMinor')">Acceptable
+                                    w/ Minor Concerns</button>
+                                <button ng-disabled="!d.step2.commentsVPMX" class="btn-orange"
+                                    ng-click="step2vote('VPMX','Not')" title="Proposal returns to step 1">
+                                    <i class="fa fa-save"></i>
+                                    Not Acceptable
+                                </button>
+                            </div>
+                            <div ng-hide="!d.step2.VPMX" class="vote">
+                                <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                {{d.step2.VPMX}}
+                                <a ng-click="undostep2('VPMX')">(Change Recommendation)</a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'OH' || (d.step2.offerOH && isProgram())">
+                    <td class="form-label">Vice-President (OH):
+
+                    </td>
+                    <td>
+                        {{d.vpOH}} (<a href="mailto:{{d.vpEMailOH}}">{{d.vpEMailOH}}</a>)
+                        <br>
+                        <div ng-hide="isPA()">
+                            Required Comment:
+                            <br>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsVPOH"
+                                ng-class="{'required-field': !d.step2.commentsVPOH}"></textarea>
+                            <br>
+                            Recommendation:
+                            <br>
+                            <div ng-hide="d.step2.VPOH">
+                                <button ng-disabled="!d.step2.commentsVPOH" class="btn-success"
+                                    ng-click="step2vote('VPOH','Accept')">Acceptable</button>
+                                <button ng-disabled="!d.step2.commentsVPOH" class="btn-successminor"
+                                    ng-click="step2vote('VPOH','AcceptMinor')">Acceptable
+                                    w/ Minor Concerns</button>
+                                <button ng-disabled="!d.step2.commentsVPOH" class="btn-orange"
+                                    ng-click="step2vote('VPOH','Not')" title="Proposal returns to step 1">
+                                    <i class="fa fa-save"></i>
+                                    Not Acceptable
+                                </button>
+                            </div>
+                            <div ng-hide="!d.step2.VPOH" class="vote">
+                                <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                {{d.step2.VPOH}}
+                                <a ng-click="undostep2('VPOH')">(Change Recommendation)</a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'TR' || (d.step2.offerTR && isProgram())">
+                    <td class="form-label">Vice-President (TR):
+
+                    </td>
+                    <td>
+                        {{d.vpTR}} (<a href="mailto:{{d.vpEMailTR}}">{{d.vpEMailTR}}</a>)
+                        <br>
+                        <div ng-hide="isPA()">
+                            Required Comment:
+                            <br>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsVPTR"
+                                ng-class="{'required-field': !d.step2.commentsVPTR}"></textarea>
+                            <br>
+                            Recommendation:
+                            <br>
+                            <div ng-hide="d.step2.VPTR">
+                                <button ng-disabled="!d.step2.commentsVPTR" class="btn-success"
+                                    ng-click="step2vote('VPTR','Accept')">Acceptable</button>
+                                <button ng-disabled="!d.step2.commentsVPTR" class="btn-successminor"
+                                    ng-click="step2vote('VPTR','AcceptMinor')">Acceptable
+                                    w/ Minor Concerns</button>
+                                <button ng-disabled="!d.step2.commentsVPTR" class="btn-orange"
+                                    ng-click="step2vote('VPTR','Not')" title="Proposal returns to step 1">
+                                    <i class="fa fa-save"></i>
+                                    Not Acceptable
+                                </button>
+                            </div>
+                            <div ng-hide="!d.step2.VPTR" class="vote">
+                                <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                {{d.step2.VPTR}}
+                                <a ng-click="undostep2('VPTR')">(Change Recommendation)</a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr ng-show="d.step1.selectCollege == 'WR' || (d.step2.offerWR && isProgram())">
+                    <td class="form-label">Vice-President (WR):
+
+                    </td>
+                    <td>
+                        {{d.vpWR}} (<a href="mailto:{{d.vpEMailWR}}">{{d.vpEMailWR}}</a>)
+                        <br>
+                        <div ng-hide="isPA()">
+                            Required Comment:
+                            <br>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.commentsVPWR"
+                                ng-class="{'required-field': !d.step2.commentsVPWR}"></textarea>
+                            <br>
+                            Recommendation:
+                            <br>
+                            <div ng-hide="d.step2.VPWR">
+                                <button ng-disabled="!d.step2.commentsVPWR" class="btn-success"
+                                    ng-click="step2vote('VPWR','Accept')">Acceptable</button>
+                                <button ng-disabled="!d.step2.commentsVPWR" class="btn-successminor"
+                                    ng-click="step2vote('VPWR','AcceptMinor')">Acceptable
+                                    w/ Minor Concerns</button>
+                                <button ng-disabled="!d.step2.commentsVPWR" class="btn-orange"
+                                    ng-click="step2vote('VPWR','Not')" title="Proposal returns to step 1">
+                                    <i class="fa fa-save"></i>
+                                    Not Acceptable
+                                </button>
+                            </div>
+                            <div ng-hide="!d.step2.VPWR" class="vote">
+                                <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                {{d.step2.VPWR}}
+                                <a ng-click="undostep2('VPWR')">(Change Recommendation)</a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+
+
+
+                <!-- Designee -->
+                <tr>
+                    <td class="form-label">
+                        <span style="white-space: nowrap">
+                            <span
+                                title="Select your Department Chair or an Academic Discipline Designee across the District that will be supportive and knowledgeable of this proposal.">
+                                <i class="fa fa-question-circle"></i>
+                                Academic or Department Discipline Designee:
+                            </span>
+                        </span>
+                        <br>
+
+                    </td>
+                    <td>
+
+                        <input type="text" name="" id="" ng-model="d.step2.designeepeople">
+                        <div ng-hide="isPA()">
+                            <br>
+                            Required Comment:
+                            <br>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.designee"
+                                ng-class="{'required-field': !d.step2.designee}"></textarea>
+                            <br>
+                            Recommendation:
+                            <div ng-hide="d.step2.DES">
+                                <button ng-disabled="!d.step2.designee" class="btn-success"
+                                    ng-click="step2vote('DES','Accept')">Acceptable</button>
+                                <button ng-disabled="!d.step2.designee" class="btn-successminor"
+                                    ng-click="step2vote('DES','AcceptMinor')">Acceptable
+                                    w/ Minor Concerns</button>
+                                <button ng-disabled="!d.step2.designee" class="btn-orange"
+                                    ng-click="step2vote('DES','Not')" title="Proposal returns to step 1">
+                                    <i class="fa fa-save"></i>
+                                    Not Acceptable
+                                </button>
+                            </div>
+                            <div ng-hide="!d.step2.DES" class="vote">
+                                <img src="https://cccedu.sharepoint.edu/_layouts/images/check.gif" alt="">
+                                {{d.step2.DES}}
+                                <a ng-click="undostep2('DES')">(Change Recommendation)</a>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+        <td width="30%" style="padding-top:30px;padding-left:20px">
+
+
+            <div class="form-label" style="text-align: left">Attach Supportive Documentation:<div>
+                    <div class="help-text">
+                        Documentation is optional at this step.
+                        See PACC Supportive Documentation Folder for PACC Documentation Guidelines PDF in Document
+                        Library.
+                    </div>
+
+                    <div ng-show="!id">
+                        <div
+                            style="background-color:lightblue; border:1px; border-color: black; padding:5px; margin-top:10px;">
+
+                            Please save PACC Proposal <button class="btn-warn" ng-click="save()">
+                                <i class="fa fa-save"></i>
+                                Save
+                            </button> to begin attaching supportive documentation.
+                            <br>
+                        </div>
+
+                    </div>
+
+
+                    <!-- File Upload -->
+                    <div ng-show="id">
+                        <div class="help-text">
+                            <br>
+                            Click "Choose File" to select file. Once file is selected, click "Upload" to complete the
+                            process.
+                            You can only upload one file at a time.
+                        </div>
+                        <table class="upload-table">
+                            <tr>
+                                <td><input type="file" name="uploadFile" id="uploadFile" class="btn-upload"
+                                        style="padding-left:3px; padding-top:3px;"></td>
+                                <td>
+                                    <button ng-click="upload()" class="btn-upload">
+                                        <i class="fa fa-upload" aria-hidden="true"></i> Upload
+                                    </button></td>
+                            </tr>
+                        </table>
+
+
+                        <button ng-click="viewFolder()" class="btn-upload" ng-hide="!id">
+                            <i class="fa fa-folder" aria-hidden="true"></i>
+                            View Folder
+                        </button>
+
+                        <!-- File Table -->
+                        <table class="table-files" ng-show="uploadFiles.length">
+                            <tr>
+                                <td>Icon</td>
+                                <td>Filename</td>
+                                <td>Created</td>
+                            </tr>
+                            <tr ng-repeat="f in uploadFiles">
+                                <td>
+                                    <img ng-src="{{getIcon(f.Name)}}" alt="" />
+                                </td>
+                                <td>
+                                    <a href="{{f.ServerRelativeUrl}}">{{f.Name}}</a>
+
+
+                                </td>
+                                <td>{{f.TimeCreated.substring(0,10)}}</td>
+                            </tr>
+                        </table>
+                    </div>
+        </td>
+    </tr>
+</table>
+
+<table width="100%">
+    <tr>
+        <td colspan="2" style="text-align: center">
+
+            <br>
+
+            <button class="btn-upload" ng-click="cancel()">
+                <i class="fa fa-times-circle"></i>
+                Close Form
+            </button>
+            <button class="btn-warn" ng-click="save()">
+                <i class="fa fa-save"></i>
+                Save
+            </button>
+            <button class="btn-warn" ng-click="save(null, 'close')" title="This will save your proposal with all data">
+                <i class="fa fa-save"></i>
+                Save and Close
+            </button>
+            <button class="btn-warn" ng-click="submit(1, false, 'tabled')" ng-show="currentCF()"
+                title="Proposal dormant">
+                <i class="fa fa-save"></i>
+                Table
+            </button>
+            <br>
+            <br>
+        </td>
+    </tr>
+</table>

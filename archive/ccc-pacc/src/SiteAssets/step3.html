@@ -1,0 +1,503 @@
+<div ng-hide="saveHide">
+    <table border="1" class="form-table" width="100%">
+        <tr>
+            <td colspan="2" class="form-header">
+                <center>
+                    <h2>
+                        STEP 3 - DEVELOPMENT
+                    </h2>
+                    <h3>
+                        College Development and Review
+                    </h3>
+                    <div>
+                        Complete the required fields and submit a Proposal Rationale (summarizing feasibility,
+                        curriculum, and cost).
+                        Once this step is submitted for review, your college Curriculum Facilitator (CF) will receive an
+                        automated email notification and will guide you through the process.
+                    </div>
+
+                </center>
+            </td>
+        </tr>
+
+        <tr>
+            <td width="70%" style="padding-top:30px">
+
+                <table>
+
+
+                    <tr>
+                        <td class="form-label">
+                            Principal Advocate:
+                        </td>
+                        <td>
+                            {{d.step1.advocateTitle}} (<a
+                                href="mailto:{{d.step1.advocateEmail}}">{{d.step1.advocateEmail}}</a>)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">
+
+                            <span
+                                title="Please select the type of PACC proposal. Refer to PACC documentation for options and requirements.">
+                                <i class="fa fa-question-circle"></i>
+
+                                Type of PACC Proposal:</td>
+                        <td>
+
+                            <select name="" id="" ng-options="x for x in choiceType" ng-model="d.step1.selectType"
+                                ng-class="{'required-field': !d.step1.selectType}" ng-disabled="isReadOnly()"></select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">
+
+
+
+                            <div
+                                ng-show="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                                <span
+                                    title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 40 characters. Sample Course Name and Number: ENG 101.">
+                                    <i class="fa fa-question-circle"></i>
+                                    Course Name and Number:</div>
+                            <div
+                                ng-hide="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                                <span
+                                    title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 40 characters. Sample Program Name: BC-Web Development.">
+                                    <i class="fa fa-question-circle"></i>
+                                    Program Name:</div>
+
+                            </span>
+
+                        </td>
+                        <td>
+                            <span
+                                title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 40 characters.">
+                                <input type="text" name="" id="" ng-model="d.step1.pacctitle"
+                                    ng-class="{'required-field': !d.step1.pacctitle}" ng-disabled="isReadOnly()"
+                                    maxlength="40">
+                            </span>
+                        </td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td style="text-align: right">
+                            <div>
+                                <div class="form-label">
+                                    Required Step 3 Rationale:
+                                </div>
+
+                                At this Step you need to download and complete Step 3 Rationale. Once complete, upload
+                                to
+                                the supportive documentation folder. If there are multiple colleges uploading, designate
+                                your file with your college two-letter abbreviation.
+                                <br>
+                                <br>
+                            </div>
+                        </td>
+                        <td>
+                            <button ng-click="downloadTemplate()" class="btn-upload" ng-hide="!id"
+                                style="margin-left:10px;">
+                                <i class="fa fa-download" style="padding-right:15px;"></i>
+                                <i class="fa fa-file-word-o" style="padding-right:15px;"></i>
+                                Download Step 3 Rational (DOCX)
+                            </button>
+                            <br>
+                            <br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right">
+                            <div class="form-label">
+                                Participating Sister College Required Step 3 Rationale:
+                            </div>
+                            Participating sister college, as designated in Step 2, must
+                            upload to the suppportive documentation folder and
+                            designate using their college two-letter abbreviation.
+                        </td>
+                        <td>
+                            <div ng-show="d.step2.offerDA">
+                                <input type="checkbox" name="" id="offerDA" ng-model="d.step2.offerDA" disabled "><label
+                                    for=" offerDA">DA
+                                (50806)</label>
+                                <br>
+                            </div>
+                            <div ng-show="d.step2.offerHW">
+                                <input type="checkbox" name="" id="offerHW" ng-model="d.step2.offerHW" disabled
+                                    ng-show="d.step2.offerHW"><label for="offerHW">HW
+                                    (50802)</label>
+                                <br>
+                            </div>
+                            <div ng-show="d.step2.offerKK">
+                                <input type="checkbox" name="" id="offerKK" ng-model="d.step2.offerKK" disabled
+                                    ng-show="d.step2.offerKK"><label for="offerKK">KK
+                                    (50801)</label>
+                                <br>
+                            </div>
+                            <div ng-show="d.step2.offerMX">
+                                <input type="checkbox" name="" id="offerMX" ng-model="d.step2.offerMX" disabled
+                                    ng-show="d.step2.offerMX"><label for="offerMX">MX
+                                    (50803)</label>
+                                <br></div>
+                            <div ng-show="d.step2.offerOH">
+                                <input type="checkbox" name="" id="offerOH" ng-model="d.step2.offerOH" disabled
+                                    ng-show="d.step2.offerOH"><label for="offerOH">OH
+                                    (50805)</label>
+                                <br>
+                            </div>
+                            <div ng-show="d.step2.offerTR">
+                                <input type="checkbox" name="" id="offerTR" ng-model="d.step2.offerTR" disabled
+                                    ng-show="d.step2.offerTR"><label for="offerTR">TR
+                                    (50804)</label>
+                                <br>
+                            </div>
+                            <div ng-show="d.step2.offerWR">
+                                <input type="checkbox" name="" id="offerWR" ng-model="d.step2.offerWR" disabled
+                                    ng-show="d.step2.offerWR"><label for="offerWR">WR
+                                    (50807)</label>
+                                <br>
+                                <br>
+                            </div>
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right" style="margin-top:20px">
+                            <div class="form-label">
+                                Proposal Team Members:
+                            </div>
+                            Please list all CCC members that have participated in the
+                            development and/or review of this proposal. Make sure to
+                            have at least one colleague from participating sister
+                            colleges. Make sure to upload email correspondence (as PDF
+                            documents) to your supportive documentation folder.
+                        </td>
+                        <td>
+                            <textarea name="" id="" cols="60" rows="5" ng-model="d.step3.propteam"
+                                ng-disabled="isReadOnly()"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label" style="margin-top:20px">
+
+                            <span
+                                title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal.">
+                                <i class="fa fa-question-circle"></i>
+
+                                PACC Proposal Description:
+                            </span>
+                        </td>
+                        <td>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step1.paccdesc"
+                                ng-disabled="isReadOnly()"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="margin-top:20px"></td>
+                        <td>
+                            <div style="width:400px; padding:5px; margin-bottom:20px;background-color: orange; color:white"
+                                ng-show="(d.step1.advocateEmail == d.curriculumFacilitatorEMail) || d.showAlternate">
+                                As the Principal Advocate of this proposal you cannot be the Curriculum Facilitator. The
+                                Alternate Curriculum Facilitator listed below will assist you with this proposal. </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="form-label">Your College:</td>
+                        <td>
+                            <select name="" id="" ng-options="x for x in choiceCollege" ng-model="d.step1.selectCollege"
+                                ng-change="changeCollege()" ng-class="{'required-field': !d.step1.selectCollege}"
+                                ng-disabled="isReadOnly()"></select>
+                        </td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <td class="form-label">Your Curriculum Facilitator:</td>
+                        <td>
+                            <div ng-show="d.curriculumFacilitator">
+                                {{d.curriculumFacilitator}} (
+                                <a href="mailto:{{d.curriculumFacilitatorEMail}}">{{d.curriculumFacilitatorEMail}}</a>
+                                )
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">Discipline Related to this PACC Proposal:</td>
+                        <td>
+                            <select name="" id="" ng-model="d.step1.discipline"
+                                ng-options="x.Title as x.Title for x in disciplineLiaisons"
+                                ng-class="{'required-field': !d.step1.discipline}" ng-disabled="isReadOnly()"></select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">Discipline Liaison:</td>
+                        <td>
+                            <div ng-show="d.step1.discipline">
+                                {{getLiason()[0].Liaison[0].Title}}
+                                (
+                                <a href="mailto:{{getLiason()[0].Liaison[0].Name.replace('i:0#.f|membership','')}}">
+                                    {{getLiason()[0].Liaison[0].Name.replace('i:0#.f|membership','')}}
+                                </a>
+                                )
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="form-label">Academic or Department Discipline Designee: </td>
+                        <td>
+                            <input type="text" name="" id=""" ng-model=" d.ddEMail" ng-disabled="isReadOnly()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form-label">Proposal Summary (Justification and Scope):</td>
+                        <td>
+                            <textarea name="" id="" cols="30" rows="2" ng-model="d.step2.paccsummary"
+                                ng-disabled="isReadOnly()"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">Expected Semester for Offering:</td>
+                        <td>
+                            {{d.step2.choiceSemester}}
+                            <div style="margin-top:10px;margin-bottom:10px">
+                                <i>
+                                    This is an approximate date. If your proposal only requires internal review, you may
+                                    be
+                                    able to offer the course or program sooner. If your proposal requires external
+                                    review,
+                                    it may take additional time before you will be able to offer the course or program.
+                                </i>
+                            </div>
+                            <br>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">
+                            <span
+                                title="If it is currentrly offered at more than one college, select all that apply. If not select no college.">
+                                <i class="fa fa-question-circle"></i>
+                                Is the course or program offered at a sister college?
+
+                                <br>(5-digit ICCB College number)
+                        </td>
+                        <td style="vertical-align: top">
+                            <div
+                                ng-class="{'required-field': !d.step2.offerDA && !d.step2.offerHW && !d.step2.offerKK && !d.step2.offerMX && !d.step2.offerOH && !d.step2.offerTR && !d.step2.offerWR}">
+
+                                <!-- Checkboxes -->
+                                <input type="checkbox" name="" id="offerDA" ng-model="d.step2.offerDA"
+                                    ng-disabled="d.step1.selectCollege == 'DA' || isReadOnly()"><label for="offerDA">DA
+                                    (50806)</label>
+                                <br>
+                                <input type="checkbox" name="" id="offerHW" ng-model="d.step2.offerHW"
+                                    ng-disabled="d.step1.selectCollege == 'HW' || isReadOnly()"><label for="offerHW">HW
+                                    (50802)</label>
+                                <br>
+                                <input type="checkbox" name="" id="offerKK" ng-model="d.step2.offerKK"
+                                    ng-disabled="d.step1.selectCollege == 'KK' || isReadOnly()"><label for="offerKK">KK
+                                    (50801)</label>
+                                <br>
+                                <input type="checkbox" name="" id="offerMX" ng-model="d.step2.offerMX"
+                                    ng-disabled="d.step1.selectCollege == 'MX' || isReadOnly()"><label for="offerMX">MX
+                                    (50803)</label>
+                                <br>
+                                <input type="checkbox" name="" id="offerOH" ng-model="d.step2.offerOH"
+                                    ng-disabled="d.step1.selectCollege == 'OH' || isReadOnly()"><label for="offerOH">OH
+                                    (50805)</label>
+                                <br>
+                                <input type="checkbox" name="" id="offerTR" ng-model="d.step2.offerTR"
+                                    ng-disabled="d.step1.selectCollege == 'TR' || isReadOnly()"><label for="offerTR">TR
+                                    (50804)</label>
+                                <br>
+                                <input type="checkbox" name="" id="offerWR" ng-model="d.step2.offerWR"
+                                    ng-disabled="d.step1.selectCollege == 'WR' || isReadOnly()"><label for="offerWR">WR
+                                    (50807)</label>
+                                <br>
+                            </div>
+                            <!-- <div ng-class="{'required-field': !d.step2.offerOther}"
+                                ng-hide="d.step2.offerAll || d.step2.offerDA  || d.step2.offerHW  || d.step2.offerKK  || d.step2.offerMX  || d.step2.offerOH  || d.step2.offerTR  || d.step2.offerWR">
+                                <input type="checkbox" name="" id="offerOther" value="yes"
+                                    ng-model="d.step2.offerOther"><label for="offerOther">Not offered at any sister
+                                    college</label>
+                            </div> -->
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="form-label">ICCB Course Classification & Funding - PCS Code:</td>
+                        <td>
+                            <select name="" id="" ng-options="x for x in choiceICCB" ng-model="d.step2.selectICCB"
+                                ng-class="{'required-field': !d.step2.selectICCB}" ng-disabled="isReadOnly()"></select>
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="form-label">Illinois Career Cluster:</td>
+                        <td>
+
+                            <select name="" id="" ng-options="x for x in choiceICC" ng-model="d.step2.selectICC"
+                                ng-class="{'required-field': !d.step2.selectICC}" ng-disabled="isReadOnly()"></select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">CCC Focus Area:</td>
+                        <td>
+                            <select name="" id="" ng-options="x for x in choiceFocus" ng-model="d.step2.selectFocus"
+                                ng-class="{'required-field': !d.step2.selectFocus}" ng-disabled="isReadOnly()"></select>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="form-label">PA Comments:</td>
+                        <td>
+                            <textarea name="" id="" cols="60" rows="5" ng-model="d.step1.comments"
+                                ng-disabled="isReadOnly()"></textarea>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="form-label">CF Comments:</td>
+                        <td>
+                            <textarea name="" id="" cols="60" rows="5" ng-model="d.step1.cfcomment"
+                                ng-disabled="isReadOnly() || isPA()"></textarea>
+                        </td>
+                    </tr>
+
+
+
+                </table>
+
+            </td>
+            <td width="30%" style="padding-top:30px;padding-left:20px">
+
+
+                <div class="form-label" style="text-align: left">Attach Supportive Documentation:<div>
+                        <div class="help-text">
+                            Documentation is optional at this step.
+                            See PACC Supportive Documentation Folder for PACC Documentation Guidelines PDF in Document
+                            Library.
+                        </div>
+
+                        <div ng-show="!id">
+                            <div
+                                style="background-color:lightblue; border:1px; border-color: black; padding:5px; margin-top:10px;">
+
+                                Please save PACC Proposal <button class="btn-warn" ng-click="save()">
+                                    <i class="fa fa-save"></i>
+                                    Save
+                                </button> to begin attaching supportive documentation.
+                                <br>
+                            </div>
+
+                        </div>
+
+
+                        <!-- File Upload -->
+                        <div ng-show="id">
+                            <div class="help-text">
+                                <br>
+                                Click "Choose File" to select file. Once file is selected, click "Upload" to complete
+                                the
+                                process.
+                                You can only upload one file at a time.
+                            </div>
+                            <table class="upload-table">
+                                <tr>
+                                    <td><input type="file" name="uploadFile" id="uploadFile" class="btn-upload"
+                                            style="padding-left:3px; padding-top:3px;"></td>
+                                    <td>
+                                        <button ng-click="upload()" class="btn-upload">
+                                            <i class="fa fa-upload" aria-hidden="true"></i> Upload
+                                        </button></td>
+                                </tr>
+                            </table>
+
+
+                            <button ng-click="viewFolder()" class="btn-upload" ng-hide="!id">
+                                <i class="fa fa-folder" aria-hidden="true"></i>
+                                View Folder
+                            </button>
+
+                            <!-- File Table -->
+                            <table class="table-files" ng-show="uploadFiles.length">
+                                <tr>
+                                    <td>Icon</td>
+                                    <td>Filename</td>
+                                    <td>Created</td>
+                                </tr>
+                                <tr ng-repeat="f in uploadFiles">
+                                    <td>
+                                        <img ng-src="{{getIcon(f.Name)}}" alt="" />
+                                    </td>
+                                    <td>
+                                        <a href="{{f.ServerRelativeUrl}}">{{f.Name}}</a>
+
+
+                                    </td>
+                                    <td>{{f.TimeCreated.substring(0,10)}}</td>
+                                </tr>
+                            </table>
+                        </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Buttons -->
+    <div>
+        <center>
+            <button class="btn-upload" ng-click="close()">
+                <i class="fa fa-times-circle"></i>
+                Close Form
+            </button>
+
+            <div ng-hide="isReadOnly()">
+                <button class="btn-warn" ng-click="save()" ng-hide="isCF()">
+                    <i class="fa fa-save"></i>
+                    Save
+                </button>
+                <button class="btn-warn" ng-click="save(null, 'close')"
+                    title="This will save your proposal with all data" ng-hide="isCF()">
+                    <i class="fa fa-save"></i>
+                    Save and Close
+                </button>
+                <!-- <button class="btn-warn" ng-click="submit(1, false, 'tabled')" ng-show="currentCF()"
+                    title="Proposal dormant">
+                    <i class="fa fa-save"></i>
+                    Table
+                </button> -->
+                <button class="btn-success" ng-click="submit(3.1, true, 'submit')"
+                    title="Submit to CF for Review and exit the proposal."
+                    ng-disabled="d.curriculumFacilitatorEMail == currentUser.Email || notValid()" ng-hide="isCF()">
+                    <i class="fa fa-arrow-circle-right"></i>
+                    Save and Submit to Curriculum Facilitator for Review
+                </button>
+            </div>
+        </center>
+    </div>
+</div>

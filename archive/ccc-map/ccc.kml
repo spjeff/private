@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>City Colleges of Chicago</name>
+  <description><![CDATA[CCC includes seven colleges: Richard J. Daley College, Kennedy-King College, Malcolm X College, Olive-Harvey College, Harry S Truman College, Harold Washington College and Wilbur Wright College.&nbsp;
+The system also oversees: the Washburne Culinary Institute, the French Pastry School, two restaurants, five Child Development Centers, the Center for Distance Learning, the Workforce Institute, the public broadcast station WYCC-TV Channel 20, radio station WKKC-FM 89.3FM and over 50 Adult Education sites throughout the city. For more information about City Colleges of Chicago,
+call: (773) COLLEGE or visit http://ccc.edu]]></description>
+  <Style id="style13">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_TR_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style5">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_DA_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style9">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/colleges/PublishingImages/google_pins_teardrop2_Google_pin_HWC2.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_KKC_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style4">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_MXC_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style2">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_WR_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style3">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_OHC_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style15">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_WR_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style11">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_KKC_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style10">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_KKC_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_TR_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style8">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_KKC_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style12">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_OHC_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style14">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_MXC_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style7">
+    <IconStyle>
+      <Icon>
+        <href>http://www.ccc.edu/PublishingImages/Map%20Pins/google_pins_teardrop_Google_pin_DA_30x30.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Harry S Truman College</name>
+    <description><![CDATA[1145 W. Wilson Ave<div>Chicago, IL 60640</div><div><a href="http://www.ccc.edu/truman" target="_blank">http://www.ccc.edu/truman</a></div><div><br><a href="http://maps.google.com/maps/place?ftid=0x880fd22d5fbb802b:0xfa60c152ad21273f&amp;q=1145+W.+Wilson,+Chicago,+il&amp;hl=en&amp;authuser=0&amp;cad=src:ppiwlink&amp;ei=fte2TpjRNIGINqeEzPwI&amp;dtab=5" target="_blank"><img src="http://cbk0.google.com/cbk?output=thumbnail&amp;w=90&amp;h=68&amp;ll=41.965369,-87.659017&amp;thumb=0"></a></div>]]></description>
+    <styleUrl>#style13</styleUrl>
+    <Point>
+      <coordinates>-87.659019,41.965370,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Richard J. Daley College</name>
+    <description><![CDATA[<div><font face="arial" size="2">7500 S Pulaski Rd</font></div><font face="arial" size="2">Chicago, IL 60652</font><div><font face="arial" size="2"><a href="http://ccc.edu/daley" target="_blank">http://www.ccc.edu/daley</a></font></div>]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-87.723900,41.756180,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Harold Washington College</name>
+    <description><![CDATA[<div style="font-size:10pt"><font face="arial" size="2">30 E Lake St</font></div><font face="arial" size="2" style="font-size:10pt">Chicago, IL 60601</font><div><font size="2"><a href="http://ccc.edu/colleges/washington/pages/default.aspx" target="_blank">http://www.ccc.edu/washington</a><br></font></div>]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>-87.626419,41.885857,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Kennedy-King College</name>
+    <description><![CDATA[<div dir="ltr">6301 S. Halsted Street<br>Chicago, IL 60201<br>773.602.5000<br><a href="http://www.ccc.edu/PublishingImages/pins/KKC_pin.png" target="_blank">http://www.ccc.edu/kennedyking</a></div>]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-87.643967,41.778290,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Malcolm X College</name>
+    <description><![CDATA[<div><font face="arial" size="2">1900 W Van Buren St</font></div><font face="arial" size="2">Chicago, IL 60612</font><br>
+<a href="http://www.ccc.edu/malcolmx" target="_blank">ccc.edu/malcolmx</a>]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-87.674217,41.876263,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Wilbur Wright College</name>
+    <description><![CDATA[<div><font size="2" face="georgia">4300 N Narragansett Ave</font></div><font size="2" face="georgia">Chicago, IL 60634</font><div><font size="2" face="georgia"><a href="http://www.ccc.edu/wilburwright" target="_blank">www.ccc.edu/wilburwright</a></font></div>]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-87.788322,41.958820,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Olive-Harvey College</name>
+    <description><![CDATA[<div style="font-family:arial;font-size:10pt"><span style="font-size:small">10001 S Woodlawn Ave</span></div><font face="arial" size="2">Chicago, IL 60628</font><br><br>]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>-87.590378,41.714104,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Humboldt Park Vocational Center</name>
+    <description><![CDATA[<div><font face="arial" size="2"><b>Humboldt Park Vocational Center</b></font></div><div style="font-family:arial;font-size:10pt"><font face="arial" size="2">1645 N California Ave</font></div><font face="arial" size="2" style="font-family:arial;font-size:10pt">Chicago, IL 60647</font><div><span style="line-height:18px;background-color:rgb(255, 255, 255)">773-489-8989</span></div><div><a href="http://ccc.edu/colleges/wright/departments/Pages/Humboldt-Park-Vocational-Education-Center.aspx" target="_blank">website</a><br><a href="http://maps.google.com/maps/place?ftid=0x880fd2a0b366f695:0x323b75b2e55287c9&amp;q=1645+N.+California+Ave.,+Chicago,+IL+60647&amp;hl=en&amp;authuser=0&amp;cad=src:ppiwlink&amp;ei=6-G2TovtC4HwM-zb5OwE&amp;dtab=5" style="font-family:arial;font-size:10pt" target="_blank"><img src="http://cbk0.google.com/cbk?output=thumbnail&amp;w=90&amp;h=68&amp;ll=41.911598,-87.696658&amp;thumb=0"></a></div>]]></description>
+    <styleUrl>#style15</styleUrl>
+    <Point>
+      <coordinates>-87.696655,41.911598,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Parrot Cage Restaurant</name>
+    <description><![CDATA[<div dir="ltr">7059 S. South Shore Drive<br>Chicago, IL 60649</div>]]></description>
+    <styleUrl>#style11</styleUrl>
+    <Point>
+      <coordinates>-87.563866,41.768265,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Dawson Technical Institute</name>
+    <description><![CDATA[<div dir="ltr">3901 South State Street<br>Chicago, IL 60609</div>]]></description>
+    <styleUrl>#style10</styleUrl>
+    <Point>
+      <coordinates>-87.626221,41.823517,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lakeview Learning Center</name>
+    <description><![CDATA[<div dir="ltr">3310 North Clark Street<br>Chicago, IL 60657<br>(773) 907-4400</div>]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-87.667557,41.971420,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Sikia Restaurant</name>
+    <description><![CDATA[<div><span dir="ltr" style="display:inline;margin-bottom:1px;font-family:arial, sans-serif;line-height:18px;background-color:rgb(255, 255, 255)">740 West 63rd Street, Chicago, IL 60621-2025</span><span style="font-family:arial, sans-serif;line-height:18px;background-color:rgb(255, 255, 255)"></span><div style="margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;font-family:arial, sans-serif;line-height:18px;background-color:rgb(255, 255, 255)"></div><span style="display:block;font-family:arial, sans-serif;line-height:18px;background-color:rgb(255, 255, 255)"><span dir="ltr">(773) 602-5200</span></span></div><a href="http://maps.google.com/maps/place?ftid=0x880e2ee3c3b5ba15:0x1b7f99ffb653afb&amp;q=740+West+63rd+Street,+Chicago,+IL+60621-2025+&amp;hl=en&amp;authuser=0&amp;cad=src:ppiwlink&amp;ei=A--2TqLsDZiWMILQzP4E&amp;dtab=5" target="_blank"><img src="http://cbk0.google.com/cbk?output=thumbnail&amp;w=90&amp;h=68&amp;ll=41.779930,-87.644155&amp;thumb=0"></a>]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>-87.644157,41.779930,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>South Chicago Learning Center</name>
+    <description><![CDATA[<div dir="ltr"><b>South Chicago Learning Center</b><br>3055 E. 92 Street<br>Chicago, IL 60617<br>(773) 291-6770<br>&nbsp;</div><div dir="ltr"><a href="http://ccc.edu/colleges/olive-harvey/departments/Pages/South-Chicago-Learning-Center.aspx" target="_blank">website</a></div>]]></description>
+    <styleUrl>#style12</styleUrl>
+    <Point>
+      <coordinates>-87.549126,41.727985,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>West Side Learning Center</name>
+    <description><![CDATA[<div dir="ltr">West Side Learning Center<br>4624 W Madison St<br>Chicago, IL 60624<br>Phone: (312) 850-7420<br><a href="http://ccc.edu/colleges/malcolm-x/departments/Pages/Westside-Learning-Center.aspx" target="_blank">website</a></div>]]></description>
+    <styleUrl>#style14</styleUrl>
+    <Point>
+      <coordinates>-87.741180,41.880882,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Arturo Velasquez Institute</name>
+    <description><![CDATA[<div dir="ltr"><font face="arial" size="2"><b>Arturo Velasquez Institute</b></font></div><div dir="ltr"><font face="arial" size="2">2800 S Western Ave</font></div><div dir="ltr" style="font-family:arial;font-size:10pt">Chicago, IL 60608</div><div dir="ltr" style="font-family:arial;font-size:10pt"><span style="line-height:18px;background-color:rgb(255, 255, 255)">773-843-4500</span></div><div dir="ltr" style="font-family:arial;font-size:10pt"><a href="http://ccc.edu/colleges/daley/departments/Pages/Arturo-Velasquez-Institute.aspx" target="_blank">website</a><br><br><br>&nbsp;</div>]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>-87.685287,41.839527,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

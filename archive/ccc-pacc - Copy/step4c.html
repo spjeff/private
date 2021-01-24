@@ -1,0 +1,223 @@
+<table border="1" class="form-table" width="100%">
+    <tr>
+        <td colspan="2" class="form-header">
+            <center>
+                <h2>
+                    STEP 4.3 - Post JCDC Decision
+                </h2>
+
+
+                <h3>
+
+                </h3>
+
+            </center>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td width="70%" style="padding-top:30px">
+
+            <table>
+                <!-- <tr>
+                    <td class="form-label">
+                        Assigned To:
+                    </td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-label">Due Date for this task:
+                        <div class="help-text">
+                            Insert a tracking title for administrative purposes. The PA or CF can change the title
+                            during Step 2.
+                            Provide a simple title, not a description of the proposal.
+                        </div>
+                    </td>
+                    <td>
+                        <input type="text" name="" id="" datepicker ng-model="d.step3.due">
+                        <i class="fa fa-calendar"></i>
+                        <div class="error">
+                            This is the date that this task is due. You will receive reminders if you have not
+                            completed this task
+                            by the above date. You can change the date if necessary.
+                        </div>
+                    </td>
+                </tr> -->
+
+                <tr>
+                    <td class="form-label">
+
+                        <div
+                            ng-show="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                            <span
+                                title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters. Sample Course Name and Number: ENG 101.">
+                                <i class="fa fa-question-circle"></i>
+                                Course Name and Number:</div>
+                        <div
+                            ng-hide="d.step1.selectType == 'New Course' || d.step1.selectType == 'Changes to Existing Course'">
+                            <span
+                                title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters. Sample Program Name: BC-Web Development.">
+                                <i class="fa fa-question-circle"></i>
+                                Program Name:</div>
+
+                        </span>
+
+                    </td>
+                    <td>
+                        <span
+                            title="Insert a tracking title for administrative purposes. The PA or CF can change the title during Step 2. Provide a simple title, not a description of the proposal. Limit 60 characters.">
+                            <input disabled type="text" name="" id="" ng-model="d.step1.pacctitle"
+                                ng-class="{'required-field': !d.step1.pacctitle}">
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="form-label">JCDC Comments:</td>
+                    <td>
+                        <textarea name="" id="" cols="60" rows="5" ng-model="d.step4.jcdcComments"></textarea>
+                        <br>
+
+                    </td>
+                </tr>
+
+
+
+
+
+                <!-- <tr>
+                    <td class="form-label">My Previous Comments:</td>
+                    <td>
+
+                    </td>
+                </tr> -->
+
+
+                <!-- <tr>
+                    <td class="form-label">Academic or Department Discipline Designee:</td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-label">President or VP or Dean or Designee:</td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-label">Curriculum Committee Chairperson:</td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                </tr> -->
+            </table>
+
+        </td>
+        <td width="30%" style="padding-top:30px;padding-left:20px">
+
+
+            <div class="form-label" style="text-align: left">Attach Supportive Documentation:<div>
+                    <div class="help-text">
+                        Documentation is optional at this step.
+                        See PACC Supportive Documentation Folder for PACC Documentation Guidelines PDF in Document
+                        Library.
+                    </div>
+
+                    <div ng-show="!id">
+                        <div
+                            style="background-color:lightblue; border:1px; border-color: black; padding:5px; margin-top:10px;">
+
+                            Please save PACC Proposal <button class="btn-warn" ng-click="save()" title="Save the current data.">
+                                <i class="fa fa-save"></i>
+                                Save
+                            </button> to begin attaching supportive documentation.
+                            <br>
+                        </div>
+
+                    </div>
+
+
+                    <!-- File Upload -->
+                    <div ng-show="id">
+                        <div class="help-text">
+                            <br>
+                            Click "Choose File" to select file. Once file is selected, click "Upload" to complete the
+                            process.
+                            You can only upload one file at a time.
+                        </div>
+                        <table class="upload-table">
+                            <tr>
+                                <td><input type="file" name="uploadFile" id="uploadFile" class="btn-upload"
+                                        style="padding-left:3px; padding-top:3px;"></td>
+                                <td>
+                                    <button ng-click="upload()" class="btn-upload">
+                                        <i class="fa fa-upload" aria-hidden="true"></i> Upload
+                                    </button></td>
+                            </tr>
+                        </table>
+
+
+                        <button ng-click="viewFolder()" class="btn-upload" ng-hide="!id">
+                            <i class="fa fa-folder" aria-hidden="true"></i>
+                            View Folder
+                        </button>
+
+                        <!-- File Table -->
+                        <table class="table-files" ng-show="uploadFiles.length">
+                            <tr>
+                                <td>Icon</td>
+                                <td>Filename</td>
+                                <td>Created</td>
+                            </tr>
+                            <tr ng-repeat="f in uploadFiles">
+                                <td>
+                                    <img ng-src="{{getIcon(f.Name)}}" alt="" />
+                                </td>
+                                <td>
+                                    <a href="{{f.ServerRelativeUrl}}">{{f.Name}}</a>
+
+
+                                </td>
+                                <td>{{f.TimeCreated.substring(0,10)}}</td>
+                            </tr>
+                        </table>
+                    </div>
+        </td>
+    </tr>
+</table>
+
+<table width="100%">
+    <tr>
+        <td colspan="2" style="text-align: center">
+
+            <br>
+
+            <button class="btn-upload" ng-click="close()">
+                <i class="fa fa-times-circle"></i>
+                Close Form
+            </button>
+            <button class="btn-warn" ng-click="save()" title="Save the current data.">
+                <i class="fa fa-save"></i>
+                Save
+            </button>
+            <button class="btn-warn" ng-click="save(null, 'close')" title="This will save your proposal with all data" title="Save the current data and close the proposal.">
+                <i class="fa fa-save"></i>
+                Save and Close
+            </button>
+            <button class="btn-warn" ng-click="submit(4, true)">
+                <i class="fa fa-arrow-circle-right"></i>
+                Return to Step 4
+            </button>
+            <button class="btn-success" ng-click="submit(5, true)">
+                <i class="fa fa-arrow-circle-right"></i>
+                Submit to External Submission
+            </button>
+            <br>
+            <br>
+        </td>
+    </tr>
+</table>
