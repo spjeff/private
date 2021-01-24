@@ -1,0 +1,98 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201105213943
+Username: LAPTOP-QRPJIFPT\Name
+RunAs User: LAPTOP-QRPJIFPT\Name
+Configuration Name: 
+Machine: LAPTOP-QRPJIFPT (Microsoft Windows NT 10.0.19041.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\Name\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2020.6.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\Name\.vscode\extensions\ms-vscode.powershell-2020.6.0\modules' -EnableConsoleRepl -StartupBanner "=====> PowerShell Integrated Console v2020.6.0 <=====
+" -LogLevel 'Normal' -LogPath 'c:\Users\Name\.vscode\extensions\ms-vscode.powershell-2020.6.0\logs\1604632876-6dba1e3f-5889-46f6-804f-156bdd3f73ce1604632719431\EditorServices.log' -SessionDetailsPath 'c:\Users\Name\.vscode\extensions\ms-vscode.powershell-2020.6.0\sessions\PSES-VSCode-5160-457883' -FeatureFlags @() 
+Process ID: 3204
+PSVersion: 5.1.19041.546
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.546
+BuildVersion: 10.0.19041.546
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\CODE\gofreshhomes\log\GoFreshHomes-Create-Folders.ps1-2020-11-05-21-39-43.log
+NewPort
+Birchwood
+MI-BW-178
+Add-PNPFolder : A file or folder with the name 
+https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-178 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+Add-PNPFolder : A file or folder with the name https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-178 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+MI-BW-179
+Add-PNPFolder : A file or folder with the name 
+https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-179 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+Add-PNPFolder : A file or folder with the name https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-179 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+MI-BW-204
+Add-PNPFolder : A file or folder with the name 
+https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-204 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+Add-PNPFolder : A file or folder with the name https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-204 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+MI-BW-205
+Add-PNPFolder : A file or folder with the name 
+https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-205 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+Add-PNPFolder : A file or folder with the name https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-205 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+MI-BW-206
+Add-PNPFolder : A file or folder with the name 
+https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-206 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+Add-PNPFolder : A file or folder with the name https://gofreshhomes.sharepoint.com/sites/Sandbox/NewPort/Birchwood/MI-BW-206 already exists.
+At C:\CODE\gofreshhomes\GoFreshHomes-Create-Folders.ps1:53 char:17
++                 Add-PNPFolder -Name $folder2 -Folder "$fru/$folder1"
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Add-PnPFolder], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Files.AddFolder
+
+Time Elapsed: 00:00:04
+**********************
+Windows PowerShell transcript end
+End time: 20201105213948
+**********************

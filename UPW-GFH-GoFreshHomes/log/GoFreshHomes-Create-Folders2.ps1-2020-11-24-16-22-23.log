@@ -1,0 +1,114 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201124162223
+Username: LAPTOP-QRPJIFPT\Name
+RunAs User: LAPTOP-QRPJIFPT\Name
+Configuration Name: 
+Machine: LAPTOP-QRPJIFPT (Microsoft Windows NT 10.0.19042.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 8984
+PSVersion: 5.1.19041.610
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.610
+BuildVersion: 10.0.19041.610
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\code\gofreshhomes\log\GoFreshHomes-Create-Folders2.ps1-2020-11-24-16-22-23.log
+PWS
+Casa Estates
+
+CO-PCE-287
+Tenant
+Name         Type   Items/Size Last Modified
+----         ----   ---------- -------------
+Casa Estates Folder          0 11/24/2020 22:22:27
+Tenant       Folder          0 11/24/2020 22:22:29
+Finance
+Finance      Folder          0 11/24/2020 22:22:30
+Archive
+Archive      Folder          0 11/24/2020 22:22:31
+History
+History      Folder          0 11/24/2020 22:22:32
+Other
+Other        Folder          0 11/24/2020 22:22:32
+CO-PFR-343
+Tenant
+Tenant       Folder          0 11/24/2020 22:22:34
+Finance
+Finance      Folder          0 11/24/2020 22:22:35
+Archive
+Archive      Folder          0 11/24/2020 22:22:36
+History
+History      Folder          0 11/24/2020 22:22:37
+Other
+Other        Folder          0 11/24/2020 22:22:38
+CO-PFVOR-510
+Tenant
+Tenant       Folder          0 11/24/2020 22:22:40
+Finance
+Finance      Folder          0 11/24/2020 22:22:41
+Archive
+Archive      Folder          0 11/24/2020 22:22:42
+History
+History      Folder          0 11/24/2020 22:22:43
+Other
+Other        Folder          0 11/24/2020 22:22:44
+CO-PFVOR-223
+Tenant
+Tenant       Folder          0 11/24/2020 22:22:46
+Finance
+Finance      Folder          0 11/24/2020 22:22:46
+Archive
+Archive      Folder          0 11/24/2020 22:22:47
+History
+History      Folder          0 11/24/2020 22:22:48
+Other
+Other        Folder          0 11/24/2020 22:22:49
+CO-PFVOR-47
+Tenant
+Tenant       Folder          0 11/24/2020 22:22:51
+Finance
+Finance      Folder          0 11/24/2020 22:22:52
+Archive
+Archive      Folder          0 11/24/2020 22:22:53
+History
+History      Folder          0 11/24/2020 22:22:54
+Other
+Other        Folder          0 11/24/2020 22:22:55
+CO-PKH-443
+Tenant
+Tenant       Folder          0 11/24/2020 22:22:57
+Finance
+Finance      Folder          0 11/24/2020 22:22:58
+Archive
+Archive      Folder          0 11/24/2020 22:22:59
+History
+History      Folder          0 11/24/2020 22:23:00
+Other
+Other        Folder          0 11/24/2020 22:23:01
+CO-PKH-132
+Tenant
+Tenant       Folder          0 11/24/2020 22:23:03
+Finance
+Finance      Folder          0 11/24/2020 22:23:04
+Archive
+Archive      Folder          0 11/24/2020 22:23:04
+History
+History      Folder          0 11/24/2020 22:23:05
+Other
+Other        Folder          0 11/24/2020 22:23:06
+CO-PKH-440
+Tenant
+Tenant       Folder          0 11/24/2020 22:23:08
+Finance
+Finance      Folder          0 11/24/2020 22:23:09
+Archive
+Archive      Folder          0 11/24/2020 22:23:10
+History
+History      Folder          0 11/24/2020 22:23:11
+Other
+Other        Folder          0 11/24/2020 22:23:12
+CO-PKH-670

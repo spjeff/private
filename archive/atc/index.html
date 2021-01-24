@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ATC - New Site Request</title>
+
+
+    <!-- AngularJS + JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+    <!-- Chosen -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css">
+
+    <!-- PNP + Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/3.0.10/pnp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!-- Toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- PNP -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.2/fetch.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.1/pnp.min.js"></script>
+
+    <!-- App -->
+    <link rel="stylesheet" href="atc-newsite.css">
+    <script src="atc-newsite.js"></script>
+</head>
+
+<body>
+
+
+
+    <div ng-app="atcApp">
+        <div ng-controller="atcCtl" ng-cloak>
+
+            <table class="atc-inputform">
+                <tr>
+                    <td>
+                        <img height="50%" width="50%" src="https://www.atcllc.com/wp-content/themes/ATC_template_v2/images/ATC-logo-520x156.png"
+                            alt="">
+                    </td>
+                    <td>
+                        <h1>New Site Request</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="atc-shade">Site Name</td>
+                    <td><input type="text" size="30" ng-class="{'atc-required': !d.siteName}" ng-model="d.siteName" ng-change="typeName()"></td>
+                </tr>
+                <tr>
+                    <td class="atc-shade"> Site Owner(s)</td> 
+                    <td><input type="text" size="30" ng-class="{'atc-required': !d.siteOwner}" ng-model="d.siteOwner"></td>
+                </tr>
+                <tr>
+                    <td class="atc-shade"> Short URL</td> 
+                    <td><input type="text" size="30" ng-class="{'atc-required': !d.siteURL}" ng-model="d.siteURL"></td>
+                </tr>
+                <tr>
+                        <td class="atc-shade"> Site URL</td> 
+                        <td>
+                            <a target="_blank" href="https://atcllc.sharepoint.com/sites/{{d.siteURL}}">https://atcllc.sharepoint.com/sites/{{d.siteURL}}</a>
+                            <div class="atc-url-avail" ng-show="verifyURL()"><img src="kpinormal-0.gif" alt=""> Available</div>
+                            <div class="atc-url-taken" ng-show="!verifyURL()"><img src="kpinormal-2.gif" alt=""> Taken</div>
+                        </td>
+                    </tr>
+                <tr>
+                    <td class="atc-shade"> Site Type</td> <td>
+                        <select name="" id="" ng-model="d.siteType" ng-options="x for x in choiceSiteType">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="atc-shade"> Site Image</td> <td>
+                        <select name="" id="" ng-model="d.siteType" ng-options="x for x in choiceImage">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="atc-shade"> Business Function</td> <td>
+                        <select class="atc-business-function" name="" id="atcBusinessFunction" ng-model="d.siteType" ng-options="x for x in choiceBusinessFunc">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="atc-shade"> Business Function Owner</td> <td><input type="text"></td>
+                </tr>
+                <tr class="atc-spacer">
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="atc-submit-row">
+
+                        <button class="atc-save">
+                            <i class="fa fa-save"></i>
+                            Submit</button>
+                        <button class="atc-cancel" style="margin-left:20px">
+                            <i class="fa fa-times-circle"></i>
+                            Cancel</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>

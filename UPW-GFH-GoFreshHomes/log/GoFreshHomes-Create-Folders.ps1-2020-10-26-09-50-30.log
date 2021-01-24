@@ -1,0 +1,221 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201026095030
+Username: LAPTOP-QRPJIFPT\Name
+RunAs User: LAPTOP-QRPJIFPT\Name
+Configuration Name: 
+Machine: LAPTOP-QRPJIFPT (Microsoft Windows NT 10.0.19041.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 1488
+PSVersion: 5.1.19041.546
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.546
+BuildVersion: 10.0.19041.546
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\code\gofreshhomes\log\GoFreshHomes-Create-Folders.ps1-2020-10-26-09-50-30.log
+
+TestLibrary1
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this Web 
+site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:23 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary"
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+Title   ServerRelativeUrl Id
+-----   ----------------- --
+Sandbox /sites/Sandbox    6c3c575f-8588-4363-9a4c-1aa6d1ff114d
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this
+Web site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:23 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary"
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+TestLibrary2
+PS C:\code\gofreshhomes> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(): "The pipeline has been stopped."
+>> TerminatingError(format-default): "The collection has not been initialized. It has not been requested or the request has not been executed. It may need to be explicitly requested."
+The collection has not been initialized. It has not been requested or the request has not been executed. It may need to be explicitly requested.
+format-default : The collection has not been initialized. It has not been requested or the request has not been
+executed. It may need to be explicitly requested.
+    + CategoryInfo          : NotSpecified: (:) [format-default], CollectionNotInitializedException
+    + FullyQualifiedErrorId : Microsoft.SharePoint.Client.CollectionNotInitializedException,Microsoft.PowerShell.Com
+   mands.FormatDefaultCommand
+
+PS C:\code\gofreshhomes> gcm New-PnPList
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          New-PnPList                                        3.26.20... SharePointPnPPowerShellOnline
+
+
+PS C:\code\gofreshhomes> man New-PnPList 
+
+NAME
+    New-PnPList
+
+SYNOPSIS
+    Creates a new list
+
+
+SYNTAX
+    New-PnPList -Title <String> -Template <ListTemplateType> [-Url <String>] [-Hidden <SwitchParameter>]
+    [-EnableVersioning <SwitchParameter>] [-EnableContentTypes <SwitchParameter>] [-OnQuickLaunch <SwitchParameter>]
+    [-Web <WebPipeBind>] [-Connection <PnPConnection>] [<CommonParameters>]
+
+
+DESCRIPTION
+
+
+RELATED LINKS
+    SharePoint Developer Patterns and Practices: http://aka.ms/sppnp
+
+REMARKS
+    To see the examples, type: "get-help New-PnPList -examples".
+    For more information, type: "get-help New-PnPList -detailed".
+    For technical information, type: "get-help New-PnPList -full".
+    For online help, type: "get-help New-PnPList -online"
+PS C:\code\gofreshhomes> man New-PnPList cls
+>> TerminatingError(help): "A positional parameter cannot be found that accepts argument 'cls'."
+help : A positional parameter cannot be found that accepts argument 'cls'.
+At line:1 char:1
++ man New-PnPList cls
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [help], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,help
+help : A positional parameter cannot be found that accepts argument 'cls'.
+At line:1 char:1
++ man New-PnPList cls
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [help], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,help
+
+PS C:\code\gofreshhomes> man New-PnPList cls
+>> TerminatingError(help): "A positional parameter cannot be found that accepts argument 'cls'."
+help : A positional parameter cannot be found that accepts argument 'cls'.
+At line:1 char:1
++ man New-PnPList cls
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [help], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,help
+help : A positional parameter cannot be found that accepts argument 'cls'.
+At line:1 char:1
++ man New-PnPList cls
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [help], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,help
+
+PS C:\code\gofreshhomes> cls
+PS C:\code\gofreshhomes> .\GoFreshHomes-Create-Document-Libraries.csv
+PS C:\code\gofreshhomes> .\GoFreshHomes-Create-Folders.ps1
+WARNING: The names of some imported commands from the module 'SharePointPnPPowerShellOnline' include unapproved verbs that might make them less discoverable. To find the commands with unapproved verbs, run the Import-Module command again with the Verbose parameter. For a list of approved verbs, type Get-Verb.
+Transcript started, output file is C:\code\gofreshhomes\log\GoFreshHomes-Create-Folders.ps1-2020-10-26-09-51-23.log
+TestLibrary1
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this Web 
+site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this
+Web site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+TestLibrary2
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this Web 
+site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this
+Web site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+TestLibrary3
+
+
+Time Elapsed: 00:00:02
+Title        Id Url
+-----        -- ---
+TestLibrary3
+Transcript stopped, output file is C:\code\gofreshhomes\log\GoFreshHomes-Create-Folders.ps1-2020-10-26-09-51-23.log
+
+
+PS C:\code\gofreshhomes> cls
+PS C:\code\gofreshhomes> .\GoFreshHomes-Create-Folders.ps1
+WARNING: The names of some imported commands from the module 'SharePointPnPPowerShellOnline' include unapproved verbs that might make them less discoverable. To find the commands with unapproved verbs, run the Import-Module command again with the Verbose parameter. For a list of approved verbs, type Get-Verb.
+Transcript started, output file is C:\code\gofreshhomes\log\GoFreshHomes-Create-Folders.ps1-2020-10-26-09-52-13.log
+TestLibrary1
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this Web 
+site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this
+Web site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+TestLibrary2
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this Web 
+site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this
+Web site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+TestLibrary3
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this Web 
+site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this
+Web site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+TestLibrary4
+
+TestLibrary5
+Title        Id Url
+-----        -- ---
+TestLibrary4
+TestLibrary5
+TestLibrary6
+TestLibrary6
+
+Time Elapsed: 00:00:03
+Transcript stopped, output file is C:\code\gofreshhomes\log\GoFreshHomes-Create-Folders.ps1-2020-10-26-09-52-13.log
+
+

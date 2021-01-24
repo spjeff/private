@@ -1,0 +1,79 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20201026095213
+Username: LAPTOP-QRPJIFPT\Name
+RunAs User: LAPTOP-QRPJIFPT\Name
+Configuration Name: 
+Machine: LAPTOP-QRPJIFPT (Microsoft Windows NT 10.0.19041.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 1488
+PSVersion: 5.1.19041.546
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.546
+BuildVersion: 10.0.19041.546
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\code\gofreshhomes\log\GoFreshHomes-Create-Folders.ps1-2020-10-26-09-52-13.log
+TestLibrary1
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this Web 
+site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this
+Web site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+TestLibrary2
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this Web 
+site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this
+Web site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+TestLibrary3
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this Web 
+site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+New-PNPList : A list, survey, discussion board, or document library with the specified title already exists in this
+Web site.  Please choose another title.
+At C:\code\gofreshhomes\GoFreshHomes-Create-Folders.ps1:24 char:13
++             New-PNPList -Title $row.Title -Template "DocumentLibrary" ...
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [New-PnPList], ServerException
+    + FullyQualifiedErrorId : EXCEPTION,PnP.PowerShell.Commands.Lists.NewList
+TestLibrary4
+
+TestLibrary5
+Title        Id Url
+-----        -- ---
+TestLibrary4
+TestLibrary5
+TestLibrary6
+TestLibrary6
+
+Time Elapsed: 00:00:03
+**********************
+Windows PowerShell transcript end
+End time: 20201026095217
+**********************
