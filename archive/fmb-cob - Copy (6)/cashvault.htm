@@ -1,0 +1,167 @@
+<h2>Cash Vault</h2>
+
+<table>
+    <tr>
+        <td>Business Name:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.cashvault.businessname"></td>
+    </tr>
+    <tr></tr>
+    <td>Vault Number:</td>
+    <td><input type="text" name="" id="" ng-model="d.cashvault.vault"></td>
+    </tr>
+    <tr>
+        <td>Money Service Business:
+        </td>
+        <td class="fmb-nowrap">
+            <input type="checkbox" name="" id="" ng-model="d.cashvault.moneysvc">Money Service Business
+        </td>
+    </tr>
+    <tr>
+        <td>Business Type :
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.cashvault.businesstype"></td>
+    </tr>
+    <tr>
+        <td>Account Number:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.cashvault.acctnumber"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Administrator (Responsible for ordering coin/currency)
+        </td>
+        <td class="fmb-form-section">Co-Admin (if applicable)</td>
+    </tr>
+    <tr>
+        <td>Full Name:
+        </td>
+        <td><input type="text" ng-model="d.cashvault.fullname"></td>
+        <td><input type="text" ng-model="d.cashvault.cofullname"></td>
+    </tr>
+    <tr>
+        <td>Email Address:
+        </td>
+        <td><input type="text" ng-model="d.cashvault.email"></td>
+        <td><input type="text" ng-model="d.cashvault.coemail"></td>
+    </tr>
+    <tr>
+        <td>Phone Number:
+        </td>
+        <td><input type="text" ng-model="d.cashvault.phone"></td>
+        <td><input type="text" ng-model="d.cashvault.cophone"></td>
+
+    </tr>
+    <tr>
+        <td>Armored Carrier:
+        </td>
+        <td><input type="text" ng-model="d.cashvault.armored"></td>
+    </tr>
+    <tr>
+        <td style="width:300px">Requested Service-New or Change:
+        </td>
+        <td class="fmb-nowrap">
+            <input type="radio" name="reqChange" id="reqChange1" value="New" ng-model="d.cashvault.reqChange">
+            <label for="reqChange1">New</label>
+            <input type="radio" name="reqChange" id="reqChange2" value="Change" ng-model="d.cashvault.reqChange">
+            <label for="reqChange2">Change</label>
+            <input type="radio" name="reqChange" id="reqChange3" value="Delete" ng-model="d.cashvault.reqChange">
+            <label for="reqChange3">Delete</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="fmb-form-section">Deposit Type - Bulk or Envelope
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Bulk - cash and coin:
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.cashvault.bulkcoin">
+            Bulk - cash and coin</td>
+        <td>Deposit of cash and/or coin on one deposit ticket</td>
+    </tr>
+    <tr>
+        <td>Envelope:
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.cashvault.envelope">
+            Envelope</td>
+        <td colspan="2">The total value of the contents in each envelope are on the face of the envelope, along with a
+            unique
+            identifier for the envelope (i.e., employee name or ID, drawer number, etc.).   Bag envelopes with the
+            corresponding deposit ticket that lists the total of each envelope, as well as the total of all envelopes.
+        </td>
+    </tr>
+    <tr>
+        <td>Does the deposit contain checks:
+        </td>
+        <td class="fmb-nowrap"><input type="checkbox" name="" id="" ng-model="d.cashvault.haschecks">
+            Deposit Contain Checks</td>
+        <td colspan="2">FMB discourages sending checks to the Commercial Cash vault, as they will be subject to 1-3
+            business day
+            processing delays. Remote Deposit Capture is strongly recommended for the depositing of checks. If sending
+            checks they must be on a separate deposit ticket.
+        </td>
+    </tr>
+    <tr>
+        <td>Effective Date:
+        </td>
+        <td><input type="text" datepicker name="" id="" ng-model="d.cashvault.effective"></td>
+        <td colspan="2">Please allow 3-4 business days for setup. Client must notify their armored transportation of
+            the change
+        </td>
+    </tr>
+    <tr>
+        <td>Currency/Coin Orders:
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.cashvault.coin">
+            Currency/Coin Orders
+        </td>
+    </tr>
+    <tr>
+        <td>Non Standard Orders:
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.cashvault.nonstandard">
+            Non Standard Orders
+        </td>
+    </tr>
+    <tr>
+        <td>Standard Orders:
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.cashvault.standard">
+            Standard Orders
+        </td>
+    </tr>
+    <tr>
+        <td>Service Days:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.cashvault.svcdays"></td>
+        <td>Mon, Tues, Wed, Thur, Fri, and/or Sat
+        </td>
+    </tr>
+    <tr>
+        <td>Cash In Limit (Average daily deposit):
+        </td>
+        <td><input type="number" name="" id="" ng-model="d.cashvault.cashin"></td>
+
+        <td>Soft limit
+        </td>
+    </tr>
+    <tr>
+        <td>Cash Out Limit:</td>
+        <td><input type="number" name="" id="" ng-model="d.cashvault.cashout"></td>
+        <td colspan="2">Hard limit. Client will need to contact bank of they go over this limit and could delay
+            delivery.
+
+        </td>
+
+    </tr>
+    <tr>
+        <td>Service address for delivery:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.cashvault.delivery"></td>
+    </tr>
+
+</table>

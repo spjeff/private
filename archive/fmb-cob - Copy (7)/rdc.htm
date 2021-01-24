@@ -1,0 +1,381 @@
+<h2>
+    RDC (Internal Use Only)
+</h2>
+
+<table>
+    <tr>
+        <td>Sub-Status:</td>
+        <td>
+            <select name="" id="" ng-model="d.rdc.substatus" ng-options="choiceSubstatus"></select>
+        </td>
+    </tr>
+</table>
+
+<table border="1">
+    <tr class="fmb-center fmb-form-section">
+        <td>Business Name
+        </td>
+        <td>Administrator <br>
+            (If new setup)
+        </td>
+        <td>Phone Number <br> where Wausau will call for setup
+        </td>
+        <td>Admin Email Address <br>
+            (If new setup)
+        </td>
+        <td>Year Company <br> was Established
+        </td>
+    </tr>
+    <tr style="vertical-align:top">
+        <td><input type="text" name="" id="" ng-model="d.start.companyName" disabled>
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.rdc.adminName">
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.rdc.phone">
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.rdc.adminEmail">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.rdc.yearEst">
+        </td>
+        <td>
+
+
+        </td>
+    </tr>
+    <tr>
+        <td class="fmb-form-section">Co-Admin (if applicable)
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.rdc.coadminName"></td>
+        <td><input type="text" name="" id="" ng-model="d.rdc.cophone"></td>
+        <td><input type="text" name="" id="" ng-model="d.rdc.coadminEmail"></td>
+        <td><input type="text" name="" id="" ng-model="d.rdc.coyearEst"></td>
+    </tr>
+    <tr>
+        <td>If additional person responsible <br> for scanning, enter here ---->
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.rdc.additionalPerson">
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="fmb-form-section">
+        <td>Account Number
+        </td>
+        <td>Account Name
+        </td>
+        <td>Per Item $
+        </td>
+        <td>Per Deposit $
+        </td>
+        <td>Per Day $
+        </td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="r in d.rdc.rdcRows">
+        <td>
+            <input type="text" name="" id="" ng-model="r.acctnumber">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="r.acctname">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="r.peritem">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="r.perdeposit">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="r.perday">
+        </td>
+        <td><i class="fas fa-minus-circle" ng-click="deleteRow('rdc.rdcRows', $index)">Remove</i></td>
+    </tr>
+    <tr>
+        <td>
+            <i class="fas fa-plus-circle" ng-click="addRow('rdc.rdcRows')">Add</i>
+        </td>
+    </tr>
+</table>
+
+<br><br>
+
+<table style="min-width:400px" border="1">
+    <tr class="fmb-center fmb-form-section">
+        <td>Address of Scanner</td>
+
+    </tr>
+    <tr>
+        <td>
+            <input type="radio" name="scannerAddress" id="" ng-model="d.rdc.scannerAddress" value="company">Company
+            Address <br>
+            <input type="radio" name="scannerAddress" id="" ng-model="d.rdc.scannerAddress" value="new">New (enter
+            below)
+            <br>
+
+
+            <table ng-show="d.rdc.scannerAddress=='new'">
+                <tr>
+                    <td>Company Name</td>
+                    <td><input type="text" ng-model="d.bo.entityname" disabled></td>
+                </tr>
+                <tr>
+                    <td>To Attn Of</td>
+                    <td><input type="text" ng-model="d.rdc.scannerattn"></td>
+                </tr>
+                <tr>
+                    <td>Address 1</td>
+                    <td><input type="text" ng-model="d.bo.entityaddress" disabled></td>
+                </tr>
+                <tr>
+                    <td>Address 2</td>
+                    <td>
+                        <input type="text" ng-model="d.bo.entityaddress2" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>
+                        <input type="text" ng-model="d.bo.city" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td>State </td>
+                    <td>
+                        <input type="text" ng-model="d.bo.state" disabled>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>ZIP </td>
+                    <td>
+                        <input type="text" ng-model="d.bo.zip" disabled>
+
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+
+    </tr>
+</table>
+
+
+<br><br>
+
+
+<table style="min-width:400px" border="1">
+    <tr class="fmb-center fmb-form-section">
+        <td>Different Person</td>
+
+    </tr>
+    <tr>
+        <td>
+            Is there a different person (other than Admin) responsible for scanning RDC deposit transactions?
+            <br>
+            <input type="radio" name="diffPerson" id="" ng-model="d.rdc.diffPerson" value="Y">Yes
+
+            <input type="radio" name="diffPerson" id="" ng-model="d.rdc.diffPerson" value="N">No
+
+            If yes, please provide the following information:
+
+            <table ng-show="d.rdc.diffPerson=='Y'">
+                <tr>
+                    <td>Persons Name</td>
+                    <td><input type="text" ng-model="d.rdc.difffpersonName"></td>
+                </tr>
+
+                <tr>
+                    <td>Phone</td>
+                    <td><input type="text" ng-model="d.rdc.diffphone"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="text" ng-model="d.rdc.diffemail">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top">Provide Additional Comments</td>
+                    <td>
+                        <textarea name="" id="" cols="30" rows="10" ng-model="d.rdc.comments"></textarea>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+
+    </tr>
+</table>
+
+
+
+<br><br>
+
+<table border="1">
+    <tr>
+        <td colspan="4" class="fmb-form-section">Types of Activity/Other Information (Check all that apply)
+        </td>
+    </tr>
+    <tr>
+        <td>Deposited Items:
+        </td>
+        <td>
+
+            <ul>
+                <input type="checkbox" name="" id="" ng-model="d.rdc.deposititems" value="local">
+                Local Checks<br>
+                <input type="checkbox" name="" id="" ng-model="d.rdc.deposititems2" value="payroll">
+                Payroll Checks<br>
+                <input type="checkbox" name="" id="" ng-model="d.rdc.deposititems3" value="3rdparty">
+                3rd Party Checks
+
+
+            </ul>
+
+
+        </td>
+        <td>
+
+            <input type="checkbox" name="" id="" ng-model="d.rdc.checktype">
+            Non-Local Checks<br>
+            <input type="checkbox" name="" id="" ng-model="d.rdc.checktype2">
+            Personal Checks<br>
+
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.rdc.travelchecks">
+            Business Checks<br>
+            <input type="checkbox" name="" id="" ng-model="d.rdc.travelchecks2">
+            Money order/Travelers Checks<br>
+        </td>
+    </tr>
+    <tr>
+        <td>ACH Activity:
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.rdc.achtypeInit">
+            Initiate ACH<br>
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.rdc.achtypeRec">
+            Receive ACH<br>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Wire Transfer Activity:
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.rdc.domesticwires">
+            Initiate/Receive Domestic wires<br>
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.rdc.foreignwires">
+            Initiate/Receive Foreign wires<br>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Scanner acquisition:
+        </td>
+        <td colspan=3>
+
+            <input type="radio" name="scannAcq" ng-model="d.rdc.scannAcq" id="" value='own'>Own
+            <input type="radio" name="scannAcq" ng-model="d.rdc.scannAcq" id="" value='finance'>Finance
+            <input type="radio" name="scannAcq" ng-model="d.rdc.scannAcq" id="" value='purchase'>Purchase
+            <input type="radio" name="scannAcq" ng-model="d.rdc.scannAcq" id="" value='fee waived'>Fee Waived
+            <span ng-show="d.rdc.scannAcq == 'fee waived'" class="fmb-error">
+                Memo Required
+            </span>
+        </td>
+        <td>
+            <span class="fmb-error" ng-model="d.rdc.memo" ng-show="scannAcq=='fee waived'">Memo from officer required
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class="fmb-error">
+                If Own,</span> state scanner Make and Model---->
+        </td>
+        <td>
+            <select name="" id="" ng-model="d.rdc.ownScanner" ng-options="x for x in choiceScanner"></select>
+        <td></td>
+        <td>
+
+        </td>
+    </tr>
+    <tr>
+        <td><span class="fmb-error">If Purchase,</span> state scanner Make and Model--->
+        </td>
+        <td><select name="" id="" ng-model="d.rdc.purchaseScanner" ng-options="x for x in choiceScanner"></select></td>
+        <td></td>
+        <td> <input type="checkbox" name="" id="">
+            Warranty
+            <select name="" id="" ng-model="d.rdc.selectedWarranty" ng-options="x for x in choiceWarranty"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>Debit Account for
+            <span class="fmb-error">purchase</span>
+        </td>
+        <td>
+            <input type="text" ng-model="d.rdc.debitPurchase">
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Method of Endorsement
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.rdc.handstamp">
+            Hand Stamp<br>
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.rdc.franking">
+            Franking<br>
+        </td>
+        <td>
+            <div ng-show="d.rdc.handstamp">
+                <input type="checkbox" name="" id="" ng-model="d.rdc.orderstamp">
+                Order Stamp?<br>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Scanner Location?
+        </td>
+        <td>
+            <input type="radio" name="scanloc" id="scanloc1" ng-model="d.rdc.scanloc" value="companyhq">
+            Company HQ
+            <input type="radio" name="scanloc" id="scanloc2" ng-model="d.rdc.scanloc" value="branch">
+            Branch
+            <input type="radio" name="scanloc" id="scanloc3" ng-model="d.rdc.scanloc" value="standalone">
+            Stand alone location
+        </td>
+    </tr>
+    <tr>
+        <td class="fmb-field">FTP File Upload?
+        </td>
+        <td> <input type="radio" name="ftpupload" id="ftpupload1" ng-model="d.rdc.ftpupload" value="Y">
+            <label for="ftpupload1">Yes</label>
+            <br>
+            <input type="radio" name="ftpupload" id="ftpupload2" ng-model="d.rdc.ftpupload" value="N">
+            <label for="ftpupload2">No</label>
+
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="fmb-field">Email Address</td>
+        <td>
+            <textarea name="" id="" cols="50" rows="5" ng-model="d.rdc.emailAddress"></textarea>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>

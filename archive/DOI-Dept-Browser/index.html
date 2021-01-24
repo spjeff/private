@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOI Department Browser</title>
+
+    <!-- AngularJS 1x -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-animate.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-aria.js"></script>
+
+    <!-- UI Grid http://ui-grid.info/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.8.3/ui-grid.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.8.3/ui-grid.min.css">
+
+    <!-- UI GridoOptional features -->
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/lodash.min.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/jszip.min.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/excel-builder.dist.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- Lodash  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+
+    <!-- Application -->
+    <script src="doi-dept-browser.js"></script>
+    <link rel="stylesheet" href="doi-dept-browser.css">
+
+</head>
+<body>
+    
+    <!-- AngularJS 1x Controller -->
+    <div ng-app="doiDeptBrowserApp">
+        <div ng-controller="doiDeptBrowserCtl">    
+            <div ng-cloak ng-hide="loading">
+
+                <!-- Header -->
+                <h2>DOI Department Browser</h2>
+                {{(gridOptions.data| filter:search).length}} rows
+
+                <br>
+                
+                <br>
+
+
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <button class="btn-success" ng-click="sendMail()">Send Email</button>
+                        </td>
+                        <td>
+                            <button class="btn-warning" ng-click="clearSelection()">Clear Selection</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <!-- Left Department Navigation -->
+                            <ul>
+                                <li ng-repeat="dept in depts">{{dept}}</li>
+                            </ul>
+
+                        </td>
+                        <td style="vertical-align: top;">
+
+                            <!-- UI Grid Table http://ui-grid.info/ -->
+                            <div ui-grid="gridOptions" ui-grid-selection class="doiGrid"></div>
+
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

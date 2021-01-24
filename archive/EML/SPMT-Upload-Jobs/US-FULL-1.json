@@ -1,0 +1,45 @@
+{ "Tasks": [
+
+{ "SourcePath": "T:\\Account Management (Commercial and Operational)\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/AM-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Account Management (Commercial and Operational)\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/AM-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Account Management (Commercial and Operational)\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/AM-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Account Management (Commercial and Operational)\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/AM-U","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Acquisitions and Investor Relations\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/BN-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Acquisitions and Investor Relations\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/BN-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Acquisitions and Investor Relations\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/BN-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Acquisitions and Investor Relations\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/BN-U","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Banks and Networks\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Banks and Networks\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Banks and Networks\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Banks and Networks\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-U","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Card Production\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Card Production\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Card Production\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Card Production\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-U","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Clients\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Clients\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Clients\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Clients\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/CP-U","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Compliance-Fraud-Regulatory-Risk\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/CFRP-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Compliance-Fraud-Regulatory-Risk\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/CFRP-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Compliance-Fraud-Regulatory-Risk\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/CFRP-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Compliance-Fraud-Regulatory-Risk\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/CFRP-U","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Customer Service\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/CSR-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Customer Service\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/CSR-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Customer Service\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/CSR-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Customer Service\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/CSR-U","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Customer Success\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/CSS-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Customer Success\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/CSS-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Customer Success\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/CSS-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Customer Success\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/CSS-U","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Executive Team\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/ET-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Executive Team\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/ET-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Executive Team\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/ET-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Executive Team\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/ET-U","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Finance\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams721-A","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Finance\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams721-E","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Finance\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams721-G","TargetList": "Documents"}
+,{ "SourcePath": "T:\\Finance\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams721-U","TargetList": "Documents"}
+
+
+]}

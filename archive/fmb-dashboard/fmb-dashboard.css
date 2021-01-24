@@ -1,0 +1,21 @@
+.fmb-green {
+    background-color: green;
+}
+.fmb-orange {
+    background-color: orange;
+}
+.fmb-red {
+    background-color: red;
+}
+.fmb-yellow {
+    background-color: yellow;
+}
+
+.fmb-logo {
+    margin-left:2px;
+    margin-right: 30px;
+}
+
+.fmb-nowrap {
+    white-space: nowrap;
+}

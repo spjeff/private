@@ -1,0 +1,7 @@
+{
+    "sourceDirectory": "src",
+    "sharePointSiteUrl": "https://spjeff.sharepoint.com",
+    "publishingScope": "SaveOnly",
+    "authenticationType": "Forms",
+    "remoteFolders" : ["/SiteAssets"]
+}

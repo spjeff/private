@@ -1,0 +1,120 @@
+<h3>
+    Account Reconciliation
+</h3>
+
+<table>
+
+<tr>
+    <td>Company</td>
+    <td colspan="3">
+        <input type="text" ng-model="d.start.companyName" disabled>
+    </td>
+</tr>
+
+    <tr>
+        <td colspan="2">
+            <h4>General Information</h4>
+            
+        </td>
+
+    </tr>
+
+
+<tr>
+    <td>Address</td>
+    <td><input type="text" ng-model="d.acctrecon.address"></td>
+    <td>City/State/Zip</td>
+    <td><input type="text" ng-model="d.acctrecon.addressSecond"></td>
+</tr>
+<tr>
+    <td>Phone #</td>
+    <td><input type="text" ng-model="d.start.companyContactPhone" disabled></td>
+    <td>Fax #</td>
+    <td><input type="text" ng-model="d.acctrecon.fax"></td>
+</tr>
+<tr>
+    <td>Tax ID</td>
+    <td><input type="text" ng-model="d.start.companyTIN" size="12" maxlength="12" disabled></td>
+    <td>Email Address</td>
+    <td><input type="text" ng-model="d.start.companyContactMail" disabled></td>
+</tr>
+<tr>
+    <td>Branch #</td>
+    <td><input type="text" ng-model="d.acctrecon.branch"></td>
+    <td>Treasury Management / Account Officer</td>
+    <td><input type="text" ng-model="d.start.tmo" disabled></td>
+</tr>
+
+
+</table>
+
+<br><br>
+
+<table border="1">
+    <tr>
+        <td colspan="6" style="text-align:center">
+            <h4>
+                Authorized Accounts
+            </h4>
+        </td>
+    </tr>
+    <tr style="text-align:center">
+        <td>Account Title</td>
+        <td>Account Number</td>
+        <td>Plan Type
+        </td>
+        <td>Cycle Type
+        </td>
+        <td colspan="2">If Custom, please provide calendar dates
+        </td>
+
+    </tr>
+    <tr ng-repeat="r in d.acctrecon.acctReconAuth">
+        <td>
+            <input type="text" ng-model="r.accttitle">
+        </td>
+        <td>
+            <input type="text" ng-model="r.acctnumber">
+        </td>
+        <td>
+            <input type="radio" name="plantype{{$index}}" id="" ng-model="r.plantype" value="Partial">Partial
+            <input type="radio" name="plantype{{$index}}" id="" ng-model="r.plantype" value="Full">Full
+            <input type="radio" name="plantype{{$index}}" id="" ng-model="r.plantype" value="Deposit">Deposit
+        </td>
+        <td>
+            <input type="radio" name="cycletype{{$index}}" id="" ng-model="r.cycletype" value="Month End">Month End
+            <input type="radio" name="cycletype{{$index}}" id="" ng-model="r.cycletype" value="Custom">Custom
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="r.customdate1">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="r.customdate2">
+        </td>
+        <td>
+            <i class="fas fa-minus-circle" ng-click="deleteRow('acctrecon.acctReconAuth', $index)">Remove</i>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <i class="fas fa-plus-circle" ng-click="addRow('acctrecon.acctReconAuth')">Add</i>
+        </td>
+    </tr>
+
+</table>
+
+<br>
+
+<ul>
+    <li><b>Partial</b> reconciliation includes DDA credits, debits, and check Information. No register items are maintained.
+
+
+    </li>
+    <li><b>Full</b> reconciliation of demand deposit debits, credits, and checks from the Deposit System. Register information
+        is submitted by the client and includes serial number, issued date, and dollar amount of the check written.
+    </li>
+    <li>
+        <b>Deposit</b> reconciliation of demand deposit debits, credits and checks plus deposit information including serial
+        numbers associated with each deposit and deposit amount
+    </li>
+</ul>

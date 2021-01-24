@@ -1,0 +1,402 @@
+<h2>Visa Corporate and Purchasing Card Application
+</h2>
+
+
+<table>
+    <tr>
+        <td>Sub-Status:</td>
+        <td>
+            <select name="" id="" ng-model="d.corppurchase.substatus" ng-options="choiceSubstatus"></select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Company Profile
+        </td>
+    </tr>
+    <tr>
+        <td>Company Name
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.start.companyName" disabled></td>
+    </tr>
+    <tr>
+        <td>Aggregate Company Credit Limit
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corppurchase.companycredit"></td>
+    </tr>
+    <tr>
+        <td>Web Site Address
+        </td>
+        <td><input type="text" name="" id="" placeholder="www." ng-model="d.corppurchase.website"></td>
+    </tr>
+    <tr>
+        <td>Company Phone Number
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corppurchase.companyphone"></td>
+    </tr>
+    <tr>
+        <td>Organized as what type of entity
+        </td>
+        <td>
+            <select name="" id="" ng-model="d.corppurchase.entity">
+                <option>Corporation</option>
+                <option>Partnership</option>
+                <option>Other</option>
+            </select>
+            <input type="text" name="" id="" ng-show="d.corppurchase.entity == 'Other'" ng-model="d.corppurchase.entityOther">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Card Program Administrator
+        </td>
+    </tr>
+    <tr>
+        <td>Administrator Name
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corppurchase.adminName"></td>
+    </tr>
+    <tr>
+        <td>Administrator Title
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corppurchase.adminTitle"></td>
+    </tr>
+    <tr>
+        <td>Administrator Email
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corppurchase.adminEmail"></td>
+    </tr>
+    <tr>
+        <td>Administrator Phone
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corppurchase.adminPhone"></td>
+    </tr>
+    <tr>
+        <td>Alternate Admin Name
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.adminName" ng-class="{'fmb-required-field': !d.corpPurchase.adminName}"></td>
+    </tr>
+    <tr>
+        <td>Alternate Admin Title
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.adminTitle" ng-class="{'fmb-required-field': !d.corpPurchase.adminTitle}"></td>
+    </tr>
+    <tr>
+        <td>Alternate Admin Email
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.adminEmail" ng-class="{'fmb-required-field': !d.corpPurchase.adminEmail}"></td>
+    </tr>
+    <tr>
+        <td>Alternate Admin Phone
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.adminPhone" ng-class="{'fmb-required-field': !d.corpPurchase.adminPhone}"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Card Program Setup
+        </td>
+    </tr>
+    <tr>
+        <td>Corporate Card (Travel & Entertainment)
+        </td>
+        <td>
+            <input type="radio" name="cardsetup" id="corpPurchase1" ng-model="d.corpPurchase.card">
+            Corporate T&E
+            <label for="corpPurchase1"></label>
+        </td>
+    </tr>
+    <tr>
+        <td class="fmb-nonrevolve-left">Purchasing Card
+        </td>
+        <td>
+            <input type="radio" name="cardsetup" id="corpPurchase2" ng-model="d.corpPurchase.purchase">
+            Purchasing
+            <label for="corpPurchase2"></label>
+        </td>
+    </tr>
+    <tr>
+        <td>Corporate (T&E) and Purchasing Card
+
+        </td>
+        <td> <input type="radio" name="cardsetup" id="corpPurchase3" ng-model="d.corpPurchase.tecard">
+            Both Corporate T&E and Purchasing
+            <label for="corpPurchase3"></label>
+        </td>
+    </tr>
+    <tr>
+        <td>Company Name to Emboss on Card
+            (24 Character max)
+
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.corpPurchase.cardname">
+        </td>
+    </tr>
+    <tr>
+        <td>Company sub-level (department) names (if applicable)</td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.corpPurchase.sublevel">
+        </td>
+    </tr>
+    <tr>
+        <td>Scorecard Rewards Program</td>
+        <td>
+            <input type="checkbox" ng-model="d.corpPurchase.rewards">
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="fmb-form-section">Statement Type-Central or Individual
+        </td>
+    </tr>
+    <tr>
+        <td>Central Account Statement (Individual memo statements accessible via the Online Administrative Tool)
+
+        </td>
+        <td>
+            {{stmtOption}}
+
+            <input type="radio" name="stmtOption" id="stmtOption1" ng-model="d.corpPurchase.stmtOption" value="C"
+                ng-change="cpUpdate()">
+            <label for="stmtOption1">Central</label>
+
+            <input type="radio" name="stmtOption" id="stmtOption2" ng-model="d.corpPurchase.stmtOption" value="I"
+                ng-change="cpUpdate()">
+            <label for="stmtOption2">Individual</label>
+        </td>
+    </tr>
+    <tr>
+        <td>IF CENTRAL Name of billing contact
+
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-class="{'fmb-required-field': (stmtOption=='C' && !stmtCentralContact)}"
+                ng-model="d.corpPurchase.stmtCentralContact"></td>
+    <tr>
+        <td>IF CENTRAL billing address
+
+        </td>
+        <td><input type="text" name="" id="" ng-class="{'fmb-required-field': (stmtOption=='C' && !stmtCentralAddress)}"
+                ng-model="d.corpPurchase.stmtCentralAddress"></td>
+    </tr>
+
+
+    <tr>
+        <td>IF CENTRAL Email address of billing contact
+        </td>
+        <td><input type="text" name="" id="" ng-class="{'fmb-required-field': (stmtOption=='C' && !stmtCentralEmail)}"
+                ng-model="d.corpPurchase.stmtCentralEmail"></td>
+    </tr>
+    <tr>
+        <td>Individual Billing (Memo Statements)
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.indivBillingMemo"></td>
+    </tr>
+
+
+
+    <tr>
+        <td colspan="2" class="fmb-form-section">Additional Statement Option
+
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>Paper Statements (Additional fees may apply-electronic statements are available online)
+
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.corpPurchase.paper">Paper Statements
+
+        </td>
+        <td>
+            <div>$2 per statement per cycle (Charged to Card)
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Billing Options-Select One Cycle and the one associated date
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Monthly
+            Choose Monthly cycle date from drop down list
+
+        </td>
+        <td>
+            <input type="radio" name="cycle" id="" ng-model="d.corppurchase.cycle" value="monthly">Monthly
+            <select name="" id="" ng-model="d.corpPurchase.monthly" ng-show="d.corppurchase.cycle == 'monthly'">
+                <option>4</option>
+                <option>10</option>
+                <option>13</option>
+                <option>14</option>
+                <option>20</option>
+                <option>25</option>
+            </select>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Semi-Monthly
+            Choose Semi-Monthly cycle day from drop down list
+
+
+        </td>
+        <td>
+            <input type="radio" name="cycle" id="" ng-model="d.corppurchase.cycle" value="semimonthly">Semi-Monthly
+            <select name="" id="" ng-model="d.corpPurchase.semimonthly" ng-show="d.corppurchase.cycle == 'semimonthly'">
+                <option>SUN</option>
+                <option>MON</option>
+                <option>TUE</option>
+                <option>WED</option>
+                <option>THR</option>
+                <option>FRI</option>
+            </select>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Weekly
+            Choose Weekly cycle day from drop down list
+
+
+
+        </td>
+        <td>
+            <input type="radio" name="cycle" id="" ng-model="d.corppurchase.cycle" value="weekly">Weekly
+            <select name="" id="" ng-model="d.corpPurchase.weekly" ng-show="d.corppurchase.cycle =='weekly'">
+                <option>SUN</option>
+                <option>MON</option>
+                <option>TUE</option>
+                <option>WED</option>
+                <option>THR</option>
+                <option>FRI</option>
+            </select>
+
+        </td>
+    </tr>
+
+
+    <tr>
+        <td colspan="2" class="fmb-form-section">Additional Options
+        </td>
+
+    </tr>
+    <tr>
+        <td>ACH Auto Pay (Authorization Form Required)
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.corpPurchase.achauto">ACH Auto Pay</td>
+        <td>(Required for Semi Monthly or Weekly Billing cycles)
+        </td>
+
+    </tr>
+    <!-- <tr>
+        <td>Include Company Logo on Card
+            (Additional fees apply)
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.corpPurchase.incllogo">Company Logo
+
+        </td>
+    </tr>
+    <tr>
+        <td>ScoreCard Rewards Program
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.corpPurchase.scorecard">ScoreCard</td>
+    </tr> -->
+
+
+
+    <tr>
+        <td class="fmb-form-section">Virtual Account
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.corpPurchase.virtual" value="1"></td>
+    </tr>
+    <tr>
+        <td>If Virtual Account - email address needed
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.virtualAccountEmail" ng-class="{'fmb-required-field': corpPurchase.virtual == 1 && !corpPurchase.virtualAccountEmail}"></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.corpPurchase.ssoaccess">
+            Single Sign-on access to Card Management Tool (eZBusiness) via Business Express
+        </td>
+    </tr>
+    <tr>
+        <td>Access EZBusiness Expense Management Tool **Additional Fees apply
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.corpPurchase.ezbusinessmgmt">
+            Access EZBusiness Expense Management
+
+        </td>
+        <td>$300 one time Implementation Fee and $20 monthly fee (AAS)
+        </td>
+    </tr>
+    <tr>
+        <td>Expense Management Transaction Data Feed
+            (VCF File)
+            **Additional Fees apply
+        </td>
+        <td>
+            <input type="radio" name="vcf" id="vcf1" ng-model="d.corpPurchase.ezbusiness" value="Concur">Concur
+            <input type="radio" name="vcf" id="vcf3" ng-model="d.corpPurchase.ezbusiness" value="Other">Other
+            <br>
+            <input ng-show="d.corpPurchase.ezbusiness == 'Other'" type="text" name="" id="" ng-model="d.corpPurchase.ezbusinessOther">
+
+        </td>
+        <td>$300 one time Implementation Fee and $20 monthly fee (AAS)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">AUTO DEBIT
+        </td>
+
+    </tr>
+    <tr>
+        <td>Financial Institution Name
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.corpPurchase.financialInst" ng-class="{'fmb-required-field': !corpPurchase.financialInst && corpPurchase.achauto}">
+        </td>
+    </tr>
+    <tr>
+        <td>Street Address
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.address" ng-class="{'fmb-required-field': !corpPurchase.address && corpPurchase.achauto}">
+        </td>
+    </tr>
+    <tr>
+        <td>City
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.city" ng-class="{'fmb-required-field': !corpPurchase.city && corpPurchase.achauto}">
+        </td>
+    </tr>
+    <tr>
+        <td>State
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.state" ng-class="{'fmb-required-field': !corpPurchase.state && corpPurchase.achauto}">
+        </td>
+    </tr>
+    <tr>
+        <td>Zip
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.zip" ng-class="{'fmb-required-field': !corpPurchase.zip && corpPurchase.achauto}">
+        </td>
+    </tr>
+    <tr>
+        <td>Account Number
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.acctNumber" ng-class="{'fmb-required-field': !corpPurchase.acctNumber && corpPurchase.achauto}">
+        </td>
+    </tr>
+    <tr>
+        <td>Transit Routing Number
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.corpPurchase.routing" ng-class="{'fmb-required-field': !corpPurchase.routing && corpPurchase.achauto}">
+        </td>
+    </tr>
+</table>

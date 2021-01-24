@@ -1,0 +1,345 @@
+<h2>Lock Box</h2>
+
+<table>
+    <tr>
+        <td>Sub-Status:</td>
+        <td>
+            <select name="" id="" ng-model="d.lockbox.substatus" ng-options="x for x in choiceSubstatus"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>Business Name:
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.start.companyName" disabled>
+        </td>
+        <td></td>
+    </tr>
+    <tr class="fmb-form-section">
+        <td></td>
+        <td>Administrator
+        </td>
+        <td>Co-Admin <br> (if applicable)
+        </td>
+        <td rowspan="14" style="vertical-align:top">
+            <img src="lockbox.png" alt="">
+        </td>
+    </tr>
+    <tr>
+        <td>Full Name:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.fullname"></td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.cofullname"></td>
+    </tr>
+    <tr>
+        <td>Title:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.title"></td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.cotitle"></td>
+    </tr>
+    <tr>
+        <td>Phone Number:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.phone"></td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.cophone"></td>
+    </tr>
+    <tr>
+        <td>Email:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.email"></td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.coemail"></td>
+    </tr>
+    <tr>
+        <td>Account Number:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.accountnumber"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Type:
+        </td>
+        <td>
+            <input type="radio" name="type1" id="type1" ng-model="d.lockbox.type" value="Wholesale">
+            <label for="type1">Wholesale</label>
+            <br>
+            <input type="radio" name="type2" id="type2" ng-model="d.lockbox.type" value="Retail">
+            <label for="type2">Retail</label>
+        </td>
+    </tr>
+    <tr>
+        <td>Tentative Start Date:
+        </td>
+        <td><input type="text" datepicker name="" id="" ng-model="d.lockbox.tentantive"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Processing Transmission Deadline Time:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.processing"></td>
+        <td>
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"> <span class="fmb-error">Any exception to end of day processing must be approved by Deposit
+                Operations Mgmt
+                prior to commiting to client.</span></td>
+
+    </tr>
+    <tr>
+        <td>Average # of items per month:
+        </td>
+        <td><input type="number" name="" id="" ng-model="d.lockbox.avgitems"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Volume Peak Times?
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.lockbox.volumepeak"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>If yes, When- day of week, month seasonal:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.peak"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Daily Data Transmission
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.ddtran">
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="fmb-field">Acceptable Payees:
+        </td>
+        <td>
+            <div ng-repeat="r in d.lockbox.acceptPayee">
+                <input type="text" name="" id="" ng-model="r.acceptpay">
+                <i class="fa fa-minus-circle" ng-click="deleteRow('lockbox.acceptPayee', $index)">Remove</i>
+            </div>
+            <i class="fa fa-plus-circle" ng-click="addRow('lockbox.acceptPayee')">Add</i>
+        </td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>Invoice/ Coupons
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.invoice">
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Is Anything to be Returned?
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.returned">
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Envelopes Returned
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.envelopes">
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Mail Options:
+        </td>
+        <td>
+            <select name="" id="" ng-model="d.selectMailOption" ng-options="x for x in choiceMailOption"></select>
+        </td>
+        <td>
+
+        </td>
+    </tr>
+    <tr>
+        <td>Specify Mailing address
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.mailingaddress"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Complex Processing Options:
+        </td>
+        <td>
+
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.cdrom">CD Rom<br>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.recmgr">Receivables Manager Archive<br>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.webexcept">Web Exceptions<br>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.archive">Archive Options<br>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.checks">Checks<br>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.correspond">Correspondence<br>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.remit">Remittance Documents<br>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.stub">Stub<br>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.envelope">Envelope<br>
+
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="fmb-field">Receivables Manager Users:
+        </td>
+        <td>
+
+            <!-- Table RM Users -->
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                </tr>
+                <tr ng-repeat="r in d.lockbox.rmUsers">
+                    <td><input type="text" name="" id="" ng-model="r.name"></td>
+                    <td><input type="text" name="" id="" ng-model="r.email"></td>
+                    <td>
+                        <i class="fa fa-minus-circle" ng-click="deleteRow('lockbox.rmUsers', $index)">Remove</i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa fa-plus-circle" ng-click="addRow('lockbox.rmUsers')">Add</i>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Data Entry Report Format (see below):
+        </td>
+        <td>
+            <select name="" id="" ng-model="d.lockbox.selectLockboxReportFormat" ng-options="x for x in choiceLockboxReportFormat"></select>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Host File:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.host"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Retail Clients Only:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.retail"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Check Digit Routine (stub/invoice/scanline)
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.check"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Change of Address
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.changeaddress"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Specify Location
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.specify"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Return Information
+        </td>
+        <td>
+            <select name="" id="" ng-model="d.lockbox.return">
+                <option value="1">1. PDF File</option>
+                <option value="2">2. Original Documents</option>
+            </select>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>EIP File:
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.lockbox.eip">
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Stop File/ Accept File
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.lockbox.stop"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Exception Items:
+
+        </td>
+        <td>
+
+            <!-- <table>
+                <tr>
+                    <td>
+                        <select name="" id="" ng-model="d.lockbox.exceptItems">
+                            <option value="1">1. Unsigned Checks</option>
+                            <option value="2">2. Paid in Full/Restrictive Notation checks</option>
+                            <option value="3">3. Canadian Checks</option>
+                            <option value="4">4. Payments without coupons/invoices</option>
+                            <option value="5">5. Missing Payees</option>
+                        </select>
+                    </td>
+                    <td style="white-space: nowrap">
+                        <input type="radio" name="processreturn" id="" value="process" ng-model="d.lockbox.processreturn">
+                        Process
+                        <input type="radio" name="processreturn" id="" value="return" ng-model="d.lockbox.processreturn">
+                        Return</td>
+                </tr>
+            </table> -->
+
+            <table class="fmb-table-nowrap">
+                <tr>
+                    <td>Unsigned Checks</td>
+                    <td><input type="radio" name="processreturn1" id="" value="process" ng-model="d.lockbox.exceptUnsigned">
+                        Process
+                        <input type="radio" name="processreturn1" id="" value="return" ng-model="d.lockbox.exceptUnsigned">
+                        Return</td>
+                </tr>
+                <tr>
+                    <td>Paid in Full/Restrictive Notation checks</td>
+                    <td><input type="radio" name="processreturn2" id="" value="process" ng-model="d.lockbox.exceptPaidFull">
+                        Process
+                        <input type="radio" name="processreturn2" id="" value="return" ng-model="d.lockbox.exceptPaidFull">
+                        Return</td>
+                </tr>
+                <tr>
+                    <td>Canadian Checks</td>
+                    <td><input type="radio" name="processreturn3" id="" value="process" ng-model="d.lockbox.exceptCA">
+                        Process
+                        <input type="radio" name="processreturn3" id="" value="return" ng-model="d.lockbox.exceptCA">
+                        Return</td>
+                </tr>
+                <tr>
+                    <td>Payments without coupons/invoices</td>
+                    <td><input type="radio" name="processreturn4" id="" value="process" ng-model="d.lockbox.exceptPayment">
+                        Process
+                        <input type="radio" name="processreturn4" id="" value="return" ng-model="d.lockbox.exceptPayment">
+                        Return</td>
+                </tr>
+                <tr>
+                    <td>Missing Payees</td>
+                    <td><input type="radio" name="processreturn5" id="" value="process" ng-model="d.lockbox.exceptMissing">
+                        Process
+                        <input type="radio" name="processreturn5" id="" value="return" ng-model="d.lockbox.exceptMissing">
+                        Return</td>
+                </tr>
+            </table>
+
+
+        </td>
+        <td></td>
+    </tr>
+
+</table>

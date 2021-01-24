@@ -1,0 +1,201 @@
+<h2>Beneficial Ownership</h2>
+
+<table>
+    <tr>
+        <td>Sub-Status:</td>
+        <td>
+            <select name="" id="" ng-model="d.bo.substatus" ng-options="x for x in choiceSubstatus"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>Training Scheduled Date:</td>
+        <td>
+            <input name="" id="" datepicker ng-model="d.bo.trainsched" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Training Completed Date:</td>
+        <td>
+            <input name="" id="" datepicker ng-model="d.bo.traincomp" />
+        </td>
+    </tr>
+</table>
+
+<p>
+    CERTIFICATION OF BENEFICIAL OWNER(S)
+    <br>
+    Persons opening an account on behalf of a legal entity must provide the following information:
+</p>
+
+<p>
+    a. Name and Title of Natural Person opening account: <br>
+    <input type="text" name="" id="" ng-model="d.bo.name">
+</p>
+
+<p>
+    b. Name, Type and Address of Legal Entity for which the Account is being opened:
+</p>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Address</td>
+        <td>Address 2</td>
+        <td>City</td>
+        <td>State</td>
+        <td>ZIP</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" name="" id="" ng-model="d.bo.entityname">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.bo.entitytype">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.bo.entityaddress" size="30">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.bo.entityaddress2" size="30">
+        </td>
+
+
+        <td>
+            <input type="text" name="" id="" ng-model="d.bo.city">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.bo.state" size="10">
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.bo.zip" size="10">
+        </td>
+    </tr>
+</table>
+</p>
+
+<p>
+    <p>
+        c. The following information for each individual, if any, who, directly or indirectly, through any contact,
+        arrangement, understanding, relationship or otherwise, owns 25 percent or more of the equity interests of the
+        legal
+        entity listed above:
+    </p>
+
+    <div class="fmb-center">
+        <b>(If no individual meets this definition, please write "Not Applicable")</b>
+    </div>
+
+    <table border="1">
+        <tr>
+            <td>Name
+            </td>
+            <td>Date of Birth (mm/dd/yyyy)
+            </td>
+            <td>Address (Residential or Business Street Address, City, State, ZIP)
+            </td>
+            <td>For U.S. Persons, Social Security Number (no dashes)
+            </td>
+            <td>For non-U.S. Persons, Social Security Number, Passport Number and Country of Issuance, or other similar
+                identification number*
+            </td>
+        </tr>
+
+        <tr ng-repeat="r in d.bo.ownerTable">
+            <td>
+                <input type="text" name="" id="" ng-model="r.name">
+            </td>
+            <td>
+                <input type="text" datepicker name="" id="" ng-model="r.dob">
+            </td>
+            <td>
+                <input type="text" name="" id="" ng-model="r.address" size=35>
+            </td>
+            <td><input type="text" name="" id="" ng-model="r.ssn" size=10 maxlength="11"></td>
+            <td><input type="text" name="" id="" ng-model="r.passport" size=65></td>
+        </tr>
+    </table>
+    <br>
+    <b>Attach a copy of a valid and unexpired government ID showing number and photo</b>
+
+    <p>
+        d. The following information for one individual with significant responsibility for managing the legal entity
+        listed above, such as:
+    </p>
+
+    <ul style="list-style:none">
+        <li><input type="radio" name="" id="" ng-model="d.bo.exec" value="exec">
+            An executive officer or senior manager (e.g. Chief Executive Officer, Chief Financial Officer, Chief
+            Operating
+            Officer, Managing Member, General Partner, President, Vice President, Treasurer); or
+        </li>
+
+        <li>
+            <input type="radio" name="" id="" ng-model="d.bo.exec" value="otherindiv">
+            Any other individual who regularly performs similar functions.
+        </li>
+    </ul>
+
+    (If appropriate, an individual listed under section (c ) above may also be listed in this section (d)).
+
+    <table border="1">
+        <tr>
+            <td>Name/title
+            </td>
+            <td>Date of Birth (mm/dd/yyyy)
+            </td>
+            <td>Address (Residential or Business Street Address, City, State, ZIP)
+            </td>
+            <td>For U.S. Persons, Social Security Number (no dashes)
+            </td>
+            <td>For non-U.S. Persons, Social Security Number, Passport Number and Country of Issuance, or other similar
+                identification number*
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="text" name="" id="" ng-model="d.bo.resp.name">
+            </td>
+            <td>
+                <input type="text" datepicker name="" id="" ng-model="d.bo.resp.dob">
+            </td>
+            <td>
+                <input type="text" name="" id="" ng-model="d.bo.resp.address" size=35>
+            </td>
+            <td><input type="text" name="" id="" ng-model="d.bo.resp.ssn" size=10 maxlength="9"></td>
+            <td><input type="text" name="" id="" ng-model="d.bo.resp.passport" size=65></td>
+        </tr>
+    </table>
+    <br>
+    <b>
+        Attach a copy of a valid and unexpired government ID showing number and photo
+    </b>
+
+    <p>
+        I, <input type="text" name="" id="" ng-model="d.bo.name"> (name of natural person opening the account),
+        hereby certify, to the best of my knowledge, that the information provided above is complete and correct.
+    </p>
+    <br><br>
+    <p>
+        Signature: ________________________________________ Date: ____________________
+    </p>
+    <div style="padding-left:200px">
+        <span ng-bind="d.bo.legalname"></span>
+    </div>
+    <br><br>
+    <p>
+        Legal Entity Identifier: <input type="text" name="" id="" ng-model="d.bo.legalname"> (optional)
+    </p>
+
+
+
+    <br>
+    <br>
+
+    <div class="fmb-footnote">
+        * in lieu of a passport number, Non-U.S. Persons may also provide a Social Security Number, an alien
+        indentification card number, or number and country of issuance of any other government-issued document
+        evidencing nationality or residence and bearing a photograph or similar safeguard.
+    </div>

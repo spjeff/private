@@ -1,0 +1,37 @@
+
+.chevron
+{
+    background-image: url('/chevron.png');
+    background-repeat: no-repeat;
+}
+.card
+{
+    background-color: #836992;
+    margin:5px;
+    height: 78px;
+    width: 140px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 5px;
+}
+div.card table {
+    width:100%;
+}
+.dashheader {
+    white-space: nowrap;
+    font-weight:bold;   
+}
+.cardid {
+    font-weight: bold;
+    background-color:#451F5C;
+    color:white;
+}
+.cardname {
+    width: 16ch;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.cardcol {
+    border-left: 2px lightgray dashed;
+    vertical-align: top;
+}

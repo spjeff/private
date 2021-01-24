@@ -1,0 +1,46 @@
+{ "Tasks": [
+{ "SourcePath": "E:\\FTP\\_General Counsel\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/GC-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_General Counsel\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/GC-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_General Counsel\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/GC-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_General Counsel\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/GC-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Human Resouces\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/HR-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Human Resouces\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/HR-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Human Resouces\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/HR-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Human Resouces\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/HR-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Legal\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams349-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Legal\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams349-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Legal\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams349-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Legal\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams349-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Marketing\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams252-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Marketing\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams252-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Marketing\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams252-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Marketing\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams252-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Operations\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams663-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Operations\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams663-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Operations\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams663-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Operations\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams663-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Product\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams368-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Product\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams368-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Product\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams368-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Product\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams368-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Project Management\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/PM354-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Project Management\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/PM354-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Project Management\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/PM354-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Project Management\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/PM354-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Sales\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams171-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Sales\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams171-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Sales\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams171-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Sales\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/msteams171-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Development\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/TD-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Development\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/TD-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Development\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/TD-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Development\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/TD-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Information Security\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/TIS-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Information Security\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/TIS-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Information Security\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/TIS-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Information Security\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/TIS-U","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Infrastructure\\Australia","TargetPath": "https://emlpayments.sharepoint.com/sites/TI-A","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Infrastructure\\EMEA","TargetPath": "https://emlpayments.sharepoint.com/sites/TI-E","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Infrastructure\\Global","TargetPath": "https://emlpayments.sharepoint.com/sites/TI-G","TargetList": "Documents"}
+,{ "SourcePath": "E:\\FTP\\_Technology\\Infrastructure\\Americas","TargetPath": "https://emlpayments.sharepoint.com/sites/TI-U","TargetList": "Documents"}
+]}

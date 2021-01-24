@@ -1,0 +1,290 @@
+<h2>
+    Visa Business Non-Revolving Card Application
+</h2>
+
+<table>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Company Profile
+        </td>
+    </tr>
+    <tr>
+        <td>Company Name
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.company"></td>
+    </tr>
+    <tr>
+        <td>Aggregate Company Credit Limit
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.creditlimit"></td>
+    </tr>
+    <tr>
+        <td>Web Site Address
+        </td>
+        <td><input type="text" name="" id="" placeholder="www." ng-model="d.nonrevolve.website"></td>
+    </tr>
+    <tr>
+        <td>Company Phone Number
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.companyphone"></td>
+    </tr>
+    <tr>
+        <td>Organized as what type of entity
+        </td>
+        <td>
+            <select name="" id="" ng-model="d.nonrevolve.entity">
+                <option value="Corporation">Corporation</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <input type="text" ng-model="d.nonrevolve.entityOther" ng-show="d.nonrevolve.entity == 'Other'">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Card Program Administrator
+        </td>
+    </tr>
+    <tr>
+        <td>Administrator Name
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.adminname"></td>
+    </tr>
+    <tr>
+        <td>Administrator Title
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.admintitle"></td>
+    </tr>
+    <tr>
+        <td>Administrator Email
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.adminemail"></td>
+    </tr>
+    <tr>
+        <td>Administrator Phone
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.adminphone"></td>
+    </tr>
+    <tr>
+        <td>Alternate Admin Name
+        </td>
+        <td><input type="text" name="" id="" ng-class="{'fmb-required-field': !d.nonrevolve.altadminName}" ng-model="d.nonrevolve.altadminName"></td>
+    </tr>
+    <tr>
+        <td>Alternate Admin Title
+        </td>
+        <td><input type="text" name="" id="" ng-class="{'fmb-required-field': !d.nonrevolve.altadminTitle}" ng-model="d.nonrevolve.altadminTitle"></td>
+    </tr>
+    <tr>
+        <td>Alternate Admin Email
+        </td>
+        <td><input type="text" name="" id="" ng-class="{'fmb-required-field': !d.nonrevolve.altadminEmail}" ng-model="d.nonrevolve.altadminEmail"></td>
+    </tr>
+    <tr>
+        <td>Alternate Admin Phone
+        </td>
+        <td><input type="text" name="" id="" ng-class="{'fmb-required-field': !d.nonrevolve.altadminPhone}" ng-model="d.nonrevolve.altadminPhone"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Card Program Setup
+        </td>
+    </tr>
+    <tr>
+        <td>Business - No Restrictions
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.nonrevolve.norestrict">Business - No Restrictions
+        </td>
+    </tr>
+    <tr>
+        <td class="fmb-nonrevolve-left">Professional (Travel and Entertainment. Limited to: Airlines, Hotels, Ground
+            Transportation, Parking, Car
+            Rental & Travel Agencies, Restaurants, Fuel and Vehicle Maintenance)
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.nonrevolve.professional">Professional
+        </td>
+    </tr>
+    <tr>
+        <td>Company Name to emboss on cards
+            (24 character max)
+        </td>
+        <td><input type="text" name="" id="" size="24" ng-model="d.nonrevolve.companynamecards"></td>
+    </tr>
+    <tr>
+        <td class="fmb-form-section">Statement and Billing (Select Central or Individual)
+        </td>
+    </tr>
+    <tr>
+        <td class="fmb-nonrevolve-left">Central Account Statement (Individual memo statements accessible via the Online
+            Administrative Tool) OR
+            Individual Billing (Memo Statements)
+        </td>
+        <td class="fmb-nowrap">
+
+            <input type="radio" name="indivBill" id="indivBill1" ng-model="d.nonrevolve.indivBill">
+            <label for="indivBill1">Central Account Statement</label>
+
+
+            <input type="radio" name="indivBill" id="indivBill2" ng-model="d.nonrevolve.indivBill">
+            <label for="indivBill2">Individual Billing</label>
+
+        </td>
+        <td>*In order for the individual cardholder to receive rewards, must choose individual
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">If CENTRAL</td>
+    </tr>
+    <tr>
+        <td>Name of Billing Contact
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.namebill"></td>
+    </tr>
+    <tr>
+        <td>Billing Address
+            (if different from the mail-to address)
+        </td>
+        <td><input type="text"></td>
+    </tr>
+    <tr>
+        <td>Email address of Billing Contact
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.emailbill"></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">ADDITIONAL OPTIONS
+        </td>
+
+    </tr>
+    <tr>
+        <td>Paper Statements (additional fees)
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.nonrevolve.paper">
+            Paper Statements
+        </td>
+        <td>$2 per statement per cycle (Charged to card)
+        </td>
+    </tr>
+    <tr>
+        <td>Monthly Statement Cycle Date
+        </td>
+        <td>
+            <select name="" id="" ng-model="d.nonrevolve.monthly" ng-options="x for x in choiceNonRevolve"></select>
+
+        </td>
+        <td>Choose 4th, 10th, 13th, 14th, 20th, 25th
+        </td>
+    </tr>
+    <tr>
+        <td>ACH Auto Pay (Authorization Form Required)
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.nonrevolve.autopay">
+            ACH Auto Pay
+        </td>
+    </tr>
+
+    <tr>
+        <td>ScoreCard Rewards Program
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.nonrevolve.scorecard">ScoreCard Rewards
+
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>Virtual Account
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.nonrevolve.virtual">Virtual Account</td>
+    </tr>
+    <tr>
+        <td>If Virtual Account - email address needed
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.virtualemail"></td>
+    </tr>
+    <tr>
+        <td class="fmb-nonrevolve-left">Access to online Administrative and Expense Management Tool
+            (when available and upon execution of Implementation Document)
+        </td>
+        <td><input type="checkbox" name="" id="" ng-model="d.nonrevolve.accessonline">Access to Online Expense
+            Management</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.nonrevolve.ssoaccess">
+            Single Sign-on access to Card Management Tool (eZBusiness) via Business Express
+        </td>
+    </tr>
+    <tr>
+        <td>Access EZBusiness Expense Management Tool **Additional Fees apply
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.nonrevolve.ezbusiness">
+            Access EZBusiness Expense Management
+        </td>
+        <td>
+            $300 one time Implementation Fee and $20 monthly fee (AAS)
+
+        </td>
+    </tr>
+    <tr>
+        <td>Expense Management Transaction Data Feed
+            (VCF File)
+            **Additional Fees apply
+        </td>
+        <td>
+            <input type="radio" name="vcf" id="vcf1" ng-model="d.nonrevolve.datafeed" value="Concur">
+            <label for="vcf1">Concur</label>
+            <input type="radio" name="vcf" id="vcf2" ng-model="d.nonrevolve.datafeed" value="Expensify">
+            <label for="vcf2">Expensify</label>
+            <input type="radio" name="vcf" id="vcf3" ng-model="d.nonrevolve.datafeed" value="Other">
+            <label for="vcf3"></label>Other</label>
+
+            <input type="text" name="" id="" ng-show="d.nonrevolve.datafeed == 'Other'" ng-model="d.nonrevolve.datafeedOther">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">AUTO DEBIT
+        </td>
+
+    </tr>
+    <tr>
+        <td>Financial Institution Name
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.nonrevolve.financialinst">
+        </td>
+    </tr>
+    <tr>
+        <td>Street Address
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.street"></td>
+    </tr>
+    <tr>
+        <td>City
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.city"></td>
+    </tr>
+    <tr>
+        <td>State
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.state"></td>
+    </tr>
+    <tr>
+        <td>Zip
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.zip"></td>
+    </tr>
+    <tr>
+        <td>Account Number
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.acctnumber"></td>
+    </tr>
+    <tr>
+        <td>Transit Routing Number
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.nonrevolve.routing"></td>
+    </tr>
+</table>

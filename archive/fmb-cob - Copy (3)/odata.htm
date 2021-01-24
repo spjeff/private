@@ -1,0 +1,92 @@
+<h2>
+    Outbound Data Exchange
+</h2>
+
+<table>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Action
+        </td>
+        <td>
+            <input type="checkbox" name="add" id="add" ng-model="d.odata.add">Add
+            <input type="checkbox" name="change" id="change" ng-model="d.odata.change">Change
+            <input type="checkbox" name="delete" id="delete" ng-model="d.odata.delete">Delete
+        </td>
+        <td colspan="2" class="fmb-form-section">Bank Number
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.odata.banknumber">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="fmb-form-section">Destination
+        </td>
+        <td>
+            <input type="checkbox" name="adp" id="add" ng-model="d.odata.adp">(Automatic Data Processing)
+            <br>
+            <input type="checkbox" name="ndc" id="change" ng-model="d.odata.gps">(Global Payment Systems)
+        </td>
+        <td>
+            <input type="checkbox" name="" id="" ng-model="d.odata.blk">BLK (BankLink/MicroLink)
+            <br>
+            <input type="checkbox" name="" id="" ng-model="d.odata.mel">MEL (Mellon Bank)
+            <br>
+            <input type="checkbox" name="" id="" ng-model="d.odata.other">Other
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="4">
+
+            <table>
+                <tr>
+                    <td>Account Number</td>
+                    <td>Account Name</td>
+                </tr>
+                <tr ng-repeat="row in d.odata.accounts">
+                    <td>
+                        <input type="text" name="" id="" ng-model="row.number">
+                    </td>
+                    <td>
+                        <input type="text" name="" id="" ng-model="row.name">
+                    </td>
+                    <td>
+                        <i class="fas fa-minus-circle" ng-click="deleteRow('odata.accounts', $index)">Remove</i>
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                            <i class="fas fa-plus-circle" ng-click="addRow('odata.accounts')">Add</i>
+                        </td>
+                    </tr>
+            </table>
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            The following fields will be included in the balalnce reporting information sent to the destination
+            indicated above. Indicate by choosing either "Yes" or "No."
+        </td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td></td>
+        <td>BA12 Type Code</td>
+    </tr>
+    <tr ng-repeat="row in d.odata.rows">
+        <td>
+            <input type="radio" name="row{{$index}}" id="yes-row{{$index}}" ng-model="row.value" value="1">
+            <label for="yes-row{{$index}}">
+                Yes
+            </label>
+
+            <input type="radio" name="row{{$index}}" id="no-row{{$index}}" ng-model="row.value" value="0">
+            <label for="no-row{{$index}}">
+                No
+            </label>
+        </td>
+        <td>{{row.name}}</td>
+        <td>{{row.number}}</td>
+    </tr>
+
+</table>

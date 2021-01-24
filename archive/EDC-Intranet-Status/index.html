@@ -1,0 +1,36 @@
+
+    <!-- App -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js"></script>
+    <script src="/sites/intranet/SiteAssets/EDC-Status/edc-status.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/sites/intranet/SiteAssets/EDC-Status/edc-status.css">
+
+    <!-- App -->
+    <div ng-app="statusApp" class="statusContainer">
+        <div ng-controller="statusCtl">
+            <table border="0" class="statusTbl" ng-class="{'statusTblBlue' : row.Color=='Blue', 'statusTblRed' : row.Color=='Red'}">
+                <tr>
+                        <img ng-show="row.Color == 'Red'" src="https://educationdevelopmentcenter.sharepoint.com/sites/intranet/Style%20Library/Images/edc-alert-on.png" alt="">
+                        <span class="statusHeader">
+                            {{row.Title}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div ng-hide="toggle">
+                            <span class="statusDesc">{{row.Description}}</span>
+                            <a ng-click="toggleView()" href="">View more »</a>
+                        </div>
+
+                        <div ng-show="toggle">
+                            <span>{{row.Description}}</span>
+                            <a ng-click="toggleView()" href="">« View Less</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>

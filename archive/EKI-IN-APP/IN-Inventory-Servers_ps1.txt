@@ -1,0 +1,32 @@
+<#
+.SYNOPSIS
+    Download list of VM servers with high level detail.
+    
+.NOTES
+	File Namespace	: IN-Inventory-Servers.ps1
+	Author			: Jeff Jones
+	Version			: 0.1
+    Last Modified	: 02-21-2019
+#>
+
+
+# Module
+Import-Module ActiveDirectory -ErrorAction SilentlyContinue | Out-Null
+
+
+# Computer
+Function DownloadServers() {
+    Write-Host "Downloading Servers..."
+    $servers = Get-ADComputer -Filter {(OperatingSystem -like "*windows*server*") -and (Enabled -eq "True")} -Properties *
+    $servers.Count
+    $servers | Export-Csv "IN-Servers.csv" -NoTypeInformation -Force
+}
+
+
+# Main
+Function Main() {
+    Start-Transcript
+    DownloadServers
+    Stop-Transcript
+}
+Main

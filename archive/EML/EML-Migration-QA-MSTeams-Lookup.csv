@@ -1,0 +1,373 @@
+﻿SourcePath,TargetPath
+_ ECommerce\Australia,/EC-A
+_ ECommerce\EMEA,/EC-E
+_ ECommerce\Global,/EC-G
+_ ECommerce\Americas,/EC-U
+_Account Management (Commercial and Operational)\Australia,/AM-A
+_Account Management (Commercial and Operational)\EMEA,/AM-E
+_Account Management (Commercial and Operational)\Global,/AM-G
+_Account Management (Commercial and Operational)\Americas,/AM-U
+_Acquisitions and Investor Relations\Australia,/AIR-A
+_Acquisitions and Investor Relations\EMEA,/AIR-E
+_Acquisitions and Investor Relations\Global,/AIR-G
+_Acquisitions and Investor Relations\Americas,/AIR-U
+_Banks and Networks\Australia,/BN-A
+_Banks and Networks\EMEA,/BN-E
+_Banks and Networks\Global,/BN-G
+_Banks and Networks\Americas,/BN-U
+_Card Production\Australia,/CP-A
+_Card Production\EMEA,/CP-E
+_Card Production\Global,/CP-G
+_Card Production\Americas,/CP-U
+_Clients\Australia,/msteams-A
+_Clients\EMEA,/msteams-E
+_Clients\Global,/msteams-G
+_Clients\Americas,/msteams-U
+_Company Secretarial\Australia,/CS-A
+_Company Secretarial\EMEA,/CS-E
+_Company Secretarial\Global,/CS-G
+_Company Secretarial\Americas,/CS-U
+_Compliance-Fraud-Regulatory-Risk\Australia,/CFRP-A
+_Compliance-Fraud-Regulatory-Risk\EMEA,/CFRP-E
+_Compliance-Fraud-Regulatory-Risk\Global,/CFRP-G
+_Compliance-Fraud-Regulatory-Risk\Americas,/CFRP-U
+_Customer Service\Australia,/CS-A
+_Customer Service\EMEA,/CS-E
+_Customer Service\Global,/CS-G
+_Customer Service\Americas,/CS-U
+_Customer Success\Australia,/CSS-A
+_Customer Success\EMEA,/CSS-E
+_Customer Success\Global,/CSS-G
+_Customer Success\Americas,/CSS-U
+_Directors\Australia,/msteams850-A
+_Directors\EMEA,/msteams850-E
+_Directors\Global,/msteams850-G
+_Directors\Americas,/msteams850-U
+_E Commerce\Australia,/EC-A
+_E Commerce\EMEA,/EC-E
+_E Commerce\Global,/EC-G
+_E Commerce\Americas,/EC-U
+_Executive Team\Australia,/ET-A
+_Executive Team\EMEA,/ET-E
+_Executive Team\Global,/ET-G
+_Executive Team\Americas,/ET-U
+_Finance\Australia,/msteams721-A
+_Finance\EMEA,/msteams721-E
+_Finance\Global,/msteams721-G
+_Finance\Americas,/msteams721-U
+_General Counsel\Australia,/GC-A
+_General Counsel\EMEA,/GC-E
+_General Counsel\Global,/GC-G
+_General Counsel\Americas,/GC-U
+_Human Resouces\Australia,/HR-A
+_Human Resouces\EMEA,/HR-E
+_Human Resouces\Global,/HR-G
+_Human Resouces\Americas,/HR-U
+_Legal\Australia,/msteams349-A
+_Legal\EMEA,/msteams349-E
+_Legal\Global,/msteams349-G
+_Legal\Americas,/msteams349-U
+_Marketing\Australia,/msteams252-A
+_Marketing\EMEA,/msteams252-E
+_Marketing\Global,/msteams252-G
+_Marketing\Americas,/msteams252-U
+_Operations\Australia,/msteams663-A
+_Operations\EMEA,/msteams663-E
+_Operations\Global,/msteams663-G
+_Operations\Americas,/msteams663-U
+_Product\Australia,/msteams368-A
+_Product\EMEA,/msteams368-E
+_Product\Global,/msteams368-G
+_Product\Americas,/msteams368-U
+_Project Management\Australia,/PM354-A
+_Project Management\EMEA,/PM354-E
+_Project Management\Global,/PM354-G
+_Project Management\Americas,/PM354-U
+_Sales\Australia,/msteams171-A
+_Sales\EMEA,/msteams171-E
+_Sales\Global,/msteams171-G
+_Sales\Americas,/msteams171-U
+_Technology\Development\Australia,/TD-A
+_Technology\Development\EMEA,/TD-E
+_Technology\Development\Global,/TD-G
+_Technology\Development\Americas,/TD-U
+_Technology\Information Security\Australia,/TIS-A
+_Technology\Information Security\EMEA,/TIS-E
+_Technology\Information Security\Global,/TIS-G
+_Technology\Information Security\Americas,/TIS-U
+_Technology\Infrastructure\Australia,/TI-A
+_Technology\Infrastructure\EMEA,/TI-E
+_Technology\Infrastructure\Global,/TI-G
+_Technology\Infrastructure\Americas,/TI-U
+Account Management (Commercial and Operational)\Australia,/AM-A
+Account Management (Commercial and Operational)\EMEA,/AM-E
+Account Management (Commercial and Operational)\Global,/AM-G
+Account Management (Commercial and Operational)\Americas,/AM-U
+Acquisitions and Investor Relations\Australia,/AIR-A
+Acquisitions and Investor Relations\EMEA,/AIR-E
+Acquisitions and Investor Relations\Global,/AIR-G
+Acquisitions and Investor Relations\Americas,/AIR-U
+Banks and Networks\Australia,/BN-A
+Banks and Networks\EMEA,/BN-E
+Banks and Networks\Global,/BN-G
+Banks and Networks\Americas,/BN-U
+Card Production\Australia,/CP-A
+Card Production\EMEA,/CP-E
+Card Production\Global,/CP-G
+Card Production\Americas,/CP-U
+Clients\Australia,/CP-A
+Clients\EMEA,/CP-E
+Clients\Global,/CP-G
+Clients\Americas,/CP-U
+Compliance-Fraud-Regulatory-Risk\Australia,/CFRP-A
+Compliance-Fraud-Regulatory-Risk\EMEA,/CFRP-E
+Compliance-Fraud-Regulatory-Risk\Global,/CFRP-G
+Compliance-Fraud-Regulatory-Risk\Americas,/CFRP-U
+Customer Service\Australia,/CSR-A
+Customer Service\EMEA,/CSR-E
+Customer Service\Global,/CSR-G
+Customer Service\Americas,/CSR-U
+Customer Success\Australia,/CSS-A
+Customer Success\EMEA,/CSS-E
+Customer Success\Global,/CSS-G
+Customer Success\Americas,/CSS-U
+Executive Team\Australia,/ET-A
+Executive Team\EMEA,/ET-E
+Executive Team\Global,/ET-G
+Executive Team\Americas,/ET-U
+Finance\Australia,/msteams721-A
+Finance\EMEA,/msteams721-E
+Finance\Global,/msteams721-G
+Finance\Americas,/msteams721-U
+Human Resouces\Australia,/HR-A
+Human Resouces\EMEA,/HR-E
+Human Resouces\Global,/HR-G
+Human Resouces\Americas,/HR-U
+Legal\Australia,/msteams349-A
+Legal\EMEA,/msteams349-E
+Legal\Global,/msteams349-G
+Legal\Americas,/msteams349-U
+Marketing\Australia,/msteams252-A
+Marketing\EMEA,/msteams252-E
+Marketing\Global,/msteams252-G
+Marketing\Americas,/msteams252-U
+Operations\Australia,/msteams663-A
+Operations\EMEA,/msteams663-E
+Operations\Global,/msteams663-G
+Operations\Americas,/msteams663-U
+Product\Australia,/msteams368-A
+Product\EMEA,/msteams368-E
+Product\Global,/msteams368-G
+Product\Americas,/msteams368-U
+Project Management\Australia,/PM354-A
+Project Management\EMEA,/PM354-E
+Project Management\Global,/PM354-G
+Project Management\Americas,/PM354-U
+Sales\Australia,/msteams171-A
+Sales\EMEA,/msteams171-E
+Sales\Global,/msteams171-G
+Sales\Americas,/msteams171-U
+Technology\Development\Australia,/TD-A
+Technology\Development\EMEA,/TD-E
+Technology\Development\Global,/TD-G
+Technology\Development\Americas,/TD-U
+Technology\Information Security\Australia,/TIS-A
+Technology\Information Security\EMEA,/TIS-E
+Technology\Information Security\Global,/TIS-G
+Technology\Information Security\Americas,/TIS-U
+Technology\Infrastructure\Australia,/TI-A
+Technology\Infrastructure\EMEA,/TI-E
+Technology\Infrastructure\Global,/TI-G
+Technology\Infrastructure\Americas,/TI-U
+_Account Management (Commercial and Operational)\Australia,/AM-A
+_Account Management (Commercial and Operational)\EMEA,/AM-E
+_Account Management (Commercial and Operational)\Global,/AM-G
+_Account Management (Commercial and Operational)\Americas,/AM-U
+_Acquisitions and Investor Relations\Australia,/AIR-A
+_Acquisitions and Investor Relations\EMEA,/AIR-E
+_Acquisitions and Investor Relations\Global,/AIR-G
+_Acquisitions and Investor Relations\Americas,/AIR-U
+_Banks and Networks\Australia,/BN-A
+_Banks and Networks\EMEA,/BN-E
+_Banks and Networks\Global,/BN-G
+_Banks and Networks\Americas,/BN-U
+_Card Production\Australia,/CP-A
+_Card Production\EMEA,/CP-E
+_Card Production\Global,/CP-G
+_Card Production\Americas,/CP-U
+_Clients\Australia,/msteams-A
+_Clients\EMEA,/msteams-E
+_Clients\Global,/msteams-G
+_Clients\Americas,/msteams-U
+_Company Secretarial\Australia,/CS-A
+_Company Secretarial\EMEA,/CS-E
+_Company Secretarial\Global,/CS-G
+_Company Secretarial\Americas,/CS-U
+_Compliance-Fraud-Risk-Regulatory\Australia,/CFRP-A
+_Compliance-Fraud-Risk-Regulatory\EMEA,/CFRP-E
+_Compliance-Fraud-Risk-Regulatory\Global,/CFRP-G
+_Compliance-Fraud-Risk-Regulatory\Americas,/CFRP-U
+_Customer Service\Australia,/CSR-A
+_Customer Service\EMEA,/CSR-E
+_Customer Service\Global,/CSR-G
+_Customer Service\Americas,/CSR-U
+_Customer Success\Australia,/CSS-A
+_Customer Success\EMEA,/CSS-E
+_Customer Success\Global,/CSS-G
+_Customer Success\Americas,/CSS-U
+_Directors\Australia,/msteams850-A
+_Directors\EMEA,/msteams850-E
+_Directors\Global,/msteams850-G
+_Directors\Americas,/msteams850-U
+_E Commerce\Australia,/EC-A
+_E Commerce\EMEA,/EC-E
+_E Commerce\Global,/EC-G
+_E Commerce\Americas,/EC-U
+_Executive Team\Australia,/ET-A
+_Executive Team\EMEA,/ET-E
+_Executive Team\Global,/ET-G
+_Executive Team\Americas,/ET-U
+_Finance\Australia,/msteams721-A
+_Finance\EMEA,/msteams721-E
+_Finance\Global,/msteams721-G
+_Finance\Americas,/msteams721-U
+_General Counsel\Australia,/GC-A
+_General Counsel\EMEA,/GC-E
+_General Counsel\Global,/GC-G
+_General Counsel\Americas,/GC-U
+_Human Resouces\Australia,/HR-A
+_Human Resouces\EMEA,/HR-E
+_Human Resouces\Global,/HR-G
+_Human Resouces\Americas,/HR-U
+_Legal\Australia,/msteams349-A
+_Legal\EMEA,/msteams349-E
+_Legal\Global,/msteams349-G
+_Legal\Americas,/msteams349-U
+_Marketing\Australia,/msteams252-A
+_Marketing\EMEA,/msteams252-E
+_Marketing\Global,/msteams252-G
+_Marketing\Americas,/msteams252-U
+_Operations\Australia,/msteams663-A
+_Operations\EMEA,/msteams663-E
+_Operations\Global,/msteams663-G
+_Operations\Americas,/msteams663-U
+_Product\Australia,/msteams368-A
+_Product\EMEA,/msteams368-E
+_Product\Global,/msteams368-G
+_Product\Americas,/msteams368-U
+_Project Management\Australia,/PM354-A
+_Project Management\EMEA,/PM354-E
+_Project Management\Global,/PM354-G
+_Project Management\Americas,/PM354-U
+_Sales\Australia,/msteams171-A
+_Sales\EMEA,/msteams171-E
+_Sales\Global,/msteams171-G
+_Sales\Americas,/msteams171-U
+_Technology\Development\Australia,/TD-A
+_Technology\Development\EMEA,/TD-E
+_Technology\Development\Global,/TD-G
+_Technology\Development\Americas,/TD-U
+_Technology\Information Security\Australia,/TIS-A
+_Technology\Information Security\EMEA,/TIS-E
+_Technology\Information Security\Global,/TIS-G
+_Technology\Information Security\Americas,/TIS-U
+_Technology\Infrastructure\Australia,/TI-A
+_Technology\Infrastructure\EMEA,/TI-E
+_Technology\Infrastructure\Global,/TI-G
+_Technology\Infrastructure\Americas,/TI-U
+_Account Management (Commercial and Operational)\Australia,/AM-A
+_Account Management (Commercial and Operational)\EMEA,/AM-E
+_Account Management (Commercial and Operational)\Global,/AM-G
+_Account Management (Commercial and Operational)\Americas,/AM-U
+_Acquisitions and Investor Relations\Australia,/AIR-A
+_Acquisitions and Investor Relations\EMEA,/AIR-E
+_Acquisitions and Investor Relations\Global,/AIR-G
+_Acquisitions and Investor Relations\Americas,/AIR-U
+_Banks and Networks\Australia,/BN-A
+_Banks and Networks\EMEA,/BN-E
+_Banks and Networks\Global,/BN-G
+_Banks and Networks\Americas,/BN-U
+_Card Production\Australia,/CP-A
+_Card Production\EMEA,/CP-E
+_Card Production\Global,/CP-G
+_Card Production\Americas,/CP-U
+_Clients\Australia,/msteams-A
+_Clients\EMEA,/msteams-E
+_Clients\Global,/msteams-G
+_Clients\Americas,/msteams-U
+_Company Secretarial\Australia,/CS-A
+_Company Secretarial\EMEA,/CS-E
+_Company Secretarial\Global,/CS-G
+_Company Secretarial\Americas,/CS-U
+_Compliance-Fraud-Risk-Regulatory\Australia,/CFRP-A
+_Compliance-Fraud-Risk-Regulatory\EMEA,/CFRP-E
+_Compliance-Fraud-Risk-Regulatory\Global,/CFRP-G
+_Compliance-Fraud-Risk-Regulatory\Americas,/CFRP-U
+_Customer Service\Australia,/CSR-A
+_Customer Service\EMEA,/CSR-E
+_Customer Service\Global,/CSR-G
+_Customer Service\Americas,/CSR-U
+_Customer Success\Australia,/CSS-A
+_Customer Success\EMEA,/CSS-E
+_Customer Success\Global,/CSS-G
+_Customer Success\Americas,/CSS-U
+_Directors\Australia,/msteams850-A
+_Directors\EMEA,/msteams850-E
+_Directors\Global,/msteams850-G
+_Directors\Americas,/msteams850-U
+_E Commerce\Australia,/EC-A
+_E Commerce\EMEA,/EC-E
+_E Commerce\Global,/EC-G
+_E Commerce\Americas,/EC-U
+_Executive Team\Australia,/ET-A
+_Executive Team\EMEA,/ET-E
+_Executive Team\Global,/ET-G
+_Executive Team\Americas,/ET-U
+_Finance\Australia,/msteams721-A
+_Finance\EMEA,/msteams721-E
+_Finance\Global,/msteams721-G
+_Finance\Americas,/msteams721-U
+_General Counsel\Australia,/GC-A
+_General Counsel\EMEA,/GC-E
+_General Counsel\Global,/GC-G
+_General Counsel\Americas,/GC-U
+_Human Resouces\Australia,/HR-A
+_Human Resouces\EMEA,/HR-E
+_Human Resouces\Global,/HR-G
+_Human Resouces\Americas,/HR-U
+_Legal\Australia,/msteams349-A
+_Legal\EMEA,/msteams349-E
+_Legal\Global,/msteams349-G
+_Legal\Americas,/msteams349-U
+_Marketing\Australia,/msteams252-A
+_Marketing\EMEA,/msteams252-E
+_Marketing\Global,/msteams252-G
+_Marketing\Americas,/msteams252-U
+_Operations\Australia,/msteams663-A
+_Operations\EMEA,/msteams663-E
+_Operations\Global,/msteams663-G
+_Operations\Americas,/msteams663-U
+_Product\Australia,/msteams368-A
+_Product\EMEA,/msteams368-E
+_Product\Global,/msteams368-G
+_Product\Americas,/msteams368-U
+_Project Management\Australia,/PM354-A
+_Project Management\EMEA,/PM354-E
+_Project Management\Global,/PM354-G
+_Project Management\Americas,/PM354-U
+_Sales\Australia,/msteams171-A
+_Sales\EMEA,/msteams171-E
+_Sales\Global,/msteams171-G
+_Sales\Americas,/msteams171-U
+_Technology\Development\Australia,/TD-A
+_Technology\Development\EMEA,/TD-E
+_Technology\Development\Global,/TD-G
+_Technology\Development\Americas,/TD-U
+_Technology\Information Security\Australia,/TIS-A
+_Technology\Information Security\EMEA,/TIS-E
+_Technology\Information Security\Global,/TIS-G
+_Technology\Information Security\Americas,/TIS-U
+_Technology\Infrastructure\Australia,/TI-A
+_Technology\Infrastructure\EMEA,/TI-E
+_Technology\Infrastructure\Global,/TI-G
+_Technology\Infrastructure\Americas,/TI-U

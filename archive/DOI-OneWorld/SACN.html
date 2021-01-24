@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border=1 cellpadding=5 cellspacing=5>
+        <tr>
+            <td>TravelerName</td>
+            <td>@{triggerBody()?['TravelerName']}</td>
+        </tr>
+        <tr>
+            <td>Destination</td>
+            <td>@{triggerBody()?['Destination']}</td>
+        </tr>
+        <tr>
+            <td>Departing</td>
+            <td>@{triggerBody()?['Departing']}</td>
+        </tr>
+        <tr>
+            <td>DepartingFrom</td>
+            <td>@{triggerBody()?['DepartingFrom']}</td>
+        </tr>
+        <tr>
+            <td>DepartingOther</td>
+            <td>@{triggerBody()?['DepartingOther']}</td>
+        </tr>
+        <tr>
+            <td>TravelingTo</td>
+            <td>@{triggerBody()?['TravelingTo']}/td>
+        </tr>
+        <tr>
+            <td>MultiDest</td>
+            <td>@{triggerBody()?['MultiDest']}</td>
+        </tr>
+        <tr>
+            <td>Return</td>
+            <td>@{triggerBody()?['Return']}</td>
+        </tr>
+        <tr>
+            <td>ReturningTo</td>
+            <td>@{triggerBody()?['ReturningTo']}</td>
+        </tr>
+        <tr>
+            <td>ReturningOther</td>
+            <td>@{triggerBody()?['ReturningOther']}</td>
+        </tr>
+        <tr>
+            <td>PurchaseTicket</td>
+            <td>@{triggerBody()?['PurchaseTicket']}</td>
+        </tr>
+        <tr>
+            <td>PurchaseTicketOther</td>
+            <td>@{triggerBody()?['PurchaseTicketOther']}</td>
+        </tr>
+        <tr>
+            <td>TravelTimeDept</td>
+            <td>@{triggerBody()?['TravelTimeDept']}</td>
+        </tr>
+        <tr>
+            <td>TravelTimeRet</td>
+            <td>@{triggerBody()?['TravelTimeRet']}</td>
+        </tr>
+        <tr>
+            <td>CheckBag</td>
+            <td>@{triggerBody()?['CheckBag']}</td>
+        </tr>
+        <tr>
+            <td>LodgingNeed</td>
+            <td>@{triggerBody()?['LodgingNeed']}</td>
+        </tr>
+        <tr>
+            <td>LodgingOver</td>
+            <td>@{triggerBody()?['LodgingOver']}</td>
+        </tr>
+        <tr>
+            <td>RentalCar</td>
+            <td>@{triggerBody()?['RentalCar']}</td>
+        </tr>
+        <tr>
+            <td>RentalCarMiles</td>
+            <td>@{triggerBody()?['RentalCarMiles']}</td>
+        </tr>
+        <tr>
+            <td>AddlExp</td>
+            <td>@{triggerBody()?['AddlExp']}</td>
+        </tr>
+        <tr>
+            <td>Incidentals</td>
+            <td>@{triggerBody()?['Incidentals']}</td>
+        </tr>
+        <tr>
+            <td>AddlExpOther</td>
+            <td>@{triggerBody()?['AddlExpOther']}</td>
+        </tr>
+        <tr>
+            <td>Accounting</td>
+            <td>@{triggerBody()?['Accounting']}</td>
+        </tr>
+        <tr>
+            <td>AddlNotes</td>
+            <td>@{triggerBody()?['AddlNotes']}</td>
+        </tr>
+        <tr>
+            <td>Supervisor</td>
+            <td>@{triggerBody()?['Supervisor']}</td>
+        </tr>
+    </table>
+    
+</body>
+</html>

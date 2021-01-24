@@ -1,0 +1,1883 @@
+
+USE [doi-oneworld]
+GO
+ IF NOT EXISTS(SELECT * FROM sys.schemas WHERE [name] = N'ONEWORLD')      
+     EXEC (N'CREATE SCHEMA ONEWORLD')                                   
+ GO                                                               
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'DATA_ALPHA_TESTING_ONLY'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'DATA_ALPHA_TESTING_ONLY'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[DATA_ALPHA_TESTING_ONLY]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[DATA_ALPHA_TESTING_ONLY]
+(
+   [key] nvarchar(max)  NULL,
+   [key_year] nchar(250)  NOT NULL,
+   [COUNTRY] nvarchar(max)  NULL,
+   [GROUP] nvarchar(max)  NULL,
+   [COMMODITY] nvarchar(max)  NULL,
+   [TYPE] nvarchar(max)  NULL,
+   [PHASE] nvarchar(max)  NULL,
+   [measure_production] nvarchar(max)  NULL,
+   [measure_content] nvarchar(max)  NULL,
+   [FORM] nvarchar(max)  NULL,
+   [SUBFORM] nvarchar(max)  NULL,
+   [Commodity_Description] nvarchar(max)  NULL,
+   [Country_Description] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [UNIT] nvarchar(max)  NULL,
+   [YEAR] int  NULL,
+   [CONFIRM] nvarchar(max)  NULL,
+   [STATUS] nvarchar(max)  NULL,
+   [v1_expires] nvarchar(max)  NULL,
+   [v1_value_prelim] nvarchar(max)  NULL,
+   [v1_e_prelim] nvarchar(max)  NULL,
+   [v1_source_prelim] nvarchar(max)  NULL,
+   [v3_expires] nvarchar(max)  NULL,
+   [v3_value_prelim] nvarchar(max)  NULL,
+   [v3_e_prelim] nvarchar(max)  NULL,
+   [v3_source_prelim] nvarchar(max)  NULL,
+   [current_value] nvarchar(max)  NULL,
+   [current_e] nvarchar(max)  NULL,
+   [current_source] nvarchar(max)  NULL,
+   [v1_prior_value] nvarchar(max)  NULL,
+   [v1_prior_e] nvarchar(max)  NULL,
+   [v3_prior_value] nvarchar(max)  NULL,
+   [v3_prior_e] nvarchar(max)  NULL,
+   [v1_footnote_1] nvarchar(max)  NULL,
+   [v1_footnote_2] nvarchar(max)  NULL,
+   [v3_footnote_1] nvarchar(max)  NULL,
+   [v3_footnote_2] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.DATA_ALPHA_TESTING_ONLY',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'DATA_ALPHA_TESTING_ONLY'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'DATA_FIX6'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'DATA_FIX6'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[DATA_FIX6]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[DATA_FIX6]
+(
+   [key] nvarchar(max)  NULL,
+   [key_year] nchar(250)  NOT NULL,
+   [COUNTRY] nvarchar(max)  NULL,
+   [GROUP] nvarchar(max)  NULL,
+   [COMMODITY] nvarchar(max)  NULL,
+   [TYPE] nvarchar(max)  NULL,
+   [PHASE] nvarchar(max)  NULL,
+   [measure_production] nvarchar(max)  NULL,
+   [measure_content] nvarchar(max)  NULL,
+   [FORM] nvarchar(max)  NULL,
+   [SUBFORM] nvarchar(max)  NULL,
+   [Commodity_Description] nvarchar(max)  NULL,
+   [Country_Description] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [UNIT] nvarchar(max)  NULL,
+   [unit_short] nvarchar(max)  NULL,
+   [YEAR] int  NULL,
+   [CONFIRM] nvarchar(max)  NULL,
+   [STATUS] nvarchar(max)  NULL,
+   [v1_expires] nvarchar(max)  NULL,
+   [v1_value_prelim] nvarchar(max)  NULL,
+   [v1_e_prelim] nvarchar(max)  NULL,
+   [v1_source_prelim] nvarchar(max)  NULL,
+   [v3_expires] nvarchar(max)  NULL,
+   [v3_value_prelim] nvarchar(max)  NULL,
+   [v3_e_prelim] nvarchar(max)  NULL,
+   [v3_source_prelim] nvarchar(max)  NULL,
+   [current_value] nvarchar(max)  NULL,
+   [current_e] nvarchar(max)  NULL,
+   [current_source] nvarchar(max)  NULL,
+   [v1_prior_value] nvarchar(max)  NULL,
+   [v1_prior_e] nvarchar(max)  NULL,
+   [v3_prior_value] nvarchar(max)  NULL,
+   [v3_prior_e] nvarchar(max)  NULL,
+   [v1_footnote_1] nvarchar(max)  NULL,
+   [v1_footnote_2] nvarchar(max)  NULL,
+   [v3_footnote_1] nvarchar(max)  NULL,
+   [v3_footnote_2] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.DATA_FIX6',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'DATA_FIX6'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'DATA_REVISIONS'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'DATA_REVISIONS'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[DATA_REVISIONS]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[DATA_REVISIONS]
+(
+   [KEY] int IDENTITY(163, 1)  NOT NULL,
+   [STATUS] nvarchar(max)  NULL,
+   [SUBMITTED] nvarchar(max)  NULL,
+   [TIME] nvarchar(max)  NULL,
+   [COMPLETED] nvarchar(max)  NULL,
+   [REQUEST] nvarchar(max)  NULL,
+   [NOTES] nvarchar(max)  NULL,
+   [RESPONSE] nvarchar(max)  NULL,
+   [SPECIALIST1] nvarchar(max)  NULL,
+   [SPECIALIST2] nvarchar(max)  NULL,
+   [COUNTRY] nvarchar(max)  NULL,
+   [COMMODITY] nvarchar(max)  NULL,
+   [TYPE] nvarchar(max)  NULL,
+   [PHASE] nvarchar(max)  NULL,
+   [MEASURE] nvarchar(max)  NULL,
+   [FORM] nvarchar(max)  NULL,
+   [SUBFORM] nvarchar(max)  NULL,
+   [UNIT] nvarchar(max)  NULL,
+   [EXPLANATION] nvarchar(max)  NULL,
+   [D_2011] nvarchar(max)  NULL,
+   [E_2011] nvarchar(max)  NULL,
+   [S_2011] nvarchar(max)  NULL,
+   [D_2012] nvarchar(max)  NULL,
+   [E_2012] nvarchar(max)  NULL,
+   [S_2012] nvarchar(max)  NULL,
+   [D_2013] nvarchar(max)  NULL,
+   [E_2013] nvarchar(max)  NULL,
+   [S_2013] nvarchar(max)  NULL,
+   [D_2014] nvarchar(max)  NULL,
+   [E_2014] nvarchar(max)  NULL,
+   [S_2014] nvarchar(max)  NULL,
+   [D_2015] nvarchar(max)  NULL,
+   [E_2015] nvarchar(max)  NULL,
+   [S_2015] nvarchar(max)  NULL,
+   [D_2016] nvarchar(max)  NULL,
+   [E_2016] nvarchar(max)  NULL,
+   [S_2016] nvarchar(max)  NULL,
+   [D_2017] nvarchar(max)  NULL,
+   [E_2017] nvarchar(max)  NULL,
+   [S_2017] nvarchar(max)  NULL,
+   [D_2018] nvarchar(max)  NULL,
+   [E_2018] nvarchar(max)  NULL,
+   [S_2018] nvarchar(max)  NULL,
+   [RESPONSE1] nvarchar(max)  NULL,
+   [RESPONSE1TIME] nvarchar(max)  NULL,
+   [RESPONSE2] nvarchar(max)  NULL,
+   [RESPONSE2TIME] nvarchar(max)  NULL,
+   [RESPONSE3] nvarchar(max)  NULL,
+   [RESPONSE3TIME] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.DATA_REVISIONS',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'DATA_REVISIONS'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'DATA_TESTBENCH'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'DATA_TESTBENCH'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[DATA_TESTBENCH]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[DATA_TESTBENCH]
+(
+   [COUNTRY] nvarchar(max)  NULL,
+   [COMMODITY] nvarchar(max)  NULL,
+   [GROUP] nvarchar(max)  NULL,
+   [TYPE] nvarchar(max)  NULL,
+   [PHASE] nvarchar(max)  NULL,
+   [measure_production] nvarchar(max)  NULL,
+   [measure_content] nvarchar(max)  NULL,
+   [FORM] nvarchar(max)  NULL,
+   [SUBFORM] nvarchar(max)  NULL,
+   [Commodity_Description] nvarchar(max)  NULL,
+   [Country_Description] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [UNIT] nvarchar(max)  NULL,
+   [YEAR] int  NULL,
+   [CONFIRM] nvarchar(max)  NULL,
+   [STATUS] nvarchar(max)  NULL,
+   [v1_expires] nvarchar(max)  NULL,
+   [v1_value_prelim] nvarchar(max)  NULL,
+   [v1_e_prelim] nvarchar(max)  NULL,
+   [v1_source_prelim] nvarchar(max)  NULL,
+   [v3_expires] nvarchar(max)  NULL,
+   [v3_value_prelim] nvarchar(max)  NULL,
+   [v3_e_prelim] nvarchar(max)  NULL,
+   [v3_source_prelim] nvarchar(max)  NULL,
+   [current_value] nvarchar(max)  NULL,
+   [current_e] nvarchar(max)  NULL,
+   [current_source] nvarchar(max)  NULL,
+   [v1_prior_value] nvarchar(max)  NULL,
+   [v3_prior_value] nvarchar(max)  NULL,
+   [v1_footnote_1] nvarchar(max)  NULL,
+   [v1_footnote_2] nvarchar(max)  NULL,
+   [v3_footnote_1] nvarchar(max)  NULL,
+   [v3_footnote_2] nvarchar(max)  NULL,
+   [key] nvarchar(max)  NULL,
+   [key_year] nchar(250)  NOT NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.DATA_TESTBENCH',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'DATA_TESTBENCH'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'HISTORY'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'HISTORY'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[HISTORY]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[HISTORY]
+(
+   [timestamp] datetime2(0)  NULL,
+   [changes] nvarchar(max)  NULL,
+   [key_year] nvarchar(500)  NULL,
+   [new_value] nvarchar(max)  NULL,
+   [user] nvarchar(max)  NULL,
+   [estimated] nvarchar(max)  NULL,
+   [source] nvarchar(max)  NULL,
+   [country] nvarchar(max)  NULL,
+   [commodity] nvarchar(max)  NULL,
+   [primary_key] int IDENTITY(1457161, 1)  NOT NULL,
+   [temp_key] nvarchar(500)  NULL,
+   [temp_changes] nvarchar(45)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.HISTORY',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'HISTORY'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'HISTORY_TEST'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'HISTORY_TEST'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[HISTORY_TEST]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[HISTORY_TEST]
+(
+   [timestamp] datetime2(0)  NULL,
+   [changes] nvarchar(max)  NULL,
+   [key_year] nvarchar(max)  NULL,
+   [new_value] nvarchar(max)  NULL,
+   [user] nvarchar(max)  NULL,
+   [estimated] nvarchar(max)  NULL,
+   [source] nvarchar(max)  NULL,
+   [country] nvarchar(max)  NULL,
+   [commodity] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.HISTORY_TEST',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'HISTORY_TEST'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PRODUCTION_DATA'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'PRODUCTION_DATA'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[PRODUCTION_DATA]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[PRODUCTION_DATA]
+(
+   [key] nvarchar(max)  NULL,
+   [key_year] nchar(250)  NOT NULL,
+   [COUNTRY] nvarchar(max)  NULL,
+   [COUNTRY_GROUP] nvarchar(max)  NULL,
+   [COMMODITY_GROUP] nvarchar(max)  NULL,
+   [COMMODITY] nvarchar(max)  NULL,
+   [TYPE] nvarchar(max)  NULL,
+   [PHASE] nvarchar(max)  NULL,
+   [measure_production] nvarchar(max)  NULL,
+   [measure_content] nvarchar(max)  NULL,
+   [FORM] nvarchar(max)  NULL,
+   [SUBFORM] nvarchar(max)  NULL,
+   [Commodity_Description] nvarchar(max)  NULL,
+   [Country_Description] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [UNIT] nvarchar(max)  NULL,
+   [unit_short] nvarchar(max)  NULL,
+   [YEAR] int  NULL,
+   [CONFIRM] nvarchar(max)  NULL,
+   [STATUS] nvarchar(max)  NULL,
+   [v1_expires] nvarchar(max)  NULL,
+   [v1_value_prelim] nvarchar(max)  NULL,
+   [v1_e_prelim] nvarchar(max)  NULL,
+   [v1_source_prelim] nvarchar(max)  NULL,
+   [v3_value_prelim] nvarchar(max)  NULL,
+   [v3_e_prelim] nvarchar(max)  NULL,
+   [v3_source_prelim] nvarchar(max)  NULL,
+   [current_value] nvarchar(max)  NULL,
+   [current_e] nvarchar(max)  NULL,
+   [current_source] nvarchar(max)  NULL,
+   [v1_prior_value] nvarchar(max)  NULL,
+   [v1_prior_e] nvarchar(max)  NULL,
+   [v3_prior_value] nvarchar(max)  NULL,
+   [v3_prior_e] nvarchar(max)  NULL,
+   [v1_footnote_1] nvarchar(max)  NULL,
+   [v1_footnote_2] nvarchar(max)  NULL,
+   [v3_footnote_1] nvarchar(max)  NULL,
+   [v3_footnote_2] nvarchar(max)  NULL,
+   [supress] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.PRODUCTION_DATA',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'PRODUCTION_DATA'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PRODUCTION_TERMS'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'PRODUCTION_TERMS'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[PRODUCTION_TERMS]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[PRODUCTION_TERMS]
+(
+   [key] nvarchar(500)  NOT NULL,
+   [region] nvarchar(max)  NULL,
+   [country] nvarchar(max)  NULL,
+   [industry_classifier] nvarchar(max)  NULL,
+   [industry_breakdown] nvarchar(max)  NULL,
+   [commodity_group] nvarchar(max)  NULL,
+   [commodity] nvarchar(max)  NULL,
+   [production_type] nvarchar(max)  NULL,
+   [production_phase] nvarchar(max)  NULL,
+   [production_measure] nvarchar(max)  NULL,
+   [production_measure_type] nvarchar(max)  NULL,
+   [production_form] nvarchar(max)  NULL,
+   [production_subform] nvarchar(max)  NULL,
+   [description_commodity] nvarchar(max)  NULL,
+   [description_country] nvarchar(max)  NULL,
+   [country_multiplier] nvarchar(max)  NULL,
+   [unit] nvarchar(max)  NULL,
+   [reconcile] nvarchar(max)  NULL,
+   [v1_footnote_1] nvarchar(max)  NULL,
+   [v1_footnote_2] nvarchar(max)  NULL,
+   [v3_footnote_1] nvarchar(max)  NULL,
+   [v3_footnote_2] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.PRODUCTION_TERMS',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'PRODUCTION_TERMS'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'STRUCT_STAGING'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'STRUCT_STAGING'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[STRUCT_STAGING]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[STRUCT_STAGING]
+(
+   [commodity] nvarchar(max)  NULL,
+   [industry] nvarchar(max)  NULL,
+   [sub_industry] nvarchar(max)  NULL,
+   [specialist] nvarchar(max)  NULL,
+   [supervisor] nvarchar(max)  NULL,
+   [number] int  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.STRUCT_STAGING',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'STRUCT_STAGING'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'STRUCT_V1'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'STRUCT_V1'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[STRUCT_V1]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[STRUCT_V1]
+(
+   [commodity] nchar(250)  NOT NULL,
+   [specialist] nvarchar(max)  NULL,
+   [specialist_name] nvarchar(max)  NULL,
+   [supervisor] nvarchar(max)  NULL,
+   [supervisor_name] nvarchar(max)  NULL,
+   [industry] nvarchar(max)  NULL,
+   [sub_industry] nvarchar(max)  NULL,
+   [title] nvarchar(max)  NULL,
+   [number] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [unit] nvarchar(max)  NULL,
+   [measure] nvarchar(max)  NULL,
+   [title_2] nvarchar(max)  NULL,
+   [stub_1] nvarchar(max)  NULL,
+   [stub_2] nvarchar(max)  NULL,
+   [total] nvarchar(max)  NULL,
+   [source] nvarchar(max)  NULL,
+   [filter_group] nvarchar(max)  NULL,
+   [filter_commodity] nvarchar(max)  NULL,
+   [filter_type1] nvarchar(max)  NULL,
+   [filter_type2] nvarchar(max)  NULL,
+   [filter_phase1] nvarchar(max)  NULL,
+   [filter_phase2] nvarchar(max)  NULL,
+   [filter_measure1] nvarchar(max)  NULL,
+   [filter_measure2] nvarchar(max)  NULL,
+   [filter_form1] nvarchar(max)  NULL,
+   [filter_form2] nvarchar(max)  NULL,
+   [filter_subform1] nvarchar(max)  NULL,
+   [filter_subform2] nvarchar(max)  NULL,
+   [filter_exclude1] nvarchar(max)  NULL,
+   [filter_exclude2] nvarchar(max)  NULL,
+   [filter_excludesubform] nvarchar(max)  NULL,
+   [filter_unit] nvarchar(max)  NULL,
+   [display_total] nvarchar(max)  NULL,
+   [display_phase] nvarchar(max)  NULL,
+   [display_measure] nvarchar(max)  NULL,
+   [display_form] nvarchar(max)  NULL,
+   [display_subform] nvarchar(max)  NULL,
+   [display_description] nvarchar(max)  NULL,
+   [table_sort] nvarchar(max)  NULL,
+   [subtotal_country] nvarchar(max)  NULL,
+   [total_country] nvarchar(max)  NULL,
+   [subtotal_primary] nvarchar(max)  NULL,
+   [subtotal_secondary] nvarchar(max)  NULL,
+   [subtotal_ophase] nvarchar(max)  NULL,
+   [subtotal_gross_weight] nvarchar(max)  NULL,
+   [subtotal_econtent] nvarchar(max)  NULL,
+   [subtotal_form1] nvarchar(max)  NULL,
+   [subtotal_form2] nvarchar(max)  NULL,
+   [subtotal_form3] nvarchar(max)  NULL,
+   [subtotal_form4] nvarchar(max)  NULL,
+   [subtotal_form5] nvarchar(max)  NULL,
+   [subtotal_oform] nvarchar(max)  NULL,
+   [status] nvarchar(max)  NULL,
+   [rec_due] nvarchar(max)  NULL,
+   [rec_submit] nvarchar(max)  NULL,
+   [rec_stage1] nvarchar(max)  NULL,
+   [rec_stage2] nvarchar(max)  NULL,
+   [rec_table] nvarchar(max)  NULL,
+   [rec_save] nvarchar(max)  NULL,
+   [rec_super] nvarchar(max)  NULL,
+   [display_type] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.STRUCT_V1',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'STRUCT_V1'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'STRUCT_V3'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'STRUCT_V3'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[STRUCT_V3]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[STRUCT_V3]
+(
+   [country] nchar(250)  NOT NULL,
+   [country_group] nvarchar(max)  NULL,
+   [specialist] nvarchar(max)  NULL,
+   [specialist_name] nvarchar(max)  NULL,
+   [supervisor] nvarchar(max)  NULL,
+   [supervisor_name] nvarchar(max)  NULL,
+   [title] nchar(250)  NOT NULL,
+   [number] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [unit] nvarchar(max)  NULL,
+   [g_title_2] nvarchar(max)  NULL,
+   [g_stub_1] nvarchar(max)  NULL,
+   [g_stub_2] nvarchar(max)  NULL,
+   [source] nvarchar(max)  NULL,
+   [status] nvarchar(max)  NULL,
+   [rec_save] nvarchar(max)  NULL,
+   [rec_due] nvarchar(max)  NULL,
+   [rec_submit] nvarchar(max)  NULL,
+   [rec_stage1] nvarchar(max)  NULL,
+   [rec_stage2] nvarchar(max)  NULL,
+   [rec_super] nvarchar(max)  NULL,
+   [rec_table] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.STRUCT_V3',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'STRUCT_V3'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'STRUCT_V3_OLD'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'STRUCT_V3_OLD'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[STRUCT_V3_OLD]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[STRUCT_V3_OLD]
+(
+   [country] nchar(250)  NOT NULL,
+   [specialist] nvarchar(max)  NULL,
+   [supervisor] nvarchar(max)  NULL,
+   [title] nchar(250)  NOT NULL,
+   [number] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [unit] nvarchar(max)  NULL,
+   [g_title_2] nvarchar(max)  NULL,
+   [g_stub_1] nvarchar(max)  NULL,
+   [g_stub_2] nvarchar(max)  NULL,
+   [country_1] nvarchar(max)  NULL,
+   [country_2] nvarchar(max)  NULL,
+   [country_3] nvarchar(max)  NULL,
+   [country_4] nvarchar(max)  NULL,
+   [country_5] nvarchar(max)  NULL,
+   [country_6] nvarchar(max)  NULL,
+   [country_7] nvarchar(max)  NULL,
+   [heading_1] nvarchar(max)  NULL,
+   [heading_2] nvarchar(max)  NULL,
+   [heading_3] nvarchar(max)  NULL,
+   [heading_4] nvarchar(max)  NULL,
+   [heading_5] nvarchar(max)  NULL,
+   [heading_6] nvarchar(max)  NULL,
+   [heading_7] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.STRUCT_V3_OLD',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'STRUCT_V3_OLD'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'STRUCTURE_V1'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'STRUCTURE_V1'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[STRUCTURE_V1]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[STRUCTURE_V1]
+(
+   [commodity] nvarchar(100)  NOT NULL,
+   [specialist] nvarchar(max)  NULL,
+   [supervisor] nvarchar(max)  NULL,
+   [title] nvarchar(max)  NULL,
+   [number] int  NULL,
+   [title_2] nvarchar(max)  NULL,
+   [stub_1] nvarchar(max)  NULL,
+   [stub_2] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [unit] nvarchar(max)  NULL,
+   [measure] nvarchar(max)  NULL,
+   [source] nvarchar(max)  NULL,
+   [display_total] nvarchar(max)  NULL,
+   [total] nvarchar(max)  NULL,
+   [display_phase] nvarchar(max)  NULL,
+   [display_measure] nvarchar(max)  NULL,
+   [display_form] nvarchar(max)  NULL,
+   [display_subform] nvarchar(max)  NULL,
+   [display_description] nvarchar(max)  NULL,
+   [subtotal_country] nvarchar(max)  NULL,
+   [total_country] nvarchar(max)  NULL,
+   [subtotal_primary] nvarchar(max)  NULL,
+   [subtotal_secondary] nvarchar(max)  NULL,
+   [subtotal_ophase] nvarchar(max)  NULL,
+   [subtotal_gross weight] nvarchar(max)  NULL,
+   [subtotal_econtent] nvarchar(max)  NULL,
+   [subtotal_form1] nvarchar(max)  NULL,
+   [subtotal_form2] nvarchar(max)  NULL,
+   [subtotal_form3] nvarchar(max)  NULL,
+   [subtotal_form4] nvarchar(max)  NULL,
+   [subtotal_form5] nvarchar(max)  NULL,
+   [subtotal_oform] nvarchar(max)  NULL,
+   [filter_group] nvarchar(max)  NULL,
+   [filter_commodity] nvarchar(max)  NULL,
+   [filter_type1] nvarchar(max)  NULL,
+   [filter_type2] nvarchar(max)  NULL,
+   [filter_phase1] nvarchar(max)  NULL,
+   [filter_phase2] nvarchar(max)  NULL,
+   [filter_measure1] nvarchar(max)  NULL,
+   [filter_measure2] nvarchar(max)  NULL,
+   [filter_form1] nvarchar(max)  NULL,
+   [filter_form2] nvarchar(max)  NULL,
+   [filter_exclude1] nvarchar(max)  NULL,
+   [filter_exclude2] nvarchar(max)  NULL,
+   [filter_unit] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.STRUCTURE_V1',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'STRUCTURE_V1'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'STRUCTURE_V3'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'STRUCTURE_V3'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[STRUCTURE_V3]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[STRUCTURE_V3]
+(
+   [country] nvarchar(max)  NULL,
+   [C: 119] nvarchar(max)  NULL,
+   [D: 20] nvarchar(max)  NULL,
+   [specialist] nvarchar(max)  NULL,
+   [supervisor] nvarchar(max)  NULL,
+   [title] nvarchar(max)  NULL,
+   [number] int  NULL,
+   [g_title_2] nvarchar(max)  NULL,
+   [g_stub_1] nvarchar(max)  NULL,
+   [g_stub_2] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [unit] nvarchar(max)  NULL,
+   [country_1] nvarchar(max)  NULL,
+   [country_2] nvarchar(max)  NULL,
+   [country_3] nvarchar(max)  NULL,
+   [country_4] nvarchar(max)  NULL,
+   [country_5] nvarchar(max)  NULL,
+   [country_6] nvarchar(max)  NULL,
+   [country_7] nvarchar(max)  NULL,
+   [heading_1] nvarchar(max)  NULL,
+   [heading_2] nvarchar(max)  NULL,
+   [heading_3] nvarchar(max)  NULL,
+   [heading_4] nvarchar(max)  NULL,
+   [heading_5] nvarchar(max)  NULL,
+   [heading_6] nvarchar(max)  NULL,
+   [heading_7] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.STRUCTURE_V3',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'STRUCTURE_V3'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'TERMINOLIGY'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'TERMINOLIGY'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[TERMINOLIGY]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[TERMINOLIGY]
+(
+   [key] nvarchar(500)  NOT NULL,
+   [region] nvarchar(max)  NULL,
+   [country] nvarchar(max)  NULL,
+   [industry_classifier] nvarchar(max)  NULL,
+   [industry_breakdown] nvarchar(max)  NULL,
+   [commodity_group] nvarchar(max)  NULL,
+   [commodity] nvarchar(max)  NULL,
+   [production_type] nvarchar(max)  NULL,
+   [production_phase] nvarchar(max)  NULL,
+   [production_measure] nvarchar(max)  NULL,
+   [production_measure_type] nvarchar(max)  NULL,
+   [production_form] nvarchar(max)  NULL,
+   [production_subform] nvarchar(max)  NULL,
+   [description_commodity] nvarchar(max)  NULL,
+   [description_country] nvarchar(max)  NULL,
+   [country_multiplier] nvarchar(max)  NULL,
+   [unit] nvarchar(max)  NULL,
+   [reconcile] nvarchar(max)  NULL,
+   [v1_footnote_1] nvarchar(max)  NULL,
+   [v1_footnote_2] nvarchar(max)  NULL,
+   [v3_footnote_1] nvarchar(max)  NULL,
+   [v3_footnote_2] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.TERMINOLIGY',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'TERMINOLIGY'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'TERMS_TESTBENCH'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'TERMS_TESTBENCH'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[TERMS_TESTBENCH]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[TERMS_TESTBENCH]
+(
+   [key] nvarchar(500)  NOT NULL,
+   [region] nvarchar(max)  NULL,
+   [country] nvarchar(max)  NULL,
+   [industry_classifier] nvarchar(max)  NULL,
+   [industry_breakdown] nvarchar(max)  NULL,
+   [commodity_group] nvarchar(max)  NULL,
+   [commodity] nvarchar(max)  NULL,
+   [production_type] nvarchar(max)  NULL,
+   [production_phase] nvarchar(max)  NULL,
+   [production_measure] nvarchar(max)  NULL,
+   [production_measure_type] nvarchar(max)  NULL,
+   [production_form] nvarchar(max)  NULL,
+   [production_subform] nvarchar(max)  NULL,
+   [description_commodity] nvarchar(max)  NULL,
+   [description_country] nvarchar(max)  NULL,
+   [country_multiplier] nvarchar(max)  NULL,
+   [unit] nvarchar(max)  NULL,
+   [reconcile] nvarchar(max)  NULL,
+   [v1_footnote_1] nvarchar(max)  NULL,
+   [v1_footnote_2] nvarchar(max)  NULL,
+   [v3_footnote_1] nvarchar(max)  NULL,
+   [v3_footnote_2] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.TERMS_TESTBENCH',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'TERMS_TESTBENCH'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'TEST_DATA'  AND sc.name = N'ONEWORLD'  AND type in (N'U'))
+BEGIN
+
+  DECLARE @drop_statement nvarchar(500)
+
+  DECLARE drop_cursor CURSOR FOR
+      SELECT 'alter table '+quotename(schema_name(ob.schema_id))+
+      '.'+quotename(object_name(ob.object_id))+ ' drop constraint ' + quotename(fk.name) 
+      FROM sys.objects ob INNER JOIN sys.foreign_keys fk ON fk.parent_object_id = ob.object_id
+      WHERE fk.referenced_object_id = 
+          (
+             SELECT so.object_id 
+             FROM sys.objects so JOIN sys.schemas sc
+             ON so.schema_id = sc.schema_id
+             WHERE so.name = N'TEST_DATA'  AND sc.name = N'ONEWORLD'  AND type in (N'U')
+           )
+
+  OPEN drop_cursor
+
+  FETCH NEXT FROM drop_cursor
+  INTO @drop_statement
+
+  WHILE @@FETCH_STATUS = 0
+  BEGIN
+     EXEC (@drop_statement)
+
+     FETCH NEXT FROM drop_cursor
+     INTO @drop_statement
+  END
+
+  CLOSE drop_cursor
+  DEALLOCATE drop_cursor
+
+  DROP TABLE [ONEWORLD].[TEST_DATA]
+END 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE 
+[ONEWORLD].[TEST_DATA]
+(
+   [key] nvarchar(max)  NULL,
+   [key_year] nchar(250)  NOT NULL,
+   [COUNTRY] nvarchar(max)  NULL,
+   [COMMODITY_GROUP] nvarchar(max)  NULL,
+   [COMMODITY] nvarchar(max)  NULL,
+   [TYPE] nvarchar(max)  NULL,
+   [PHASE] nvarchar(max)  NULL,
+   [measure_production] nvarchar(max)  NULL,
+   [measure_content] nvarchar(max)  NULL,
+   [FORM] nvarchar(max)  NULL,
+   [SUBFORM] nvarchar(max)  NULL,
+   [Commodity_Description] nvarchar(max)  NULL,
+   [Country_Description] nvarchar(max)  NULL,
+   [multiplier] nvarchar(max)  NULL,
+   [UNIT] nvarchar(max)  NULL,
+   [unit_short] nvarchar(max)  NULL,
+   [YEAR] int  NULL,
+   [CONFIRM] nvarchar(max)  NULL,
+   [STATUS] nvarchar(max)  NULL,
+   [v1_expires] nvarchar(max)  NULL,
+   [v1_value_prelim] nvarchar(max)  NULL,
+   [v1_e_prelim] nvarchar(max)  NULL,
+   [v1_source_prelim] nvarchar(max)  NULL,
+   [v3_expires] nvarchar(max)  NULL,
+   [v3_value_prelim] nvarchar(max)  NULL,
+   [v3_e_prelim] nvarchar(max)  NULL,
+   [v3_source_prelim] nvarchar(max)  NULL,
+   [current_value] nvarchar(max)  NULL,
+   [current_e] nvarchar(max)  NULL,
+   [current_source] nvarchar(max)  NULL,
+   [v1_prior_value] nvarchar(max)  NULL,
+   [v1_prior_e] nvarchar(max)  NULL,
+   [v3_prior_value] nvarchar(max)  NULL,
+   [v3_prior_e] nvarchar(max)  NULL,
+   [v1_footnote_1] nvarchar(max)  NULL,
+   [v1_footnote_2] nvarchar(max)  NULL,
+   [v3_footnote_1] nvarchar(max)  NULL,
+   [v3_footnote_2] nvarchar(max)  NULL
+)
+WITH (DATA_COMPRESSION = NONE)
+GO
+BEGIN TRY
+    EXEC sp_addextendedproperty
+        N'MS_SSMA_SOURCE', N'ONEWORLD.TEST_DATA',
+        N'SCHEMA', N'ONEWORLD',
+        N'TABLE', N'TEST_DATA'
+END TRY
+BEGIN CATCH
+    IF (@@TRANCOUNT > 0) ROLLBACK
+    PRINT ERROR_MESSAGE()
+END CATCH
+GO
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_DATA_ALPHA_TESTING_ONLY_key_year'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[DATA_ALPHA_TESTING_ONLY] DROP CONSTRAINT [PK_DATA_ALPHA_TESTING_ONLY_key_year]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[DATA_ALPHA_TESTING_ONLY]
+ ADD CONSTRAINT [PK_DATA_ALPHA_TESTING_ONLY_key_year]
+   PRIMARY KEY
+   CLUSTERED ([key_year] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_DATA_FIX6_key_year'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[DATA_FIX6] DROP CONSTRAINT [PK_DATA_FIX6_key_year]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[DATA_FIX6]
+ ADD CONSTRAINT [PK_DATA_FIX6_key_year]
+   PRIMARY KEY
+   CLUSTERED ([key_year] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_DATA_REVISIONS_KEY'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[DATA_REVISIONS] DROP CONSTRAINT [PK_DATA_REVISIONS_KEY]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[DATA_REVISIONS]
+ ADD CONSTRAINT [PK_DATA_REVISIONS_KEY]
+   PRIMARY KEY
+   CLUSTERED ([KEY] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_DATA_TESTBENCH_key_year'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[DATA_TESTBENCH] DROP CONSTRAINT [PK_DATA_TESTBENCH_key_year]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[DATA_TESTBENCH]
+ ADD CONSTRAINT [PK_DATA_TESTBENCH_key_year]
+   PRIMARY KEY
+   CLUSTERED ([key_year] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_HISTORY_primary_key'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[HISTORY] DROP CONSTRAINT [PK_HISTORY_primary_key]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[HISTORY]
+ ADD CONSTRAINT [PK_HISTORY_primary_key]
+   PRIMARY KEY
+   CLUSTERED ([primary_key] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_PRODUCTION_DATA_key_year'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[PRODUCTION_DATA] DROP CONSTRAINT [PK_PRODUCTION_DATA_key_year]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[PRODUCTION_DATA]
+ ADD CONSTRAINT [PK_PRODUCTION_DATA_key_year]
+   PRIMARY KEY
+   CLUSTERED ([key_year] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_PRODUCTION_TERMS_key'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[PRODUCTION_TERMS] DROP CONSTRAINT [PK_PRODUCTION_TERMS_key]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[PRODUCTION_TERMS]
+ ADD CONSTRAINT [PK_PRODUCTION_TERMS_key]
+   PRIMARY KEY
+   CLUSTERED ([key] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_STRUCT_V1_commodity'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[STRUCT_V1] DROP CONSTRAINT [PK_STRUCT_V1_commodity]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[STRUCT_V1]
+ ADD CONSTRAINT [PK_STRUCT_V1_commodity]
+   PRIMARY KEY
+   CLUSTERED ([commodity] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_STRUCT_V3_country'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[STRUCT_V3] DROP CONSTRAINT [PK_STRUCT_V3_country]
+ GO
+
+
+/*
+*   SSMA warning messages:
+*   M2SS0019: The size of the primary key is more than 900 bytes
+*/
+
+
+ALTER TABLE [ONEWORLD].[STRUCT_V3]
+ ADD CONSTRAINT [PK_STRUCT_V3_country]
+   PRIMARY KEY
+   CLUSTERED ([country] ASC, [title] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_STRUCT_V3_OLD_country'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[STRUCT_V3_OLD] DROP CONSTRAINT [PK_STRUCT_V3_OLD_country]
+ GO
+
+
+/*
+*   SSMA warning messages:
+*   M2SS0019: The size of the primary key is more than 900 bytes
+*/
+
+
+ALTER TABLE [ONEWORLD].[STRUCT_V3_OLD]
+ ADD CONSTRAINT [PK_STRUCT_V3_OLD_country]
+   PRIMARY KEY
+   CLUSTERED ([country] ASC, [title] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_STRUCTURE_V1_commodity'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[STRUCTURE_V1] DROP CONSTRAINT [PK_STRUCTURE_V1_commodity]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[STRUCTURE_V1]
+ ADD CONSTRAINT [PK_STRUCTURE_V1_commodity]
+   PRIMARY KEY
+   CLUSTERED ([commodity] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_TERMINOLIGY_key'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[TERMINOLIGY] DROP CONSTRAINT [PK_TERMINOLIGY_key]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[TERMINOLIGY]
+ ADD CONSTRAINT [PK_TERMINOLIGY_key]
+   PRIMARY KEY
+   CLUSTERED ([key] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_TERMS_TESTBENCH_key'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[TERMS_TESTBENCH] DROP CONSTRAINT [PK_TERMS_TESTBENCH_key]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[TERMS_TESTBENCH]
+ ADD CONSTRAINT [PK_TERMS_TESTBENCH_key]
+   PRIMARY KEY
+   CLUSTERED ([key] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'PK_TEST_DATA_key_year'  AND sc.name = N'ONEWORLD'  AND type in (N'PK'))
+ALTER TABLE [ONEWORLD].[TEST_DATA] DROP CONSTRAINT [PK_TEST_DATA_key_year]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[TEST_DATA]
+ ADD CONSTRAINT [PK_TEST_DATA_key_year]
+   PRIMARY KEY
+   CLUSTERED ([key_year] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+IF EXISTS (SELECT * FROM sys.objects so JOIN sys.schemas sc ON so.schema_id = sc.schema_id WHERE so.name = N'DATA_TESTBENCH$key_year_UNIQUE'  AND sc.name = N'ONEWORLD'  AND type in (N'UQ'))
+ALTER TABLE [ONEWORLD].[DATA_TESTBENCH] DROP CONSTRAINT [DATA_TESTBENCH$key_year_UNIQUE]
+ GO
+
+
+
+ALTER TABLE [ONEWORLD].[DATA_TESTBENCH]
+ ADD CONSTRAINT [DATA_TESTBENCH$key_year_UNIQUE]
+ UNIQUE 
+   NONCLUSTERED ([key_year] ASC)
+
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[DATA_ALPHA_TESTING_ONLY]
+ ADD DEFAULT NULL FOR [YEAR]
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[DATA_FIX6]
+ ADD DEFAULT NULL FOR [YEAR]
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[DATA_TESTBENCH]
+ ADD DEFAULT NULL FOR [YEAR]
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[HISTORY]
+ ADD DEFAULT getdate() FOR [timestamp]
+GO
+
+ALTER TABLE  [ONEWORLD].[HISTORY]
+ ADD DEFAULT NULL FOR [key_year]
+GO
+
+ALTER TABLE  [ONEWORLD].[HISTORY]
+ ADD DEFAULT NULL FOR [temp_key]
+GO
+
+ALTER TABLE  [ONEWORLD].[HISTORY]
+ ADD DEFAULT NULL FOR [temp_changes]
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[HISTORY_TEST]
+ ADD DEFAULT getdate() FOR [timestamp]
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[PRODUCTION_DATA]
+ ADD DEFAULT NULL FOR [YEAR]
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[STRUCT_STAGING]
+ ADD DEFAULT NULL FOR [number]
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[STRUCTURE_V1]
+ ADD DEFAULT NULL FOR [number]
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[STRUCTURE_V3]
+ ADD DEFAULT NULL FOR [number]
+GO
+
+
+USE [doi-oneworld]
+GO
+ALTER TABLE  [ONEWORLD].[TEST_DATA]
+ ADD DEFAULT NULL FOR [YEAR]
+GO
+

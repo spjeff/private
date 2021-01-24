@@ -1,0 +1,18 @@
+Requirements DOC
+
+User Experience (Chrome/IE/multi)
+
+Mineral
+*Bauxite
+*Coal
+*Carbon-1(yrs)
+
+Global
+*Ecuador
+*Brazil
+
+Visual Studio (build/release)
+* EF from MySQL schema
+
+Azure Dev Ops (code backup)
+API on 12 with JSON

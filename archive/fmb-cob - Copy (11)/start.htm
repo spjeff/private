@@ -1,0 +1,607 @@
+<h2>Start</h2>
+
+<!-- TBD Any Email -->
+<!-- If select #6 then require Acct # -->
+<!-- If select #1,2,3,5 then hide # Acct open -->
+<!-- #6 remove drop down, allow account  # revise -->
+
+<div>Please indicate the purpose for this request:</div>
+<br>
+<div ng-class="{'fmb-required-field': !d.start.purpose}">
+    <input type="radio" ng-model="d.start.purpose" name="purpose" id="newClient" value="newClient">
+    <label for="newClient"><b>New Client</b> to the Bank to be on-boarded (<b>Accounts Only</b>):</label>
+    <br />
+    <input type="radio" ng-model="d.start.purpose" name="purpose" id="newAccount" value="newAccount">
+    <label for="newAccount"><b>New Client</b> to the Bank to be on-boarded (<b>Accounts and Treasury Services</b>):</label>
+    <br />
+    <input type="radio" ng-model="d.start.purpose" name="purpose" id="addDeposit" value="addDeposit">
+    <label for="addDeposit"><b>Existing Client</b> adding a new <b>Deposit Account only</b>:</label>
+    <br />
+    <input type="radio" ng-model="d.start.purpose" name="purpose" id="addTreasury" value="addTreasury">
+    <label for="addTreasury"><b>Existing Client</b> adding a new <b>Treasury Service only</b>:</label>
+    <br />
+    <input type="radio" ng-model="d.start.purpose" name="purpose" id="addDT" value="addDT">
+    <label for="addDT"><b>Existing Client</b> adding new <b>Deposit Account and Treasury Service</b>:</label>
+    <br />
+    <input type="radio" ng-model="d.start.purpose" name="purpose" id="revise" value="revise">
+    <label for="revise"><b>Existing Client</b> revising <b>Exising Deposit Account</b>:</label>
+    <select ng-show="d.start.purpose == 'revise'" name="" id="" ng-model="d.start.selectExistingDeposit" ng-options="x for x in choiceExistingDeposit"></select>
+    <br />
+    <input type="radio" ng-model="d.start.purpose" name="purpose" id="newentity" value="newentity">
+    <label for="newentity"><b>Existing Client</b> - <b>Opening New Entity</b>:</label>
+    <br />
+    <input type="radio" ng-model="d.start.purpose" name="purpose" id="revisetreas" value="revisetreas">
+    <label for="revisetreas"><b>Revising Treasury Services</b></label>
+    <br />
+    <input type="radio" ng-model="d.start.purpose" name="purpose" id="loanrequest" value="loanrequest">
+    <label for="loanrequest"><b>Loan Request</b> - CIS Record Needed:</label>
+</div>
+
+<br><br>
+<div>
+    <div ng-hide="d.start.purpose == 'loanrequest'">
+        Number of Accounts to be <span ng-show="d.start.purpose != 'revise' && d.start.purpose != 'revisetreas'">opened</span>
+        <span ng-show="d.start.purpose == 'revise' || d.start.purpose == 'revisetreas'">revised</span>:
+        <input type="number" name="" id="" ng-model="d.start.numberAccountOpened" ng-change="numberAccountChanged()">
+    </div>
+    
+    <div ng-show="d.start.purpose == 'loanrequest'">
+        Number of CIS Records to be opened:
+        <input type="number" name="" id="" ng-model="d.start.numberAccountOpened" ng-change="numberAccountChanged()">
+    </div>
+
+    <!-- Same TM options for all -->
+    <div>
+        <input type="checkbox" name="sameTMoption" id="sameTMoption" ng-model="d.start.sameTMoption">
+        <label for="sameTMoption">Same option for all accounts</label>
+    </div>
+
+    <!-- Repeat options table -->
+    <table border="1" ng-show="d.start.purpose && d.start.sameTMoption && d.start.numberAccountOpened > 0 && (d.start.purpose == 'newAccount' || d.start.purpose == 'addTreasury' || d.start.purpose == 'newentity' || d.start.purpose == 'addDT' || d.start.purpose == 'revisetreas')"
+        class="fmb-account-features">
+        <tr>
+            <td>Business Express:
+                <input type="checkbox" name="" id="" ng-model="d.start.ao.busexp">
+            </td>
+            <td>Corp./Purchasing Card:
+                <input type="checkbox" name="" id="" ng-model="d.start.ao.corpurch">
+            </td>
+        </tr>
+        <tr>
+            <td>ACH:
+                <input type="checkbox" name="" id="" ng-model="d.start.ao.ach">
+            </td>
+            <td>Daylight OD Line of Credit:<input type="checkbox" name="" id="" ng-model="d.start.ao.daylightod">
+            </td>
+        </tr>
+        <tr>
+            <td>Wire Transfers:
+                <input type="checkbox" name="" id="" ng-model="d.start.ao.wirexfer">
+            </td>
+            <td>Lockbox:
+                <input type="checkbox" name="" id="" ng-model="d.start.ao.lockbox">
+            </td>
+        </tr>
+        <tr>
+            <td>Positive Pay:
+                <input type="checkbox" name="" id="" ng-model="d.start.ao.pospay">
+            </td>
+            <td>Cash Vault:
+                <input type="checkbox" name="" id="" ng-model="d.start.ao.cashvault">
+            </td>
+        </tr>
+        <tr>
+            <td>Remote Deposit Capture:
+                <input type="checkbox" name="" id="" ng-model="d.start.ao.remotedepcapture">
+            </td>
+            <td>Smart Safe:
+                <input type="checkbox" name="" id="" ng-model="d.start.ao.smartsafe">
+            </td>
+        </tr>
+        <tr>
+            <td>Sweeps:<input type="checkbox" name="" id="" ng-model="d.start.ao.sweeps">
+            </td>
+            <td>EDI:<input type="checkbox" name="" id="" ng-model="d.start.ao.edi">
+            </td>
+        </tr>
+        <tr>
+            <td>ACH Debit Block:<input type="checkbox" name="" id="" ng-model="d.start.ao.achdebit">
+            </td>
+            <td>Repurchase Agreement:<input type="checkbox" name="" id="" ng-model="d.start.ao.repurchase">
+            </td>
+        </tr>
+        <tr>
+            <td>Account Recon:<input type="checkbox" name="" id="" ng-model="d.start.ao.acctrecon">
+            </td>
+            <td>Return Item Services:<input type="checkbox" name="" id="" ng-model="d.start.ao.returnitem">
+            </td>
+        </tr>
+        <tr>
+            <td>Bus Non-Revolving Card:<input type="checkbox" name="" id="" ng-model="d.start.ao.busnonrev">
+            </td>
+            <td>Bill Payment Consol.:<input type="checkbox" name="" id="" ng-model="d.start.ao.billpaycol">
+            </td>
+        </tr>
+        <tr>
+            <td>ACH Positive Pay:<input type="checkbox" name="" id="" ng-model="d.start.ao.achpospay">
+            </td>
+            <td>Controlled Disbursement:<input type="checkbox" name="" id="" ng-model="d.start.ao.controldist">
+            </td>
+        </tr>
+        <tr>
+            <td>F/X Wires:<input type="checkbox" name="" id="" ng-model="d.start.ao.fxwires">
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div ng-repeat="ao in d.start.accountOpened">
+        <div ng-hide="d.start.purpose == 'loanrequest'">
+            Account {{$index + 1}}
+            <input type="text" name="" id="" ng-model="ao.name" ng-show="d.start.purpose != 'newClient' && 
+                d.start.purpose != 'newAccount' &&
+                d.start.purpose != 'newentity' &&
+                d.start.purpose != 'addDeposit' &&
+                d.start.purpose != 'addDT'">
+            <select name="" id="" ng-model="ao.selectStartAccount" ng-options="x for x in choiceStartAccount" ng-show="start.purpose != 'revise'"></select>
+            <input ng-show="d.start.purpose == 'revise'" type="text" placeholder="Revise reason here" ng-model="ao.revisereason">
+
+            <div ng-show="d.start.purpose == 'revisetreas'">
+                Revise reason:
+                <input type="text" name="" id="" ng-model="d.start.revisereason">
+            </div>
+        </div>
+
+        <!-- Repeat options table -->
+        <table border="1" ng-show="d.start.purpose && !d.start.sameTMoption && (d.start.purpose == 'newAccount' || d.start.purpose == 'addTreasury' || d.start.purpose == 'newentity'|| d.start.purpose == 'addDT'  || d.start.purpose == 'revisetreas')"
+            class="fmb-account-features">
+            <tr>
+                <td>Business Express:
+                    <input type="checkbox" name="" id="" ng-model="ao.busexp">
+                </td>
+                <td>Corp./Purchasing Card:
+                    <input type="checkbox" name="" id="" ng-model="ao.corpurch">
+                </td>
+            </tr>
+            <tr>
+                <td>ACH:
+                    <input type="checkbox" name="" id="" ng-model="ao.ach">
+                </td>
+                <td>Daylight OD Line of Credit:<input type="checkbox" name="" id="" ng-model="ao.daylightod">
+                </td>
+            </tr>
+            <tr>
+                <td>Wire Transfers:
+                    <input type="checkbox" name="" id="" ng-model="ao.wirexfer">
+                </td>
+                <td>Lockbox:
+                    <input type="checkbox" name="" id="" ng-model="ao.lockbox">
+                </td>
+            </tr>
+            <tr>
+                <td>Positive Pay:
+                    <input type="checkbox" name="" id="" ng-model="ao.pospay">
+                </td>
+                <td>Cash Vault:
+                    <input type="checkbox" name="" id="" ng-model="ao.cashvault">
+                </td>
+            </tr>
+            <tr>
+                <td>Remote Deposit Capture:
+                    <input type="checkbox" name="" id="" ng-model="ao.remotedepcapture">
+                </td>
+                <td>Smart Safe:
+                    <input type="checkbox" name="" id="" ng-model="ao.smartsafe">
+                </td>
+            </tr>
+            <tr>
+                <td>Sweeps:<input type="checkbox" name="" id="" ng-model="ao.sweeps">
+                </td>
+                <td>EDI:<input type="checkbox" name="" id="" ng-model="ao.edi">
+                </td>
+            </tr>
+            <tr>
+                <td>ACH Debit Block:<input type="checkbox" name="" id="" ng-model="ao.achdebit">
+                </td>
+                <td>Repurchase Agreement:<input type="checkbox" name="" id="" ng-model="ao.repurchase">
+                </td>
+            </tr>
+            <tr>
+                <td>Account Recon:<input type="checkbox" name="" id="" ng-model="ao.acctrecon">
+                </td>
+                <td>Return Item Services:<input type="checkbox" name="" id="" ng-model="ao.returnitem">
+                </td>
+            </tr>
+            <tr>
+                <td>Bus Non-Revolving Card:<input type="checkbox" name="" id="" ng-model="ao.busnonrev">
+                </td>
+                <td>Bill Payment Consol.:<input type="checkbox" name="" id="" ng-model="ao.billpaycol">
+                </td>
+            </tr>
+            <tr>
+                <td>ACH Positive Pay:<input type="checkbox" name="" id="" ng-model="ao.achpospay">
+                </td>
+                <td>Controlled Disbursement:<input type="checkbox" name="" id="" ng-model="ao.controldist">
+                </td>
+            </tr>
+            <tr>
+                <td>F/X Wires:<input type="checkbox" name="" id="" ng-model="ao.fxwires">
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<br><br>
+<table>
+    <tr>
+        <td>FMB Colleague Making the Request:</td>
+        <td>
+            <input ng-class="{'fmb-required-field': !d.start.person && d.start.purpose != 'loanrequest'}" type="text"
+                name="" id="" ng-model="d.start.person">
+        </td>
+    </tr>
+    <tr>
+        <td>E-mail to receive updates on this request:</td>
+        <td>
+            <input type="text" ng-model="d.start.emailupdate">
+        </td>
+    </tr>
+
+    <!-- Relationship Manager -->
+    <tr ng-hide="d.start.purpose == 'loanrequest'">
+        <td>Relationship Manager:</td>
+        <td>
+            <input ng-class="{'fmb-required-field': !d.start.rm && d.start.purpose != 'loanrequest'}" type="text" name=""
+                id="" ng-model="d.start.rm">
+        </td>
+    </tr>
+    <tr ng-hide="d.start.purpose == 'loanrequest'">
+        <td>E-mail to receive updates on this request:</td>
+        <td>
+            <input type="text" ng-model="d.start.emailrm">
+        </td>
+    </tr>
+
+    <!-- Primary Relationship Manager -->
+    <tr ng-show="d.start.purpose == 'loanrequest'">
+        <td>Primary Relationship Manager:</td>
+        <td>
+            <input ng-class="{'fmb-required-field': !d.start.rmprimary && d.start.purpose != 'loanrequest'}" type="text"
+                name="" id="" ng-model="d.start.rmprimary">
+        </td>
+    </tr>
+    <tr ng-show="d.start.purpose == 'loanrequest'">
+        <td>E-mail to receive updates on this request:</td>
+        <td>
+            <input type="text" ng-model="d.start.emailrmprimary">
+        </td>
+    </tr>
+   
+    <tr>
+        <td>Treasury Management Officer:</td>
+        <td>
+            <input ng-class="{'fmb-required-field': !d.start.tmo && d.start.purpose != 'loanrequest'}" type="text" name=""
+                id="" ng-model="d.start.tmo">
+        </td>
+    </tr>
+    <tr>
+        <td>E-mail to receive updates on this request:</td>
+        <td>
+            <input type="text" ng-model="d.start.emailtmo">
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Cost Center:</td>
+        <td>
+            <input ng-class="{'fmb-required-field': !d.start.cc && d.start.purpose != 'loanrequest'}" type="text" name=""
+                id="" ng-model="d.start.cc">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div ng-show="d.start.purpose == 'loanrequest'">
+                Deal Number:
+            </div>
+        </td>
+        <td>
+            <input ng-model="d.start.dealNumber" ng-show="d.start.purpose == 'loanrequest'">
+        </td>
+    </tr>
+    <tr ng-hide="hideDueDiligence()">
+        <td colspan="2">
+            <h4>Due Diligence</h4>
+        </td>
+    </tr>
+    <tr ng-hide="hideDueDiligence()">
+        <td>Does the client engage in Internet Gambling activities?</td>
+        <td>
+            <div ng-class="{'fmb-required-field': !d.start.gambling && d.start.purpose != 'loanrequest'}">
+                <input type="radio" name="gaming" id="yes-gaming" ng-model="d.start.gambling" value="1">
+                <label for="yes-gaming">
+                    Yes
+                </label>
+
+                <input type="radio" name="gaming" id="no-gaming" ng-model="d.start.gambling" value="0">
+                <label for="no-gaming">
+                    No
+                </label>
+            </div>
+
+
+            <div class="fmb-warning" ng-show="d.start.gambling == 1">
+                Account cannot be opened due to FMB policies and procedures regarding Internet Gambling Activities.
+            </div>
+
+        </td>
+    </tr>
+    <tr ng-hide="hideDueDiligence()">
+        <td>Does the business own, lease, operate or service ATMs?</td>
+        <td>
+            <div ng-class="{'fmb-required-field': !d.start.atm && d.start.purpose != 'loanrequest'}">
+                <input type="radio" name="atm" id="yes-atm" ng-model="d.start.atm" value="1">
+                <label for="yes-atm">
+                    Yes
+                </label>
+
+                <input type="radio" name="atm" id="no-atm" ng-model="d.start.atm" value="0">
+                <label for="no-atm">
+                    No
+                </label>
+            </div>
+
+
+        </td>
+    </tr>
+    <tr ng-hide="hideDueDiligence()">
+        <td> Does the business sell Prepaid Cards?</td>
+        <td>
+            <div ng-class="{'fmb-required-field': !d.start.prepaid && d.start.purpose != 'loanrequest'}">
+                <input type="radio" name="prepaid" id="yes-prepaid" ng-model="d.start.prepaid" value="1">
+                <label for="yes-prepaid">
+                    Yes
+                </label>
+
+                <input type="radio" name="prepaid" id="no-prepaid" ng-model="d.start.prepaid" value="0">
+                <label for="no-prepaid">
+                    No
+                </label>
+            </div>
+
+        </td>
+    </tr>
+    <tr ng-hide="hideDueDiligence()">
+        <td>Does the business involve Legalized Video Gaming?</td>
+        <td>
+
+            <div ng-class="{'fmb-required-field': !d.start.video && d.start.purpose != 'loanrequest'}">
+                <input type="radio" name="video" id="yes-video" ng-model="d.start.video" value="1">
+                <label for="yes-video">
+                    Yes
+                </label>
+
+                <input type="radio" name="video" id="no-video" ng-model="d.start.video" value="0">
+                <label for="no-video">
+                    No
+                </label>
+            </div>
+
+        </td>
+    </tr>
+    <tr ng-hide="hideDueDiligence()">
+        <td>Does the business engage in third party check cashing, selling of money orders or transmit funds for
+            others?</td>
+        <td>
+            <div ng-class="{'fmb-required-field': !d.start.checkcash && d.start.purpose != 'loanrequest'}">
+                <input type="radio" name="checkcash" id="yes-checkcash" ng-model="d.start.checkcash" value="1">
+                <label for="yes-checkcash">
+                    Yes
+                </label>
+
+                <input type="radio" name="checkcash" id="no-checkcash" ng-model="d.start.checkcash" value="0">
+                <label for="no-checkcash">
+                    No
+                </label>
+            </div>
+            <div class="fmb-warning" ng-show="d.start.checkcash == 1">
+                Money Service Businesses require pre-approval. Contact the AML Department, MSB Manager prior to
+                opening.
+            </div>
+        </td>
+    </tr>
+    <tr ng-hide="hideDueDiligence()">
+        <td> Does the business engage in a marijuana-related business (grow, process, transport and/or dispense
+            marijuana?)</td>
+        <td>
+            <div ng-class="{'fmb-required-field': !d.start.marijuna && d.start.purpose != 'loanrequest'}">
+                <input type="radio" name="marijuna" id="yes-marijuna" ng-model="d.start.marijuna" value="1">
+                <label for="yes-marijuna">
+                    Yes
+                </label>
+
+                <input type="radio" name="marijuna" id="no-marijuna" ng-model="d.start.marijuna" value="0">
+                <label for="no-marijuna">
+                    No
+                </label>
+            </div>
+            <div class="fmb-warning" ng-show="d.start.marijuna == 1">
+                Account cannot be opened due to FMB policies and procedures regarding providing financial services to
+                Marijuana Related Businesses (MRB).
+            </div>
+        </td>
+    </tr>
+    <tr ng-hide="hideDueDiligence()">
+        <td> Does the business provide services or product to Marijuana Related Businesses?</td>
+        <td>
+
+            <div ng-class="{'fmb-required-field': !d.start.marijunarelated && d.start.purpose != 'loanrequest'}">
+                <input type="radio" name="marijuna-related" id="yes-marijuna-related" ng-model="d.start.marijunarelated"
+                    value="1">
+                <label for="yes-marijuna-related">
+                    Yes
+                </label>
+
+                <input type="radio" name="marijuna-related" id="no-marijuna-related" ng-model="d.start.marijunarelated"
+                    value="0">
+                <label for="no-marijuna-related">
+                    No
+                </label>
+            </div>
+            <div class="fmb-warning" ng-show="d.start.marijunarelated == 1">
+                Contact the AML Department for further instruction.
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>Existing Client's CIS Number:</td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.start.cisNumber" ng-class="{'fmb-required-field': !d.start.cisNumber && d.start.purpose == 'newentity'}">
+        </td>
+    </tr>
+    <tr>
+        <td>Company Name:</td>
+        <td>
+
+            <input type="text" name="" id="" ng-class="{'fmb-required-field': !d.start.companyName && d.start.purpose != 'loanrequest'}"
+                ng-model="d.start.companyName">
+        </td>
+    </tr>
+    <tr>
+        <td>Company TIN#:</td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.start.companyTIN">
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>State of Registration (Org) :</td>
+        <td>
+            <select name="" id="" ng-model="d.start.selectState" ng-options="x for x in choiceState"></select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Type of Entity:</td>
+        <td>
+            <select name="" id="" ng-class="{'fmb-required-field': !d.start.selectTypeEntity  && d.start.purpose != 'loanrequest'}"
+                ng-model="d.start.selectTypeEntity" ng-options="x for x in choiceTypeEntity"></select>
+
+            <div class="fmb-warning" ng-show="d.start.selectTypeEntity == 'Partnership' ||
+            d.start.selectTypeEntity == 'Non-Profit Organization/Association' ||
+            d.start.selectTypeEntity == 'Non-Profit Corporation' ||
+            d.start.selectTypeEntity == 'IOLTA - Company' ||
+            d.start.selectTypeEntity == 'IBRETA - Company' ||
+            d.start.selectTypeEntity == 'Corporation - Privately Held' || 
+            d.start.selectTypeEntity == 'Limited Liability Co - Privately Held' || 
+            d.start.selectTypeEntity == 'Statutory Trust' 
+            ">
+                BENEFICIAL OWNERSHIP APPLIES
+
+            </div>
+
+        </td>
+    </tr>
+    <tr>
+        <td>Company Contact Name:</td>
+        <td>
+            <input type="text" name="" id="" ng-class="{'fmb-required-field': !d.start.companyContactName && d.start.purpose != 'loanrequest'}"
+                ng-model="d.start.companyContactName">
+        </td>
+    </tr>
+    <tr>
+        <td>Company Contact Phone:</td>
+        <td>
+            <input type="text" name="" id="" ng-class="{'fmb-required-field': !d.start.companyContactPhone && d.start.purpose != 'loanrequest'}"
+                ng-model="d.start.companyContactPhone">
+        </td>
+    </tr>
+    <tr>
+        <td>Company Contact E-Mail:</td>
+        <td>
+            <input type="text" name="" id="" ng-class="{'fmb-required-field': !d.start.companyContactMail && d.start.purpose != 'loanrequest'}"
+                ng-model="d.start.companyContactMail">
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top">
+            Comments:
+        </td>
+        <td>
+            <textarea name="" id="" cols="60" rows="5" ng-model="d.start.comments" maxlength="200"></textarea>
+        </td>
+    </tr>
+
+
+    <!-- File Upload -->
+    <tr ng-show="!id">
+        <td style="vertical-align: top">
+            <h4>File Upload</h4>
+            <div>
+                Please first save form ID # and then attachments upload will be available.
+            </div>
+        </td>
+    </tr>
+    <tr ng-show="id">
+        <td style="vertical-align: top">
+            <h4>File Upload</h4>
+            <div ng-show="uploadFiles.length > 0">
+                <a href="/sites/cobtest/COBAttach/{{id}}" target="_blank">
+                    <img src="/_layouts/images/folder16.gif" alt="" border="0">View Folder
+                </a></div>
+        </td>
+        <td>
+
+            <!-- Collection -->
+            <table>
+                <tr>
+                    <td></td>
+                    <td>Name</td>
+                    <td>Size</td>
+                </tr>
+                <tr ng-repeat="f in uploadFiles">
+                    <td>
+                        <img alt="" ng-src="{{getIcon(f.ServerRelativeUrl)}}">
+                    </td>
+                    <td>
+                        <a ng-href="{{f.ServerRelativeUrl}}">
+                            {{f.Name}}
+                        </a>
+                    </td>
+                    <td>
+                        {{f.Length}}
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+        <td style="vertical-align: top">
+            <input type="file" class="btn fmb-purple" name="" id="uploadFile">
+            <button class="btn fmb-green" value="Upload" ng-click="upload()">
+                <i class="fa fa-upload"></i>
+                &nbsp;Upload
+            </button>
+        <td></td>
+    </tr>
+
+</table>

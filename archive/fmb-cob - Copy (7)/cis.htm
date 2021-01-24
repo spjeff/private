@@ -1,0 +1,158 @@
+<h2>CIS Record</h2>
+
+<table>
+    <tr>
+        <td>Sub-Status:</td>
+        <td>
+            <select name="" id="" ng-model="d.cis.substatus" ng-options="choiceSubstatus"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>New Client?
+        </td>
+        <td>
+            <div ng-class="{'fmb-required-field': !d.cis.newclient}">
+
+                <input type="radio" name="newclient" id="yes-newclient" ng-model="d.cis.newclient" value="1">
+                <label for="yes-newclient">
+                    Yes
+                </label>
+
+                <input type="radio" name="newclient" id="no-newclient" ng-model="d.cis.newclient" value="0">
+                <label for="no-newclient">
+                    No
+                </label>
+                Enter CIS number:
+                <input type="text" name="" id="" ng-show="d.cis.newclient == '0'" ng-model="d.cis.cisnumber">
+        </td>
+
+    </tr>
+    <tr>
+        <td>Full Name:
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.start.companyName" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>Complete Address:
+        </td>
+        <td colspan="3">
+            <input type="text" name="" id="" ng-model="d.cis.address" size=80>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td colspan="3">
+            <input type="text" name="" id="" ng-model="d.cis.address2" size=80>
+            <span class="fmb-error">(Must be physical address, no PO Boxes)</span>
+        </td>
+    </tr>
+    <tr>
+        <td>City:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.cis.city"></td>
+        <td>
+
+            State:
+
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.cis.state"></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Zipcode:</td>
+        <td><input type="text" name="" id="" ng-model="d.cis.zip"></td>
+    </tr>
+    <tr>
+        <td>Type of Entity:
+        </td>
+        <td>
+            <select name="" id="" disabled ng-model="d.start.selectTypeEntity" ng-options="x for x in choiceTypeEntity"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>Cost Center:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.start.cc" disabled></td>
+        <td>Client Type:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.cis.client"></td>
+    </tr>
+    <tr>
+        <td>In Business Since:
+        </td>
+        <td>
+            <input type="text" datepicker name="" id="" ng-model="d.cis.businessSince">
+        </td>
+        <td>Type of Business:
+        </td>
+        <td>
+            <select name="" id="" ng-model="d.cis.selectCISBusinessType" ng-options=" x for x in choiceCISBusinessType"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span ng-hide="personalTaxId(d.cis.selectTypeEntity)">
+                FEDERAL TAX ID</span>
+            <span ng-show="personalTaxId(d.cis.selectTypeEntity)">
+                FEDERAL TAX ID/SSN:</span>
+            <div class="fmb-error">(No Dashes)</div>
+        </td>
+        <td>
+            <!-- Input Mask https://jsfiddle.net/mykisscool/VpNMA/ -->
+            <input type="text" name="" id="" ng-model="d.start.companyTIN" maxlength="9" size="10" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td># of Employees:
+        </td>
+        <td>
+            <select name="" id="" ng-model="d.cis.selectCISEmployees" ng-options=" x for x in choiceCISEmployees"></select>
+
+        </td>
+    </tr>
+    <tr>
+        <td>Corporate Contact Name:
+
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.start.companyContactName" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>Corporate Contact Phone:
+
+        </td>
+        <td>
+            <input type="tel" name="" id="" ng-model="d.start.companyContactPhone" disabled>
+        </td>
+    </tr>
+    <tr>
+        <td>Corporate Contact Email:
+
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.start.companyContactMail" disabled>
+        </td>
+    </tr>
+</table>
+
+
+<br>
+<br>
+
+<div class="fmb-error" ng-show="cis.selectTypeEntity == 'Partnership' ||
+cis.selectTypeEntity == 'Non-Profit Organization/Association' ||
+cis.selectTypeEntity == 'Non-Profit Corporation' ||
+cis.selectTypeEntity == 'IOLTA - Company' ||
+cis.selectTypeEntity == 'IBRETA - Company' ||
+cis.selectTypeEntity == 'Corporation - Privately Held' || 
+cis.selectTypeEntity == 'Limited Liability Co - Privately Held' || 
+cis.selectTypeEntity == 'Statutory Trust'
+">
+    BENEFICIAL OWNERSHIP APPLIES - TAB MUST BE COMPLETED
+</div>

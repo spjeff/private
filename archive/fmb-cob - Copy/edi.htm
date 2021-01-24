@@ -1,0 +1,62 @@
+<h2>EDI</h2>
+
+<table class="fmb-field-table">
+    <tr>
+        <td>Business name:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.edi.businessname"></td>
+    </tr>
+    <tr>
+        <td>Email address:
+        </td>
+        <td><input type="email" name="" id="" ng-model="d.edi.email"></td>
+    </tr>
+    <tr>
+        <td>Phone number:
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.edi.phone"></td>
+    </tr>
+    <tr>
+        <td>Receiving Account #:
+        </td>
+        <td>
+            <div ng-repeat="r in d.edi.recacct">
+                <input type="text" name="" id="" ng-model="r.recacct" size="10"
+                    maxlength="10">
+                <i class="fa fa-minus-circle" ng-click="deleteRow('edi.recacct', $index)">Remove</i>    
+            </div>
+            <i class="fa fa-plus-circle" ng-click="addRow('edi.recacct')">Add</i>
+
+        </td>
+    </tr>
+    <tr>
+
+    </tr>
+    <tr>
+        <td>Incoming Transaction Format:
+        </td>
+        <td>
+            <input type="radio" ng-model="d.edi.transactionformat" name="transactionformat" id="" value="CTX">CTX
+            <input type="radio" ng-model="d.edi.transactionformat" name="transactionformat" id="" value="IAT">IAT
+            <input type="radio" ng-model="d.edi.transactionformat" name="transactionformat" id="" value="Both">Both
+        </td>
+    </tr>
+    <tr>
+        <td>Output Options:
+        </td>
+        <td>
+            <input type="radio" ng-model="d.edi.outputoption" name="outputoption" id="" value="Translated">Translated
+            <input type="radio" ng-model="d.edi.outputoption" name="outputoption" id="" value="Untranslated">Untranslated
+        </td>
+    </tr>
+    <tr>
+        <td>Delivery Method:
+        </td>
+        <td>
+            <input type="radio" ng-model="d.edi.delivery" name="delivery" id="" value="Business Express">Business
+            Express
+            <input type="radio" ng-model="d.edi.delivery" name="delivery" id="" value="Email">Secure Email
+
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,60 @@
+<h2>
+    ACH Universal Debit Block
+</h2>
+
+<table border="0">
+    <tr>
+        <td>Company</td>
+        <td colspan="3"><input type="text" ng-model="d.achdebit.company" size="70">
+        </td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td><input type="text" ng-model="d.achdebit.address1" size="70"></td>
+
+
+        <td>City/State/Zip
+        </td>
+        <td>
+            <input type="text" name="" id="" ng-model="d.achdebit.address2">
+        </td>
+    </tr>
+    <tr>
+        <td>Phone #</td>
+        <td><input type="text" ng-model="d.achdebit.phone"></td>
+        <td>Fax #
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.achdebit.fax"></td>
+    </tr>
+    <tr>
+        <td>Tax ID</td>
+        <td><input type="text" ng-model="d.achdebit.taxid"></td>
+        
+        <td>Email Address
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.achdebit.email"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Treasury Management / Account Officer
+        </td>
+        <td><input type="text" name="" id="" ng-model="d.start.tmo">
+    </td>
+    </tr>
+    <tr>
+        <td>DDA Account Numbers
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            <div ng-repeat="r in d.achdebit.achdebitAccounts">
+                <input type="text" name="" id="" ng-model="r.accountNumber">
+                <i class="fas fa-minus-circle" ng-click="deleteRow('achdebit.achdebitAccounts', $index)">Remove</i>    
+            </div>
+            <i class="fas fa-plus-circle" ng-click="addRow('achdebit.achdebitAccounts')">Add</i>
+        </td>
+        <td></td>
+    </tr>
+</table>

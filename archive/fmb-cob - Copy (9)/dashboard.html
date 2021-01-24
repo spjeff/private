@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COB Dashboard</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+
+
+    <!-- AngularJS + JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+
+    <!-- PNP -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.2/fetch.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.1/pnp.min.js"></script>
+
+
+    <!-- App -->
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="dashboard.js"></script>
+
+</head>
+
+<body>
+
+
+    <div ng-app="cobDashboardApp">
+        <div ng-controller="cobDashboardCtl">
+            <table>
+                <tr style="background-color: lightgrey">
+                    <td class="dashheader">
+                        Returned <br />({{data1.length}})
+                    </td>
+                    <td class="dashheader">Open <br />({{data2.length}})</td>
+                    <td class="dashheader">In Queue<br />({{data3.length}})</td>
+                    <td class="dashheader">In Progress<br />({{data4.length}})</td>
+                    <td class="dashheader">Out To<br />Client ({{data5.length}})</td>
+                    <td class="dashheader">Under<br />Review ({{data6.length}})</td>
+                    <td class="dashheader">Account(s)<br />Complete ({{data7.length}})</td>
+                    <td class="dashheader">Docs<br />Approved ({{data8.length}})</td>
+                    <td class="dashheader">Set up<br />Complete ({{data9.length}})</td>
+                    <td class="dashheader">Product(s)<br />Established ({{data10.length}})</td>
+                    <td class="dashheader">Training<br />Complete ({{data11.length}})</td>
+                    <td class="dashheader">Closed <br />({{data12.length}})</td>
+                    <td class="dashheader">On Hold <br />({{data13.length}})</td>
+                    <td class="dashheader">Purge <br />({{data14.length}})</td>
+                </tr>
+                <tr>
+                    <td class="cardcol" colspan="2">
+
+                        <div class="card" ng-repeat="c in data1">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.companyName}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data2">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.companyName}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data3">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.companyName}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data4">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data5">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">
+                                            {{c.JSONparse.start.companyName}}
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data6">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data7">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data8">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data9">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data10">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data11">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data12">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data13">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                    <td class="cardcol">
+                        <div class="card" ng-repeat="c in data14">
+                            <table ng-click="navigate(c)">
+                                <tr>
+                                    <td class="cardid">#{{c.Id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cardname">{{c.JSONparse.start.companyName}}</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>{{c.JSONparse.start.purpose}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</body>
+
+</html>

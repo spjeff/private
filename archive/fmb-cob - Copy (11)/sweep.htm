@@ -1,0 +1,118 @@
+<h2>
+    Sweep
+</h2>
+
+
+<table>
+    <tr>
+        <td>Sub-Status:</td>
+        <td>
+            <select name="" id="" ng-model="d.sweep.substatus" ng-options="x for x in choiceSubstatus"></select>
+        </td>
+    </tr>
+    <tr>
+        <td>Training Scheduled Date:</td>
+        <td>
+            <input name="" id="" datepicker ng-model="d.sweep.trainsched" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Training Completed Date:</td>
+        <td>
+            <input name="" id="" datepicker ng-model="d.sweep.traincomp" />
+        </td>
+    </tr>
+</table>
+
+<table border="1">
+    <tr class="fmb-headers fmb-form-section fmb-center">
+        <td>Business Name
+        </td>
+        <td>Overdraw a/c
+
+        <td>Related Available
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="text" name="" id="" size="60" ng-model="d.start.companyName" disabled>
+        </td>
+        <td>
+            <input type="radio" ng-model="d.sweep.overdraw" name="overdraw" id="overdraw" value="Y">
+            Y - Transfer funds even if it causes account to be overdrawn.
+            <br>
+            <input type="radio" ng-model="d.sweep.overdraw" name="overdraw" id="overdraw" value="A">
+            A - Transfer as much as possible without overdrawing account.
+
+        </td>
+
+        <td>
+            <input type="radio" ng-model="d.sweep.related" name="related" id="related" value="Y">
+            Y - Pass related account available balance to Teller System.
+            <br>
+            <input type="radio" ng-model="d.sweep.related" name="related" id="related" value="A">
+            N - Do not pass related account available balance to Teller System.
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr class="fmb-headers fmb-form-section fmb-center">
+        <td>Type of Sweep
+        </td>
+        <td>(1)
+            Sending Account/Master/Parent Account
+        </td>
+        <td>(2)
+            Receiving Account/Subsidiary/Child Acct
+        </td>
+        <td>(3)
+            Maintained/Target Balance
+        </td>
+        <td>(4)
+            Threshold"
+        </td>
+        <td>(5)
+            $$ Increment of Transfer
+        </td>
+
+    </tr>
+    <tr ng-repeat="r in d.sweep.sweepTable">
+        <td>
+            <select name="" id="" ng-model="r.type" ng-options="x for x in choiceSweep"></select>
+        </td>
+        <td><input type="text" name="" id="" ng-model="r.sending"></td>
+        <td><input type="text" name="" id="" ng-model="r.rec"></td>
+        <td><input ng-class="{'fmb-required-field':  ((r.type.indexOf('Complete all')>0 || r.type.indexOf('Complete 1,2,3')>0)) && !r.maint }"
+                type="text" name="" id="" ng-model="r.maint"></td>
+        <td><input type="text" name="" id="" ng-model="r.threshold"></td>
+        <td><input type="text" name="" id="" ng-model="r.increment"></td>
+        <td>
+            <i class="fas fa-minus-circle" ng-click="deleteRow('sweep.sweepTable', $index)">Remove</i>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <i class="fas fa-plus-circle" ng-click="addRow('sweep.sweepTable')">Add</i>
+        </td>
+    </tr>
+</table>
+
+<br><br>
+
+
+<table>
+    <tr>
+        <td class="fmb-field">Date or Frequency of Scheduled Sweep:</td>
+        <td><input type="text" name="" id="" ng-model="d.sweep.sched"></td>
+    </tr>
+    <tr>
+        <td class="fmb-field">Phone Number:</td>
+        <td><input type="text" name="" id="" ng-model="d.sweep.phone"></td>
+    </tr>
+    <tr>
+        <td class="fmb-field">Email Address:</td>
+        <td><input type="text" name="" id="" ng-model="d.sweep.email"></td>
+    </tr>
+</table>

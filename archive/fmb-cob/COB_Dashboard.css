@@ -1,0 +1,69 @@
+/* COB_Dashboard.css */
+
+.colStage
+{
+    width: 7.5%;
+}
+.colStageHeader
+{
+    display: inline;
+}
+.colStageHeader img
+{
+    height: 50px;
+    width: 100%;
+}
+.colStageHeader .colStageLabel
+{
+    color: #FFFFFF;
+    position: relative;
+    top: -40px;
+    left: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+.cardTemplate
+{
+    margin-bottom: 3px;
+}
+.card
+{
+    background-image: url('/SiteAssets/images/dbCardBackground_119x78.png');
+    background-repeat: no-repeat;
+    height: 78px;
+    width: 125px;
+    padding-left: 3px;
+    padding-top: 1px;
+}
+.mbDataSearch
+{
+    width: 100%;
+    vertical-align: top;
+    border-bottom-style: solid;
+    border-bottom-color: #C0C0C0;
+    border-bottom-width: 1px;
+}
+.highlight
+{
+    background-color: #FFFF88;
+}
+a:link
+{
+    /* [ReplaceColor(themeColor:"Hyperlink")] */
+    color: #0072BC;
+    text-decoration: none;
+}
+#fieldRequestNumber 
+{
+    float:left;
+}
+#fieldReportType 
+{
+    float:left;
+}
+.fieldHours 
+{
+    vertical-align: top;
+    width: 45px;
+    text-align: right;
+}

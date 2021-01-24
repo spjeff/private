@@ -1,0 +1,43 @@
+Status,Source table,Target table,Total rows,Migrated rows,Success rate,Duration (DD:HH:MM:SS:MS),Error messages
+"Completed","`ONEWORLD`.`DATA_ALPHA_TESTING_ONLY`","[doi-oneworld].[ONEWORLD].[DATA_ALPHA_TESTING_ONLY]",36214,3000,"8.28%","00:00:08:49:172","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+The connection has been disabled.
+"
+"Completed","`ONEWORLD`.`DATA_FIX6`","[doi-oneworld].[ONEWORLD].[DATA_FIX6]",36194,3000,"8.29%","00:00:07:17:676","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+The connection has been disabled.
+"
+"Completed","`ONEWORLD`.`DATA_REVISIONS`","[doi-oneworld].[ONEWORLD].[DATA_REVISIONS]",132,132,"100.00%","00:00:02:00:947","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+"
+"Completed","`ONEWORLD`.`DATA_TESTBENCH`","[doi-oneworld].[ONEWORLD].[DATA_TESTBENCH]",0,0,"100.00%","00:00:00:07:306","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+"
+"Completed","`ONEWORLD`.`HISTORY`","[doi-oneworld].[ONEWORLD].[HISTORY]",1353194,6000,"0.44%","00:00:06:56:036","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+The connection has been disabled.
+"
+"Completed","`ONEWORLD`.`HISTORY_TEST`","[doi-oneworld].[ONEWORLD].[HISTORY_TEST]",93,93,"100.00%","00:00:00:22:843","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+"
+"Completed","`ONEWORLD`.`PRODUCTION_DATA`","[doi-oneworld].[ONEWORLD].[PRODUCTION_DATA]",42311,5000,"11.82%","00:00:09:01:497","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+The connection has been disabled.
+"
+"Completed","`ONEWORLD`.`PRODUCTION_TERMS`","[doi-oneworld].[ONEWORLD].[PRODUCTION_TERMS]",5344,4000,"74.85%","00:00:06:11:999","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+The connection has been disabled.
+"
+"Completed","`ONEWORLD`.`STRUCTURE_V1`","[doi-oneworld].[ONEWORLD].[STRUCTURE_V1]",84,84,"100.00%","00:00:03:28:224","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+"
+"Completed","`ONEWORLD`.`STRUCTURE_V3`","[doi-oneworld].[ONEWORLD].[STRUCTURE_V3]",154,154,"100.00%","00:00:01:06:422","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+"
+"Completed","`ONEWORLD`.`STRUCT_STAGING`","[doi-oneworld].[ONEWORLD].[STRUCT_STAGING]",132,132,"100.00%","00:00:00:22:858","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+"
+"Completed","`ONEWORLD`.`STRUCT_V1`","[doi-oneworld].[ONEWORLD].[STRUCT_V1]",151,151,"100.00%","00:00:03:48:243","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+"
+"Completed","`ONEWORLD`.`STRUCT_V3`","[doi-oneworld].[ONEWORLD].[STRUCT_V3]",198,198,"100.00%","00:00:01:09:175","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+"
+"Completed","`ONEWORLD`.`STRUCT_V3_OLD`","[doi-oneworld].[ONEWORLD].[STRUCT_V3_OLD]",192,192,"100.00%","00:00:01:01:851","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+"
+"Completed","`ONEWORLD`.`TERMINOLIGY`","[doi-oneworld].[ONEWORLD].[TERMINOLIGY]",5188,4000,"77.10%","00:00:07:06:404","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+The connection has been disabled.
+"
+"Initial","`ONEWORLD`.`TERMS_TESTBENCH`","[doi-oneworld].[ONEWORLD].[TERMS_TESTBENCH]",45,,"N/A",,"Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+ExecuteNonQuery requires an open and available Connection. The connection's current state is closed.
+"
+"Completed","`ONEWORLD`.`TEST_DATA`","[doi-oneworld].[ONEWORLD].[TEST_DATA]",36222,2000,"5.52%","00:00:06:29:617","Exception during data migration: Reference to database and/or server name in 'master.sys.databases' is not supported in this version of SQL Server.
+The connection has been disabled.
+"

@@ -1,0 +1,32 @@
+<#
+.SYNOPSIS
+    Download list of VM users with high level detail.
+    
+.NOTES
+	File Namespace	: IN-Inventory-Users.ps1
+	Author			: Jeff Jones
+	Version			: 0.1
+    Last Modified	: 02-21-2019
+#>
+
+
+# Module
+Import-Module ActiveDirectory -ErrorAction SilentlyContinue | Out-Null
+
+
+# Computer
+Function DownloadUsers() {
+    Write-Host "Downloading Users..."
+    $servers = Get-ADUser -LDAPFilter "(&(objectCategory=person)(objectClass=user)(!userAccountControl:1.2.840.113556.1.4.803:=2))" -Properties *
+    $servers.Count
+    $servers | Export-Csv "IN-Users.csv" -NoTypeInformation -Force
+}
+
+
+# Main
+Function Main() {
+    Start-Transcript
+    DownloadUsers
+    Stop-Transcript
+}
+Main
