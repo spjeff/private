@@ -1,4 +1,5 @@
 # Config
+# Tenant = "SPJEFF"
 $TenantName     = "0a9449ca-3619-4fca-8644-bdd67d0c8ca6"
 
 # Azure Credential
@@ -20,7 +21,7 @@ function AuthO365() {
     return Invoke-RestMethod -Uri "https://login.microsoftonline.com/$TenantName/oauth2/v2.0/token" -ContentType "application/x-www-form-urlencoded" -Method "POST" -Body $ReqTokenBody
 }
 Function Get-CloudEvents() {
-    $dns = "https://ms-updates.azurewebsites.net"
+    $dns = "https://msupdates5.azurewebsites.net"
     #REM $dns = "http://localhost:2069"
     $uri = "$dns" + "/api/events"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
