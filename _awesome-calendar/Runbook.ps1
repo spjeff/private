@@ -103,7 +103,7 @@ function Main() {
     # Read local events
     $token = AuthO365
     $apiroot = "https://graph.microsoft.com/v1.0/users/spjeff@spjeff.com/calendar/events"
-    $apiget = $apiroot + "?`$top=999&`$filter=start/dateTime ge '2020-11-01'&`$select=subject,body,bodyPreview,organizer,attendees,start,end,location,categories"
+    $apiget = $apiroot + "?`$top=999&`$filter=start/dateTime ge '2021-01-01'&`$select=subject,body,bodyPreview,organizer,attendees,start,end,location,categories"
     # /events?$select=subject,body,bodyPreview,organizer,attendees,start,end,location'
 
     # MS Graph API Call
