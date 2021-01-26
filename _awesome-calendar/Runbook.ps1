@@ -3,11 +3,14 @@
 $TenantName     = "0a9449ca-3619-4fca-8644-bdd67d0c8ca6"
 
 # Azure Credential
-$cred = Get-AutomationPSCredential "SPJEFF-SPO"
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($cred.Password)
-$UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
-$clientID      = $cred.UserName
-$clientSecret  = $UnsecurePassword
+# $cred = Get-AutomationPSCredential "SPJEFF-SPO"
+# $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($cred.Password)
+# $UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+# $clientID      = $cred.UserName
+# $clientSecret  = $UnsecurePassword
+
+$clientID = "cb7a9679-fce9-4bce-8240-72add1e7ee0b"
+$clientSecret = "J_86JyE5IGD~3hIOIR4_BCSVurOYF6i.i2"
 
 # from https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/CallAnAPI/appId/cb7a9679-fce9-4bce-8240-72add1e7ee0b/objectId/57d31dd1-73f3-46d4-bd03-795462eeb293/isMSAApp//defaultBlade/Overview/appSignInAudience/AzureADMyOrg/servicePrincipalCreated/true
 function AuthO365() {
