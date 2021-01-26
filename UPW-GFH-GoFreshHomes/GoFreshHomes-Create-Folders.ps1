@@ -2,13 +2,22 @@
 # Source CSV = GoFreshHomes-Create-Document-Libraries
 # Destination URL = https://gofreshhomes.sharepoint.com/sites/Sandbox
 
+# https://gofreshhomes.sharepoint.com/sites/Dataroomdocuments/_layouts/15/appregnew.aspx
+#
+# The app identifier has been successfully created.
+# Client Id:  	97eb3212-7013-4266-8963-94b7961ae665
+# Client Secret:  	aFjJsj1Mx1cEfAv1cetYlofcmZsSF589XKog1lvOBeE=
+# Title:  	PowerShell
+# App Domain:  	localhost
+# Redirect URI:  	https://localhost
+
 # Modules
 # from https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets?view=sharepoint-ps
 Import-Module "SharePointPnPPowerShellOnline" -ErrorAction SilentlyContinue | Out-Null
 
 function  Main {
     # Connect
-    $url            = "https://gofreshhomes.sharepoint.com/sites/Sandbox"
+    $url            = "https://gofreshhomes.sharepoint.com/sites/VREPM"
     $ClientId       = "c2a1580d-b191-4371-8fba-e80ac3b410ad"
     $ClientSecret   = "YTifhe97GHqK38/zXar0nkKX0vgMoE7+1kK/VIAwmXc="
     Connect-PNPOnline -Url $url -ClientId $ClientId -ClientSecret $ClientSecret
@@ -54,7 +63,10 @@ function  Main {
                 }
 
                 # Create subfolder if missing
-                $subs    = "Tenant,Finance,Archive,History,Other".Split(",")
+
+                # CREATE
+                #OLD $subs    = "Tenant,Finance,Archive,History,Other".Split(",")
+                $subs = "Tenant,Asset-Unit".Split(",")
                 foreach ($s in $subs) {
                     Write-Host $s -ForegroundColor Green
                     $path = "$sru/$folder1/$folder2"
@@ -63,6 +75,19 @@ function  Main {
                         Add-PNPFolder -Name $s -Folder "$fru/$folder1/$folder2"
                     }
                 }
+
+                # DELETE
+                $subs    = "Tenant,Finance,Archive,History,Other".Split(",")
+                foreach ($s in $subs) {
+                    Write-Host $s -ForegroundColor Yellow
+                    $path = "$sru/$folder1/$folder2"
+                    $found = Get-PnPFolder "$path/$s" -ErrorAction SilentlyContinue
+                    if (!$found) {
+                        Remove-PNPFolder -Name $s -Folder "$fru/$folder1/$folder2"
+                    }
+                }
+
+
             }
         }
     }
