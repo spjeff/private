@@ -762,3 +762,11 @@ computerName                   LAPTOP-QRPJIFPT
 instanceId                     0f84648a-c1ac-4d21-bebb-1e514d7b417a
 
 PS C:\Documents\GitHub\private\UPW-GFH-GoFreshHomes> cls
+PS C:\Documents\GitHub\private\UPW-GFH-GoFreshHomes> @{ 'computerName' = if ([Environment]::MachineName) {[Environment]::MachineName}  else {'localhost'}; 'processId' = $PID; 'instanceId' = $host.InstanceId }
+
+Name                           Value
+----                           -----
+processId                      11552
+computerName                   LAPTOP-QRPJIFPT
+instanceId                     0f84648a-c1ac-4d21-bebb-1e514d7b417a
+
