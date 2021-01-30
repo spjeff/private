@@ -2,7 +2,7 @@
 
 # Read source
 $file = "timesheet"
-$txt = Get-Content "$file.txt"
+$txt = Get-Content "_timesheet\$file.txt"
 
 # Count max length and clean whitespace
 $length = 0
@@ -32,4 +32,4 @@ for ($i=0; $i -le 4; $i++) {
 }
 
 # Write final TXT
-$daynotes | Out-File "$file-notes-fix.txt" -Force
+$daynotes | Out-File "_timesheet\$file-notes-fix.txt" -Force
