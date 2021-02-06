@@ -1,5 +1,0 @@
-* Error with Wizdom Custom Calendar web part (ticket #9748). Support for Wizdom branding and GTM (Google Traffic Manager) with CSS left padding for Records Detail ASPX. 
-* Wizdom - Everywhere panel overlaying Page content (ticket #12963). Windows updates / reboots for the SharePoint servers. 
-* Wizdom branding support and review. Error with Wizdom Custom Calendar web part (ticket #9748).   PowerShell, usage, and page analytics updates. 
-* Everywhere panel overlaying Page content (ticket #12963). Found root cause.  VM server [BPGSPSRCHSV01] is offline. 
-* RE: Windows updates / reboots for the SharePoint servers.   

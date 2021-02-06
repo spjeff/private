@@ -66,7 +66,7 @@ Function Set-CloudEvents($json) {
         }
     } catch {}
 
-    $dns = "https://msupdates4.com"
+    $dns = "https://msupdate5.com"
     #REM $dns = "http://localhost:2069"
     $uri = "$dns" + "/api/events"
     $uri

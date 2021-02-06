@@ -1,9 +1,5 @@
- Error with Wizdom Custom Calendar web part (ticket #9748)
-Support for Wizdom branding and GTM (Google Traffic Manager) with CSS left padding for Records Detail ASPX
-Wizdom - Everywhere panel overlaying Page content (ticket #12963)
-Windows updates / reboots for the SharePoint servers
-Wizdom branding support and review.
-Error with Wizdom Custom Calendar web part (ticket #9748).   PowerShell, usage, and page analytics updates.
-Everywhere panel overlaying Page content (ticket #12963)
-Found root cause.  VM server [BPGSPSRCHSV01] is offline.
-RE: Windows updates / reboots for the SharePoint servers
+AGS Engineer has REJECTED RFV NUMBER. 417th Engineer has REJECTED RFV NUMBER. 417th Supervisor has REJECTED RFV NUMBER.
+Meeting-JOSH MALAN's Zoom Meeting (https://aarcorp.zoom.us/j/89358122027?pwd=b0xXMTUvNVdrZWpoU3FBRFlrcGhCUT09)
+Updated link to RFV number in all 3 emails and included the “PAN” group based on selected audience.
+InfoPath front end control #23A (Originating Officer Name) updated with cascade events.  Those trigger when #23A is selected to fill in subsequent fields.  Made great progress today.
+Meetin with Josh to review TAVP approval for permision, dept group, and cascade InfoPath lookup from 23A to 24B fields.
