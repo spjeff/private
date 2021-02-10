@@ -14,7 +14,7 @@ Function Get-OutlookCalendar
     $outlook = New-Object -ComObject outlook.application
 
     # connect to the appropriate location
-    $namespace = $outlook.GetNameSpace('MAPI')
+    $namespace = $outlook.GetNameSpace("MAPI")
     $Calendar = [Microsoft.Office.Interop.Outlook.OlDefaultFolders]::olFolderCalendar
     $folder = $namespace.getDefaultFolder($Calendar)
     # get calendar items
@@ -25,7 +25,7 @@ Function Get-OutlookCalendar
         -PercentComplete ($i/$items.count*100)
         if($_.Subject -ne "b" -AND (($_.Start -ge $dte -AND $_.Start -le $week) -OR ($_.IsRecurring -eq $true -AND ($_.Start -le $week -OR $_.End -ge $dte))))
         {
-            $obj = New-Object -TypeName PSCustomObject -Property @{
+            $obj = New-Object -TypeName "PSCustomObject" -Property @{
                 
                 Start=$_.Start;
                 StartUTC=$_.StartUTC;
@@ -60,8 +60,8 @@ Function Set-CloudEvents($json) {
     $local = "ms-updates-prev.txt"
     try {
         $prev = Get-Content $local -ErrorAction SilentlyContinue
-        if ($prev -eq $json) {
-            Write-Host "Same. Skip."
+        if ($prev.Trim() -eq $json.Trim()) {
+            Write-Host "Skip" -ForegroundColor "Cyan"
             return
         }
     } catch {}
