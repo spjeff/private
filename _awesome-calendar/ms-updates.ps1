@@ -4,14 +4,15 @@
 
 Function Get-OutlookCalendar
 {
+    # Look forward two weeks
     $dte = Get-Date
-	$week = $dte.AddDays(7)
+	$week = $dte.AddDays(14)
 
     # load the required .NET types
     [Reflection.Assembly]::LoadWithPartialname("Microsoft.Office.Interop.Outlook") | Out-Null
     
     # access Outlook object model
-    $outlook = New-Object -ComObject outlook.application
+    $outlook = New-Object -ComObject "Outlook.application"
 
     # connect to the appropriate location
     $namespace = $outlook.GetNameSpace("MAPI")
