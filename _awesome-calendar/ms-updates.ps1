@@ -60,7 +60,7 @@ Function Set-CloudEvents($json) {
     Write-Host "CloudEvents"
     $local = "ms-updates-prev.txt"
     try {
-        $prev = Get-Content $local -ErrorAction SilentlyContinue
+        $prev = Get-Content $local -ErrorAction SilentlyContinue -Encoding UTF8 | Out-String
         if ($prev.Trim() -eq $json.Trim()) {
             Write-Host "Skip" -ForegroundColor "Cyan"
             return
@@ -89,7 +89,7 @@ function Main() {
     # JSON text file
     $json = ConvertTo-Json $events
     $json | Out-File "json.txt" -Force
-    $json = Get-Content "json.txt" -Encoding UTF8 |  Out-String
+    $json = Get-Content "json.txt" -ErrorAction SilentlyContinue -Encoding UTF8 | Out-String
 
     # Ignore SSL Warning
     # from https://stackoverflow.com/questions/11696944/powershell-v3-invoke-webrequest-https-error
