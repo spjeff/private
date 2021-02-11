@@ -67,10 +67,16 @@ Function Set-CloudEvents($json) {
         }
     } catch {}
 
-    $dns = "https://msupdate5.com"
-    #REM $dns = "http://localhost:2069"
-    $uri = "$dns" + "/api/events"
+    # Dynamic URL
+    if ($env:computername -like "ITE*" -or
+        $env:computername -like "WAZP*") {
+        $uri = "https://www.spjeff.com/feed/"
+    } else {
+        $uri = "https://msupdate5.com/api/events"
+    }
     $uri
+
+    # Upload HTTP POST with JSON body
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     $result = Invoke-WebRequest -Uri $uri -Body $json -Method "POST" -ContentType "application/json; charset=utf-8" 
     $result.StatusCode
