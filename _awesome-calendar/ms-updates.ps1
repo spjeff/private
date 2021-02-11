@@ -78,7 +78,7 @@ Function Set-CloudEvents($json) {
 
     # Upload HTTP POST with JSON body
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    $result = Invoke-WebRequest -Uri $uri -Body $json -Method "POST" -ContentType "application/json; charset=utf-8" 
+    $result = Invoke-WebRequest -Uri $uri -Body $json -Method "POST" -ContentType "application/json; charset=utf-8" -Headers @{"Pc"=$env:computername}
     $result.StatusCode
     if ($result.StatusCode -eq 204) {
         $json | Out-File $local -Force
