@@ -12,7 +12,7 @@ foreach ($header as $headers => $value) {
 }
 if ($pc) {
 	$rawBody = file_get_contents("php://input"); // Read body
-	file_put_contents($pc, $rawBody);
+	//REM file_put_contents($pc, $rawBody);
 }
 
 // from https://stackoverflow.com/questions/8115683/php-curl-custom-headers
