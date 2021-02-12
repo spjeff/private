@@ -1,25 +1,25 @@
 # from https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/retrieving-outlook-calendar-entries
 # from https://devblogs.microsoft.com/scripting/hey-scripting-guy-how-can-i-display-my-office-outlook-appointments-without-starting-office-outlook/
-# Select-Object -Property Start, StartUTC, EndUTC, Categories, Subject, Location, RTFBody, Body, IsRecurring, Organizer, Recipients, OptionalAttendees, RequiredAttendees, ResponseStatus, AllDayEvent, ReminderMinutesBeforeStart, RecurrenceState
 
 Function Get-OutlookCalendar
 {
     # Look forward two weeks
-    $dte = Get-Date
-	$week = $dte.AddDays(14)
+    $dte    = Get-Date
+	$week   = $dte.AddDays(14)
 
-    # load the required .NET types
+    # Load the required .NET types
     [Reflection.Assembly]::LoadWithPartialname("Microsoft.Office.Interop.Outlook") | Out-Null
     
-    # access Outlook object model
-    $outlook = New-Object -ComObject "Outlook.application"
+    # Outlook object model
+    $outlook = New-Object -ComObject "Outlook.Application"
 
-    # connect to the appropriate location
-    $namespace = $outlook.GetNameSpace("MAPI")
-    $Calendar = [Microsoft.Office.Interop.Outlook.OlDefaultFolders]::olFolderCalendar
-    $folder = $namespace.getDefaultFolder($Calendar)
-    # get calendar items
-    $items = $folder.items
+    # Connect to the appropriate location
+    $namespace  = $outlook.GetNameSpace("MAPI")
+    $Calendar   = [Microsoft.Office.Interop.Outlook.OlDefaultFolders]::olFolderCalendar
+    $folder     = $namespace.getDefaultFolder($Calendar)
+
+    # Get calendar items
+    $items      = $folder.items
     $items |
     Foreach-Object {
         Write-Progress -activity "Inspecting $($items.count) calendar appointments"  -Status "Processing ..." `
@@ -57,9 +57,11 @@ Function Get-OutlookCalendar
 }
 
 Function Set-CloudEvents($json) {
+    # Write events to EXO calendar
     Write-Host "CloudEvents"
     $local = "ms-updates-prev.txt"
     try {
+        # Skip if same as before
         $prev = Get-Content $local -ErrorAction SilentlyContinue -Encoding UTF8 | Out-String
         if ($prev.Trim() -eq $json.Trim()) {
             Write-Host "Skip" -ForegroundColor "Cyan"
@@ -68,34 +70,32 @@ Function Set-CloudEvents($json) {
     } catch {}
 
     # Dynamic URL
-    if ($env:computername -like "ITE*" -or
-        $env:computername -like "WAZP*") {
-        $uri = "https://www.spjeff.com/feed/"
-    } else {
-        $uri = "https://msupdate5.com/api/events"
-    }
+    # "https://msupdate5.com/api/events"
+    $uri = "https://www.spjeff.com/feed/"
     $uri
 
     # Upload HTTP POST with JSON body
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     $result = Invoke-WebRequest -Uri $uri -Body $json -Method "POST" -ContentType "application/json; charset=utf-8" -Headers @{"Pc"=$env:computername}
     $result.StatusCode
-    if ($result.StatusCode -eq 204) {
+    if ($result.StatusCode -ge 200 -and
+        $result.StatusCode -lt 300
+    ) {
         $json | Out-File $local -Force
     }
-
 }
 
 function Main() {
     # Read calendar
     $events =  Get-OutlookCalendar
-    $total =  $events.Count
+    $total  =  $events.Count
     Write-Host "Found $total" -Fore "Yellow"
 
     # JSON text file
+    $localjson = $local.Replace("prev","curr")
     $json = ConvertTo-Json $events
-    $json | Out-File "json.txt" -Force
-    $json = Get-Content "json.txt" -ErrorAction SilentlyContinue -Encoding UTF8 | Out-String
+    $json | Out-File $localjson -Force
+    $json = Get-Content $localjson -ErrorAction SilentlyContinue -Encoding UTF8 | Out-String
 
     # Ignore SSL Warning
     # from https://stackoverflow.com/questions/11696944/powershell-v3-invoke-webrequest-https-error
@@ -110,23 +110,22 @@ function Main() {
         }
     }
 "@
-[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+    [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 
     # Upload to SQL Azure
     Set-CloudEvents $json
 }
 
-# Loop
-Start-Process OUTLOOK.EXE
-
-# HTTP 407 proxy 
+# Optional HTTP 407 proxy 
 # http://woshub.com/using-powershell-behind-a-proxy/
-if ($env:computername -like "ITE*") {
-    $Wcl=New-Object System.Net.WebClient
-    $Creds=Get-Credential
-    $Wcl.Proxy.Credentials=$Creds
+if ($env:computername -like "NGV*") {
+    $wcl    =   New-Object System.Net.WebClient
+    $creds  =   Get-Credential
+    $wcl.Proxy.Credentials = $creds
 }
 
+# Main loop
+Start-Process "OUTLOOK.EXE"
 While ($true) {
     Main
     Get-Date

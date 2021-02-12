@@ -70,10 +70,12 @@ function Add-Appointment() {
             "CREATE  $Subject"
 
             # Color Coding
-            switch ($pc) {
-                "USCHIJEFFREJON3" {$categories = '"DNT"';}
-                "WSTP-R90SR6KH-L" {$categories = '"Yellow category"';}
-                "IOSLTDENJJONES" {$categories = '"Blue category"';}
+            switch -wildcard ($pc) {
+                "USCHI*" {$categories = '"DNT"';}
+                "WSTP*" {$categories = '"Yellow category"';}
+                "WAZ*" {$categories = '"Yellow category"';}
+                "IOS*" {$categories = '"Blue category"';}
+                "NGV*" {$categories = '"NGC"';}
             }
             
             # JSON body
