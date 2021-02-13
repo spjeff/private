@@ -92,6 +92,7 @@ function Main() {
     Write-Host "Found $total" -Fore "Yellow"
 
     # JSON text file
+    $local = "ms-updates-prev.txt"
     $localjson = $local.Replace("prev","curr")
     $json = ConvertTo-Json $events
     $json | Out-File $localjson -Force
