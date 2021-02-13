@@ -12,7 +12,6 @@ foreach ($header as $headers => $value) {
 }
 if ($pc) {
 	$rawBody = file_get_contents("php://input"); // Read body
-	//REM file_put_contents($pc, $rawBody);
 }
 
 // from https://stackoverflow.com/questions/8115683/php-curl-custom-headers
@@ -28,13 +27,13 @@ function cUrlGetData($url, $post_fields = null) {
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
     $data = curl_exec($ch);
-    if (curl_errno($ch)) {
-        echo 'Error:' . curl_error($ch);
-    }
+    // if (curl_errno($ch)) {
+    //     echo 'Error:' . curl_error($ch);
+    // }
     curl_close($ch);
     return $data;
 }
 $url = "https://msupdate5.com/api/events";
 $dat = cUrlGetData($url, $rawBody);
-echo $dat;
+echo "";
 ?>

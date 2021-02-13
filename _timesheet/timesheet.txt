@@ -1,5 +1,16 @@
-AGS Engineer has REJECTED RFV NUMBER. 417th Engineer has REJECTED RFV NUMBER. 417th Supervisor has REJECTED RFV NUMBER.
-Meeting-JOSH MALAN's Zoom Meeting (https://aarcorp.zoom.us/j/89358122027?pwd=b0xXMTUvNVdrZWpoU3FBRFlrcGhCUT09)
-Updated link to RFV number in all 3 emails and included the “PAN” group based on selected audience.
-InfoPath front end control #23A (Originating Officer Name) updated with cascade events.  Those trigger when #23A is selected to fill in subsequent fields.  Made great progress today.
-Meetin with Josh to review TAVP approval for permision, dept group, and cascade InfoPath lookup from 23A to 24B fields.
+Mark Carter updates to DIVE application with Steve.  SQL both DEV and PROD.
+Copy ACCDB latest to new server.   Cold Fusion error and vendor support
+DIVE Cold Fusion 
+NPS IT Support Project Check-In (Microsoft Teams Meeting)
+OPH/Partners/CF Standup (See Teams Meeting Below)
+Review Cold Fusion migration with Mark and Steve.
+DIVE migration for SQL and MS Access 64 driver install.
+Microservices review with Dan and Christie for forward support.  KT and transition with Dan.
+Offline OPHIS support with Cameron and team for PWA (Progressive Web Application)
+OPH/Partners/CF Standup (See Teams Meeting Below)
+NPS-MSS Project Stand-Up Meeting (Planet & DL only) (Microsoft Teams Meeting)
+OPH/Partners/CF Standup (See Teams Meeting Below)
+Server updates for MS Access 64 bit driver.
+Updates to Cold Fusion Access 64 bit driver.
+MS Access 64 troubleshooting and debug with MS office installed driver.  Download install. ORCA MSI editor for install condition blockers.  Debug and repeat DIVE server install.
+
