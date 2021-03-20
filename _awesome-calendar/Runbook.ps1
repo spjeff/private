@@ -1,6 +1,6 @@
 # Config
 # Tenant = "SPJEFF"
-$TenantName     = "0a9449ca-3619-4fca-8644-bdd67d0c8ca6"
+$TenantName = "0a9449ca-3619-4fca-8644-bdd67d0c8ca6"
 
 # Azure Credential
 # $cred = Get-AutomationPSCredential "SPJEFF-SPO"
@@ -28,10 +28,14 @@ Function Get-CloudEvents() {
     #REM $dns = "http://localhost:2069"
     $uri = "$dns" + "/api/events"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    Invoke-WebRequest -Uri $uri -Method "GET" -ContentType "application/json; charset=utf-8" -Headers @{"key"="VWco7wDsB#RXIn7Dnu(LIjE55Nv43i_UVHBU5vYYRNln"} -UseBasicParsing
+    Invoke-WebRequest -Uri $uri -Method "GET" -ContentType "application/json; charset=utf-8" -Headers @{"key" = "VWco7wDsB#RXIn7Dnu(LIjE55Nv43i_UVHBU5vYYRNln" } -UseBasicParsing
 }
 function CleanString($before) {
-    return $before -replace '[\u201C-\u201D]+', ''
+    $temp = $before -replace '[\u201C-\u201D]+', ''
+    $temp = $temp.replace('“','')
+    $temp = $temp.replace('”','')
+    $temp = $temp.replace('"','\"')
+    return $temp
 }
 function Add-Appointment() {
     [CmdletBinding()]
@@ -54,14 +58,14 @@ function Add-Appointment() {
     if ($global:events.Count -gt 0) {
 
         
-        $match = $global:events |? {$_.location.displayName -eq $Location}
+        $match = $global:events | ? { $_.location.displayName -eq $Location }
         $Subject
         if ($match) {
             $found = $true
         }
 
-        # Timezone offset
-        $cst = -6
+        # Timezone offset (-5 summer DST enabled / -6 winter DST disabled)
+        $cst = -5
         $StartTime = (get-date $Start).AddHours($cst)
         $EndTime = (get-date $End).AddHours($cst)
 
@@ -71,11 +75,11 @@ function Add-Appointment() {
 
             # Color Coding
             switch -wildcard ($pc) {
-                "USCHI*" {$categories = '"DNT"';}
-                "WSTP*" {$categories = '"Yellow category"';}
-                "WAZ*" {$categories = '"Yellow category"';}
-                "IOS*" {$categories = '"Blue category"';}
-                "NGV*" {$categories = '"NGC"';}
+                "USCHI*" { $categories = 'DNT'; }
+                "WSTP*" { $categories = 'Yellow category'; }
+                "WAZ*" { $categories = 'Yellow category'; }
+                "IOS*" { $categories = 'Blue category'; }
+                "NGV*" { $categories = 'NGC'; }
             }
             
             # JSON body
@@ -83,11 +87,38 @@ function Add-Appointment() {
             $EndTimeStr = $EndTime.ToString("yyyy-MM-ddTHH:mm:ss")
             $Subject = CleanString $Subject
             $Body = CleanString $Body
-            $json = '{"subject":"' + $Subject + '","body":{"content":"' + $Body + '"},"start":{"dateTime":"'+$StartTimeStr+'","timeZone":"Central Standard Time"},"end":{"dateTime":"'+$EndTimeStr+'","timeZone":"Central Standard Time"},"location":{"displayName":"'+$Location+'"} ,"categories":['+$categories+']}';
+
+            # from https://stackoverflow.com/questions/44597175/creating-a-json-string-powershell-object
+            $obj = [ordered]@{
+                subject    = $Subject
+                body       = @{
+                    content = $Body
+                }
+                start      = @{
+                    dateTime = $StartTimeStr
+                    timeZone = "Central Standard Time"
+                }
+                end        = @{
+                    dateTime = $EndTimeStr
+                    timeZone = "Central Standard Time"
+                }
+                location   = @{
+                    displayName = $Location
+                }
+                categories = @($categories)
+            }
+        
+            # $json = '{"subject":"' + $Subject + '","body":{"content":"' + $Body + '"},"start":{"dateTime":"' + $StartTimeStr + '",
+            # "timeZone":"Central Standard Time"},"end":{"dateTime":"' + $EndTimeStr + '","timeZone":"Central Standard Time"},
+            # "location":{"displayName":"' + $Location + '"} ,"categories":[' + $categories + ']}';
+            $json = $obj | ConvertTo-Json -Depth 10
+            $json | Out-File "json.txt" -Encoding UTF8
+            $json8 = (Get-Content "json.txt").replace("\n","")
 
             # MS Graph API Call
             $apiroot
-            $result = Invoke-RestMethod -Headers @{Authorization = "Bearer $($token.access_token)" } -Uri $apiroot -Method "POST" -ContentType "application/json" -Body $json -UseBasicParsing
+            $result = Invoke-RestMethod -Headers @{Authorization = "Bearer $($token.access_token)";Host="graph.microsoft.com";"Content-Type"= "application/json" } -Uri $apiroot -Method "POST" -Body $json8 
+            #-Proxy "http://localhost:8888"
             $result
         }
     }
@@ -118,11 +149,11 @@ function Main() {
 
     # Create if missing
     foreach ($row in $rows) {
-            $dtStartTime = [datetime]$row.Start
-            $dtEndTime = [datetime]$row.End
-            if ($dtStartTime -gt (Get-Date) -or $dtEndTime -gt (Get-Date)) {
-                Add-Appointment -Start $row.Start -End $row.End -Subject $row.Subject.Trim() -location $row.GlobalAppointmentID -Body ("$($row.Location)`r`n$($row.Body)") -pc $row.PC.Trim()
-            }
+        $dtStartTime = [datetime]$row.Start
+        $dtEndTime = [datetime]$row.End
+        if ($dtStartTime -gt (Get-Date) -or $dtEndTime -gt (Get-Date)) {
+            Add-Appointment -Start $row.Start -End $row.End -Subject $row.Subject.Trim() -location $row.GlobalAppointmentID -Body ("$($row.Location)`r`n$($row.Body)") -pc $row.PC.Trim()
+        }
     }
 
 

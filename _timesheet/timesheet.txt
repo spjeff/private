@@ -1,0 +1,17 @@
+Coordinate and schedule O365 meetings with Scott.
+RE: Office 365 CDN scheduling with Scott
+Review 240 line item HAR (HTTP Archive) with offline Fiddler analyis sfor cache candidate resources
+ Office365 CDN - PROD
+Change Order has been approved, and will be implemented at noon.
+Inspect banner images with DomNet main slider
+Review DomNet performance for web page load.
+Capture HTTP tracing detail with PNG sizing, disk cache, and network data transfer.   Summary charts and tables for Dominion Management.
+Compare and reconsile speed difference with DomNet.
+Dominion Energy: Daily Stand-Up (Microsoft Teams Meeting)
+DomNet Audit: Touchbase (Microsoft Teams Meeting)
+DomNet: Stand-Up (Tuesdays & Thursdays) (Microsoft Teams Meeting)
+F12 Chrome performance testing with CDN network endpoint enabled
+DomNet: Preview Final Read-Out Materials (Microsoft Teams Meeting)
+Meeting - DomNet Audit: Final Read-Out (Including Executive Summary) (Microsoft Teams Meeting)
+Meeting prep for Dominion Energy witih Alex and Andrew to summary DomNet Intranet performance improvement with F12 network trace and page loading lifecycle.
+PowerPoint slide prepare and internal review.
