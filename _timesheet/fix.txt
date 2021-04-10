@@ -1,0 +1,5 @@
+* Review source VB.Net original system.  Onboarding with SPO admin rights for client tenant.  Called Lantheus desk: 978-671-8763. Do we need to add new user (jonesj1@lantheus.com) to Oracle table?. 
+* GlobalProtect VPN configuration and install. Meeting - Awards & Recognition Kick Off with full team.   User account provision for Lantheus.   Review VN.Net source application code. 
+* Lantheus Awards system access. M365 license confirmation.  Develop new PowerApp template for collecting peer awards (Cheers, Value, Outstanding).  Prepare for internal team demo Thursday.  Data connections, formulas, and layout. 
+* Meeting - Jared technical review for prototype build. Project timeline and milestones outline with XLS updates. What is the best way to request Microsoft 365 License for "PowerApps" and "PowerAutomate" on Lantheus account (jonesj1@lantheus.com). 
+* Updates to PowerApp survey input for awards collection and peer feedback.  Unit testing, confirm contacts with Jared for team.  Planning internal testing week ahead.  PowerApp license availability for Lantheus workforce. 
