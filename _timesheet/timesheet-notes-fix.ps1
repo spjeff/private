@@ -7,7 +7,11 @@ function ProcessClient ($client, $clientRows) {
     # $file = "timesheet"
     # $txt = Get-Content "$file.txt"
 
-    
+    # Append collect text
+    $txt = ""
+    foreach ($row in $clientRows) {
+        $txt += $row.Task
+    }
 
     # Count max length and clean whitespace
     $length = 0
