@@ -1,5 +1,0 @@
-* Dominion Energy: Daily Stand-Up.  (Microsoft Teams Meeting) with team for planning Wave 9 migration. SharePoint Designer review source workflows. 
-* Dominion Energy: Daily Stand-Up.  Wave 9 workflow 2010 migration into MS Flow. Meeting - DESC: Daily Stand-Up (SharePoint Leadership Team) (Microsoft Teams Meeting). Meeting - Dominion Energy: Daily Stand-Up (Microsoft Teams Meeting). 
-* Dominion Energy: Daily Stand-Up.  Support Workflow debug in MS Flow post migration date 5/5 go live.   Project planning. Workflow 2010 migration into MS Flow.   Unit testing, documentation, and update workflow MS Flow edit notes. 
-* Dominion Energy: Daily Stand-Up.  Meeting - DESC: Daily Stand-Up (SharePoint Leadership Team) (Microsoft Teams Meeting). Meeting - Dominion Energy: Daily Stand-Up (Microsoft Teams Meeting). 
-* Dominion Energy: Daily Stand-Up.  Wave 9  migration support after hours with John, Asnaku, and workflow testing from on-premise into SPO. Fossil Hydro Site migration.  Site collection lock, permissions, and technical support with John and Asnaku.  SP Designer 2013 review current workflows for waved based migration. 

@@ -8,7 +8,7 @@ function ProcessClient ($client, $clientRows) {
     # $txt = Get-Content "$file.txt"
 
     # Append collect text
-    $txt = ""
+    $txt = @()
     foreach ($row in $clientRows) {
         $txt += $row.Task
     }
@@ -41,15 +41,33 @@ function ProcessClient ($client, $clientRows) {
     }
 
     # Write final TXT
-    $daynotes | Out-File "$client.txt" -Force
+    $daynotes | Out-File "$client.log" -Force
 }
 
 function Main() {
-    $csv = Import-Csv "timesheet.csv"
+    # Find recent Friday
+    $sourceFile = "C:\Documents\Work\ztime\time2021.accdb"
+    $recentFriday = Get-Date
+    while ($recentFriday.DayOfWeek -ne "Friday") {
+        $recentFriday = $recentFriday.AddDays(-1)
+    }
+    $recentFriday
+
+    # Query time LOG
+    # $acccess = New-Object
+    # $query = "SELECT * FROM [Time] WHERE [Date] <= '" + $recentFriday.ToShortDateString() +"' AND [Date] > '" + $recentFriday.AddDays(-7).ToShortDateString() +"' "
+
+    # Clear LOG
+    Remove-Item "*.LOG"
+
+    # Read lines
+    $csv = Import-Csv "time.csv"
     $groups = $csv | Group Client
     foreach ($client in $groups) {
-        $clientRows = ($csv |? {$_.Client -eq $client})
-        ProcessClient $client $clientRows
+        # LOG per client
+        $clientName = $client.Name
+        $clientRows = ($csv |? {$_.Client -eq $clientName})
+        ProcessClient $clientName $clientRows
     }
 }
 Main
