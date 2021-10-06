@@ -160,11 +160,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BreezeWebApiConfig.cs" />
+    <Compile Include="Controllers\NotesController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="EventClass.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="NoteClass.cs" />
     <Compile Include="Secure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="readme.aspx.cs">
@@ -193,7 +195,11 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\ms-updates - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\ms-updates - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ms-updates - ReadOnly - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\ms-updates - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\msupdates5 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\msupdates5 - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\msupdates5 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\WD.pubxml">
       <SubType>Designer</SubType>
     </None>

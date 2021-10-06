@@ -21,19 +21,21 @@ namespace awesomeCalendarAPI.Controllers
         methods: "*")]
     public class EventsController : ApiController
     {
-
-
-
-
         // GET api/values
         public DataTable Get()
         {
             if (Secure.IsSecure(Request))
             {
-                string sqlServer = "awesome-calendar.database.windows.net";
-                string sqlUser = "awesome-calendar-sa";
-                string sqlPass = "fVRpmHbxARhBz2d";
-                string sqlDatabase = "awesome-calendar";
+                //string sqlServer = "awesome-calendar.database.windows.net";
+                //string sqlUser = "awesome-calendar-sa";
+                //string sqlPass = "fVRpmHbxARhBz2d";
+                //string sqlDatabase = "awesome-calendar";
+
+                string sqlServer = "spjeff-sql.database.windows.net";
+                string sqlUser = "spjeff-sa";
+                string sqlPass = "ubrjE57fTwRi7mAdI5g6";
+                string sqlDatabase = "msupdates5";
+
                 string sqlConn = String.Format("Server = {0}; Database = {1}; User Id = {2}; Password = {3}", sqlServer, sqlDatabase, sqlUser, sqlPass);
                 SqlConnection conn = new SqlConnection(sqlConn);
                 string tsql = String.Format("SELECT * FROM [dbo].[Events]");
@@ -56,10 +58,11 @@ namespace awesomeCalendarAPI.Controllers
             // List<EventClass>events
             // from https://stackoverflow.com/questions/12939501/insert-into-c-sharp-with-sqlcommand
 
-            string sqlServer    = "awesome-calendar.database.windows.net";
-            string sqlUser      = "awesome-calendar-sa";
-            string sqlPass      = "fVRpmHbxARhBz2d";
-            string sqlDatabase  = "awesome-calendar";
+            string sqlServer = "spjeff-sql.database.windows.net";
+            string sqlUser = "spjeff-sa";
+            string sqlPass = "ubrjE57fTwRi7mAdI5g6";
+            string sqlDatabase = "msupdates5";
+
             string sqlConn      = String.Format("Server = {0}; Database = {1}; User Id = {2}; Password = {3}", sqlServer, sqlDatabase, sqlUser, sqlPass);
             SqlConnection conn  = new SqlConnection(sqlConn);
             conn.Open();

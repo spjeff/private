@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <NameOfLastUsedPublishProfile>ms-updates - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Documents\GitHub\private\_awesome-calendar\awesomeCalendarAPI\awesomeCalendarAPI\Properties\PublishProfiles\msupdates5 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
     <ProjectView>ProjectFiles</ProjectView>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
@@ -12,7 +12,7 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+    <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressUseClassicPipelineMode />
