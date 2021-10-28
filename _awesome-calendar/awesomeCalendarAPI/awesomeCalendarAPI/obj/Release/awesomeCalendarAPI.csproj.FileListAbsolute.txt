@@ -157,6 +157,5 @@ C:\Documents\GitHub\private\_awesome-calendar\awesomeCalendarAPI\awesomeCalendar
 C:\Documents\GitHub\private\_awesome-calendar\awesomeCalendarAPI\awesomeCalendarAPI\bin\zh-Hant\System.Spatial.resources.dll
 C:\Documents\GitHub\private\_awesome-calendar\awesomeCalendarAPI\awesomeCalendarAPI\obj\Release\awesomeCalendarAPI.csproj.AssemblyReference.cache
 C:\Documents\GitHub\private\_awesome-calendar\awesomeCalendarAPI\awesomeCalendarAPI\obj\Release\awesomeCalendarAPI.csproj.CoreCompileInputs.cache
-C:\Documents\GitHub\private\_awesome-calendar\awesomeCalendarAPI\awesomeCalendarAPI\obj\Release\awesomeCalendarAPI.csproj.CopyComplete
 C:\Documents\GitHub\private\_awesome-calendar\awesomeCalendarAPI\awesomeCalendarAPI\obj\Release\awesomeCalendarAPI.dll
 C:\Documents\GitHub\private\_awesome-calendar\awesomeCalendarAPI\awesomeCalendarAPI\obj\Release\awesomeCalendarAPI.pdb
