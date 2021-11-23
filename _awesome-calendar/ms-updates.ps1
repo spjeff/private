@@ -1,232 +1,190 @@
-# from https://community.idera.com/database-tools/powershell/powertips/b/tips/posts/retrieving-outlook-calendar-entries
-# from https://devblogs.microsoft.com/scripting/hey-scripting-guy-how-can-i-display-my-office-outlook-appointments-without-starting-office-outlook/
+# Last Updated 11-23-2021
 
-Function Get-OutlookCalendar {
-    # Look forward two weeks
-    $dte = Get-Date
-    $week = $dte.AddDays(14)
+# Config
+$TenantName = "0a9449ca-3619-4fca-8644-bdd67d0c8ca6"
 
-    # Load the required .NET types
-    [Reflection.Assembly]::LoadWithPartialname("Microsoft.Office.Interop.Outlook") | Out-Null
-    
-    # Outlook object model
-    $outlook = New-Object -ComObject "Outlook.Application"
+# Azure Credential
+# $cred = Get-AutomationPSCredential "SPJEFF-SPO"
+# $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($cred.Password)
+# $UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+# $clientID      = $cred.UserName
+# $clientSecret  = $UnsecurePassword
+$clientID = "cb7a9679-fce9-4bce-8240-72add1e7ee0b"
+$clientSecret = "J_86JyE5IGD~3hIOIR4_BCSVurOYF6i.i2"
 
-    # Connect to the appropriate location
-    $namespace = $outlook.GetNameSpace("MAPI")
-    $Calendar = [Microsoft.Office.Interop.Outlook.OlDefaultFolders]::olFolderCalendar
-    $folder = $namespace.getDefaultFolder($Calendar)
+# from https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/CallAnAPI/appId/cb7a9679-fce9-4bce-8240-72add1e7ee0b/objectId/57d31dd1-73f3-46d4-bd03-795462eeb293/isMSAApp//defaultBlade/Overview/appSignInAudience/AzureADMyOrg/servicePrincipalCreated/true
+function AuthO365() {
+    # Auth call
+    $ReqTokenBody = @{
+        grant_type    = "client_credentials"
+        client_id     = $clientID
+        client_secret = $clientSecret
+        scope         = "https://graph.microsoft.com/.default"
+    } 
+    return Invoke-RestMethod -Uri "https://login.microsoftonline.com/$TenantName/oauth2/v2.0/token" -ContentType "application/x-www-form-urlencoded" -Method "POST" -Body $ReqTokenBody
+}
+Function Get-CloudEvents() {
+    $dns = "https://msupdates5.azurewebsites.net"
+    #REM $dns = "http://localhost:2069"
+    $uri = "$dns" + "/api/events"
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Invoke-WebRequest -Uri $uri -Method "GET" -ContentType "application/json; charset=utf-8" -Headers @{"key" = "VWco7wDsB#RXIn7Dnu(LIjE55Nv43i_UVHBU5vYYRNln" } -UseBasicParsing
+}
+function CleanString($before, $crlf) {
+    $temp = $before -replace '[\u201C-\u201D]+', ''
+    $temp = $temp.replace('“','')
+    $temp = $temp.replace('”','')
+    $temp = $temp.replace('"','\"')
+    if ($crlf) {
+        $temp = $temp.replace("`r`n", "")
+    }
+    $temp = $temp.Trim()
+    return $temp
+}
+function Add-Appointment() {
+    [CmdletBinding()]
+    param (
+        [parameter(Mandatory = $true, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
+        $Start, 
+        [parameter(Mandatory = $true, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
+        $End, 
+        [parameter(Mandatory = $true, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
+        $Subject,
+        $Body,
+        $Location,
+        $pc
+    )
 
-    # Get calendar items
-    $items = $folder.items
-    $items |
-    Foreach-Object {
-        Write-Progress -activity "Inspecting $($items.count) calendar appointments"  -Status "Processing ..." `
-            -PercentComplete ($i / $items.count * 100)
-        if ($_.Subject -ne "b" -AND (($_.Start -ge $dte -AND $_.Start -le $week) -OR ($_.IsRecurring -eq $true -AND ($_.Start -le $week -OR $_.End -ge $dte)))) {
-            $obj = New-Object -TypeName "PSCustomObject" -Property @{
-                
-                Start                      = $_.Start;
-                StartUTC                   = $_.StartUTC;
-                End                        = $_.End;
-                EndUTC                     = $_.EndUTC;
-                Categories                 = $_.Categories;
-                Subject                    = $_.Subject;
-                Location                   = $_.Location;
-                #RTFBody=$_.RTFBody;
-                Body                       = $_.Body;
-                IsRecurring                = $_.IsRecurring;
-                Organizer                  = $_.Organizer;
-                #Recipients=$_.Recipients;
-                OptionalAttendees          = $_.OptionalAttendees;
-                RequiredAttendees          = $_.RequiredAttendees;
-                ResponseStatus             = $_.ResponseStatus;
-                AllDayEvent                = $_.AllDayEvent;
-                ReminderMinutesBeforeStart = $_.ReminderMinutesBeforeStart;
-                RecurrenceState            = $_.RecurrenceState;
-                PC                         = $env:COMPUTERNAME;
-                GlobalAppointmentID        = $_.GlobalAppointmentID;
+    # Match event
+    $found = $false
+    $match = $null
+    "MATCH $($global:events.Count) --$Location-- "
+    if ($global:events.Count -gt 0) {
+
+        
+        $match = $global:events | ? { $_.location.displayName -eq $Location }
+        $Subject
+        if ($match) {
+            $found = $true
+        }
+
+        # Timezone offset (-5 summer DST enabled / -6 winter DST disabled)
+        # https://www.tutorialspoint.com/how-to-check-if-the-date-is-adjusted-by-daylight-saving-time-using-powershell
+        if ((Get-Date).IsDaylightSavingTime()) {
+            # Winter
+            $cst = -5
+        } else {
+            # Summer
+            $cst = -6
+        }
+        
+        $StartTime = (get-date $Start).AddHours($cst)
+        $EndTime = (get-date $End).AddHours($cst)
+
+        # Add if don't already have
+        if (!$found) {
+            "CREATE  $Subject"
+
+            # Color Coding
+            switch -wildcard ($pc) {
+                "USCHI*" { $categories = 'DNT'; }
+                "WSTP*" { $categories = 'Yellow category'; }
+                "WAZ*" { $categories = 'Yellow category'; }
+                "IOS*" { $categories = 'Blue category'; }
+                "NGV*" { $categories = 'NGC'; }
+                "ITE*" { $categories = 'NGC'; }
+                "10-*" { $categories = 'WGU'; }
+                "W10-*" { $categories = 'BLK'; }
 
             }
-            return $obj
-        }
-        $i++
-    }
-}
+            
+            # JSON body
+            $StartTimeStr = $StartTime.ToString("yyyy-MM-ddTHH:mm:ss")
+            $EndTimeStr = $EndTime.ToString("yyyy-MM-ddTHH:mm:ss")
+            $Subject = CleanString $Subject $true
+            $Body = CleanString $Body
 
-Function Set-CloudEvents($json) {
-    # Write events to EXO calendar
-    Write-Host ">> Set-CloudEvents"
-    $local = "ms-updates-prev.txt"
-    try {
-        # Skip if same as before
-        $prev = Get-Content $local -ErrorAction SilentlyContinue -Encoding UTF8 | Out-String
-        if ($prev.Trim() -eq $json.Trim()) {
-            Write-Host "Skip" -ForegroundColor "Cyan"
-            return
-        }
-    }
-    catch {}
-
-    # Dynamic URL
-    # "https://msupdate5.com/api/events"
-    $uri = "https://www.spjeff.com/feed/"
-    $uri
-
-    # Upload HTTP POST with JSON body
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    $result = Invoke-WebRequest -Uri $uri -Body $json -Method "POST" -ContentType "application/json; charset=utf-8" -Headers @{"Pc" = $env:computername }
-    $result.StatusCode
-    if ($result.StatusCode -ge 200 -and
-        $result.StatusCode -lt 300
-    ) {
-        $json | Out-File $local -Force
-    }
-}
-
-Function Get-OutlookSent {
-    # Look forward two weeks
-    $dte = Get-Date
-    $week = $dte.AddDays(-7)
-
-    # Load the required .NET types
-    [Reflection.Assembly]::LoadWithPartialname("Microsoft.Office.Interop.Outlook") | Out-Null
-    
-    # Outlook object model
-    $outlook = New-Object -ComObject "Outlook.Application"
-
-    # Connect to the appropriate location
-    $namespace = $outlook.GetNameSpace("MAPI")
-    $sent = [Microsoft.Office.Interop.Outlook.OlDefaultFolders]::olFolderSentMail
-    $folder = $namespace.getDefaultFolder($sent)
-
-    # Get calendar items
-    $notes = ""
-    $items = $folder.items
-    $items |
-    Foreach-Object {
-        Write-Progress -activity "Inspecting $($items.count) sent mail"  -Status "Processing ..." -PercentComplete ($i / $items.count * 100)
-        if ($_.SentOn -ge $week) {
-            # Body max 200
-            $max = 200
-            $body = $_.Body
-            if ($body.Length -gt $max) {
-                $body = $body.Substring(0, $max);
+            # from https://stackoverflow.com/questions/44597175/creating-a-json-string-powershell-object
+            $obj = [ordered]@{
+                subject    = $Subject
+                body       = @{
+                    content = $Body
+                }
+                start      = @{
+                    dateTime = $StartTimeStr
+                    timeZone = "Central Standard Time"
+                }
+                end        = @{
+                    dateTime = $EndTimeStr
+                    timeZone = "Central Standard Time"
+                }
+                location   = @{
+                    displayName = $Location
+                }
+                #categories = @($categories)
             }
-            $notes += $_.Subject + " " + $body
+
+            # Optional cateogry
+            if ($categories) {
+                $obj.categories = @($categories)
+            }
+
+        
+            # $json = '{"subject":"' + $Subject + '","body":{"content":"' + $Body + '"},"start":{"dateTime":"' + $StartTimeStr + '",
+            # "timeZone":"Central Standard Time"},"end":{"dateTime":"' + $EndTimeStr + '","timeZone":"Central Standard Time"},
+            # "location":{"displayName":"' + $Location + '"} ,"categories":[' + $categories + ']}';
+            $json = $obj | ConvertTo-Json -Depth 10
+            $json | Out-File "json.txt" -Encoding UTF8
+            $json8 = (Get-Content "json.txt").replace("\n","")
+
+            # MS Graph API Call
+            $apiroot
+            # try {
+            $result = Invoke-RestMethod -Headers @{Authorization = "Bearer $($token.access_token)";Host="graph.microsoft.com";"Content-Type"= "application/json" } -Uri $apiroot -Method "POST" -Body $json8 
+                $result
+            # } catch {
+            #     "ERROR"
+            # } 
+            #-Proxy "http://localhost:8888"
+            
         }
-        $i++
     }
-    return $notes
-}
 
-Function Set-CloudNotes($json) {
-    # Write events to EXO calendar
-    Write-Host ">> Set-CloudNotes"
-    $local = "ms-updates-notes-prev.txt"
-    try {
-        # Skip if same as before
-        $prev = Get-Content $local -ErrorAction SilentlyContinue -Encoding UTF8 | Out-String
-        if ($prev.Trim() -eq $json.Trim()) {
-            Write-Host "Skip" -ForegroundColor "Cyan"
-            return
-        }
-    }
-    catch {}
-
-    # Dynamic URL
-    #$uri = "https://msupdate5.com/api/notes"
-    $uri = "https://www.spjeff.com/feed2/"
-    $uri
-
-    # Upload HTTP POST with JSON body
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    $result = Invoke-WebRequest -Uri $uri -Body $json -Method "POST" -ContentType "application/json; charset=utf-8" -Headers @{"Pc" = $env:computername }
-    $result.StatusCode
-    if ($result.StatusCode -ge 200 -and
-        $result.StatusCode -lt 300
-    ) {
-        $json | Out-File $local -Force
-    }
 }
 
 function Main() {
-    # Ignore SSL Warning
-    # from https://stackoverflow.com/questions/11696944/powershell-v3-invoke-webrequest-https-error
-    add-type @"
-    using System.Net;
-    using System.Security.Cryptography.X509Certificates;
-    public class TrustAllCertsPolicy : ICertificatePolicy {
-        public bool CheckValidationResult(
-            ServicePoint srvPoint, X509Certificate certificate,
-            WebRequest request, int certificateProblem) {
-            return true;
+
+    # Read database
+    $resp = Get-CloudEvents
+    $rows = ConvertFrom-Json $resp.Content
+    # $rows | ft -a
+    "SOURCE=$($rows.count)"
+
+    # Read local events
+    $token = AuthO365
+    $apiroot = "https://graph.microsoft.com/v1.0/users/spjeff@spjeff.com/calendar/events"
+    $today = (Get-Date).AddDays(-2).ToString("yyyy-MM-dd")
+    $apiget = $apiroot + "?`$top=999&`$filter=start/dateTime ge '" + $today + "'&`$select=subject,body,bodyPreview,organizer,attendees,start,end,location,categories"
+    # /events?$select=subject,body,bodyPreview,organizer,attendees,start,end,location'
+
+    # MS Graph API Call
+    $apiget
+    $result = Invoke-RestMethod -Headers @{Authorization = "Bearer $($token.access_token)" } -Uri $apiget -Method "GET" -ContentType "application/json" -UseBasicParsing
+    $global:events = $result.value
+
+    # Destination
+    "DEST=$($global:events.Count)"
+
+    # Create if missing
+    foreach ($row in $rows) {
+        $dtStartTime = [datetime]$row.Start
+        $dtEndTime = [datetime]$row.End
+        if ($dtStartTime -gt (Get-Date) -or $dtEndTime -gt (Get-Date)) {
+            Add-Appointment -Start $row.Start -End $row.End -Subject $row.Subject.Trim() -location $row.GlobalAppointmentID -Body ("$($row.Location)`r`n$($row.Body)") -pc $row.PC.Trim()
         }
     }
-"@
-    [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 
-    # ----- CALENDAR SYNC -----
 
-    # Read calendar
-    $events = Get-OutlookCalendar
-    $total = $events.Count
-    Write-Host "Found $total" -Fore "Yellow"
 
-    # JSON text file
-    $local = "ms-updates-prev.txt"
-    $localjson = $local.Replace("prev", "curr")
-    $json = ConvertTo-Json $events
-    $json | Out-File $localjson -Force
-    $json = Get-Content $localjson -ErrorAction SilentlyContinue -Encoding UTF8 | Out-String
-
-    # Upload to SQL Azure
-    Set-CloudEvents $json
-
-    # ----- SENT NOTES 4PM ONLY -----
-
-    # Only process 5-6PM CST end of day
-    $we = (Get-Date)
-    # if ($we.Hour -eq 17) {    
-        # Upcoming Friday (Week Ending)
-        while ($we.DayOfWeek -ne "Friday") {
-            $we = $we.AddDays(1)
-        }
-
-        # Read sent folder
-        $notes = Get-OutlookSent
-        $obj = New-Object -TypeName "PSCustomObject" -Property @{
-            Notes      = $notes;
-            PC         = $env:COMPUTERNAME;
-            WeekEnding = $we.ToString("MM-dd-yyyy")
-        }
-        Write-Host "Found Sent $($notes.Length)" -Fore "Yellow"
-
-        # JSON text file
-        $json = $obj | ConvertTo-Json
-        $local = "ms-updates-notes-prev.txt"
-        $localjson = $local.Replace("prev", "curr")
-        $json | Out-File $localjson -Force
-        $json = Get-Content $localjson -ErrorAction SilentlyContinue -Encoding UTF8 | Out-String
-
-        # Upload to SQL
-        Set-CloudNotes $json
-    # }
 }
-
-# Optional HTTP 407 proxy 
-# http://woshub.com/using-powershell-behind-a-proxy/
-if ($env:computername -like "NGV*") {
-    $wcl = New-Object System.Net.WebClient
-    $creds = Get-Credential
-    $wcl.Proxy.Credentials = $creds
-}
-
-# Main loop
-Start-Process "OUTLOOK.EXE"
-While ($true) {
-    Main
-    Get-Date
-    # Write-Host "Wait 15 minutes ... "
-    # Start-Sleep (60 * 15)
-}
+Main

@@ -1,4 +1,3 @@
-# Input full CSV 
 # Format daily work notes into 5 even blocks for timesheet
 
 function ProcessClient ($client, $clientRows) {
@@ -19,15 +18,14 @@ function ProcessClient ($client, $clientRows) {
         $coll += $line
         $length += $line.Length
     }
-    # $collfull = $coll -join " "
 
     # Break into daily blocks
-    $j=0
+    $j = 0
     Write-Host "length=$length"
-    $daylength = $length/5
+    $daylength = $length / 5
     Write-Host "daylength=$daylength"
-    $daynotes = @('* ','* ','* ','* ','* ')
-    for ($i=0; $i -le 4; $i++) {
+    $daynotes = @('* ', '* ', '* ', '* ', '* ')
+    for ($i = 0; $i -le 4; $i++) {
         $note = ''
         $notelength = 0
 
@@ -39,15 +37,15 @@ function ProcessClient ($client, $clientRows) {
         #     "FROM $from TO $to LEN $($collfull.length)"
         #     $note = $collfull.Substring($from, $to-$from)
         # } else {
-            while ($notelength -lt $daylength) {
+        while ($notelength -lt $daylength) {
             
-                # Append short
-                $note += $coll[$j] + " "
-                $j++
-                $notelength += $note.length
-                $j
+            # Append short
+            $note += $coll[$j] + " "
+            $j++
+            $notelength += $note.length
+            $j
                 
-            }
+        }
         # }
 
         # Update daily note
@@ -56,7 +54,7 @@ function ProcessClient ($client, $clientRows) {
     }
 
     # Write final TXT
-    $daynotes | Out-File "$client.log" -Force
+    $daynotes | Out-File "$client.RTF" -Force
 }
 
 function Main() {
@@ -72,10 +70,10 @@ function Main() {
     # $acccess = New-Object
     # $query = "SELECT * FROM [Time] WHERE [Date] <= '" + $recentFriday.ToShortDateString() +"' AND [Date] > '" + $recentFriday.AddDays(-7).ToShortDateString() +"' "
 
-    # Clear .LOG files
+    # Clear .RTF files
     # from https://stackoverflow.com/questions/502002/how-do-i-move-a-file-to-the-recycle-bin-using-powershell
     Import-Module -Name "Recycle"
-    Remove-ItemSafely "*.LOG"
+    Remove-ItemSafely "*.RTF"
 
     # Read lines
     $csv = Import-Csv "time.csv"
@@ -83,7 +81,7 @@ function Main() {
     foreach ($client in $groups) {
         # LOG per client
         $clientName = $client.Name
-        $clientRows = ($csv |? {$_.Client -eq $clientName})
+        $clientRows = ($csv | ? { $_.Client -eq $clientName })
         ProcessClient $clientName $clientRows
     }
 }

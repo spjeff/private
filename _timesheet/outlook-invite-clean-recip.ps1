@@ -8,5 +8,7 @@ foreach ($s in $split) {
         $coll += $new
     }
 }
+
+"---`r`n`r`n"
 $after = $coll -join ";`r`n"
 $after
