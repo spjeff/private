@@ -11,11 +11,20 @@ $clientSecret = "MuX7Q~GeGFQs6iV9Sn5J14J74MQ583Gm67YSW"
 
 function AuthO365() {
     # Auth call
+    # $ReqTokenBody = @{
+    #     Grant_Type    = "client_credentials"
+    #     client_Id     = $clientID
+    #     Client_Secret = $clientSecret
+    #     Scope         = "https://graph.microsoft.com/.default"
+    # } 
     $ReqTokenBody = @{
-        Grant_Type    = "client_credentials"
+        Grant_Type    = "password"
+        username      = $username
+        password      = $password
+        # Scope         = "https://graph.microsoft.com/.default"
         client_Id     = $clientID
         Client_Secret = $clientSecret
-        Scope         = "https://graph.microsoft.com/.default"
+        scope         = "Calendar.Read"
     } 
     return Invoke-RestMethod -Uri "https://login.microsoftonline.com/$TenantName/oauth2/v2.0/token" -Method "POST" -Body $ReqTokenBody
 }
@@ -28,10 +37,12 @@ function Main () {
     # All events for user
     $startDate = (Get-Date).ToString("yyyy-MM-dd")
     $api = "https://graph.microsoft.com/v1.0/users/me/events?`$top=999&`$filter=start/dateTime ge '$startDate'"
-    Write-Host $api -ForegroundColor "Green"
+    Write-Host $api -ForegroundColor "Yellow"
     $events = $null
     $events = Invoke-RestMethod -Headers @{Authorization = "Bearer $($token.access_token)" } -Uri $api -Method "GET" -ContentType "application/json"
     $events | ft -a
-}
 
-# Insert SQL Azure
+    # Insert SQL Azure
+    #TBD
+}
+Main
