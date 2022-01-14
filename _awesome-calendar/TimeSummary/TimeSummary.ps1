@@ -26,12 +26,19 @@ while ($lastFriday.DayOfWeek -ne "Friday") {
 }
 $lastFriday
 $threshold = $lastFriday.ToString("yyyy-MM-dd")
+$weekEnding = $threshold.AddDays(7)
 
 # Source
-$caml = "<View><ViewFields><FieldRef Name='ID'/><FieldRef Name='Date'/><FieldRef Name='Client'/><FieldRef Name='Note'/></ViewFields><Query><Where><Gt><FieldRef Name='Created'/><Value Type='DateTime'>$threshold</Value></Gt></Where></Query></View>"
-$caml
+$caml = "<View><ViewFields><FieldRef Name='ID'/><FieldRef Name='Date'/><FieldRef Name='Client'/><FieldRef Name='Note'/></ViewFields>" +
+    "<Query><Where><Gt><FieldRef Name='Created'/><Value Type='DateTime'>$threshold</Value></Gt>" +
+    "</Where></Query></View>"
+# <And>
+# <Eq><FieldRef Name='Client'/><Value Type='Text'>EX3-WDC</Value></Eq></And>
+
+# Query
 $rows = Get-PnPListItem "TimeLog" -Query $caml
-$rows.Count
+Write-Host "TimeLog=$($rows.Count)" -Fore "Yellow"
+Write-Host $caml -Fore "Yellow"
 
 # Loop
 $log = @()
@@ -43,8 +50,8 @@ foreach ($r in $rows) {
 }
 
 # Group
-$groups = $log | Group Client
-$groups | Select Name |ft -a
+$groups = $log | Group-Object Client
+$groups | Select-Object Name |ft -a
 
 # Summary
 foreach ($g in $groups) {
@@ -81,13 +88,19 @@ foreach ($g in $groups) {
             $matchNote = $match[$j].Note
             if ($matchNote) {
                 $note += $matchNote + ". "
-                
+                $notelength += $matchNote.length
             } else {
                 break
             }
-            $notelength += $note.length
             $j++
-            $j
+        }
+
+        # Friday catch all
+        if ($i -eq 4 -and $j -lt $match.length) {
+            while ($j -lt $match.length) {
+                $daynotes[$i] += $match[$j].Note
+                $j++
+            }
         }
 
         # Update daily note
@@ -96,14 +109,11 @@ foreach ($g in $groups) {
 
     # Found for Insert/Update
     # T00:00:00Z
-    $caml = "<View><Query><Where><And><Eq><FieldRef Name='Date'/><Value Type='Text'>$($threshold)</Value></Eq><Eq><FieldRef Name='Client'/><Value Type='Choice'>$client</Value></Eq></And></Where></Query></View>"
-    $caml
+    $caml = "<View><Query><Where><And><Eq><FieldRef Name='WeekEnding'/><Value Type='Text'>$($threshold)</Value></Eq><Eq><FieldRef Name='Client'/><Value Type='Choice'>$client</Value></Eq></And></Where></Query></View>"
     $found = Get-PnPListItem -List "TimeSummary" -Query $caml
-    $found
-    $found.Count
+    Write-Host $caml -Fore "Yellow"
 
-
-    $hash = @{"Date"=$threshold; "Client"=$Client; "Note"=$daynotes[0]; "Note2"=$daynotes[1]; "Note3"=$daynotes[2]; "Note4"=$daynotes[3]; "Note5"=$daynotes[4]}
+    $hash = @{"WeekEnding"=$weekEnding; "Client"=$Client; "Note"=$daynotes[0]; "Note2"=$daynotes[1]; "Note3"=$daynotes[2]; "Note4"=$daynotes[3]; "Note5"=$daynotes[4]}
     if ($found.Count) {
         # Update
         Set-PnPListItem -List "TimeSummary" -Values $hash -Identity $found.Id
