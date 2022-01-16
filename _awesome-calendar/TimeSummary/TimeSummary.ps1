@@ -5,18 +5,36 @@
 # https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps
 # https://mmsharepoint.wordpress.com/2018/12/19/modern-sharepoint-authentication-in-azure-automation-runbook-with-pnp-powershell/
 
+if ($host.Runspace) { if ($host.Runspace[0].GetType().Name -eq "LocalRunspace") { $local = $true; "LOCAL" } } else { "RUNBOOK" }
+
 # Folder
-cd "C:\Documents\GitHub\private\_awesome-calendar\TimeSummary"
+if ($local) {
+    cd "C:\Documents\GitHub\private\_awesome-calendar\TimeSummary"
+}
 
 # Scope
 $tenant = "spjeffdev"
 $clientFile = "PnP-PowerShell-Client.txt"
+$clientId = "583e9a09-8836-44f3-8366-1cb438f0dd8c"
+$password = "pass@word1"
+
+
+if (!$local) {
+    # Azure Certificate
+    "Azure Certificate"
+    $secPassword = $password | ConvertTo-SecureString -AsPlainText -Force
+    $cert = Get-AutomationCertificate -Name "PNP-PowerShell-$tenant"
+    "CERT"
+    $cert
+    $pfxCert = $cert.Export("pfx" , $password ) # 3=Pfx
+    $certPath = "PNP-PowerShell-$tenant.pfx"
+    $certPath
+    Set-Content -Value $pfxCert -Path $certPath -Force -Encoding Byte 
+}
 
 # Connect
-$clientId = Get-Content $clientFile
-$password = "pass@word1"
 $secPassword = $password | ConvertTo-SecureString -AsPlainText -Force
-Connect-PnPOnline -ClientId $clientId -Url "https://$tenant.sharepoint.com/sites/TimeLog" -Tenant "$tenant.onmicrosoft.com" -CertificatePath '.\PnP-PowerShell.pfx' -CertificatePassword $secPassword
+Connect-PnPOnline -ClientId $clientId -Url "https://$tenant.sharepoint.com/sites/TimeLog" -Tenant "$tenant.onmicrosoft.com" -CertificatePath ".\PnP-PowerShell-$tenant.pfx" -CertificatePassword $secPassword
 Get-PnPTenantSite | Format-Table -AutoSize
 
 # Walk date backward
@@ -26,12 +44,12 @@ while ($lastFriday.DayOfWeek -ne "Friday") {
 }
 $lastFriday
 $threshold = $lastFriday.ToString("yyyy-MM-dd")
-$weekEnding = $threshold.AddDays(7)
+$weekEnding = $lastFriday.AddDays(7).ToString("yyyy-MM-dd")
 
 # Source
 $caml = "<View><ViewFields><FieldRef Name='ID'/><FieldRef Name='Date'/><FieldRef Name='Client'/><FieldRef Name='Note'/></ViewFields>" +
-    "<Query><Where><Gt><FieldRef Name='Created'/><Value Type='DateTime'>$threshold</Value></Gt>" +
-    "</Where></Query></View>"
+"<Query><Where><Gt><FieldRef Name='Created'/><Value Type='DateTime'>$threshold</Value></Gt>" +
+"</Where></Query></View>"
 # <And>
 # <Eq><FieldRef Name='Client'/><Value Type='Text'>EX3-WDC</Value></Eq></And>
 
@@ -46,12 +64,12 @@ foreach ($r in $rows) {
     $Date = $r.FieldValues["Date"]
     $Client = $r.FieldValues["Client"]
     $Note = $r.FieldValues["Note"]
-    $log += [PSCustomObject]@{"Date"=$Date; "Client"=$Client; "Note"=$Note}
+    $log += [PSCustomObject]@{"Date" = $Date; "Client" = $Client; "Note" = $Note }
 }
 
 # Group
 $groups = $log | Group-Object Client
-$groups | Select-Object Name |ft -a
+$groups | Select-Object Name | ft -a
 
 # Summary
 foreach ($g in $groups) {
@@ -60,7 +78,7 @@ foreach ($g in $groups) {
     $length = 0
     $note = ""
     $client = $g.Name
-    $match = $log |? {$_.Client -eq $client}
+    $match = $log | ? { $_.Client -eq $client }
     foreach ($m in $match) {
         $line = $m.Note
         if (!$line.EndsWith(".")) {
@@ -89,7 +107,8 @@ foreach ($g in $groups) {
             if ($matchNote) {
                 $note += $matchNote + ". "
                 $notelength += $matchNote.length
-            } else {
+            }
+            else {
                 break
             }
             $j++
@@ -113,11 +132,12 @@ foreach ($g in $groups) {
     $found = Get-PnPListItem -List "TimeSummary" -Query $caml
     Write-Host $caml -Fore "Yellow"
 
-    $hash = @{"WeekEnding"=$weekEnding; "Client"=$Client; "Note"=$daynotes[0]; "Note2"=$daynotes[1]; "Note3"=$daynotes[2]; "Note4"=$daynotes[3]; "Note5"=$daynotes[4]}
+    $hash = @{"WeekEnding" = $weekEnding; "Client" = $Client; "Note" = $daynotes[0]; "Note2" = $daynotes[1]; "Note3" = $daynotes[2]; "Note4" = $daynotes[3]; "Note5" = $daynotes[4] }
     if ($found.Count) {
         # Update
         Set-PnPListItem -List "TimeSummary" -Values $hash -Identity $found.Id
-    } else {
+    }
+    else {
         # Insert
         Add-PnPListItem -List "TimeSummary" -Values $hash 
     }
