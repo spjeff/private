@@ -95,7 +95,7 @@ foreach ($g in $groups) {
     $daynotes = @('* ', '* ', '* ', '* ', '* ')
     for ($i = 0; $i -le 4; $i++) {
         # Default
-        $note = ''
+        $note = ""
         $notelength = 0
         
         # Next day
@@ -129,7 +129,6 @@ foreach ($g in $groups) {
     $caml = "<View><Query><Where><And><Eq><FieldRef Name='WeekEnding'/><Value Type='Text'>$($threshold)</Value></Eq><Eq><FieldRef Name='Client'/><Value Type='Choice'>$client</Value></Eq></And></Where></Query></View>"
     $found = Get-PnPListItem -List "TimeSummary" -Query $caml
     Write-Host $caml -Fore "Yellow"
-
     $hash = @{"WeekEnding" = $weekEnding; "Client" = $Client; "Note" = $daynotes[0]; "Note2" = $daynotes[1]; "Note3" = $daynotes[2]; "Note4" = $daynotes[3]; "Note5" = $daynotes[4] }
     if ($found.Count) {
         # Update
