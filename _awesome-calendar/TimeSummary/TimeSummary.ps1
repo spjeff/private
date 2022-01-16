@@ -13,10 +13,10 @@ if ($local) {
 }
 
 # Scope
-$tenant = "spjeffdev"
+$tenant     = "spjeffdev"
 $clientFile = "PnP-PowerShell-Client.txt"
-$clientId = "583e9a09-8836-44f3-8366-1cb438f0dd8c"
-$password = "pass@word1"
+$clientId   = "583e9a09-8836-44f3-8366-1cb438f0dd8c"
+$password   = "pass@word1"
 
 
 if (!$local) {
@@ -43,15 +43,13 @@ while ($lastFriday.DayOfWeek -ne "Friday") {
     $lastFriday = $lastFriday.AddDays(-1)
 }
 $lastFriday
-$threshold = $lastFriday.ToString("yyyy-MM-dd")
+$threshold  = $lastFriday.ToString("yyyy-MM-dd")
 $weekEnding = $lastFriday.AddDays(7).ToString("yyyy-MM-dd")
 
 # Source
 $caml = "<View><ViewFields><FieldRef Name='ID'/><FieldRef Name='Date'/><FieldRef Name='Client'/><FieldRef Name='Note'/></ViewFields>" +
 "<Query><Where><Gt><FieldRef Name='Created'/><Value Type='DateTime'>$threshold</Value></Gt>" +
 "</Where></Query></View>"
-# <And>
-# <Eq><FieldRef Name='Client'/><Value Type='Text'>EX3-WDC</Value></Eq></And>
 
 # Query
 $rows = Get-PnPListItem "TimeLog" -Query $caml
@@ -61,24 +59,24 @@ Write-Host $caml -Fore "Yellow"
 # Loop
 $log = @()
 foreach ($r in $rows) {
-    $Date = $r.FieldValues["Date"]
+    $Date   = $r.FieldValues["Date"]
     $Client = $r.FieldValues["Client"]
-    $Note = $r.FieldValues["Note"]
-    $log += [PSCustomObject]@{"Date" = $Date; "Client" = $Client; "Note" = $Note }
+    $Note   = $r.FieldValues["Note"]
+    $log    += [PSCustomObject]@{"Date" = $Date; "Client" = $Client; "Note" = $Note }
 }
 
 # Group
-$groups = $log | Group-Object Client
-$groups | Select-Object Name | ft -a
+$groups = $log | Group-Object "Client"
+$groups | Select-Object "Name" | ft -a
 
 # Summary
 foreach ($g in $groups) {
 
     # Append weekly Note
     $length = 0
-    $note = ""
+    $note   = ""
     $client = $g.Name
-    $match = $log | ? { $_.Client -eq $client }
+    $match  = $log | ? { $_.Client -eq $client }
     foreach ($m in $match) {
         $line = $m.Note
         if (!$line.EndsWith(".")) {
