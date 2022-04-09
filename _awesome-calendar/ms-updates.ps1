@@ -32,8 +32,8 @@ Function Get-CloudEvents() {
 }
 function CleanString($before, $crlf) {
     $temp = $before -replace '[\u201C-\u201D]+', ''
-    $temp = $temp.replace('“','')
-    $temp = $temp.replace('”','')
+    $temp = $temp.replace('â€œ','')
+    $temp = $temp.replace('â€','')
     $temp = $temp.replace('"','\"')
     if ($crlf) {
         $temp = $temp.replace("`r`n", "")
@@ -75,7 +75,7 @@ function Add-Appointment() {
             $cst = -5
         } else {
             # Summer
-            $cst = -6
+            $cst = -5
         }
         
         $StartTime = (get-date $Start).AddHours($cst)
@@ -91,11 +91,13 @@ function Add-Appointment() {
                 "WSTP*" { $categories = 'Yellow category'; }
                 "WAZ*" { $categories = 'Yellow category'; }
                 "IOS*" { $categories = 'Blue category'; }
+				"LT-98879*" { $categories = 'Green category'; }
                 "NGV*" { $categories = 'NGC'; }
                 "ITE*" { $categories = 'NGC'; }
                 "10-*" { $categories = 'WGU'; }
-                "W10-*" { $categories = 'BLK'; }
-
+                "W10-*" { $categories = 'EYY'; }
+				"US322*" { $categories = 'EYY'; }
+                "WXLT*" { $categories = 'FMB'; }
             }
             
             # JSON body

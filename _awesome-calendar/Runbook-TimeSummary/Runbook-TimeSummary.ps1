@@ -9,7 +9,7 @@ if ($host.Runspace) { if ($host.Runspace[0].GetType().Name -eq "LocalRunspace") 
 
 # Folder
 if ($local) {
-    cd "C:\Documents\GitHub\private\_awesome-calendar\TimeSummary"
+    cd "C:\Documents\GitHub\private\_awesome-calendar\Runbook-TimeSummary"
 }
 
 # Scope
