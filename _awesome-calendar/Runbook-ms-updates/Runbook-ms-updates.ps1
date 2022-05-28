@@ -1,4 +1,4 @@
-# Last Updated 11-23-2021
+# Last Updated 05-17-2022
 
 # Config
 $TenantName = "0a9449ca-3619-4fca-8644-bdd67d0c8ca6"
@@ -75,7 +75,7 @@ function Add-Appointment() {
             $cst = -5
         } else {
             # Summer
-            $cst = -6
+            $cst = -5
         }
         
         $StartTime = (get-date $Start).AddHours($cst)
@@ -91,17 +91,20 @@ function Add-Appointment() {
                 "WSTP*" { $categories = 'Yellow category'; }
                 "WAZ*" { $categories = 'Yellow category'; }
                 "IOS*" { $categories = 'Blue category'; }
+				"LT-98879*" { $categories = 'Green category'; }
                 "NGV*" { $categories = 'NGC'; }
                 "ITE*" { $categories = 'NGC'; }
                 "10-*" { $categories = 'WGU'; }
-                "W10-*" { $categories = 'BLK'; }
+                "W10-*" { $categories = 'EYY'; }
+				"US322*" { $categories = 'EYY'; }
                 "WXLT*" { $categories = 'FMB'; }
+				"VMVPW*" { $categories = 'MORG'; }
             }
             
             # JSON body
             $StartTimeStr = $StartTime.ToString("yyyy-MM-ddTHH:mm:ss")
             $EndTimeStr = $EndTime.ToString("yyyy-MM-ddTHH:mm:ss")
-            $Subject = CleanString $Subject $true
+            $Subject = CleanString $Subject.Replace("FW :","") $true
             $Body = CleanString $Body
 
             # from https://stackoverflow.com/questions/44597175/creating-a-json-string-powershell-object

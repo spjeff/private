@@ -38,7 +38,7 @@ Connect-PnPOnline -ClientId $clientId -Url "https://$tenant.sharepoint.com/sites
 Get-PnPTenantSite | Format-Table -AutoSize
 
 # Walk date backward
-$lastFriday = (Get-Date).AddDays(-1)
+$lastFriday = (Get-Date).AddDays(-2)
 while ($lastFriday.DayOfWeek -ne "Friday") {
     $lastFriday = $lastFriday.AddDays(-1)
 }
