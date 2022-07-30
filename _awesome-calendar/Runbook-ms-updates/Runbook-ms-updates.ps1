@@ -1,4 +1,4 @@
-# Last Updated 05-17-2022
+# Last Updated 06-29-2022
 
 # Config
 $TenantName = "0a9449ca-3619-4fca-8644-bdd67d0c8ca6"
@@ -32,8 +32,8 @@ Function Get-CloudEvents() {
 }
 function CleanString($before, $crlf) {
     $temp = $before -replace '[\u201C-\u201D]+', ''
-    $temp = $temp.replace('â€œ','')
-    $temp = $temp.replace('â€','')
+    $bad="â€�"
+    $temp = $temp.replace($bad,'')
     $temp = $temp.replace('"','\"')
     if ($crlf) {
         $temp = $temp.replace("`r`n", "")
@@ -59,7 +59,7 @@ function Add-Appointment() {
     $found = $false
     $match = $null
     "MATCH $($global:events.Count) --$Location-- "
-    if ($global:events.Count -gt 0) {
+    if ($global:events.Count -gt 0 -and $Location) {
 
         
         $match = $global:events | ? { $_.location.displayName -eq $Location }
@@ -166,7 +166,7 @@ function Main() {
     # Read local events
     $token = AuthO365
     $apiroot = "https://graph.microsoft.com/v1.0/users/spjeff@spjeff.com/calendar/events"
-    $today = (Get-Date).AddDays(-2).ToString("yyyy-MM-dd")
+    $today = (Get-Date).AddDays(-30).ToString("yyyy-MM-dd")
     $apiget = $apiroot + "?`$top=999&`$filter=start/dateTime ge '" + $today + "'&`$select=subject,body,bodyPreview,organizer,attendees,start,end,location,categories"
     # /events?$select=subject,body,bodyPreview,organizer,attendees,start,end,location'
 
@@ -183,7 +183,9 @@ function Main() {
         $dtStartTime = [datetime]$row.Start
         $dtEndTime = [datetime]$row.End
         if ($dtStartTime -gt (Get-Date) -or $dtEndTime -gt (Get-Date)) {
-            Add-Appointment -Start $row.Start -End $row.End -Subject $row.Subject.Trim() -location $row.GlobalAppointmentID -Body ("$($row.Location)`r`n$($row.Body)") -pc $row.PC.Trim()
+           
+               Add-Appointment -Start $row.Start -End $row.End -Subject $row.Subject.Trim() -location $row.GlobalAppointmentID -Body ("$($row.Location)`r`n$($row.Body)") -pc $row.PC.Trim()
+           
         }
     }
 
